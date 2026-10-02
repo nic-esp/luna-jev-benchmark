@@ -1,6 +1,6 @@
 {
   "format_version": 1,
-  "created_at": "2026-10-02T18:32:20.085674+00:00",
+  "created_at": "2026-10-02T21:34:12.136998+00:00",
   "note": "This is a transformed public copy. RTE premise/hypothesis text and copies in requests are omitted because exact upstream redistribution terms were not verified. All numerical results and reference labels are retained. Hashes recorded by the original study identify original local artifacts, not these public bytes; PUBLICATION_MANIFEST.json records the public file hashes. Local artifact paths have been made relative to the public package.",
   "rte_source_rows": 277,
   "rte_source_text_scan_passed": true,
@@ -1290,9 +1290,9 @@
       "transformed_or_added": false
     },
     "benchmark/multimodel/build_report.py": {
-      "public_sha256": "11beb862efa2099f74c3eceb8cf21a59b90e958941e37de3365379a37b71602f",
-      "bytes": 37671,
-      "original_local_sha256": "11beb862efa2099f74c3eceb8cf21a59b90e958941e37de3365379a37b71602f",
+      "public_sha256": "f223954ad8901358cd0a2b287af70f045cf93e5b12f7832dcd55b44e944076f4",
+      "bytes": 36142,
+      "original_local_sha256": "f223954ad8901358cd0a2b287af70f045cf93e5b12f7832dcd55b44e944076f4",
       "transformed_or_added": false
     },
     "benchmark/multimodel/cache_protocol.py": {
@@ -1428,9 +1428,9 @@
       "transformed_or_added": true
     },
     "benchmark/multimodel/report-data/evidence.json": {
-      "public_sha256": "a72dddb177ed7f75b42878abaa15b0c6d9dfe829807a726e3e2b11bd6a48bd48",
+      "public_sha256": "d492593d0d25c83985543402697dc09a50431b4c2417b0d7293cdef0b6dcc390",
       "bytes": 58410,
-      "original_local_sha256": "a72dddb177ed7f75b42878abaa15b0c6d9dfe829807a726e3e2b11bd6a48bd48",
+      "original_local_sha256": "d492593d0d25c83985543402697dc09a50431b4c2417b0d7293cdef0b6dcc390",
       "transformed_or_added": false
     },
     "benchmark/multimodel/report-data/records-000.json": {
@@ -3360,9 +3360,9 @@
       "transformed_or_added": false
     },
     "benchmark/multimodel/report_evidence.py": {
-      "public_sha256": "eeabe0742955af609630b79dba6d9588b4096f6e3bead838d1b614ac8f101d6c",
-      "bytes": 21473,
-      "original_local_sha256": "eeabe0742955af609630b79dba6d9588b4096f6e3bead838d1b614ac8f101d6c",
+      "public_sha256": "856c030dc56c966f52a2c4f6e2b5ec6d8a5ac8db5750c4b5501c84c6b32ea1d9",
+      "bytes": 21637,
+      "original_local_sha256": "856c030dc56c966f52a2c4f6e2b5ec6d8a5ac8db5750c4b5501c84c6b32ea1d9",
       "transformed_or_added": false
     },
     "benchmark/multimodel/run_study.py": {
@@ -4188,14 +4188,14 @@
       "transformed_or_added": false
     },
     "comparison.html": {
-      "public_sha256": "a0bca4e189089d7dbe4f83aae30a051e45d9b79ab3f9ecf8c20b115002c6cc93",
-      "bytes": 60988702,
-      "original_local_sha256": "0fc43787ed17392ff752f828fde9d0339badb21e35b7c3e8c99b80d8049b26f5",
+      "public_sha256": "e54ea086893b7a8b0c036a55ce1a8e023c58401f32989847a00d67e5222f4e52",
+      "bytes": 60985816,
+      "original_local_sha256": "4b6e0089461c7eea9ad6a1c5cb7fec89c994373aa72778ff91fe1da05dce419c",
       "transformed_or_added": true
     },
     "index.html": {
-      "public_sha256": "a0bca4e189089d7dbe4f83aae30a051e45d9b79ab3f9ecf8c20b115002c6cc93",
-      "bytes": 60988702,
+      "public_sha256": "e54ea086893b7a8b0c036a55ce1a8e023c58401f32989847a00d67e5222f4e52",
+      "bytes": 60985816,
       "original_local_sha256": null,
       "transformed_or_added": true
     },

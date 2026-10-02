@@ -192,10 +192,12 @@ def explorer_markup(cases, records, supplementary_count):
     tasks = Counter(c["experiment"] for c in cases)
     options("case-task", [(key, f"{task_names.get(key, key)} ({count:,})") for key, count in tasks.items()], "All experiments")
     template = re.sub(r'<p>Inspect all .*?</p>',
-        f'<p>Inspect all <strong>{len(cases):,} benchmark and cache cases</strong>, with their inputs, reference answers, provenance and linked model outputs. Supplementary measurements and setup inputs remain available in the API call explorer below. Filters affect this appendix only; the paper’s tables use their stated protocol samples.</p>', template, count=1)
+        f'<p>{len(cases):,} cases. Filters affect this explorer only.</p>', template, count=1)
     template = template.replace("Download all evidence as JSON", "Download the evidence manifest")
     template = template.replace('href="benchmark/multimodel/report-data/evidence.json" download>Download all case data', 'href="benchmark/multimodel/report-data/cases.json" download>Download all case data')
     template = template.replace("Export full request and response records (JSON)", "Evidence manifest and raw record chunks")
+    template = template.replace('<span>Open a case to inspect its full evidence.</span>', '')
+    template = template.replace('All study calls are retained: measured requests, warmups, cache priming and setup probes. Expand a row for the exact request, API response, tokens, bill and timing. The saved records omit authorization headers. Full records load on demand from the saved evidence files.', 'Authorization headers are omitted.')
     return template
 
 
