@@ -1,6 +1,6 @@
-# Expanded-study figure captions
+# Model-comparison figure captions
 
-All figures use completed runs and are reconciled to the audited analysis. The retained pilot figures are unchanged.
+The figures present the quality, timing, and caching protocols within one model-comparison study. All plotted values come from completed runs and are reconciled to the audited analysis.
 
 ## fig4-quality
 
@@ -18,7 +18,7 @@ Model-generated probabilities versus exact event probabilities on 300 prespecifi
 
 PNG: 3224 × 1300 pixels. SVG preserves vector geometry and text.
 
-The isolated serial timing study selected 12 cases per task before outcomes were inspected and repeated them three times per model. Each plotted point is one case/model's median over those three repeats. Grey connectors pair the same case across models, and heavy horizontal bars mark medians across case medians. Cases missing a valid positive timing in either arm in any repeat are excluded with counts retained in the analysis. Common logarithmic time axes are used. No concurrent quality-run latency is included.
+The isolated serial timing protocol selected 12 cases per task before outcomes were inspected and repeated them three times per model. Each plotted point is one case/model's median over those three repeats. Grey connectors pair the same case across models, and heavy horizontal bars mark medians across case medians. Cases missing a valid positive timing in either arm in any repeat are excluded with counts retained in the analysis. Common logarithmic time axes are used. No concurrent quality-run latency is included.
 
 ## fig7-cache
 

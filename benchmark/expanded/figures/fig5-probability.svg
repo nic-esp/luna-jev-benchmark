@@ -2,12 +2,12 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="806.4pt" height="410.4pt" viewBox="0 0 806.4 410.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>Expanded probability estimates against exact targets</title>
+ <title>Probability estimates against exact targets</title>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title>Expanded probability estimates against exact targets</dc:title>
+    <dc:title>Probability estimates against exact targets</dc:title>
     <dc:date>2026-10-02</dc:date>
     <dc:description>Model-generated probabilities versus exact event probabilities on 300 prespecified finite probability problems. Each panel reports its own valid-response denominator and mean absolute error in percentage points. Invalid responses have no plottable probability and are omitted here but retained in the study's failure accounting. The dashed diagonal is exact agreement. No jitter is added to the probability values, and overlapping marks remain present.</dc:description>
     <dc:format>image/svg+xml</dc:format>

@@ -19,7 +19,7 @@
   },
   "generator": {
     "path": "benchmark/expanded/paper_figures.py",
-    "sha256": "116fb406e832f8f9f1e2609d16f1ecee493a83fb564c6ebd283fd5454a6a9b1b",
+    "sha256": "4ffa97c02d9afea34359992934d9899e0baca0ef81c697d60c476fff4c6f01c7",
     "shared_style_sha256": "00b037750fbb47947ebdeeab2ed708f196d19165bf430460edd4c4455a0e0bf3",
     "matplotlib": "3.11.2",
     "numpy": "2.5.3"
@@ -36,10 +36,10 @@
         3224,
         1378
       ],
-      "title": "Expanded binary-task quality",
+      "title": "Binary-task quality",
       "caption": "Accuracy on four binary tasks, counting every invalid response as incorrect. Points show observed accuracy and horizontal intervals are nominal 95% Wilson intervals. The table gives correct answers over all attempted cases. BoolQ, RTE, and WiC measure agreement with published reference labels; synthetic policy targets come from a deterministic oracle. The intervals are exploratory, do not account for every shared passage or template, and should not be used to infer model differences from overlap alone.",
-      "svg_sha256": "82023826754755b52d26d9b7cd317f098637056f7e83c853eb5d0f524759bc2d",
-      "png_sha256": "229697df900acfd96d93dd9b6b620426b2478c3ac10e2a28fdf8310f89769dcd"
+      "svg_sha256": "32a81d0c89a933f89643d9aff202057fc81aacc09bc9f79b7f4baa1adaed6b3c",
+      "png_sha256": "7a743ae976c2cab9e330863b55cfc4ea242cf3abce13e7594f0219fd8dba68f8"
     },
     "fig5-probability": {
       "svg": "fig5-probability.svg",
@@ -52,10 +52,10 @@
         2912,
         1482
       ],
-      "title": "Expanded probability estimates against exact targets",
+      "title": "Probability estimates against exact targets",
       "caption": "Model-generated probabilities versus exact event probabilities on 300 prespecified finite probability problems. Each panel reports its own valid-response denominator and mean absolute error in percentage points. Invalid responses have no plottable probability and are omitted here but retained in the study's failure accounting. The dashed diagonal is exact agreement. No jitter is added to the probability values, and overlapping marks remain present.",
-      "svg_sha256": "7d808010e9cd4a2fda06d0516abf5380a2946e665f044fedfdb88d73b7726888",
-      "png_sha256": "175864f8ae71f31aebd6a8fe311e4749dac03a8744766d852fbf00d459c3b68d"
+      "svg_sha256": "f3b1c4391bab15a1261c750668612f4045c364f6c888db08e7114dff8e8ac3e0",
+      "png_sha256": "3cd3dc24ae6dd0c475e9c01d084bb4428bd5a5c9cd55c7c6736b4167afdcbb0e"
     },
     "fig6-timing": {
       "svg": "fig6-timing.svg",
@@ -69,9 +69,9 @@
         1300
       ],
       "title": "Isolated repeated latency across five tasks",
-      "caption": "The isolated serial timing study selected 12 cases per task before outcomes were inspected and repeated them three times per model. Each plotted point is one case/model's median over those three repeats. Grey connectors pair the same case across models, and heavy horizontal bars mark medians across case medians. Cases missing a valid positive timing in either arm in any repeat are excluded with counts retained in the analysis. Common logarithmic time axes are used. No concurrent quality-run latency is included.",
-      "svg_sha256": "1b781b694d22f651f5164d6fdd24e25084b13decf63312d3c7986e43c259f39d",
-      "png_sha256": "b67cd715d447e6878932be2073be7b49faabbab655690d9f0832804d6eeafc89"
+      "caption": "The isolated serial timing protocol selected 12 cases per task before outcomes were inspected and repeated them three times per model. Each plotted point is one case/model's median over those three repeats. Grey connectors pair the same case across models, and heavy horizontal bars mark medians across case medians. Cases missing a valid positive timing in either arm in any repeat are excluded with counts retained in the analysis. Common logarithmic time axes are used. No concurrent quality-run latency is included.",
+      "svg_sha256": "47058569b68f081b59f4133ce71c1808fff1ba772a0895c27421b3833f205116",
+      "png_sha256": "79bcda9edf5608c8c52e1906b8dbb150fd41a7850433f5a43c81ab4d8097b5f2"
     },
     "fig7-cache": {
       "svg": "fig7-cache.svg",

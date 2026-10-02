@@ -1,6 +1,6 @@
-# Expanded GPT-6 Luna / Jev study
+# GPT-6 Luna / Jev study
 
-This directory contains a larger, reproducible comparison through OpenRouter using the same `{"type":"noul","noul":p}` answer object. Luna uses strict JSON Schema, `reasoning.effort=none`, an OpenAI-only provider route, and a maximum of 128 output tokens. The ceiling does not force token consumption: inspect the actual returned usage and output audit. The answer schema matches Jev; decimal precision/token counts are not forced to be identical.
+This directory contains a reproducible comparison through OpenRouter using the same `{"type":"noul","noul":p}` answer object. Luna uses strict JSON Schema, `reasoning.effort=none`, an OpenAI-only provider route, and a maximum of 128 output tokens. The ceiling does not force token consumption: inspect the actual returned usage and output audit. The answer schema matches Jev; decimal precision/token counts are not forced to be identical.
 
 ## Protocols
 
@@ -8,7 +8,7 @@ This directory contains a larger, reproducible comparison through OpenRouter usi
 - **Timing:** 60 frozen cases (12/task), repeated 3 times/model serially. 360 measured calls plus 12 warmups.
 - **Caching:** 96 cases in 48 counterfactual pairs, 4 separately primed blocks, 3 arms/case. 288 measured calls plus 4 primes. Identical text/segmentation across Luna arms, explicit breakpoint only in the cache-on arm.
 
-Analysis decisions were frozen in `analysis-spec.json` before expanded outcomes were inspected. `data/manifest.json` and `sources/freeze.json` record source identity, mappings, row counts, hashes, overlap and licensing. Published labels are retained without outcome-based editing.
+Analysis decisions were frozen in `analysis-spec.json` before primary outcomes were inspected. `data/manifest.json` and `sources/freeze.json` record source identity, mappings, row counts, hashes, overlap and licensing. Published labels are retained without outcome-based editing.
 
 ## The service-error amendment
 
@@ -30,7 +30,7 @@ python3 expanded/cache_analysis.py --help
 python3 expanded/build_report.py
 ```
 
-`analyze.py QUALITY_RUN --timing-dir TIMING_RUN` writes expanded `summary.json` and `analysis.md`. `cache_analysis.py` reports paired uncertainty for the expanded cache run. `paper_figures.py` generates SVG and PNG figures using Matplotlib. Python standard-library modules handle model runs and statistics; plotting was performed with Matplotlib 3.11.2 and NumPy 2.5.3. The final figures and their data accompany the archive.
+`analyze.py QUALITY_RUN --timing-dir TIMING_RUN` writes `summary.json` and `analysis.md` in this directory. `cache_analysis.py` reports paired uncertainty for the cache protocol. `paper_figures.py` generates SVG and PNG figures using Matplotlib. Python standard-library modules handle model runs and statistics; plotting was performed with Matplotlib 3.11.2 and NumPy 2.5.3. The final figures and their data accompany the archive.
 
 The report uses small saved-record JSON chunks for its expandable API records. Serve the `outputs` directory through a local static HTTP server, or use the published GitHub Pages site. No application server or API key is required to read the study.
 
@@ -62,4 +62,4 @@ Use `run_timing` only after bulk calls stop, with the frozen `data/timing-cases.
 
 `fetch_sources.py` retrieves the normalized public sources and verifies recorded source hashes. Public-package byte hashes differ from original input hashes where RTE text is omitted; the publication manifest explains the transformations. Original hashes remain provenance for the actual experiment, not claims about redacted bytes.
 
-The pilot is kept separately. Sixty BoolQ rows overlap but all expanded predictions are fresh. Thirteen policy operand sets overlap the pilot; no identical probability input overlaps. Shared templates and public training-data exposure remain limitations.
+Supplementary measurements are retained in the evidence appendix. Sixty BoolQ rows overlap but all primary benchmark predictions come from new calls. Thirteen policy operand sets overlap the supplementary cases; no identical probability input overlaps. Shared templates and public training-data exposure remain limitations.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Expanded-study publication figures, from completed runs only.
+"""Model-comparison publication figures, from completed runs only.
 
 Run with the workspace's work/figure-venv/bin/python. Requires Matplotlib and
 NumPy. No API calls; the generator refuses running or incomplete analyses.
@@ -102,7 +102,7 @@ def fig_quality(summary, out, manifest):
     ax.legend(loc="upper left", bbox_to_anchor=(0, 1.075), ncol=2, handletextpad=.5, columnspacing=2)
     fig.text(.055, .05, "Invalid responses count as incorrect. Bars show nominal 95% Wilson intervals; the four tasks have different reference standards.", fontsize=9, color=GREY)
     manifest["metrics"]["binary_quality"] = numbers
-    common.save(fig, "fig4-quality", out, manifest, "Expanded binary-task quality",
+    common.save(fig, "fig4-quality", out, manifest, "Binary-task quality",
         "Accuracy on four binary tasks, counting every invalid response as incorrect. Points show observed accuracy and horizontal intervals are nominal 95% Wilson intervals. The table gives correct answers over all attempted cases. BoolQ, RTE, and WiC measure agreement with published reference labels; synthetic policy targets come from a deterministic oracle. The intervals are exploratory, do not account for every shared passage or template, and should not be used to infer model differences from overlap alone.")
 
 
@@ -139,7 +139,7 @@ def fig_probability(summary, quality_rows, out, manifest):
     fig.text(.06, .06, "Each mark is a valid response; overlapping marks are retained. Dashed diagonal: exact agreement.", fontsize=9, color=GREY)
     fig.text(.06, .022, "The 300 prespecified problems have exact mathematical targets. This task does not test real-world forecasting calibration.", fontsize=9, color=GREY)
     manifest["metrics"]["exact_probability"] = numbers
-    common.save(fig, "fig5-probability", out, manifest, "Expanded probability estimates against exact targets",
+    common.save(fig, "fig5-probability", out, manifest, "Probability estimates against exact targets",
         "Model-generated probabilities versus exact event probabilities on 300 prespecified finite probability problems. Each panel reports its own valid-response denominator and mean absolute error in percentage points. Invalid responses have no plottable probability and are omitted here but retained in the study's failure accounting. The dashed diagonal is exact agreement. No jitter is added to the probability values, and overlapping marks remain present.")
 
 
@@ -209,7 +209,7 @@ def fig_timing(summary, timing_rows, metadata, out, manifest):
     fig.text(.06, .017, "Only cases with valid timing responses in all repeats for both models are included. Warmups and concurrent bulk timings are excluded.", fontsize=9, color=GREY)
     manifest["metrics"]["timing_case_points"] = dict(points)
     common.save(fig, "fig6-timing", out, manifest, "Isolated repeated latency across five tasks",
-        "The isolated serial timing study selected 12 cases per task before outcomes were inspected and repeated them three times per model. Each plotted point is one case/model's median over those three repeats. Grey connectors pair the same case across models, and heavy horizontal bars mark medians across case medians. Cases missing a valid positive timing in either arm in any repeat are excluded with counts retained in the analysis. Common logarithmic time axes are used. No concurrent quality-run latency is included.")
+        "The isolated serial timing protocol selected 12 cases per task before outcomes were inspected and repeated them three times per model. Each plotted point is one case/model's median over those three repeats. Grey connectors pair the same case across models, and heavy horizontal bars mark medians across case medians. Cases missing a valid positive timing in either arm in any repeat are excluded with counts retained in the analysis. Common logarithmic time axes are used. No concurrent quality-run latency is included.")
 
 
 def fig_cache(cache_summary, rows, out, manifest):
@@ -325,7 +325,7 @@ def main():
     fig_timing(summary, timing, tmeta, args.out_dir, manifest)
     fig_cache(cache_summary, cache, args.out_dir, manifest)
     (args.out_dir / "figure-manifest.json").write_text(json.dumps(manifest, indent=2))
-    notes = ["# Expanded-study figure captions", "", "All figures use completed runs and are reconciled to the audited analysis. The retained pilot figures are unchanged.", ""]
+    notes = ["# Model-comparison figure captions", "", "The figures present the quality, timing, and caching protocols within one model-comparison study. All plotted values come from completed runs and are reconciled to the audited analysis.", ""]
     for name, item in manifest["figures"].items():
         notes += [f"## {name}", "", f"PNG: {item['png_pixels'][0]} × {item['png_pixels'][1]} pixels. SVG preserves vector geometry and text.", "", item["caption"], ""]
     (args.out_dir / "captions.md").write_text("\n".join(notes))

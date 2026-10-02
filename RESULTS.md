@@ -1,8 +1,8 @@
-# GPT-6 Luna and Jev: expanded study
+# GPT-6 Luna and Jev study
 
 Evaluation date: 2 October 2026. Both services were called through OpenRouter.
 
-Open `comparison.html` through a static HTTP server for the full paper, figures, all 4,881 expanded cases and all 10,675 API attempts. The original pilot remains in `pilot.html`.
+Open `comparison.html` through a static HTTP server for the full paper, figures, all 4,881 benchmark and cache cases and all 10,675 API attempts. Supplementary measurements and their 204 cases are available in `supplement.html`.
 
 ## Output restriction
 
