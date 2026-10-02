@@ -1,0 +1,13 @@
+{
+  "calls_completed": 676,
+  "completed_blocks": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "last_sequence": 675,
+  "phase": "measured",
+  "case_id": "expanded-cache-47-battery-invalid-yes",
+  "model_label": "DeepSeek V4.1 Flash"
+}

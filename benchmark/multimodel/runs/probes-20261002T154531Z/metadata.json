@@ -1,0 +1,25 @@
+{
+  "models": {
+    "Qwen3.8 Flash": {
+      "label": "Qwen3.8 Flash",
+      "id": "qwen/qwen3.8-flash",
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "prices": {
+        "prompt": "0.00000015",
+        "completion": "0.00000047",
+        "input_cache_read": "0.000000016",
+        "input_cache_write": "0.0000002"
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    }
+  },
+  "purpose": "Protocol checks on non-study fixtures; no repairs or retries",
+  "max_tokens": 128
+}

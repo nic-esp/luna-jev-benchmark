@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-10-02T16:41:50.418304+00:00",
+  "status": "complete",
+  "phase": "recovery_probe",
+  "models": [
+    {
+      "label": "Qwen3.8 Flash",
+      "id": "qwen/qwen3.8-flash",
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "prices": {
+        "prompt": "0.00000015",
+        "completion": "0.00000047",
+        "input_cache_read": "0.000000016",
+        "input_cache_write": "0.0000002"
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    }
+  ],
+  "planned_calls": 2,
+  "protocol": "Two synthetic service-health probes; validity and explicitly observed zero reasoning are required. Correctness is not a recovery selection criterion.",
+  "excluded_from_quality_timing_and_cache_scores": true,
+  "continuation_sha256": "439e844fd74b119eef354ba2ff367fb0039b7f6438c8e0c89270f0b16e29de46",
+  "finished_at": "2026-10-02T16:41:52.652944+00:00",
+  "calls_completed": 2,
+  "charged_usd": 6.534e-05,
+  "known_charge_subtotal_usd": 6.534e-05,
+  "unknown_billing": 0,
+  "unknown_billing_guard_usd": 0.0,
+  "budget_pending_usd": 0.0,
+  "budget_accounted_usd": 6.534e-05,
+  "budget_stop_reason": null,
+  "responses_sha256": "98520092d6e82cf7f749ef2501234b0439b92c68e86e7ebb5cd06deb490d3f01"
+}

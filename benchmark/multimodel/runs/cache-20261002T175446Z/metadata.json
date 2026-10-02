@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "experiment": "multimodel_cache_policy",
+  "created_at": "2026-10-02T17:54:46.572383+00:00",
+  "models": [
+    {
+      "label": "Jev",
+      "id": "typesafe/jev-1.13",
+      "provider": "TypeSafe",
+      "provider_name": "TypeSafe",
+      "prices": {
+        "prompt": "0.0000002",
+        "completion": "0.00000075"
+      },
+      "reasoning": null,
+      "cache_control": "unsupported",
+      "max_tokens": null,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "Luna",
+      "id": "openai/gpt-6-luna",
+      "provider": "OpenAI",
+      "provider_name": "OpenAI",
+      "prices": {
+        "prompt": "0.0000001",
+        "completion": "0.0000005",
+        "web_search": "0.01",
+        "input_cache_read": "0.00000001",
+        "input_cache_write": "0.000000125",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.0000002",
+            "completion": "0.00000075",
+            "input_cache_read": "0.00000002",
+            "input_cache_write": "0.00000025"
+          }
+        ]
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "explicit",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "Qwen3.8 Flash",
+      "id": "qwen/qwen3.8-flash",
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "prices": {
+        "prompt": "0.00000015",
+        "completion": "0.00000047",
+        "input_cache_read": "0.000000016",
+        "input_cache_write": "0.0000002"
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "DeepSeek V4.1 Flash",
+      "id": "deepseek/deepseek-v4.1-flash",
+      "provider": "deepinfra/fp8",
+      "provider_name": "DeepInfra",
+      "prices": {
+        "prompt": "0.00000014",
+        "completion": "0.00000042",
+        "input_cache_read": "0.0000000042",
+        "discount": 0.3
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    },
+    {
+      "label": "MiMo V2.6 Flash",
+      "id": "xiaomi/mimo-v2.6-flash",
+      "provider": "xiaomi/fp8",
+      "provider_name": "Xiaomi",
+      "prices": {
+        "prompt": "0.00000014",
+        "completion": "0.00000028",
+        "input_cache_read": "0.0000000028",
+        "discount": 0
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    },
+    {
+      "label": "Hy4 Preview",
+      "id": "tencent/hy4-preview",
+      "provider": "tencent/fp8",
+      "provider_name": "Tencent",
+      "prices": {
+        "prompt": "0.000000834",
+        "completion": "0.000002501",
+        "input_cache_read": "0.000000042",
+        "discount": 0,
+        "overrides": [
+          {
+            "utc_start": 0,
+            "utc_end": 1600,
+            "prompt": "0.000000834",
+            "completion": "0.000002501",
+            "input_cache_read": "0.000000042"
+          },
+          {
+            "utc_start": 1600,
+            "utc_end": 0,
+            "prompt": "0.0000007506",
+            "completion": "0.0000022509",
+            "input_cache_read": "0.0000000378"
+          }
+        ]
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    }
+  ],
+  "seed": 20261002,
+  "blocks": 4,
+  "cases": 96,
+  "counterfactual_pairs": 48,
+  "calls_planned": 676,
+  "source_hashes": {
+    "cases_sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c",
+    "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+    "prime_source_responses_sha256": "a837d11e4ad92e01c258a5d5e1defe82f6b64b7e4440ec6f383defc30d650e3f"
+  },
+  "source_dir": "benchmark/expanded/runs/cache-20261002T095722Z",
+  "protocol_sha256": "f3ddc1865467e45265cebd4b5e36c6512505ee1b1d46da11f823085b5283c616",
+  "protocol_file": "cache_protocol_v2.py",
+  "protocol_version": 2,
+  "protocol_amendment": {
+    "id": "administrative-cache-key-length-fix",
+    "original_protocol_file": "cache_protocol.py",
+    "original_protocol_sha256": "65276cccf0f45553045ef30da85c1bb2d7c98046264ac01696a2c58e23cb3374",
+    "reason": "The original 66-character generated key exceeded the provider's 64-character limit and produced HTTP 400 responses.",
+    "change": "Shorten the cache key prefix from model-comparison-cache- to mc-; validate every key before preparing any request. Preserve original HTTP/API errors on already invalid responses and stop after saving a failed priming attempt.",
+    "unchanged": "Frozen cases, reference answers, rulebook, text serialization, schema, model settings, arm order and priming design are unchanged. Fresh per-block identifiers remain required."
+  },
+  "plan_sha256": "239e42d0dfac906c1ad9af20e3c1c24b66f2d6a58d961f337e356152879a4bda",
+  "automatic_retries": 0,
+  "unknown_bill_allowance_usd": 0.01,
+  "protocol": "Four sequential blocks. Fresh shared prefix nonce per block; one separate prime per controlled model per block. Frozen case order and all-model arm order randomized within each block. One serial injected adapter session. Unsupported cache models receive one baseline arm only.",
+  "resume_policy": "Complete-block boundaries only; no repeated attempts.",
+  "billing_guard": "Reserve max(adapter conservative estimate, $0.01) before each call. Known charges count at actual recorded values; each missing bill uses a $0.01 guard allowance while its reported price remains null. This local guard is not a remote account spending limit.",
+  "status": "complete",
+  "budget_usd": 1.5,
+  "calls_completed": 676,
+  "charged_usd": 0.1568607109,
+  "known_charge_subtotal_usd": 0.1568607109,
+  "cost_missing_n": 0,
+  "unknown_bill_allowance_total_usd": 0.0,
+  "budget_accounted_usd": 0.1568607109,
+  "completed_blocks": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "finished_at": "2026-10-02T18:17:40.202393+00:00",
+  "calls_dispatched": 676,
+  "unresolved_dispatch_n": 0
+}

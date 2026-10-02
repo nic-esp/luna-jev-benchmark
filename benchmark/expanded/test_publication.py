@@ -49,6 +49,50 @@ class PublicationTests(unittest.TestCase):
         raw = b'{"experiment":"boolq", "target":0.0, "state":{"passage":"Example."}}'
         self.assertEqual(raw, self.redactor.bytes(Path("example.json"), raw))
 
+    def test_absolute_source_paths_in_dictionary_keys_become_relative(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        source = Path(temporary.name) / 'outputs'
+        redactor = p.Redactor([self.case], source)
+        relative = 'benchmark/multimodel/runs/quality/responses.jsonl'
+        absolute = str(source / relative)
+        original = {'input_sha256': {absolute: 'unchanged-original-hash'},
+                    'nested': [{absolute: {'cost_usd': .0125614895, 'missing_bills': 18,
+                                          'total_usd': None, 'counter': 9007199254740993}}],
+                    'source_path': absolute}
+        raw = json.dumps(original).encode()
+        public = json.loads(redactor.bytes(Path('summary-verification.json'), raw))
+        self.assertEqual(public['input_sha256'], {relative: 'unchanged-original-hash'})
+        self.assertEqual(public['nested'][0][relative], original['nested'][0][absolute])
+        self.assertEqual(public['source_path'], relative)
+        self.assertNotIn(str(source), json.dumps(public))
+        self.assertEqual(json.loads(raw), original)
+
+    def test_normalized_dictionary_key_collision_is_rejected(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        source = Path(temporary.name) / 'outputs'
+        redactor = p.Redactor([self.case], source)
+        relative = 'benchmark/responses.jsonl'
+        original = {'input_sha256': {str(source / relative): 'first-hash', relative: 'second-hash'}}
+        raw = json.dumps(original).encode()
+        with self.assertRaisesRegex(ValueError, 'dictionary-key normalization collision') as error:
+            redactor.bytes(Path('summary-verification.json'), raw)
+        self.assertNotIn(str(source), str(error.exception))
+        self.assertEqual(json.loads(raw), original)
+
+    def test_account_identity_removed_without_changing_failure_or_bill(self):
+        record = {"http_status": 429, "valid": False, "probability": None,
+                  "latency_s": .625, "cost_usd": None,
+                  "response": {"error": {"code": 429}, "user_id": "[account identifier omitted]"},
+                  "error": 'Provider error: {"user_id":"[account identifier omitted]","code":429}'}
+        public = self.redactor.redact(record)
+        self.assertNotIn('user_id', public['response'])
+        self.assertNotIn('[account identifier omitted]', json.dumps(public))
+        for key in ('http_status', 'valid', 'probability', 'latency_s', 'cost_usd'):
+            self.assertEqual(record[key], public[key])
+        self.assertEqual(public['response']['error']['code'], 429)
+
     def test_export_manifest_and_zip(self):
         with tempfile.TemporaryDirectory() as tmp:
             source, dest = Path(tmp) / "original", Path(tmp) / "public"

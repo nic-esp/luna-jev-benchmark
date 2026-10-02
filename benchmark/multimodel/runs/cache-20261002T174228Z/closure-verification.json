@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "primary_analysis_eligible": false,
+  "role": "supplementary_aborted_cache",
+  "run_dir": "benchmark/multimodel/runs/cache-20261002T174228Z",
+  "generated_at_utc": "2026-10-02T18:18:06.538517+00:00",
+  "verifier_sha256": "c2dc744c1deaa1f5a7f40c9a34d182d6c4be4be22d4d6f719f7d1afce97847fc",
+  "attempts": 55,
+  "original_saved_responses": 54,
+  "valid": 37,
+  "lost_outcomes": 1,
+  "cost": {
+    "requests": 55,
+    "known_billed_usd": 0.0125614895,
+    "observed_bills": 37,
+    "missing_bills": 18,
+    "total_billed_usd": null,
+    "usd_per_1000_attempts": null
+  },
+  "hashes": {
+    "metadata.json": "ac13d30de5e9f48861b2059ab32cf94e8af7889b809e95b353f07d6bb6fec676",
+    "responses.jsonl": "860144b4940c12f2c10c34f31689227859a4490dd1128ae536cf1d4ad1c604bf",
+    "dispatches.jsonl": "fcc5b9336e346153234f9bcfa49f4d1c26fa58deef86dd307893c50f7835703b",
+    "plan.json": "8356d29841cab994b3ca934229fb712b38f66d74db8a082038ea9efdc82b3c46",
+    "aborted-session-audit.json": "592edf4cd641a986538c559b28c370c3a2848f17cc846ef8bf7438633933cf6f",
+    "close_aborted_cache.py": "860c87da1337724cea73ec8b541b5f8a9cef9413775a1060857dbba3acbd1e01"
+  },
+  "checks": {
+    "session_aborted_and_ineligible_for_primary": true,
+    "reported_closure_passed": true,
+    "closure_script_hash": true,
+    "original_protocol_hash": true,
+    "exact_original_evidence_file_set": true,
+    "responses.jsonl_original_prefix_preserved": true,
+    "dispatches.jsonl_original_prefix_preserved": true,
+    "dispatches.jsonl_entire_original_file_preserved": true,
+    "plan.json_original_prefix_preserved": true,
+    "plan.json_entire_original_file_preserved": true,
+    "original_saved_response_count": true,
+    "final_response_dispatch_counts": true,
+    "one_ordered_outcome_per_dispatch": true,
+    "original_plan_reproduces": true,
+    "frozen_source_hashes": true,
+    "all_retained_rows_match_source_requests_and_response_contract": true,
+    "only_appended_lost_dispatches_marked_unknown": true,
+    "lost_dispatches_have_no_fabricated_outcome": true,
+    "lost_dispatch_metadata": true,
+    "closure_valid_count": true,
+    "closure_billing_complete_or_unknown": true,
+    "metadata_billing_complete_or_unknown": true
+  },
+  "issues": [],
+  "status": "passed",
+  "limitations": [
+    "This is evidence and billing closure for an aborted administrative-key session. It does not establish a successful cache treatment and is excluded from all primary quality, timing and cache estimates. A lost dispatched outcome and its bill remain unknown."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "checked_at_utc": "2026-10-02T16:10:33.305982+00:00",
+  "capture_method": "Selected facts transcribed from public pages returned by web.open; not raw HTML responses.",
+  "scope": "Advice only. No changes to active study.",
+  "rows": [
+    {
+      "model": "xiaomi/mimo-v2.6-flash",
+      "source": "https://openrouter.ai/xiaomi/mimo-v2.6-flash",
+      "period": "1 week",
+      "service_tier": "standard",
+      "percentile": "P50",
+      "provider": "DeepInfra",
+      "latency_page_s": 1.76,
+      "output_tokens_per_second": 35,
+      "input_usd_per_million": 0.14,
+      "output_usd_per_million": 0.28
+    },
+    {
+      "model": "xiaomi/mimo-v2.6-flash",
+      "source": "https://openrouter.ai/xiaomi/mimo-v2.6-flash",
+      "period": "1 week",
+      "service_tier": "standard",
+      "percentile": "P50",
+      "provider": "Xiaomi",
+      "latency_page_s": 4.87,
+      "output_tokens_per_second": 33,
+      "input_usd_per_million": 0.14,
+      "output_usd_per_million": 0.28
+    },
+    {
+      "model": "tencent/hy4-preview",
+      "source": "https://openrouter.ai/tencent/hy4-preview",
+      "period": "1 week",
+      "service_tier": "standard",
+      "percentile": "P50",
+      "reasoning": "all",
+      "provider": "DeepInfra",
+      "latency_page_s": 2.97,
+      "output_tokens_per_second": 17
+    },
+    {
+      "model": "tencent/hy4-preview",
+      "source": "https://openrouter.ai/tencent/hy4-preview",
+      "period": "1 week",
+      "service_tier": "standard",
+      "percentile": "P50",
+      "reasoning": "all",
+      "provider": "SiliconFlow",
+      "latency_page_s": 1.62,
+      "output_tokens_per_second": 50
+    },
+    {
+      "model": "tencent/hy4-preview",
+      "source": "https://openrouter.ai/tencent/hy4-preview",
+      "period": "1 week",
+      "service_tier": "standard",
+      "percentile": "P50",
+      "reasoning": "all",
+      "provider": "Tencent",
+      "latency_page_s": 4.28,
+      "output_tokens_per_second": 43
+    },
+    {
+      "model": "qwen/qwen3.8-27b",
+      "source": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "period": "1 week",
+      "service_tier": "standard",
+      "percentile": "P50",
+      "reasoning": "all",
+      "provider": "Cerebras",
+      "latency_page_s": 0.23,
+      "output_tokens_per_second": 115,
+      "input_usd_per_million": 0.99,
+      "output_usd_per_million": 1.49
+    }
+  ],
+  "limits": [
+    "Publisher latency and throughput aggregates are not study-specific complete-response measurements.",
+    "Models and provider capabilities can change.",
+    "No inference or setup probes were made for these alternative routes."
+  ]
+}

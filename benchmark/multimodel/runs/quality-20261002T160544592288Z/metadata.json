@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-02T16:05:45.675189+00:00",
+  "models": [
+    {
+      "label": "DeepSeek V4.1 Flash",
+      "id": "deepseek/deepseek-v4.1-flash",
+      "provider": "deepinfra/fp8",
+      "provider_name": "DeepInfra",
+      "prices": {
+        "prompt": "0.00000014",
+        "completion": "0.00000042",
+        "input_cache_read": "0.0000000042",
+        "discount": 0.3
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    },
+    {
+      "label": "MiMo V2.6 Flash",
+      "id": "xiaomi/mimo-v2.6-flash",
+      "provider": "xiaomi/fp8",
+      "provider_name": "Xiaomi",
+      "prices": {
+        "prompt": "0.00000014",
+        "completion": "0.00000028",
+        "input_cache_read": "0.0000000028",
+        "discount": 0
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    },
+    {
+      "label": "Hy4 Preview",
+      "id": "tencent/hy4-preview",
+      "provider": "tencent/fp8",
+      "provider_name": "Tencent",
+      "prices": {
+        "prompt": "0.000000834",
+        "completion": "0.000002501",
+        "input_cache_read": "0.000000042",
+        "discount": 0,
+        "overrides": [
+          {
+            "utc_start": 0,
+            "utc_end": 1600,
+            "prompt": "0.000000834",
+            "completion": "0.000002501",
+            "input_cache_read": "0.000000042"
+          },
+          {
+            "utc_start": 1600,
+            "utc_end": 0,
+            "prompt": "0.0000007506",
+            "completion": "0.0000022509",
+            "input_cache_read": "0.0000000378"
+          }
+        ]
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    }
+  ],
+  "phase": "quality",
+  "cases": 4785,
+  "planned_calls": 14355,
+  "calls_planned": 14355,
+  "concurrency_pairs": 16,
+  "seed": 20261002,
+  "source_hashes": {
+    "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+    "timing_cases_sha256": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8"
+  },
+  "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+  "code_hashes": {
+    "original-runner.py": "1c6d2ea8084da6e671d41a6d89f089edbf13729c75990bf4be0458db5df4242c",
+    "original-adapter.py": "47c300bd57b53f669dd9c707b4317cf47cf2b5888c5233e17b94d1310e6f691b",
+    "original-answer-contract.py": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7"
+  },
+  "plan_sha256": "7beaa575ad9b58776da1be18e8c5a451d0a5199990f61b3f593bb65607fb06a8",
+  "requests_sha256": "edbb6e6de3f59b7b5dceb81479a683f923a28351bdf93624fcd1c01e475a11ce",
+  "automatic_retries": 0,
+  "repeats": 1,
+  "warmups_per_model_per_block": 0,
+  "unknown_bill_allowance_usd": 0.01,
+  "protocol": "Frozen full quality split; randomized case and within-case model order. Each worker runs a case's models sequentially. Bulk latency is diagnostic only.",
+  "stop_rule": "Stop new dispatches after 5 consecutive invalid or >=5% invalid after 100 completed calls, overall or per model, in completion order. In-flight attempts are retained.",
+  "billing_guard": "Known bills use observed values. Missing bills remain null and retain their reservation, at least $0.01, against the local guard. A local estimate cannot enforce a remote account-level cap.",
+  "resume_policy": "Quality only: identical source, adapter, plan and exact request hashes; dispatch journal prevents every attempted sequence from being retried, including lost outcomes.",
+  "status": "complete",
+  "budget_usd": 5,
+  "calls_completed": 14355,
+  "valid": 14351,
+  "invalid": 4,
+  "charged_usd": null,
+  "known_charge_subtotal_usd": 1.324546401199999,
+  "unknown_billing": 4,
+  "unknown_billing_guard_usd": 0.04,
+  "budget_pending_usd": 0.0,
+  "budget_accounted_usd": 1.364546401199999,
+  "budget_stop_reason": null,
+  "finished_at": "2026-10-02T16:41:46.141386+00:00",
+  "responses_sha256": "9b949a90dcc900c2228ef035987ae306a858c138eab153eb7cf4bb6056357a22",
+  "attempts_sha256": "36eaaed33c2db8cb4f79dc0cb77536d34e382d6e7e3bf17cb08e2d890dd62670"
+}

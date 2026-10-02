@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-10-02T18:20:11.030310+00:00",
+  "passed": true,
+  "summary_path": "benchmark/multimodel/summary.json",
+  "verifier_sha256": "19b6514e61294f8eb95d9ba6d592084675080674c71b066fca5d95867978adb1",
+  "scope": "Independent raw-data recomputation of descriptive quality scores and Wilson intervals, billing and null projections, all-model timing support and point estimates, cache arm/block scores, prime allocations and raw cache counters.",
+  "not_recomputed": [
+    "Bootstrap confidence intervals",
+    "Paired quality/cache contrast metrics",
+    "Request protocol compliance"
+  ],
+  "errors": [],
+  "checked_values": 216001,
+  "mismatches": [],
+  "input_sha256": {
+    "benchmark/multimodel/summary.json": "686213b31fd138f5007e1876f4431a77db0ab8e0b9b9e230c1cb2689fdc39fc8",
+    "benchmark/expanded/data/cases.jsonl": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+    "benchmark/expanded/runs/quality-20261002T093341Z/metadata.json": "7d2e066a6ea4d62c7daf7f10145cc1ae27c536d384e4209a704e221df7120ed7",
+    "benchmark/expanded/runs/quality-20261002T093341Z/responses.jsonl": "c508f6173a27bed9834a294329414cf499bdc078381eb3f41e4d66c08f9f3f8b",
+    "benchmark/multimodel/runs/quality-20261002T155349573021Z/metadata.json": "25a1ba71ec635eecfce2855c2370f615a8edbf9c65dd7c0aa9a71305576d6a72",
+    "benchmark/multimodel/runs/quality-20261002T155349573021Z/responses.jsonl": "a0bc839aaf80fb359b48e808962f21249bde21ef00d058ce163a6bab6ca750b6",
+    "benchmark/multimodel/runs/quality-20261002T160544592288Z/metadata.json": "6de40eac4355fa3e886db0837bfd6e89719089415338882799bce1bdcba76720",
+    "benchmark/multimodel/runs/quality-20261002T160544592288Z/responses.jsonl": "9b949a90dcc900c2228ef035987ae306a858c138eab153eb7cf4bb6056357a22",
+    "benchmark/expanded/data/timing-cases.jsonl": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8",
+    "benchmark/multimodel/runs/timing-20261002T170524992994Z/metadata.json": "d953c8c6de2de950108e81b4a5c48eeeea9f3df85ae8841099732bf3bdf2801d",
+    "benchmark/multimodel/runs/timing-20261002T170524992994Z/responses.jsonl": "7119428ee08d80ac620681f9a9bde1a5da76ffbe003df500b1ca0b968248fd78",
+    "benchmark/multimodel/runs/cache-20261002T175446Z/metadata.json": "85102a217b3a975b101caac932f2cfe0a5d5636e5948ccbd25202c60cdf58abf",
+    "benchmark/multimodel/runs/cache-20261002T175446Z/responses.jsonl": "df69dc65a48ec7f87721c187ad5470c51eeec40ae6ab5b928c597d6a0adf125f",
+    "benchmark/multimodel/runs/cache-20261002T175446Z/cases.jsonl": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c"
+  },
+  "status": "passed"
+}

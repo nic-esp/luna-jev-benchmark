@@ -1,0 +1,26 @@
+[
+  {
+    "path": "catalog.json",
+    "url": "https://openrouter.ai/api/v1/models",
+    "retrieved_at": "2026-10-02T15:31:20.289496+00:00",
+    "sha256": "f781943930bd49b51643c96bfb6127aa5fe873a9177ffd645f903ade820622a7"
+  },
+  {
+    "path": "gemini-3.8-flash-endpoints.json",
+    "url": "https://openrouter.ai/api/v1/models/google/gemini-3.8-flash/endpoints",
+    "retrieved_at": "2026-10-02T15:31:20.236658+00:00",
+    "sha256": "733bd21fe5b4b2176757c3c2ed0fb5bc417fc1bae7d65bbc5a9a11fb1ec7c53e"
+  },
+  {
+    "path": "glm-5.3-flash-endpoints.json",
+    "url": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints",
+    "retrieved_at": "2026-10-02T15:31:20.239504+00:00",
+    "sha256": "edf44ded7a5877a2105fb5c0304db9cae75c559f2b9ccd90fd37e3179386eec0"
+  },
+  {
+    "path": "qwen3.8-flash-endpoints.json",
+    "url": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-flash/endpoints",
+    "retrieved_at": "2026-10-02T15:32:46.205168+00:00",
+    "sha256": "8f2b4823c5a1203c5d145c155d113b14a77d6127a83532aaa4a7ebc7d4f9eefc"
+  }
+]

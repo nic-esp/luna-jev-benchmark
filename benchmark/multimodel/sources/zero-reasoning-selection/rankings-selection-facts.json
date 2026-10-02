@@ -1,0 +1,47 @@
+{
+  "source": "https://openrouter.ai/rankings",
+  "as_of_usage_date": "2026-10-01",
+  "accessed_at_utc": "2026-10-02T16:01:17.097653+00:00",
+  "period": "most recent complete UTC day",
+  "metric": "prompt plus completion tokens processed on public OpenRouter traffic",
+  "capture_method": "Facts transcribed from the public page returned by web.open; not a raw HTML/API response. Direct unauthenticated HTML download returned 403.",
+  "license": "CC BY 4.0",
+  "attribution": "Source: OpenRouter (openrouter.ai/rankings), as of 2026-10-01.",
+  "rows": [
+    {
+      "rank": 2,
+      "model": "DeepSeek V4.1 Flash",
+      "tokens_display": "3.55T"
+    },
+    {
+      "rank": 4,
+      "model": "MiMo-V2.6-Flash",
+      "tokens_display": "1.34T"
+    },
+    {
+      "rank": 5,
+      "model": "GPT-6 Luna",
+      "tokens_display": "1.16T"
+    },
+    {
+      "rank": 7,
+      "model": "Nemotron 3 Ultra (free)",
+      "tokens_display": "756B"
+    },
+    {
+      "rank": 8,
+      "model": "Hy4 preview",
+      "tokens_display": "673B"
+    },
+    {
+      "rank": 10,
+      "model": "Jev 1.13",
+      "tokens_display": "503B"
+    }
+  ],
+  "limits": [
+    "Popularity by token usage is not accuracy, unique users or spend.",
+    "Paid and free model variants are ranked separately.",
+    "Ranks are descriptive selection context; measured study outcomes must not determine model inclusion."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "frozen_at_utc": "2026-10-02T15:32:22.624588+00:00",
+  "freeze_scope": "Specified before inspection of new-model outcomes. Existing Jev/Luna outcomes are known and retained, not re-collected for primary quality.",
+  "models": "Jev and Luna reference labels plus user-requested Gemini 3.8 Flash, GLM 5.3 Flash and Qwen 3.8. Exact served IDs/providers and any naming resolution belong in frozen run metadata. Analysis accepts explicit model labels without inferring aliases.",
+  "cases": "Same frozen 4785 primary quality cases; 60 fixed serial timing cases, 3 repeats; 96 long-policy cache cases in 48 counterfactual pairs and 4 blocks. No outcome-based selection.",
+  "quality_metrics": {
+    "binary": "Threshold p>=0.5; all attempted outputs in accuracy and balanced-accuracy denominators, invalid=wrong; valid-only Brier and natural-log loss clipped at 1e-15. Wilson nominal 95% marginal accuracy intervals.",
+    "probability": "Valid-only MAE, RMSE, squared error (excess Brier), and expected Brier = squared error + q(1-q).",
+    "success": "Valid/attempted, failure counts; missing attempts shown separately, never silently counted as completed.",
+    "comparisons": "Every non-reference model minus Jev and minus Luna, plus Luna minus Jev. Shared attempted case pairs; invalids wrong for label accuracy; proper scores restricted to common valid pairs. No cross-task quality pooling."
+  },
+  "uncertainty": {
+    "confidence_level": 0.95,
+    "bootstrap_draws": 5000,
+    "seed": 20261002,
+    "method": "Paired percentile bootstrap. Exact duplicate BoolQ passage strings form clusters; other quality tasks use case identity. All intervals exploratory and unadjusted for multiplicity. Marginal Wilson assumes independent rows.",
+    "scope": "Conditional on chosen cases, outputs and measurement sessions; not model-training, provider-day, domain or price-regime uncertainty."
+  },
+  "timing": {
+    "source": "A new sequential interleaved all-five-model timing run only; legacy timing remains supplementary and is never pooled into the new comparison.",
+    "primary": "Complete valid 3-repeat observations for all participating models on a common case set. Per-case/model median across repeats, then median across common cases. Paired bootstrap cases for ratio of medians, median paired ratio and mean case-median difference.",
+    "sensitivity": "Pairwise complete valid case support reported separately if common all-model support is reduced.",
+    "blocks": "Per-repeat block median, p95 and all-attempt counts.",
+    "exclusions": "Warmups excluded latency comparisons and included billing; concurrent bulk latency diagnostic only."
+  },
+  "cache": {
+    "source": "Analyze each supplied cache session separately. Do not pool old/new sessions for causal speed or caching claims.",
+    "comparisons": "Available model/arm comparisons against Jev and Luna controls, plus cached vs uncached variants of each model; explicit arm identities, sources and denominators.",
+    "clusters": "Resample counterfactual pair_id within each fixed block, retaining both cases and all compared arms. Different blocks/sessions held fixed.",
+    "metrics": "Accuracy and Brier contrasts; paired median latency ratio, mean latency difference, cost ratio; binary agreement. Missing cost suppresses total cost/ratio.",
+    "primes": "Every prime billed separately, then allocated to its model cached arm across measured decisions; both measured and setup-inclusive costs reported. Unknown prime bills make setup-inclusive total unknown.",
+    "verification": "Do not infer actual cache state from request flags alone. Report observed reads/writes and model-specific unknown counters separately."
+  },
+  "billing": "Every attempted cost retained including invalids, warmups and primes. Missing usage.cost remains unknown; known subtotal separately. Cost/1000 = full known bill / all attempts *1000 only when all bills observed. No budget reservation is billing.",
+  "verification": "Frozen case source fields; unique identities; seeded saved plan where supported; full request payload source content; strict Noul response parse/readback; model/provider settings and returned IDs; reasoning flags and observed counters; raw usage/cost reconciliation. Unknown observations reported honestly.",
+  "output_contract": "Same type+noul object. Non-Jev max_tokens=128 and requested reasoning none; observed output/reasoning counts separately. Schema equality does not equalize tokens or internal work.",
+  "chronology": "Quality comparisons reuse earlier Jev/Luna observations and new requested-model observations; record time ranges per model and note temporal/provider confounding. New timing interleaves all five to reduce that confounding."
+}

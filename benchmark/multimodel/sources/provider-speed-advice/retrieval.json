@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+    "file": "qwen3.8-27b-endpoints.json",
+    "retrieved_at_utc": "2026-10-02T16:08:34.787004+00:00",
+    "sha256": "362e6e44c6d6f7975461a006554f852196714a4a8a55711fd9263e5261570551"
+  }
+]

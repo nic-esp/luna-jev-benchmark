@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "unique_frozen_case_ids": true,
+    "frozen_cases_hash": true,
+    "expected_models_present": true,
+    "frozen_source_code_hashes": true,
+    "plan_count": true,
+    "plan_sha256": true,
+    "seeded_plan_reproduces": true,
+    "unique_attempt_identities": true,
+    "every_record_matches_contract_and_source": true,
+    "complete_timing_cross_product": true,
+    "serial_timing_concurrency": true,
+    "attempts.jsonl_unique_dispatches": true,
+    "attempts.jsonl_frozen_request_hashes": true,
+    "saved_exact_requests_hash": true,
+    "saved_responses_sha256": true,
+    "saved_attempts_sha256": true,
+    "metadata_billing_complete_or_unknown": true,
+    "named_source_hashes_match": true,
+    "current_code_matches_saved_snapshot": true
+  },
+  "issues": [],
+  "issue_count": 0,
+  "run_dir": "benchmark/multimodel/runs/timing-20261002T170524992994Z",
+  "raw_sha256": "7119428ee08d80ac620681f9a9bde1a5da76ffbe003df500b1ca0b968248fd78",
+  "case_sha256": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8",
+  "attempts": 1116,
+  "valid": 1116,
+  "cost": {
+    "requests": 1116,
+    "known_billed_usd": 0.0549220258,
+    "observed_bills": 1116,
+    "missing_bills": 0,
+    "total_billed_usd": 0.0549220258,
+    "usd_per_1000_attempts": 0.04921328476702509
+  },
+  "observed_usage": {
+    "Jev": {
+      "valid_calls": 186,
+      "output_tokens": {
+        "observed": 186,
+        "min": 20,
+        "max": 20,
+        "total": 3720
+      },
+      "reasoning_counter_observed": 0,
+      "reasoning_counter_unknown": 186,
+      "reasoning_tokens_reported_total": null,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 0,
+      "cache_write_counter_observed": 0
+    },
+    "Qwen3.8 Flash": {
+      "valid_calls": 186,
+      "output_tokens": {
+        "observed": 186,
+        "min": 11,
+        "max": 21,
+        "total": 2967
+      },
+      "reasoning_counter_observed": 186,
+      "reasoning_counter_unknown": 0,
+      "reasoning_tokens_reported_total": 0,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 186,
+      "cache_write_counter_observed": 186
+    },
+    "MiMo V2.6 Flash": {
+      "valid_calls": 186,
+      "output_tokens": {
+        "observed": 186,
+        "min": 13,
+        "max": 23,
+        "total": 3175
+      },
+      "reasoning_counter_observed": 186,
+      "reasoning_counter_unknown": 0,
+      "reasoning_tokens_reported_total": 0,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 186,
+      "cache_write_counter_observed": 186
+    },
+    "DeepSeek V4.1 Flash": {
+      "valid_calls": 186,
+      "output_tokens": {
+        "observed": 186,
+        "min": 12,
+        "max": 18,
+        "total": 2773
+      },
+      "reasoning_counter_observed": 186,
+      "reasoning_counter_unknown": 0,
+      "reasoning_tokens_reported_total": 0,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 186,
+      "cache_write_counter_observed": 186
+    },
+    "Luna": {
+      "valid_calls": 186,
+      "output_tokens": {
+        "observed": 186,
+        "min": 20,
+        "max": 27,
+        "total": 3900
+      },
+      "reasoning_counter_observed": 186,
+      "reasoning_counter_unknown": 0,
+      "reasoning_tokens_reported_total": 0,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 186,
+      "cache_write_counter_observed": 186
+    },
+    "Hy4 Preview": {
+      "valid_calls": 186,
+      "output_tokens": {
+        "observed": 186,
+        "min": 12,
+        "max": 18,
+        "total": 2990
+      },
+      "reasoning_counter_observed": 186,
+      "reasoning_counter_unknown": 0,
+      "reasoning_tokens_reported_total": 0,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 186,
+      "cache_write_counter_observed": 186
+    }
+  },
+  "exact_payload_factory_supplied": true,
+  "seeded_plan_factory_supplied": true,
+  "limitations": [
+    "Missing reasoning/cache counters are unobserved, not verified zero. Without factories, quality/timing source content and contracts are checked, but complete payload and seeded plan regeneration are not established."
+  ],
+  "generated_at_utc": "2026-10-02T17:48:54.825979+00:00"
+}

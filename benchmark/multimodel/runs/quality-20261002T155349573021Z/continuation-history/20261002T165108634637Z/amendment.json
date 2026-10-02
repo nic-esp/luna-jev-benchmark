@@ -1,0 +1,68 @@
+{
+  "id": "20261002T165108634637Z",
+  "decided_at_utc": "2026-10-02T16:51:08.646544+00:00",
+  "status": "completed",
+  "continuation_sha256": "de869edee16e83efa9651d8298ddadd6b3f2b19c3750f483322ad3cb86a88661",
+  "continuation_file": "continuation_paced.py",
+  "pre_continuation": {
+    "responses.jsonl": {
+      "sha256": "07a7991e64b7381d2c077c564a968f6192c255952b752f55b66ef727ae32f723",
+      "bytes": 14310934
+    },
+    "attempts.jsonl": {
+      "sha256": "682223d0c0f497848ff86310cbc3fb2dec7ab94aa374c95b972af21e595c7e89",
+      "bytes": 557493
+    },
+    "plan.json": {
+      "sha256": "b6f47e7d5913a3be6c34e0ac8b59ee7e8e70953907a53a002818286c6887327f",
+      "bytes": 1342472
+    },
+    "requests.jsonl": {
+      "sha256": "eca30790f8e18d580b19662c3d61cee27f4f8de6db4a3c3b8ba31e45a4b23911",
+      "bytes": 9149297
+    }
+  },
+  "metadata_before_sha256": "293b715756ee17039812b6f2b5329bdd07be3a571ed7d30343c38bfb63202ef0",
+  "metadata_before_path": "benchmark/multimodel/runs/quality-20261002T155349573021Z/continuation-history/20261002T165108634637Z/metadata-before.json",
+  "recovery_run_dir": "benchmark/multimodel/runs/probes-recovery-20261002T165108634637Z",
+  "original_attempts": 3651,
+  "original_invalid": 71,
+  "unattempted_requests": 1134,
+  "models": [
+    {
+      "label": "Qwen3.8 Flash",
+      "id": "qwen/qwen3.8-flash",
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "prices": {
+        "prompt": "0.00000015",
+        "completion": "0.00000047",
+        "input_cache_read": "0.000000016",
+        "input_cache_write": "0.0000002"
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    }
+  ],
+  "workers": 16,
+  "original_worker_setting": 16,
+  "effective_worker_ceiling": 2,
+  "effective_max_active_requests": 2,
+  "min_dispatch_spacing_s": 0.25,
+  "first_unattempted_sequence": 3651,
+  "seed": 20261002,
+  "total_quality_and_recovery_budget_usd": 5,
+  "change": "Prospectively limit active outbound calls to two after two worker-16 episodes hit the shared provider quota. The saved original worker setting remains 16; actual executor workers are prospectively capped at two before the dispatch journal and adapter timer. Every new row records the effective ceiling. A minimum 0.25-second spacing is enforced before dispatch claims, with the original stop and budget guards rechecked after waiting. This changes the remaining bulk dispatch schedule; bulk timing remains diagnostic only. No provider, prompt, schema, reasoning setting, case, score or attempted request changes. After two valid synthetic service-health probes with observed zero reasoning, clear only the replayed historical consecutive-failure stop and streaks. Preserve cumulative invalid counts, every original attempt and bill, all unknown-bill reservations, request hashes, worker16 and the original live circuit. Dispatch only previously unattempted sequences. No benchmark output was selected for removal or retry.",
+  "recovery_finished_at": "2026-10-02T16:51:12.059331+00:00",
+  "recovery_budget_accounted_usd": 6.581e-05,
+  "historical_recovery_budget_accounted_usd": 6.534e-05,
+  "recovery_calls": 2,
+  "finished_at_utc": "2026-10-02T17:05:22.955181+00:00",
+  "final_quality_calls": 4785,
+  "final_quality_unknown_bills": 114
+}

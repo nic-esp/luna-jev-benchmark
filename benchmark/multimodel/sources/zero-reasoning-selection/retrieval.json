@@ -1,0 +1,44 @@
+[
+  {
+    "file": "catalog.json",
+    "url": "https://openrouter.ai/api/v1/models",
+    "saved_at_utc": "2026-10-02T15:57:26.189528+00:00",
+    "sha256": "366abf757ad0b8c574b212d6087a3fa06996dfa06bad88bc0e150b8417525f63",
+    "snapshot_kind": "unmodified public unauthenticated API response"
+  },
+  {
+    "file": "deepseek-v4.1-flash-endpoints.json",
+    "url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "saved_at_utc": "2026-10-02T15:57:26.131596+00:00",
+    "sha256": "dc65c7b65f3b6cc45f05443e07969eede6fc9eebec2f2b8f27dcffc63ef60f99",
+    "snapshot_kind": "unmodified public unauthenticated API response"
+  },
+  {
+    "file": "mimo-v2.6-flash-endpoints.json",
+    "url": "https://openrouter.ai/api/v1/models/xiaomi/mimo-v2.6-flash/endpoints",
+    "saved_at_utc": "2026-10-02T15:57:26.140700+00:00",
+    "sha256": "44c18a0e096266a9f563e4d4e099b20fc7934e3d16af0dcb94b60070135199b3",
+    "snapshot_kind": "unmodified public unauthenticated API response"
+  },
+  {
+    "file": "hy4-preview-endpoints.json",
+    "url": "https://openrouter.ai/api/v1/models/tencent/hy4-preview/endpoints",
+    "saved_at_utc": "2026-10-02T15:57:26.143719+00:00",
+    "sha256": "cc54b5566a15a8261243e2855f4ec3267996e32e76ca1374596f9ac558de1cc7",
+    "snapshot_kind": "unmodified public unauthenticated API response"
+  },
+  {
+    "file": "nemotron-3-ultra-endpoints.json",
+    "url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b/endpoints",
+    "saved_at_utc": "2026-10-02T15:57:26.169367+00:00",
+    "sha256": "51dd5e8371e50c794229949d07f5e68b47eadd92fb20d69932d9ee91d3c05d05",
+    "snapshot_kind": "unmodified public unauthenticated API response"
+  },
+  {
+    "file": "rankings-selection-facts.json",
+    "url": "https://openrouter.ai/rankings",
+    "saved_at_utc": "2026-10-02T16:01:17.097930+00:00",
+    "sha256": "9a849ce11abb4d8dea00be8c1e95407a4b70b0f2d4b9c999d7f1c5252a8c61aa",
+    "snapshot_kind": "selected factual extraction"
+  }
+]

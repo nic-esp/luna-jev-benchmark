@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "closed_at": "2026-10-02T17:47:04.490714+00:00",
+  "checks": {
+    "responses.jsonl_original_prefix_unchanged": true,
+    "dispatches.jsonl_original_prefix_unchanged": true,
+    "dispatches.jsonl_entire_file_unchanged": true,
+    "plan.json_original_prefix_unchanged": true,
+    "plan.json_entire_file_unchanged": true,
+    "one_outcome_per_dispatch": true,
+    "exact_plan_reconstruction": true
+  },
+  "original_evidence": {
+    "responses.jsonl": {
+      "sha256": "dd1c3f3c92c020af0df81a0526b70c121da9ff9fd906fb5529b741c43918525d",
+      "bytes": 948858
+    },
+    "dispatches.jsonl": {
+      "sha256": "fcc5b9336e346153234f9bcfa49f4d1c26fa58deef86dd307893c50f7835703b",
+      "bytes": 13074
+    },
+    "plan.json": {
+      "sha256": "8356d29841cab994b3ca934229fb712b38f66d74db8a082038ea9efdc82b3c46",
+      "bytes": 452557
+    }
+  },
+  "original_saved_responses": 54,
+  "lost_sequences_retained_as_unknown": [
+    54
+  ],
+  "final_attempts": 55,
+  "valid": 37,
+  "cost": {
+    "total_usd": null,
+    "known_subtotal_usd": 0.0125614895,
+    "missing_n": 18,
+    "unknown_bill_allowance_usd": 0.18,
+    "budget_accounted_usd": 0.1925614895
+  },
+  "closure_script_sha256": "860c87da1337724cea73ec8b541b5f8a9cef9413775a1060857dbba3acbd1e01"
+}

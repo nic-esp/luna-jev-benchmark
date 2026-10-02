@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "created_at_utc": "2026-10-02T16:01:17.097653+00:00",
+  "freeze_scope": "Prospective selection before inference probes or benchmark outputs from the three additions; existing reference/Qwen runs already exist. Do not rewrite this selection from observed performance.",
+  "selection_rationale": "Add three highly used current OpenRouter model families whose catalog and upstream docs allow reasoning off and whose selected provider advertises the identical strict JSON contract. The requested set contains six services including the two existing references and Qwen3.8 Flash.",
+  "credential_scope": "Only the user-approved Alpha OpenRouter credential may be used for inference by the root controller. This selection research used no credentials, authentication, model calls or other services.",
+  "models": [
+    {
+      "label": "Jev",
+      "id": "typesafe/jev-1.13",
+      "provider": "TypeSafe",
+      "provider_name": "TypeSafe",
+      "prices": {
+        "prompt": "0.0000002",
+        "completion": "0.00000075"
+      },
+      "reasoning": null,
+      "cache_control": "unsupported",
+      "max_tokens": null,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "Luna",
+      "id": "openai/gpt-6-luna",
+      "provider": "OpenAI",
+      "provider_name": "OpenAI",
+      "prices": {
+        "prompt": "0.0000001",
+        "completion": "0.0000005",
+        "web_search": "0.01",
+        "input_cache_read": "0.00000001",
+        "input_cache_write": "0.000000125",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.0000002",
+            "completion": "0.00000075",
+            "input_cache_read": "0.00000002",
+            "input_cache_write": "0.00000025"
+          }
+        ]
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "explicit",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "Qwen3.8 Flash",
+      "id": "qwen/qwen3.8-flash",
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "prices": {
+        "prompt": "0.00000015",
+        "completion": "0.00000047",
+        "input_cache_read": "0.000000016",
+        "input_cache_write": "0.0000002"
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "DeepSeek V4.1 Flash",
+      "id": "deepseek/deepseek-v4.1-flash",
+      "provider": "deepinfra/fp8",
+      "provider_name": "DeepInfra",
+      "prices": {
+        "prompt": "0.00000014",
+        "completion": "0.00000042",
+        "input_cache_read": "0.0000000042",
+        "discount": 0.3
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    },
+    {
+      "label": "MiMo V2.6 Flash",
+      "id": "xiaomi/mimo-v2.6-flash",
+      "provider": "xiaomi/fp8",
+      "provider_name": "Xiaomi",
+      "prices": {
+        "prompt": "0.00000014",
+        "completion": "0.00000028",
+        "input_cache_read": "0.0000000028",
+        "discount": 0
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    },
+    {
+      "label": "Hy4 Preview",
+      "id": "tencent/hy4-preview",
+      "provider": "deepinfra/fp8",
+      "provider_name": "DeepInfra",
+      "prices": {
+        "prompt": "0.000000834",
+        "completion": "0.000002501",
+        "input_cache_read": "0.000000042",
+        "discount": 0
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    }
+  ],
+  "quality_pending": [
+    "DeepSeek V4.1 Flash",
+    "MiMo V2.6 Flash",
+    "Hy4 Preview"
+  ],
+  "new_model_provenance": [
+    {
+      "label": "DeepSeek V4.1 Flash",
+      "canonical_slug": "deepseek/deepseek-v4.1-flash-20260910",
+      "catalog_reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "high",
+          "low"
+        ],
+        "default_effort": "high"
+      },
+      "endpoint_tag": "deepinfra/fp8",
+      "provider_name": "DeepInfra",
+      "quantization": "fp8",
+      "endpoint_status": 0,
+      "endpoint_source": "sources/zero-reasoning-selection/deepseek-v4.1-flash-endpoints.json",
+      "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+      "required_parameters_advertised": [
+        "reasoning",
+        "response_format",
+        "structured_outputs"
+      ],
+      "price_basis": "Exact selected endpoint pricing, USD per token. Actual recorded usage.cost controls study billing.",
+      "upstream_reasoning_off_url": "https://api-docs.deepseek.com/api/create-chat-completion/",
+      "upstream_evidence": "thinking.type=disabled selects non-thinking; reasoning_effort=none disables thinking. DeepSeek official changelog identifies deepseek-flash as V4.1 Flash.",
+      "openrouter_today_rank": 2,
+      "ranking_usage_date": "2026-10-01",
+      "latency_last_30m": null,
+      "throughput_last_30m": null,
+      "speed_evidence_limit": "The retrieved public endpoint API returned null latency/throughput; this selection does not establish the fastest endpoint or study latency."
+    },
+    {
+      "label": "MiMo V2.6 Flash",
+      "canonical_slug": "xiaomi/mimo-v2.6-flash-20260921",
+      "catalog_reasoning": {
+        "mandatory": false
+      },
+      "endpoint_tag": "xiaomi/fp8",
+      "provider_name": "Xiaomi",
+      "quantization": "fp8",
+      "endpoint_status": 0,
+      "endpoint_source": "sources/zero-reasoning-selection/mimo-v2.6-flash-endpoints.json",
+      "endpoint_url": "https://openrouter.ai/api/v1/models/xiaomi/mimo-v2.6-flash/endpoints",
+      "required_parameters_advertised": [
+        "reasoning",
+        "response_format",
+        "structured_outputs"
+      ],
+      "price_basis": "Exact selected endpoint pricing, USD per token. Actual recorded usage.cost controls study billing.",
+      "upstream_reasoning_off_url": "https://mimo.mi.com/models/en-US/mimo-v2.6-flash",
+      "upstream_evidence": "The exact model page provides a request with thinking.type=disabled.",
+      "openrouter_today_rank": 4,
+      "ranking_usage_date": "2026-10-01",
+      "latency_last_30m": null,
+      "throughput_last_30m": null,
+      "speed_evidence_limit": "The retrieved public endpoint API returned null latency/throughput; this selection does not establish the fastest endpoint or study latency."
+    },
+    {
+      "label": "Hy4 Preview",
+      "canonical_slug": "tencent/hy4-preview-20260827",
+      "catalog_reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supported_efforts": [
+          "high",
+          "low",
+          "none"
+        ],
+        "default_effort": "high"
+      },
+      "endpoint_tag": "deepinfra/fp8",
+      "provider_name": "DeepInfra",
+      "quantization": "fp8",
+      "endpoint_status": 0,
+      "endpoint_source": "sources/zero-reasoning-selection/hy4-preview-endpoints.json",
+      "endpoint_url": "https://openrouter.ai/api/v1/models/tencent/hy4-preview/endpoints",
+      "required_parameters_advertised": [
+        "reasoning",
+        "response_format",
+        "structured_outputs"
+      ],
+      "price_basis": "Exact selected endpoint pricing, USD per token. Actual recorded usage.cost controls study billing.",
+      "upstream_reasoning_off_url": "https://intl.cloud.tencent.com/zh/document/product/1300/80637",
+      "upstream_evidence": "Tencent lists Hy4 preview among models supporting thinking.type=disabled and reasoning_effort=none.",
+      "openrouter_today_rank": 8,
+      "ranking_usage_date": "2026-10-01",
+      "latency_last_30m": null,
+      "throughput_last_30m": null,
+      "speed_evidence_limit": "The retrieved public endpoint API returned null latency/throughput; this selection does not establish the fastest endpoint or study latency."
+    }
+  ],
+  "excluded_models": [
+    {
+      "id": "openai/gpt-oss-120b",
+      "name": "OpenAI: gpt-oss-120b",
+      "reasoning": {
+        "mandatory": true,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
+      },
+      "reason": "Mandatory reasoning; cannot meet the user requirement that reasoning be disabled. Minimal/low reasoning and hidden reasoning are not equivalent to off."
+    },
+    {
+      "id": "google/gemini-3.8-flash",
+      "name": "Google: Gemini 3.8 Flash",
+      "reasoning": {
+        "mandatory": true,
+        "default_enabled": true,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
+      },
+      "reason": "Mandatory reasoning; cannot meet the user requirement that reasoning be disabled. Minimal/low reasoning and hidden reasoning are not equivalent to off."
+    },
+    {
+      "id": "z-ai/glm-5.3-flash",
+      "name": "Z.ai: GLM 5.3 Flash",
+      "reasoning": {
+        "mandatory": true,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "high",
+          "low"
+        ],
+        "default_effort": "max"
+      },
+      "reason": "Mandatory reasoning; cannot meet the user requirement that reasoning be disabled. Minimal/low reasoning and hidden reasoning are not equivalent to off."
+    }
+  ],
+  "fallback_considered": {
+    "id": "nvidia/nemotron-3-ultra-550b-a55b",
+    "endpoint": "deepinfra/fp4",
+    "reasoning_off_documentation": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
+    "not_selected_reason": "The observed top-seven rank belongs to its free variant, which lacks advertised strict schema support; a paid endpoint changes that popularity comparison. Three directly ranked candidates suffice."
+  },
+  "selection_sources": {
+    "rankings_url": "https://openrouter.ai/rankings",
+    "ranking_facts": "sources/zero-reasoning-selection/rankings-selection-facts.json",
+    "public_snapshot_manifest": "sources/zero-reasoning-selection/retrieval.json",
+    "reasoning_parameter_reference": "https://openrouter.ai/docs/guides/best-practices/reasoning-tokens",
+    "structured_output_reference": "https://openrouter.ai/docs/guides/features/structured-outputs",
+    "deepseek_name_mapping": "https://api-docs.deepseek.com/updates/"
+  },
+  "eligibility_validation": "Each added model must pass the unchanged saved system/schema contract with reasoning.effort=none, max_tokens=128, exact pinned provider, no fallbacks, no response healing and no retries. Visible reasoning or positive reasoning tokens fail the off protocol. A missing reasoning counter remains unverified, never zero. A successful probe establishes only those requests; audit the full study separately.",
+  "cache_protocol": "Each addition has one uncontrolled long-input baseline, with actual returned cache counters. Do not infer uncached state from omitted markers or false endpoint flags.",
+  "method_limitations": [
+    "Token popularity is not intelligence or task accuracy.",
+    "Zero reasoning means the exposed reasoning mode is disabled; external API observations do not reveal every internal model computation.",
+    "Short-answer latency must be measured with the same serial interleaved protocol. Public provider latency aggregates mix workloads and reasoning modes.",
+    "Reasoning is native/not exposed for Jev; its inherited spec is unchanged."
+  ]
+}

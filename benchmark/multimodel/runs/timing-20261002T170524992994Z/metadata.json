@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-02T17:05:25.139339+00:00",
+  "models": [
+    {
+      "label": "Jev",
+      "id": "typesafe/jev-1.13",
+      "provider": "TypeSafe",
+      "provider_name": "TypeSafe",
+      "prices": {
+        "prompt": "0.0000002",
+        "completion": "0.00000075"
+      },
+      "reasoning": null,
+      "cache_control": "unsupported",
+      "max_tokens": null,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "Luna",
+      "id": "openai/gpt-6-luna",
+      "provider": "OpenAI",
+      "provider_name": "OpenAI",
+      "prices": {
+        "prompt": "0.0000001",
+        "completion": "0.0000005",
+        "web_search": "0.01",
+        "input_cache_read": "0.00000001",
+        "input_cache_write": "0.000000125",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.0000002",
+            "completion": "0.00000075",
+            "input_cache_read": "0.00000002",
+            "input_cache_write": "0.00000025"
+          }
+        ]
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "explicit",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "Qwen3.8 Flash",
+      "id": "qwen/qwen3.8-flash",
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "prices": {
+        "prompt": "0.00000015",
+        "completion": "0.00000047",
+        "input_cache_read": "0.000000016",
+        "input_cache_write": "0.0000002"
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    },
+    {
+      "label": "DeepSeek V4.1 Flash",
+      "id": "deepseek/deepseek-v4.1-flash",
+      "provider": "deepinfra/fp8",
+      "provider_name": "DeepInfra",
+      "prices": {
+        "prompt": "0.00000014",
+        "completion": "0.00000042",
+        "input_cache_read": "0.0000000042",
+        "discount": 0.3
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    },
+    {
+      "label": "MiMo V2.6 Flash",
+      "id": "xiaomi/mimo-v2.6-flash",
+      "provider": "xiaomi/fp8",
+      "provider_name": "Xiaomi",
+      "prices": {
+        "prompt": "0.00000014",
+        "completion": "0.00000028",
+        "input_cache_read": "0.0000000028",
+        "discount": 0
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    },
+    {
+      "label": "Hy4 Preview",
+      "id": "tencent/hy4-preview",
+      "provider": "tencent/fp8",
+      "provider_name": "Tencent",
+      "prices": {
+        "prompt": "0.000000834",
+        "completion": "0.000002501",
+        "input_cache_read": "0.000000042",
+        "discount": 0,
+        "overrides": [
+          {
+            "utc_start": 0,
+            "utc_end": 1600,
+            "prompt": "0.000000834",
+            "completion": "0.000002501",
+            "input_cache_read": "0.000000042"
+          },
+          {
+            "utc_start": 1600,
+            "utc_end": 0,
+            "prompt": "0.0000007506",
+            "completion": "0.0000022509",
+            "input_cache_read": "0.0000000378"
+          }
+        ]
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null,
+      "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+    }
+  ],
+  "phase": "timing",
+  "cases": 60,
+  "planned_calls": 1116,
+  "calls_planned": 1116,
+  "concurrency_pairs": 1,
+  "seed": 20261005,
+  "source_hashes": {
+    "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+    "timing_cases_sha256": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8"
+  },
+  "cases_sha256": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8",
+  "code_hashes": {
+    "original-runner.py": "1c6d2ea8084da6e671d41a6d89f089edbf13729c75990bf4be0458db5df4242c",
+    "original-adapter.py": "47c300bd57b53f669dd9c707b4317cf47cf2b5888c5233e17b94d1310e6f691b",
+    "original-answer-contract.py": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7"
+  },
+  "plan_sha256": "7298f8c79b0bd68c33c10a08bcfc62b93c2f80dd35e3deb705e0edb7117da0da",
+  "requests_sha256": "93cecde0a629648ce8629eee54004482ba45df6f149c0676f50e2ffc857a3318",
+  "automatic_retries": 0,
+  "repeats": 3,
+  "warmups_per_model_per_block": 2,
+  "unknown_bill_allowance_usd": 0.01,
+  "protocol": "Three serial randomized blocks of the same 60 frozen cases, with two warmups per model per block excluded from measured timing. One persistent adapter, nonstreaming full-response latency. No overlapping quality/timing run through this runner.",
+  "stop_rule": "Stop new dispatches after 5 consecutive invalid or >=5% invalid after 100 completed calls, overall or per model, in completion order. In-flight attempts are retained.",
+  "billing_guard": "Known bills use observed values. Missing bills remain null and retain their reservation, at least $0.01, against the local guard. A local estimate cannot enforce a remote account-level cap.",
+  "resume_policy": "Quality only: identical source, adapter, plan and exact request hashes; dispatch journal prevents every attempted sequence from being retried, including lost outcomes.",
+  "status": "complete",
+  "budget_usd": 1.5,
+  "calls_completed": 1116,
+  "valid": 1116,
+  "invalid": 0,
+  "charged_usd": 0.05492202580000004,
+  "known_charge_subtotal_usd": 0.05492202580000004,
+  "unknown_billing": 0,
+  "unknown_billing_guard_usd": 0.0,
+  "budget_pending_usd": 0.0,
+  "budget_accounted_usd": 0.05492202580000004,
+  "budget_stop_reason": null,
+  "finished_at": "2026-10-02T17:42:25.413958+00:00",
+  "responses_sha256": "7119428ee08d80ac620681f9a9bde1a5da76ffbe003df500b1ca0b968248fd78",
+  "attempts_sha256": "a3139a5882c83a2e865ad8eed7dc73f10c0e1dc7e985fc1c5595855bb656c5c6"
+}

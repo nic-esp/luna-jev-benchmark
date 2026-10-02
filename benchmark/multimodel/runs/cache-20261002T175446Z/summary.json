@@ -1,0 +1,1293 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "experiment": "multimodel_cache_policy",
+    "created_at": "2026-10-02T17:54:46.572383+00:00",
+    "models": [
+      {
+        "label": "Jev",
+        "id": "typesafe/jev-1.13",
+        "provider": "TypeSafe",
+        "provider_name": "TypeSafe",
+        "prices": {
+          "prompt": "0.0000002",
+          "completion": "0.00000075"
+        },
+        "reasoning": null,
+        "cache_control": "unsupported",
+        "max_tokens": null,
+        "reasoning_mandatory": false,
+        "protocol_difference": null
+      },
+      {
+        "label": "Luna",
+        "id": "openai/gpt-6-luna",
+        "provider": "OpenAI",
+        "provider_name": "OpenAI",
+        "prices": {
+          "prompt": "0.0000001",
+          "completion": "0.0000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000001",
+          "input_cache_write": "0.000000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.0000002",
+              "completion": "0.00000075",
+              "input_cache_read": "0.00000002",
+              "input_cache_write": "0.00000025"
+            }
+          ]
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "explicit",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null
+      },
+      {
+        "label": "Qwen3.8 Flash",
+        "id": "qwen/qwen3.8-flash",
+        "provider": "alibaba",
+        "provider_name": "Alibaba",
+        "prices": {
+          "prompt": "0.00000015",
+          "completion": "0.00000047",
+          "input_cache_read": "0.000000016",
+          "input_cache_write": "0.0000002"
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "unsupported",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null
+      },
+      {
+        "label": "DeepSeek V4.1 Flash",
+        "id": "deepseek/deepseek-v4.1-flash",
+        "provider": "deepinfra/fp8",
+        "provider_name": "DeepInfra",
+        "prices": {
+          "prompt": "0.00000014",
+          "completion": "0.00000042",
+          "input_cache_read": "0.0000000042",
+          "discount": 0.3
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "unsupported",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null,
+        "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+      },
+      {
+        "label": "MiMo V2.6 Flash",
+        "id": "xiaomi/mimo-v2.6-flash",
+        "provider": "xiaomi/fp8",
+        "provider_name": "Xiaomi",
+        "prices": {
+          "prompt": "0.00000014",
+          "completion": "0.00000028",
+          "input_cache_read": "0.0000000028",
+          "discount": 0
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "unsupported",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null,
+        "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+      },
+      {
+        "label": "Hy4 Preview",
+        "id": "tencent/hy4-preview",
+        "provider": "tencent/fp8",
+        "provider_name": "Tencent",
+        "prices": {
+          "prompt": "0.000000834",
+          "completion": "0.000002501",
+          "input_cache_read": "0.000000042",
+          "discount": 0,
+          "overrides": [
+            {
+              "utc_start": 0,
+              "utc_end": 1600,
+              "prompt": "0.000000834",
+              "completion": "0.000002501",
+              "input_cache_read": "0.000000042"
+            },
+            {
+              "utc_start": 1600,
+              "utc_end": 0,
+              "prompt": "0.0000007506",
+              "completion": "0.0000022509",
+              "input_cache_read": "0.0000000378"
+            }
+          ]
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "unsupported",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null,
+        "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+      }
+    ],
+    "seed": 20261002,
+    "blocks": 4,
+    "cases": 96,
+    "counterfactual_pairs": 48,
+    "calls_planned": 676,
+    "source_hashes": {
+      "cases_sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c",
+      "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+      "prime_source_responses_sha256": "a837d11e4ad92e01c258a5d5e1defe82f6b64b7e4440ec6f383defc30d650e3f"
+    },
+    "source_dir": "benchmark/expanded/runs/cache-20261002T095722Z",
+    "protocol_sha256": "f3ddc1865467e45265cebd4b5e36c6512505ee1b1d46da11f823085b5283c616",
+    "protocol_file": "cache_protocol_v2.py",
+    "protocol_version": 2,
+    "protocol_amendment": {
+      "id": "administrative-cache-key-length-fix",
+      "original_protocol_file": "cache_protocol.py",
+      "original_protocol_sha256": "65276cccf0f45553045ef30da85c1bb2d7c98046264ac01696a2c58e23cb3374",
+      "reason": "The original 66-character generated key exceeded the provider's 64-character limit and produced HTTP 400 responses.",
+      "change": "Shorten the cache key prefix from model-comparison-cache- to mc-; validate every key before preparing any request. Preserve original HTTP/API errors on already invalid responses and stop after saving a failed priming attempt.",
+      "unchanged": "Frozen cases, reference answers, rulebook, text serialization, schema, model settings, arm order and priming design are unchanged. Fresh per-block identifiers remain required."
+    },
+    "plan_sha256": "239e42d0dfac906c1ad9af20e3c1c24b66f2d6a58d961f337e356152879a4bda",
+    "automatic_retries": 0,
+    "unknown_bill_allowance_usd": 0.01,
+    "protocol": "Four sequential blocks. Fresh shared prefix nonce per block; one separate prime per controlled model per block. Frozen case order and all-model arm order randomized within each block. One serial injected adapter session. Unsupported cache models receive one baseline arm only.",
+    "resume_policy": "Complete-block boundaries only; no repeated attempts.",
+    "billing_guard": "Reserve max(adapter conservative estimate, $0.01) before each call. Known charges count at actual recorded values; each missing bill uses a $0.01 guard allowance while its reported price remains null. This local guard is not a remote account spending limit.",
+    "status": "complete",
+    "budget_usd": 1.5,
+    "calls_completed": 676,
+    "charged_usd": 0.1568607109,
+    "known_charge_subtotal_usd": 0.1568607109,
+    "cost_missing_n": 0,
+    "unknown_bill_allowance_total_usd": 0.0,
+    "budget_accounted_usd": 0.1568607109,
+    "completed_blocks": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "finished_at": "2026-10-02T18:17:40.202393+00:00",
+    "calls_dispatched": 676,
+    "unresolved_dispatch_n": 0
+  },
+  "arms": {
+    "Jev": {
+      "n": 96,
+      "valid_n": 96,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.01293264,
+        "known_subtotal_usd": 0.01293264,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.01293264
+      },
+      "cost_per_1000_usd": 0.134715,
+      "accuracy_including_invalid_as_wrong": 0.96875,
+      "brier_valid_only": 0.037015624999999996,
+      "median_latency_s": 0.29669247899437323,
+      "latency_observed_n": 96,
+      "cache_observed_n": 0,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": null,
+      "cache_write_observed_n": 0,
+      "cache_write_tokens": null,
+      "unique_cache_read_sizes": []
+    },
+    "Luna uncached": {
+      "n": 96,
+      "valid_n": 96,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.029084,
+        "known_subtotal_usd": 0.029084,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.029084
+      },
+      "cost_per_1000_usd": 0.30295833333333333,
+      "accuracy_including_invalid_as_wrong": 0.8645833333333334,
+      "brier_valid_only": 0.13541666666666666,
+      "median_latency_s": 1.092991729005007,
+      "latency_observed_n": 96,
+      "cache_observed_n": 96,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": 0,
+      "cache_write_observed_n": 96,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0
+      ]
+    },
+    "Luna cached": {
+      "n": 96,
+      "valid_n": 96,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.0068888000000000005,
+        "known_subtotal_usd": 0.0068888000000000005,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.0068888000000000005
+      },
+      "cost_per_1000_usd": 0.07175833333333334,
+      "accuracy_including_invalid_as_wrong": 0.8645833333333334,
+      "brier_valid_only": 0.13541666666666666,
+      "median_latency_s": 1.137883604504168,
+      "latency_observed_n": 96,
+      "cache_observed_n": 96,
+      "cache_hit_calls": 96,
+      "cache_read_tokens": 246720,
+      "cache_write_observed_n": 96,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        2566,
+        2569,
+        2572,
+        2573
+      ]
+    },
+    "Qwen3.8 Flash": {
+      "n": 96,
+      "valid_n": 96,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.011560668,
+        "known_subtotal_usd": 0.011560668,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.011560668
+      },
+      "cost_per_1000_usd": 0.12042362499999999,
+      "accuracy_including_invalid_as_wrong": 0.7604166666666666,
+      "brier_valid_only": 0.23958333333333334,
+      "median_latency_s": 1.489837562010507,
+      "latency_observed_n": 96,
+      "cache_observed_n": 96,
+      "cache_hit_calls": 92,
+      "cache_read_tokens": 238848,
+      "cache_write_observed_n": 96,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0,
+        2560,
+        2816
+      ]
+    },
+    "DeepSeek V4.1 Flash": {
+      "n": 96,
+      "valid_n": 96,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.0076339032,
+        "known_subtotal_usd": 0.0076339032,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.0076339032
+      },
+      "cost_per_1000_usd": 0.079519825,
+      "accuracy_including_invalid_as_wrong": 0.75,
+      "brier_valid_only": 0.25,
+      "median_latency_s": 1.0940515204856638,
+      "latency_observed_n": 96,
+      "cache_observed_n": 96,
+      "cache_hit_calls": 92,
+      "cache_read_tokens": 240896,
+      "cache_write_observed_n": 96,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0,
+        2560,
+        2688,
+        2816
+      ]
+    },
+    "MiMo V2.6 Flash": {
+      "n": 96,
+      "valid_n": 96,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.007778512,
+        "known_subtotal_usd": 0.007778512,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.007778512
+      },
+      "cost_per_1000_usd": 0.08102616666666666,
+      "accuracy_including_invalid_as_wrong": 0.8020833333333334,
+      "brier_valid_only": 0.19791666666666666,
+      "median_latency_s": 2.0327555624971865,
+      "latency_observed_n": 96,
+      "cache_observed_n": 96,
+      "cache_hit_calls": 90,
+      "cache_read_tokens": 237440,
+      "cache_write_observed_n": 96,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0,
+        2560,
+        2624,
+        2688,
+        2752,
+        2816,
+        2880
+      ]
+    },
+    "Hy4 Preview": {
+      "n": 96,
+      "valid_n": 96,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.0795155877,
+        "known_subtotal_usd": 0.0795155877,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.0795155877
+      },
+      "cost_per_1000_usd": 0.828287371875,
+      "accuracy_including_invalid_as_wrong": 0.8125,
+      "brier_valid_only": 0.1875,
+      "median_latency_s": 3.3181042079959298,
+      "latency_observed_n": 96,
+      "cache_observed_n": 96,
+      "cache_hit_calls": 76,
+      "cache_read_tokens": 193920,
+      "cache_write_observed_n": 96,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0,
+        2496,
+        2560,
+        2624,
+        2688,
+        2752,
+        2816
+      ]
+    }
+  },
+  "blocks": [
+    {
+      "block": 0,
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0032315219999999997,
+            "known_subtotal_usd": 0.0032315219999999997,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0032315219999999997
+          },
+          "cost_per_1000_usd": 0.13464675,
+          "accuracy_including_invalid_as_wrong": 0.9583333333333334,
+          "brier_valid_only": 0.057508333333333335,
+          "median_latency_s": 0.30488337500719354,
+          "latency_observed_n": 24,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna uncached": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0072688,
+            "known_subtotal_usd": 0.0072688,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0072688
+          },
+          "cost_per_1000_usd": 0.3028666666666666,
+          "accuracy_including_invalid_as_wrong": 0.7916666666666666,
+          "brier_valid_only": 0.20833333333333334,
+          "median_latency_s": 0.967239604506176,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": 0,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0
+          ]
+        },
+        "Luna cached": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.00172216,
+            "known_subtotal_usd": 0.00172216,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.00172216
+          },
+          "cost_per_1000_usd": 0.07175666666666666,
+          "accuracy_including_invalid_as_wrong": 0.7916666666666666,
+          "brier_valid_only": 0.20833333333333334,
+          "median_latency_s": 1.024862916499842,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 24,
+          "cache_read_tokens": 61656,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            2569
+          ]
+        },
+        "Qwen3.8 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.002931972,
+            "known_subtotal_usd": 0.002931972,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.002931972
+          },
+          "cost_per_1000_usd": 0.12216550000000001,
+          "accuracy_including_invalid_as_wrong": 0.75,
+          "brier_valid_only": 0.25,
+          "median_latency_s": 1.3009495209989836,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 59392,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2816
+          ]
+        },
+        "DeepSeek V4.1 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0019514768,
+            "known_subtotal_usd": 0.0019514768,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0019514768
+          },
+          "cost_per_1000_usd": 0.08131153333333332,
+          "accuracy_including_invalid_as_wrong": 0.7083333333333334,
+          "brier_valid_only": 0.2916666666666667,
+          "median_latency_s": 1.452812958494178,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 59904,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2688,
+            2816
+          ]
+        },
+        "MiMo V2.6 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.001783404,
+            "known_subtotal_usd": 0.001783404,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.001783404
+          },
+          "cost_per_1000_usd": 0.0743085,
+          "accuracy_including_invalid_as_wrong": 0.7083333333333334,
+          "brier_valid_only": 0.2916666666666667,
+          "median_latency_s": 2.0327555624971865,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 60480,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2624,
+            2688,
+            2752,
+            2880
+          ]
+        },
+        "Hy4 Preview": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.020081179799999998,
+            "known_subtotal_usd": 0.020081179799999998,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.020081179799999998
+          },
+          "cost_per_1000_usd": 0.8367158249999999,
+          "accuracy_including_invalid_as_wrong": 0.7083333333333334,
+          "brier_valid_only": 0.2916666666666667,
+          "median_latency_s": 3.3630395629879786,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 19,
+          "cache_read_tokens": 48192,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2496,
+            2560,
+            2624
+          ]
+        }
+      }
+    },
+    {
+      "block": 1,
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.00323379,
+            "known_subtotal_usd": 0.00323379,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.00323379
+          },
+          "cost_per_1000_usd": 0.13474125,
+          "accuracy_including_invalid_as_wrong": 1.0,
+          "brier_valid_only": 0.009354166666666665,
+          "median_latency_s": 0.28965062501083594,
+          "latency_observed_n": 24,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna uncached": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0072754,
+            "known_subtotal_usd": 0.0072754,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0072754
+          },
+          "cost_per_1000_usd": 0.30314166666666664,
+          "accuracy_including_invalid_as_wrong": 0.9166666666666666,
+          "brier_valid_only": 0.08333333333333333,
+          "median_latency_s": 1.033214979499462,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": 0,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0
+          ]
+        },
+        "Luna cached": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.00172228,
+            "known_subtotal_usd": 0.00172228,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.00172228
+          },
+          "cost_per_1000_usd": 0.07176166666666667,
+          "accuracy_including_invalid_as_wrong": 0.9166666666666666,
+          "brier_valid_only": 0.08333333333333333,
+          "median_latency_s": 1.1588594999921042,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 24,
+          "cache_read_tokens": 61728,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            2572
+          ]
+        },
+        "Qwen3.8 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.00281806,
+            "known_subtotal_usd": 0.00281806,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.00281806
+          },
+          "cost_per_1000_usd": 0.11741916666666666,
+          "accuracy_including_invalid_as_wrong": 0.875,
+          "brier_valid_only": 0.125,
+          "median_latency_s": 1.7670792919961968,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 60160,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2816
+          ]
+        },
+        "DeepSeek V4.1 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0018881072,
+            "known_subtotal_usd": 0.0018881072,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0018881072
+          },
+          "cost_per_1000_usd": 0.07867113333333334,
+          "accuracy_including_invalid_as_wrong": 0.7916666666666666,
+          "brier_valid_only": 0.20833333333333334,
+          "median_latency_s": 1.0346363749995362,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 60416,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2688,
+            2816
+          ]
+        },
+        "MiMo V2.6 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0018033848,
+            "known_subtotal_usd": 0.0018033848,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0018033848
+          },
+          "cost_per_1000_usd": 0.07514103333333333,
+          "accuracy_including_invalid_as_wrong": 0.875,
+          "brier_valid_only": 0.125,
+          "median_latency_s": 2.793738062508055,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 60416,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2624,
+            2688,
+            2816,
+            2880
+          ]
+        },
+        "Hy4 Preview": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0197956233,
+            "known_subtotal_usd": 0.0197956233,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0197956233
+          },
+          "cost_per_1000_usd": 0.8248176375,
+          "accuracy_including_invalid_as_wrong": 0.9166666666666666,
+          "brier_valid_only": 0.08333333333333333,
+          "median_latency_s": 3.3566275000193855,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 19,
+          "cache_read_tokens": 48640,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2496,
+            2560,
+            2752,
+            2816
+          ]
+        }
+      }
+    },
+    {
+      "block": 2,
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.003231354,
+            "known_subtotal_usd": 0.003231354,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.003231354
+          },
+          "cost_per_1000_usd": 0.13463975,
+          "accuracy_including_invalid_as_wrong": 0.9583333333333334,
+          "brier_valid_only": 0.027795833333333336,
+          "median_latency_s": 0.2949892915057717,
+          "latency_observed_n": 24,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna uncached": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.007278,
+            "known_subtotal_usd": 0.007278,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.007278
+          },
+          "cost_per_1000_usd": 0.30324999999999996,
+          "accuracy_including_invalid_as_wrong": 0.7916666666666666,
+          "brier_valid_only": 0.20833333333333334,
+          "median_latency_s": 1.1503861465025693,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": 0,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0
+          ]
+        },
+        "Luna cached": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.00172272,
+            "known_subtotal_usd": 0.00172272,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.00172272
+          },
+          "cost_per_1000_usd": 0.07178000000000001,
+          "accuracy_including_invalid_as_wrong": 0.9166666666666666,
+          "brier_valid_only": 0.08333333333333333,
+          "median_latency_s": 1.0343990420078626,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 24,
+          "cache_read_tokens": 61752,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            2573
+          ]
+        },
+        "Qwen3.8 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.002865114,
+            "known_subtotal_usd": 0.002865114,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.002865114
+          },
+          "cost_per_1000_usd": 0.11937975,
+          "accuracy_including_invalid_as_wrong": 0.7083333333333334,
+          "brier_valid_only": 0.2916666666666667,
+          "median_latency_s": 1.5065319374989485,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 59904,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2816
+          ]
+        },
+        "DeepSeek V4.1 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0018735248,
+            "known_subtotal_usd": 0.0018735248,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0018735248
+          },
+          "cost_per_1000_usd": 0.07806353333333334,
+          "accuracy_including_invalid_as_wrong": 0.7083333333333334,
+          "brier_valid_only": 0.2916666666666667,
+          "median_latency_s": 0.9835982710064854,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 60544,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2688,
+            2816
+          ]
+        },
+        "MiMo V2.6 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0023895592,
+            "known_subtotal_usd": 0.0023895592,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0023895592
+          },
+          "cost_per_1000_usd": 0.09956496666666666,
+          "accuracy_including_invalid_as_wrong": 0.8333333333333334,
+          "brier_valid_only": 0.16666666666666666,
+          "median_latency_s": 1.8414089790021535,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 21,
+          "cache_read_tokens": 56064,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2624,
+            2688,
+            2816,
+            2880
+          ]
+        },
+        "Hy4 Preview": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0217371465,
+            "known_subtotal_usd": 0.0217371465,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0217371465
+          },
+          "cost_per_1000_usd": 0.9057144374999999,
+          "accuracy_including_invalid_as_wrong": 0.7916666666666666,
+          "brier_valid_only": 0.20833333333333334,
+          "median_latency_s": 3.2872396250022575,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 18,
+          "cache_read_tokens": 45952,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2496,
+            2560,
+            2624,
+            2816
+          ]
+        }
+      }
+    },
+    {
+      "block": 3,
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.003235974,
+            "known_subtotal_usd": 0.003235974,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.003235974
+          },
+          "cost_per_1000_usd": 0.13483225,
+          "accuracy_including_invalid_as_wrong": 0.9583333333333334,
+          "brier_valid_only": 0.05340416666666667,
+          "median_latency_s": 0.29199427099956665,
+          "latency_observed_n": 24,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna uncached": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0072618,
+            "known_subtotal_usd": 0.0072618,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0072618
+          },
+          "cost_per_1000_usd": 0.302575,
+          "accuracy_including_invalid_as_wrong": 0.9583333333333334,
+          "brier_valid_only": 0.041666666666666664,
+          "median_latency_s": 1.1690310834965203,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": 0,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0
+          ]
+        },
+        "Luna cached": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.00172164,
+            "known_subtotal_usd": 0.00172164,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.00172164
+          },
+          "cost_per_1000_usd": 0.07173500000000001,
+          "accuracy_including_invalid_as_wrong": 0.8333333333333334,
+          "brier_valid_only": 0.16666666666666666,
+          "median_latency_s": 1.276685353994253,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 24,
+          "cache_read_tokens": 61584,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            2566
+          ]
+        },
+        "Qwen3.8 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.002945522,
+            "known_subtotal_usd": 0.002945522,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.002945522
+          },
+          "cost_per_1000_usd": 0.12273008333333332,
+          "accuracy_including_invalid_as_wrong": 0.7083333333333334,
+          "brier_valid_only": 0.2916666666666667,
+          "median_latency_s": 2.0802034584921785,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 59392,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2816
+          ]
+        },
+        "DeepSeek V4.1 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0019207944000000001,
+            "known_subtotal_usd": 0.0019207944000000001,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0019207944000000001
+          },
+          "cost_per_1000_usd": 0.08003310000000001,
+          "accuracy_including_invalid_as_wrong": 0.7916666666666666,
+          "brier_valid_only": 0.20833333333333334,
+          "median_latency_s": 1.1495826665050117,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 60032,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2688,
+            2816
+          ]
+        },
+        "MiMo V2.6 Flash": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.001802164,
+            "known_subtotal_usd": 0.001802164,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.001802164
+          },
+          "cost_per_1000_usd": 0.07509016666666667,
+          "accuracy_including_invalid_as_wrong": 0.7916666666666666,
+          "brier_valid_only": 0.20833333333333334,
+          "median_latency_s": 1.685804166496382,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 23,
+          "cache_read_tokens": 60480,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2624,
+            2688,
+            2752,
+            2816
+          ]
+        },
+        "Hy4 Preview": {
+          "n": 24,
+          "valid_n": 24,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0179016381,
+            "known_subtotal_usd": 0.0179016381,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0179016381
+          },
+          "cost_per_1000_usd": 0.7459015874999999,
+          "accuracy_including_invalid_as_wrong": 0.8333333333333334,
+          "brier_valid_only": 0.16666666666666666,
+          "median_latency_s": 3.259101395495236,
+          "latency_observed_n": 24,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 20,
+          "cache_read_tokens": 51136,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2496,
+            2560,
+            2688,
+            2752
+          ]
+        }
+      }
+    }
+  ],
+  "cache_verification": {
+    "Jev": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched explicit on/off control.",
+      "observed_counters": {
+        "cache_observed_n": 0,
+        "cache_hit_calls": 0,
+        "cache_read_tokens": null,
+        "cache_write_observed_n": 0,
+        "cache_write_tokens": null
+      }
+    },
+    "Luna": {
+      "status": "verified",
+      "blocks": [
+        {
+          "block": 0,
+          "cold_prime_verified": true,
+          "all_24_cached_requests_hit": true,
+          "uncached_control_verified": true,
+          "stable_cached_prefix_token_count": true,
+          "read_size_matches_prime_write": true,
+          "prime_cost_usd": 0.000366525,
+          "prime_cache_write_tokens": 2569,
+          "fully_verified": true
+        },
+        {
+          "block": 1,
+          "cold_prime_verified": true,
+          "all_24_cached_requests_hit": true,
+          "uncached_control_verified": true,
+          "stable_cached_prefix_token_count": true,
+          "read_size_matches_prime_write": true,
+          "prime_cost_usd": 0.0003669,
+          "prime_cache_write_tokens": 2572,
+          "fully_verified": true
+        },
+        {
+          "block": 2,
+          "cold_prime_verified": true,
+          "all_24_cached_requests_hit": true,
+          "uncached_control_verified": true,
+          "stable_cached_prefix_token_count": true,
+          "read_size_matches_prime_write": true,
+          "prime_cost_usd": 0.000367025,
+          "prime_cache_write_tokens": 2573,
+          "fully_verified": true
+        },
+        {
+          "block": 3,
+          "cold_prime_verified": true,
+          "all_24_cached_requests_hit": true,
+          "uncached_control_verified": true,
+          "stable_cached_prefix_token_count": true,
+          "read_size_matches_prime_write": true,
+          "prime_cost_usd": 0.00036615,
+          "prime_cache_write_tokens": 2566,
+          "fully_verified": true
+        }
+      ],
+      "prime_count": 4,
+      "priming_cost": {
+        "total_usd": 0.0014666,
+        "known_subtotal_usd": 0.0014666,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.0014666
+      },
+      "setup_inclusive_cached_cost_usd": 0.0083554,
+      "setup_inclusive_cached_cost_per_1000_usd": 0.08703541666666667
+    },
+    "Qwen3.8 Flash": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched explicit on/off control.",
+      "observed_counters": {
+        "cache_observed_n": 96,
+        "cache_hit_calls": 92,
+        "cache_read_tokens": 238848,
+        "cache_write_observed_n": 96,
+        "cache_write_tokens": 0
+      }
+    },
+    "DeepSeek V4.1 Flash": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study.",
+      "observed_counters": {
+        "cache_observed_n": 96,
+        "cache_hit_calls": 92,
+        "cache_read_tokens": 240896,
+        "cache_write_observed_n": 96,
+        "cache_write_tokens": 0
+      }
+    },
+    "MiMo V2.6 Flash": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study.",
+      "observed_counters": {
+        "cache_observed_n": 96,
+        "cache_hit_calls": 90,
+        "cache_read_tokens": 237440,
+        "cache_write_observed_n": 96,
+        "cache_write_tokens": 0
+      }
+    },
+    "Hy4 Preview": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study.",
+      "observed_counters": {
+        "cache_observed_n": 96,
+        "cache_hit_calls": 76,
+        "cache_read_tokens": 193920,
+        "cache_write_observed_n": 96,
+        "cache_write_tokens": 0
+      }
+    }
+  },
+  "all_attempt_cost": {
+    "total_usd": 0.1568607109,
+    "known_subtotal_usd": 0.1568607109,
+    "missing_n": 0,
+    "unknown_bill_allowance_usd": 0.0,
+    "budget_accounted_usd": 0.1568607109
+  },
+  "definitions": {
+    "accuracy": "Probability >=0.5 means yes. Every invalid attempt counts as incorrect.",
+    "cost_per_1000": "Observed mean billed cost projected to 1,000 decisions at the measured request mix.",
+    "setup_inclusive": "Four distinct prime charges plus measured cached charges, divided across 96 measured decisions.",
+    "baseline": "Unsupported cache control means one baseline arm with uncontrolled cache state. Observed counters are reported; it is not an uncached treatment.",
+    "blocks": "Four sequential blocks from one session, each with the original 24 cases and a new common prefix nonce. They are not independent days.",
+    "billing": "Missing charges remain unknown. Each unknown attempt consumes a separate $0.01 allowance for the local budget guard; that allowance is not a reported price."
+  }
+}

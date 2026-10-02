@@ -1,0 +1,1178 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "experiment": "multimodel_cache_policy",
+    "created_at": "2026-10-02T17:42:29.229570+00:00",
+    "models": [
+      {
+        "label": "Jev",
+        "id": "typesafe/jev-1.13",
+        "provider": "TypeSafe",
+        "provider_name": "TypeSafe",
+        "prices": {
+          "prompt": "0.0000002",
+          "completion": "0.00000075"
+        },
+        "reasoning": null,
+        "cache_control": "unsupported",
+        "max_tokens": null,
+        "reasoning_mandatory": false,
+        "protocol_difference": null
+      },
+      {
+        "label": "Luna",
+        "id": "openai/gpt-6-luna",
+        "provider": "OpenAI",
+        "provider_name": "OpenAI",
+        "prices": {
+          "prompt": "0.0000001",
+          "completion": "0.0000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000001",
+          "input_cache_write": "0.000000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.0000002",
+              "completion": "0.00000075",
+              "input_cache_read": "0.00000002",
+              "input_cache_write": "0.00000025"
+            }
+          ]
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "explicit",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null
+      },
+      {
+        "label": "Qwen3.8 Flash",
+        "id": "qwen/qwen3.8-flash",
+        "provider": "alibaba",
+        "provider_name": "Alibaba",
+        "prices": {
+          "prompt": "0.00000015",
+          "completion": "0.00000047",
+          "input_cache_read": "0.000000016",
+          "input_cache_write": "0.0000002"
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "unsupported",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null
+      },
+      {
+        "label": "DeepSeek V4.1 Flash",
+        "id": "deepseek/deepseek-v4.1-flash",
+        "provider": "deepinfra/fp8",
+        "provider_name": "DeepInfra",
+        "prices": {
+          "prompt": "0.00000014",
+          "completion": "0.00000042",
+          "input_cache_read": "0.0000000042",
+          "discount": 0.3
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "unsupported",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null,
+        "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+      },
+      {
+        "label": "MiMo V2.6 Flash",
+        "id": "xiaomi/mimo-v2.6-flash",
+        "provider": "xiaomi/fp8",
+        "provider_name": "Xiaomi",
+        "prices": {
+          "prompt": "0.00000014",
+          "completion": "0.00000028",
+          "input_cache_read": "0.0000000028",
+          "discount": 0
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "unsupported",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null,
+        "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+      },
+      {
+        "label": "Hy4 Preview",
+        "id": "tencent/hy4-preview",
+        "provider": "tencent/fp8",
+        "provider_name": "Tencent",
+        "prices": {
+          "prompt": "0.000000834",
+          "completion": "0.000002501",
+          "input_cache_read": "0.000000042",
+          "discount": 0,
+          "overrides": [
+            {
+              "utc_start": 0,
+              "utc_end": 1600,
+              "prompt": "0.000000834",
+              "completion": "0.000002501",
+              "input_cache_read": "0.000000042"
+            },
+            {
+              "utc_start": 1600,
+              "utc_end": 0,
+              "prompt": "0.0000007506",
+              "completion": "0.0000022509",
+              "input_cache_read": "0.0000000378"
+            }
+          ]
+        },
+        "reasoning": {
+          "effort": "none"
+        },
+        "cache_control": "unsupported",
+        "max_tokens": 128,
+        "reasoning_mandatory": false,
+        "protocol_difference": null,
+        "cache_reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study."
+      }
+    ],
+    "seed": 20261002,
+    "blocks": 4,
+    "cases": 96,
+    "counterfactual_pairs": 48,
+    "calls_planned": 676,
+    "source_hashes": {
+      "cases_sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c",
+      "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+      "prime_source_responses_sha256": "a837d11e4ad92e01c258a5d5e1defe82f6b64b7e4440ec6f383defc30d650e3f"
+    },
+    "source_dir": "benchmark/expanded/runs/cache-20261002T095722Z",
+    "protocol_sha256": "65276cccf0f45553045ef30da85c1bb2d7c98046264ac01696a2c58e23cb3374",
+    "plan_sha256": "8356d29841cab994b3ca934229fb712b38f66d74db8a082038ea9efdc82b3c46",
+    "automatic_retries": 0,
+    "unknown_bill_allowance_usd": 0.01,
+    "protocol": "Four sequential blocks. Fresh shared prefix nonce per block; one separate prime per controlled model per block. Frozen case order and all-model arm order randomized within each block. One serial injected adapter session. Unsupported cache models receive one baseline arm only.",
+    "resume_policy": "Complete-block boundaries only; no repeated attempts.",
+    "billing_guard": "Reserve max(adapter conservative estimate, $0.01) before each call. Known charges count at actual recorded values; each missing bill uses a $0.01 guard allowance while its reported price remains null. This local guard is not a remote account spending limit.",
+    "status": "aborted",
+    "budget_usd": 1.5,
+    "calls_completed": 55,
+    "charged_usd": null,
+    "known_charge_subtotal_usd": 0.0125614895,
+    "cost_missing_n": 18,
+    "unknown_bill_allowance_total_usd": 0.18,
+    "budget_accounted_usd": 0.1925614895,
+    "completed_blocks": [],
+    "finished_at": "2026-10-02T17:47:04.490714+00:00",
+    "calls_dispatched": 55,
+    "unresolved_dispatch_n": 0,
+    "lost_outcome_n": 1,
+    "error": "Cache construction generated 66-character Luna keys; upstream maximum is 64. Entire session excluded from primary cache inference and retained as supplementary setup evidence.",
+    "primary_analysis_eligible": false
+  },
+  "arms": {
+    "Jev": {
+      "n": 7,
+      "valid_n": 7,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.000943362,
+        "known_subtotal_usd": 0.000943362,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.000943362
+      },
+      "cost_per_1000_usd": 0.134766,
+      "accuracy_including_invalid_as_wrong": 1.0,
+      "brier_valid_only": 0.03547142857142858,
+      "median_latency_s": 0.2907872079813387,
+      "latency_observed_n": 7,
+      "cache_observed_n": 0,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": null,
+      "cache_write_observed_n": 0,
+      "cache_write_tokens": null,
+      "unique_cache_read_sizes": []
+    },
+    "Luna uncached": {
+      "n": 8,
+      "valid_n": 0,
+      "invalid_n": 8,
+      "cost": {
+        "total_usd": null,
+        "known_subtotal_usd": 0,
+        "missing_n": 8,
+        "unknown_bill_allowance_usd": 0.08,
+        "budget_accounted_usd": 0.08
+      },
+      "cost_per_1000_usd": null,
+      "accuracy_including_invalid_as_wrong": 0.0,
+      "brier_valid_only": null,
+      "median_latency_s": 0.2852237919869367,
+      "latency_observed_n": 8,
+      "cache_observed_n": 0,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": null,
+      "cache_write_observed_n": 0,
+      "cache_write_tokens": null,
+      "unique_cache_read_sizes": []
+    },
+    "Luna cached": {
+      "n": 8,
+      "valid_n": 0,
+      "invalid_n": 8,
+      "cost": {
+        "total_usd": null,
+        "known_subtotal_usd": 0,
+        "missing_n": 8,
+        "unknown_bill_allowance_usd": 0.08,
+        "budget_accounted_usd": 0.08
+      },
+      "cost_per_1000_usd": null,
+      "accuracy_including_invalid_as_wrong": 0.0,
+      "brier_valid_only": null,
+      "median_latency_s": 0.3127495835069567,
+      "latency_observed_n": 8,
+      "cache_observed_n": 0,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": null,
+      "cache_write_observed_n": 0,
+      "cache_write_tokens": null,
+      "unique_cache_read_sizes": []
+    },
+    "Qwen3.8 Flash": {
+      "n": 8,
+      "valid_n": 8,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.00122916,
+        "known_subtotal_usd": 0.00122916,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.00122916
+      },
+      "cost_per_1000_usd": 0.153645,
+      "accuracy_including_invalid_as_wrong": 0.75,
+      "brier_valid_only": 0.25,
+      "median_latency_s": 1.2396894999983488,
+      "latency_observed_n": 8,
+      "cache_observed_n": 8,
+      "cache_hit_calls": 7,
+      "cache_read_tokens": 17920,
+      "cache_write_observed_n": 8,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0,
+        2560
+      ]
+    },
+    "DeepSeek V4.1 Flash": {
+      "n": 8,
+      "valid_n": 8,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.0009100616,
+        "known_subtotal_usd": 0.0009100616,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.0009100616
+      },
+      "cost_per_1000_usd": 0.1137577,
+      "accuracy_including_invalid_as_wrong": 0.625,
+      "brier_valid_only": 0.375,
+      "median_latency_s": 0.8770268750085961,
+      "latency_observed_n": 8,
+      "cache_observed_n": 8,
+      "cache_hit_calls": 7,
+      "cache_read_tokens": 18048,
+      "cache_write_observed_n": 8,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0,
+        2560,
+        2688
+      ]
+    },
+    "MiMo V2.6 Flash": {
+      "n": 7,
+      "valid_n": 7,
+      "invalid_n": 0,
+      "cost": {
+        "total_usd": 0.0007832832,
+        "known_subtotal_usd": 0.0007832832,
+        "missing_n": 0,
+        "unknown_bill_allowance_usd": 0.0,
+        "budget_accounted_usd": 0.0007832832
+      },
+      "cost_per_1000_usd": 0.1118976,
+      "accuracy_including_invalid_as_wrong": 0.5714285714285714,
+      "brier_valid_only": 0.42857142857142855,
+      "median_latency_s": 1.2660068330005743,
+      "latency_observed_n": 7,
+      "cache_observed_n": 7,
+      "cache_hit_calls": 6,
+      "cache_read_tokens": 15744,
+      "cache_write_observed_n": 7,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0,
+        2560,
+        2624,
+        2688
+      ]
+    },
+    "Hy4 Preview": {
+      "n": 8,
+      "valid_n": 7,
+      "invalid_n": 1,
+      "cost": {
+        "total_usd": null,
+        "known_subtotal_usd": 0.0086956227,
+        "missing_n": 1,
+        "unknown_bill_allowance_usd": 0.01,
+        "budget_accounted_usd": 0.0186956227
+      },
+      "cost_per_1000_usd": null,
+      "accuracy_including_invalid_as_wrong": 0.5,
+      "brier_valid_only": 0.42857142857142855,
+      "median_latency_s": 4.012585499993293,
+      "latency_observed_n": 7,
+      "cache_observed_n": 7,
+      "cache_hit_calls": 4,
+      "cache_read_tokens": null,
+      "cache_write_observed_n": 7,
+      "cache_write_tokens": null,
+      "unique_cache_read_sizes": [
+        0,
+        2496,
+        2560
+      ]
+    }
+  },
+  "blocks": [
+    {
+      "block": 0,
+      "arms": {
+        "Jev": {
+          "n": 7,
+          "valid_n": 7,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.000943362,
+            "known_subtotal_usd": 0.000943362,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.000943362
+          },
+          "cost_per_1000_usd": 0.134766,
+          "accuracy_including_invalid_as_wrong": 1.0,
+          "brier_valid_only": 0.03547142857142858,
+          "median_latency_s": 0.2907872079813387,
+          "latency_observed_n": 7,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna uncached": {
+          "n": 8,
+          "valid_n": 0,
+          "invalid_n": 8,
+          "cost": {
+            "total_usd": null,
+            "known_subtotal_usd": 0,
+            "missing_n": 8,
+            "unknown_bill_allowance_usd": 0.08,
+            "budget_accounted_usd": 0.08
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": 0.0,
+          "brier_valid_only": null,
+          "median_latency_s": 0.2852237919869367,
+          "latency_observed_n": 8,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna cached": {
+          "n": 8,
+          "valid_n": 0,
+          "invalid_n": 8,
+          "cost": {
+            "total_usd": null,
+            "known_subtotal_usd": 0,
+            "missing_n": 8,
+            "unknown_bill_allowance_usd": 0.08,
+            "budget_accounted_usd": 0.08
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": 0.0,
+          "brier_valid_only": null,
+          "median_latency_s": 0.3127495835069567,
+          "latency_observed_n": 8,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Qwen3.8 Flash": {
+          "n": 8,
+          "valid_n": 8,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.00122916,
+            "known_subtotal_usd": 0.00122916,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.00122916
+          },
+          "cost_per_1000_usd": 0.153645,
+          "accuracy_including_invalid_as_wrong": 0.75,
+          "brier_valid_only": 0.25,
+          "median_latency_s": 1.2396894999983488,
+          "latency_observed_n": 8,
+          "cache_observed_n": 8,
+          "cache_hit_calls": 7,
+          "cache_read_tokens": 17920,
+          "cache_write_observed_n": 8,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560
+          ]
+        },
+        "DeepSeek V4.1 Flash": {
+          "n": 8,
+          "valid_n": 8,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0009100616,
+            "known_subtotal_usd": 0.0009100616,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0009100616
+          },
+          "cost_per_1000_usd": 0.1137577,
+          "accuracy_including_invalid_as_wrong": 0.625,
+          "brier_valid_only": 0.375,
+          "median_latency_s": 0.8770268750085961,
+          "latency_observed_n": 8,
+          "cache_observed_n": 8,
+          "cache_hit_calls": 7,
+          "cache_read_tokens": 18048,
+          "cache_write_observed_n": 8,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2688
+          ]
+        },
+        "MiMo V2.6 Flash": {
+          "n": 7,
+          "valid_n": 7,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0.0007832832,
+            "known_subtotal_usd": 0.0007832832,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0007832832
+          },
+          "cost_per_1000_usd": 0.1118976,
+          "accuracy_including_invalid_as_wrong": 0.5714285714285714,
+          "brier_valid_only": 0.42857142857142855,
+          "median_latency_s": 1.2660068330005743,
+          "latency_observed_n": 7,
+          "cache_observed_n": 7,
+          "cache_hit_calls": 6,
+          "cache_read_tokens": 15744,
+          "cache_write_observed_n": 7,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0,
+            2560,
+            2624,
+            2688
+          ]
+        },
+        "Hy4 Preview": {
+          "n": 8,
+          "valid_n": 7,
+          "invalid_n": 1,
+          "cost": {
+            "total_usd": null,
+            "known_subtotal_usd": 0.0086956227,
+            "missing_n": 1,
+            "unknown_bill_allowance_usd": 0.01,
+            "budget_accounted_usd": 0.0186956227
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": 0.5,
+          "brier_valid_only": 0.42857142857142855,
+          "median_latency_s": 4.012585499993293,
+          "latency_observed_n": 7,
+          "cache_observed_n": 7,
+          "cache_hit_calls": 4,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 7,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": [
+            0,
+            2496,
+            2560
+          ]
+        }
+      }
+    },
+    {
+      "block": 1,
+      "arms": {
+        "Jev": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna uncached": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna cached": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Qwen3.8 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "DeepSeek V4.1 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "MiMo V2.6 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Hy4 Preview": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        }
+      }
+    },
+    {
+      "block": 2,
+      "arms": {
+        "Jev": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna uncached": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna cached": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Qwen3.8 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "DeepSeek V4.1 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "MiMo V2.6 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Hy4 Preview": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        }
+      }
+    },
+    {
+      "block": 3,
+      "arms": {
+        "Jev": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna uncached": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Luna cached": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Qwen3.8 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "DeepSeek V4.1 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "MiMo V2.6 Flash": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        },
+        "Hy4 Preview": {
+          "n": 0,
+          "valid_n": 0,
+          "invalid_n": 0,
+          "cost": {
+            "total_usd": 0,
+            "known_subtotal_usd": 0,
+            "missing_n": 0,
+            "unknown_bill_allowance_usd": 0.0,
+            "budget_accounted_usd": 0.0
+          },
+          "cost_per_1000_usd": null,
+          "accuracy_including_invalid_as_wrong": null,
+          "brier_valid_only": null,
+          "median_latency_s": null,
+          "latency_observed_n": 0,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": []
+        }
+      }
+    }
+  ],
+  "cache_verification": {
+    "Jev": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched explicit on/off control.",
+      "observed_counters": {
+        "cache_observed_n": 0,
+        "cache_hit_calls": 0,
+        "cache_read_tokens": null,
+        "cache_write_observed_n": 0,
+        "cache_write_tokens": null
+      }
+    },
+    "Luna": {
+      "status": "unverified",
+      "blocks": [
+        {
+          "block": 0,
+          "cold_prime_verified": false,
+          "all_24_cached_requests_hit": false,
+          "uncached_control_verified": false,
+          "stable_cached_prefix_token_count": false,
+          "read_size_matches_prime_write": false,
+          "prime_cost_usd": null,
+          "prime_cache_write_tokens": null,
+          "fully_verified": false
+        },
+        {
+          "block": 1,
+          "cold_prime_verified": false,
+          "all_24_cached_requests_hit": false,
+          "uncached_control_verified": false,
+          "stable_cached_prefix_token_count": false,
+          "read_size_matches_prime_write": false,
+          "prime_cost_usd": null,
+          "prime_cache_write_tokens": null,
+          "fully_verified": false
+        },
+        {
+          "block": 2,
+          "cold_prime_verified": false,
+          "all_24_cached_requests_hit": false,
+          "uncached_control_verified": false,
+          "stable_cached_prefix_token_count": false,
+          "read_size_matches_prime_write": false,
+          "prime_cost_usd": null,
+          "prime_cache_write_tokens": null,
+          "fully_verified": false
+        },
+        {
+          "block": 3,
+          "cold_prime_verified": false,
+          "all_24_cached_requests_hit": false,
+          "uncached_control_verified": false,
+          "stable_cached_prefix_token_count": false,
+          "read_size_matches_prime_write": false,
+          "prime_cost_usd": null,
+          "prime_cache_write_tokens": null,
+          "fully_verified": false
+        }
+      ],
+      "prime_count": 1,
+      "priming_cost": {
+        "total_usd": null,
+        "known_subtotal_usd": 0,
+        "missing_n": 1,
+        "unknown_bill_allowance_usd": 0.01,
+        "budget_accounted_usd": 0.01
+      },
+      "setup_inclusive_cached_cost_usd": null,
+      "setup_inclusive_cached_cost_per_1000_usd": null
+    },
+    "Qwen3.8 Flash": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched explicit on/off control.",
+      "observed_counters": {
+        "cache_observed_n": 8,
+        "cache_hit_calls": 7,
+        "cache_read_tokens": 17920,
+        "cache_write_observed_n": 8,
+        "cache_write_tokens": 0
+      }
+    },
+    "DeepSeek V4.1 Flash": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study.",
+      "observed_counters": {
+        "cache_observed_n": 8,
+        "cache_hit_calls": 7,
+        "cache_read_tokens": 18048,
+        "cache_write_observed_n": 8,
+        "cache_write_tokens": 0
+      }
+    },
+    "MiMo V2.6 Flash": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study.",
+      "observed_counters": {
+        "cache_observed_n": 7,
+        "cache_hit_calls": 6,
+        "cache_read_tokens": 15744,
+        "cache_write_observed_n": 7,
+        "cache_write_tokens": 0
+      }
+    },
+    "Hy4 Preview": {
+      "status": "unsupported",
+      "cache_state": "uncontrolled",
+      "reason": "No verified matched OpenRouter cache-enable/cache-disable treatment for this provider in this study.",
+      "observed_counters": {
+        "cache_observed_n": 7,
+        "cache_hit_calls": 4,
+        "cache_read_tokens": null,
+        "cache_write_observed_n": 7,
+        "cache_write_tokens": null
+      }
+    }
+  },
+  "all_attempt_cost": {
+    "total_usd": null,
+    "known_subtotal_usd": 0.0125614895,
+    "missing_n": 18,
+    "unknown_bill_allowance_usd": 0.18,
+    "budget_accounted_usd": 0.1925614895
+  },
+  "definitions": {
+    "accuracy": "Probability >=0.5 means yes. Every invalid attempt counts as incorrect.",
+    "cost_per_1000": "Observed mean billed cost projected to 1,000 decisions at the measured request mix.",
+    "setup_inclusive": "Four distinct prime charges plus measured cached charges, divided across 96 measured decisions.",
+    "baseline": "Unsupported cache control means one baseline arm with uncontrolled cache state. Observed counters are reported; it is not an uncached treatment.",
+    "blocks": "Four sequential blocks from one session, each with the original 24 cases and a new common prefix nonce. They are not independent days.",
+    "billing": "Missing charges remain unknown. Each unknown attempt consumes a separate $0.01 allowance for the local budget guard; that allowance is not a reported price."
+  }
+}

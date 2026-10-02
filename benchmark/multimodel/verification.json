@@ -1,0 +1,1769 @@
+{
+  "generated_at_utc": "2026-10-02T18:18:01.728839+00:00",
+  "passed": true,
+  "status": "passed",
+  "models": [
+    "Jev",
+    "Luna",
+    "Qwen3.8 Flash",
+    "DeepSeek V4.1 Flash",
+    "MiMo V2.6 Flash",
+    "Hy4 Preview"
+  ],
+  "scope": "Reused Jev/Luna quality, added-model quality, common new timing, common new cache, all supplied setup/recovery probes, and separately audited supplementary aborted-cache closures. Supplementary rows contribute only to the ledger, never primary estimates. Earlier historical timing/cache protocols are documented in their original audits.",
+  "input_paths": {
+    "quality": [
+      "benchmark/expanded/runs/quality-20261002T093341Z",
+      "benchmark/multimodel/runs/quality-20261002T155349573021Z",
+      "benchmark/multimodel/runs/quality-20261002T160544592288Z"
+    ],
+    "timing": "benchmark/multimodel/runs/timing-20261002T170524992994Z",
+    "cache": "benchmark/multimodel/runs/cache-20261002T175446Z",
+    "probes": [
+      "benchmark/multimodel/runs/probes-20261002T154531Z",
+      "benchmark/multimodel/runs/probes-20261002T160145Z",
+      "benchmark/multimodel/runs/probes-20261002T160424Z",
+      "benchmark/multimodel/runs/probes-recovery-20261002T164150404672Z",
+      "benchmark/multimodel/runs/probes-recovery-20261002T165108634637Z"
+    ],
+    "supplementary_aborted_cache": [
+      "benchmark/multimodel/runs/cache-20261002T174228Z"
+    ]
+  },
+  "checks": {
+    "all_input_sources_distinct": true,
+    "all_primary_sources_exist": true,
+    "all_primary_runs_complete": true,
+    "quality_timing_cache_audits_pass": true,
+    "all_probe_audits_pass": true,
+    "all_aborted_cache_closures_pass": true,
+    "selected_configurations_match": true,
+    "all_linked_recovery_probes_in_ledger": true,
+    "all_inputs_unchanged_during_audit": true
+  },
+  "errors": [],
+  "verification_code_sha256": "fd0c7ccacfa0636dc274bee44e9580fdf7a15e7f1db3da601f8c43dc9e9dec9e",
+  "selection_sha256": "cad30987db1160b9259b8bf11e7b88b8d126e642c183857a83d7688ef12cb9c4",
+  "analysis_spec_sha256": "e9adf0af72ba995d759f21e776e7f3d892e31fdcc51bee24606818322cde9054",
+  "generic_verifier_sha256": "742192c33af3836c3724f0ea60c2ceda140b35d775ff40d01a980e4d39ce4a0a",
+  "evidence_before": {
+    "benchmark/expanded/runs/quality-20261002T093341Z": {
+      "metadata.json": {
+        "bytes": 2858,
+        "sha256": "7d2e066a6ea4d62c7daf7f10145cc1ae27c536d384e4209a704e221df7120ed7"
+      },
+      "plan.json": {
+        "bytes": 554057,
+        "sha256": "4a9deec659f08d1698e150b41b0b32ad01f55dde55c2c93fc4e288ef89a67c36"
+      },
+      "responses.jsonl": {
+        "bytes": 27893199,
+        "sha256": "c508f6173a27bed9834a294329414cf499bdc078381eb3f41e4d66c08f9f3f8b"
+      }
+    },
+    "benchmark/multimodel/runs/quality-20261002T155349573021Z": {
+      "attempts.jsonl": {
+        "bytes": 730995,
+        "sha256": "595f028be707ecd9b1b9451ef9b8eceebea0aa1d75bdf6d606ec60eedcc99f22"
+      },
+      "metadata.json": {
+        "bytes": 10837,
+        "sha256": "25a1ba71ec635eecfce2855c2370f615a8edbf9c65dd7c0aa9a71305576d6a72"
+      },
+      "plan.json": {
+        "bytes": 1342472,
+        "sha256": "b6f47e7d5913a3be6c34e0ac8b59ee7e8e70953907a53a002818286c6887327f"
+      },
+      "requests.jsonl": {
+        "bytes": 9149297,
+        "sha256": "eca30790f8e18d580b19662c3d61cee27f4f8de6db4a3c3b8ba31e45a4b23911"
+      },
+      "responses.jsonl": {
+        "bytes": 18961625,
+        "sha256": "a0bc839aaf80fb359b48e808962f21249bde21ef00d058ce163a6bab6ca750b6"
+      }
+    },
+    "benchmark/multimodel/runs/quality-20261002T160544592288Z": {
+      "attempts.jsonl": {
+        "bytes": 2199560,
+        "sha256": "36eaaed33c2db8cb4f79dc0cb77536d34e382d6e7e3bf17cb08e2d890dd62670"
+      },
+      "metadata.json": {
+        "bytes": 4800,
+        "sha256": "6de40eac4355fa3e886db0837bfd6e89719089415338882799bce1bdcba76720"
+      },
+      "plan.json": {
+        "bytes": 4062697,
+        "sha256": "7beaa575ad9b58776da1be18e8c5a451d0a5199990f61b3f593bb65607fb06a8"
+      },
+      "requests.jsonl": {
+        "bytes": 27588446,
+        "sha256": "edbb6e6de3f59b7b5dceb81479a683f923a28351bdf93624fcd1c01e475a11ce"
+      },
+      "responses.jsonl": {
+        "bytes": 56934981,
+        "sha256": "9b949a90dcc900c2228ef035987ae306a858c138eab153eb7cf4bb6056357a22"
+      }
+    },
+    "benchmark/multimodel/runs/timing-20261002T170524992994Z": {
+      "attempts.jsonl": {
+        "bytes": 169638,
+        "sha256": "a3139a5882c83a2e865ad8eed7dc73f10c0e1dc7e985fc1c5595855bb656c5c6"
+      },
+      "metadata.json": {
+        "bytes": 6586,
+        "sha256": "d953c8c6de2de950108e81b4a5c48eeeea9f3df85ae8841099732bf3bdf2801d"
+      },
+      "plan.json": {
+        "bytes": 310868,
+        "sha256": "7298f8c79b0bd68c33c10a08bcfc62b93c2f80dd35e3deb705e0edb7117da0da"
+      },
+      "requests.jsonl": {
+        "bytes": 1864317,
+        "sha256": "93cecde0a629648ce8629eee54004482ba45df6f149c0676f50e2ffc857a3318"
+      },
+      "responses.jsonl": {
+        "bytes": 3928820,
+        "sha256": "7119428ee08d80ac620681f9a9bde1a5da76ffbe003df500b1ca0b968248fd78"
+      }
+    },
+    "benchmark/multimodel/runs/cache-20261002T175446Z": {
+      "cases.jsonl": {
+        "bytes": 1405194,
+        "sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c"
+      },
+      "dispatches.jsonl": {
+        "bytes": 161482,
+        "sha256": "c234b5896b2b6e3291dc87fa2101e4069e993b12b02d7b06ff0aa67305b8fdbd"
+      },
+      "metadata.json": {
+        "bytes": 6894,
+        "sha256": "85102a217b3a975b101caac932f2cfe0a5d5636e5948ccbd25202c60cdf58abf"
+      },
+      "plan.json": {
+        "bytes": 439037,
+        "sha256": "239e42d0dfac906c1ad9af20e3c1c24b66f2d6a58d961f337e356152879a4bda"
+      },
+      "primes.json": {
+        "bytes": 58426,
+        "sha256": "ae3bf5c3e3ae9e64e2675a1a45ef70b613631e61788179cbd521b4b7314e8ad9"
+      },
+      "responses.jsonl": {
+        "bytes": 12043192,
+        "sha256": "df69dc65a48ec7f87721c187ad5470c51eeec40ae6ab5b928c597d6a0adf125f"
+      },
+      "rulebook.txt": {
+        "bytes": 12745,
+        "sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b"
+      }
+    },
+    "benchmark/multimodel/runs/probes-20261002T154531Z": {
+      "metadata.json": {
+        "bytes": 644,
+        "sha256": "8c73186ddc222ca59ada9a37b190c6f8f6f75ad43edcc55ead0c7f82db71939b"
+      },
+      "responses.jsonl": {
+        "bytes": 6780,
+        "sha256": "179e508f0bcfd11a8d2008456ea0c2cfbecd9fd09f787970cabceef1f8ccc968"
+      }
+    },
+    "benchmark/multimodel/runs/probes-20261002T160145Z": {
+      "metadata.json": {
+        "bytes": 2068,
+        "sha256": "458599aedda7ad3864a6683cd0c236506381024a61743dbee77f96ec98af1895"
+      },
+      "responses.jsonl": {
+        "bytes": 20223,
+        "sha256": "063603c9491de948a17b754e2dc23e6514e7946f23b537064ebbe93a2c4d8874"
+      }
+    },
+    "benchmark/multimodel/runs/probes-20261002T160424Z": {
+      "metadata.json": {
+        "bytes": 2512,
+        "sha256": "1365b59941d21e537a3ea6451ca5e074a082c5e96eaf91b060c963e14892d399"
+      },
+      "responses.jsonl": {
+        "bytes": 20577,
+        "sha256": "793022b33fc0a54d81809cca39895df50716cb2809fda8a445b13daecc98ea00"
+      }
+    },
+    "benchmark/multimodel/runs/probes-recovery-20261002T164150404672Z": {
+      "attempts.jsonl": {
+        "bytes": 300,
+        "sha256": "c92616bae313e9b28f9253aa8bfc8f02e915846265138449aab755bc33404f38"
+      },
+      "cases.jsonl": {
+        "bytes": 697,
+        "sha256": "685bc3111777dbe79d6f8ddf404ecf5f76c72baf019d0bd14a38ea9b13822b73"
+      },
+      "metadata.json": {
+        "bytes": 1366,
+        "sha256": "475aded7d7780cd50c78b7a51090d24b094740d75fc7efc3e4ea8a13123389d9"
+      },
+      "responses.jsonl": {
+        "bytes": 6710,
+        "sha256": "98520092d6e82cf7f749ef2501234b0439b92c68e86e7ebb5cd06deb490d3f01"
+      }
+    },
+    "benchmark/multimodel/runs/probes-recovery-20261002T165108634637Z": {
+      "attempts.jsonl": {
+        "bytes": 300,
+        "sha256": "cee6a0f8cd3458ea2422a66c9c95969430ee1de580c42347c28a6c847e8815e3"
+      },
+      "cases.jsonl": {
+        "bytes": 697,
+        "sha256": "a82e8742b59c1b7933a6c100846b286454d8d02db6488213c966e30780f902b5"
+      },
+      "metadata.json": {
+        "bytes": 1414,
+        "sha256": "7d8c5eaf1814ed3e036af55ef9de03b68b2e44555f4344647d1a3959e8ce2cdd"
+      },
+      "responses.jsonl": {
+        "bytes": 6708,
+        "sha256": "f700c9a0a128f179aa1ea542f012a912c40af8f7d1d7dc6276628401c10c1d4f"
+      }
+    },
+    "benchmark/multimodel/runs/cache-20261002T174228Z": {
+      "aborted-session-audit.json": {
+        "bytes": 1268,
+        "sha256": "592edf4cd641a986538c559b28c370c3a2848f17cc846ef8bf7438633933cf6f"
+      },
+      "cases.jsonl": {
+        "bytes": 1405194,
+        "sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c"
+      },
+      "close_aborted_cache.py": {
+        "bytes": 4090,
+        "sha256": "860c87da1337724cea73ec8b541b5f8a9cef9413775a1060857dbba3acbd1e01"
+      },
+      "dispatches.jsonl": {
+        "bytes": 13074,
+        "sha256": "fcc5b9336e346153234f9bcfa49f4d1c26fa58deef86dd307893c50f7835703b"
+      },
+      "metadata.json": {
+        "bytes": 6236,
+        "sha256": "ac13d30de5e9f48861b2059ab32cf94e8af7889b809e95b353f07d6bb6fec676"
+      },
+      "plan.json": {
+        "bytes": 452557,
+        "sha256": "8356d29841cab994b3ca934229fb712b38f66d74db8a082038ea9efdc82b3c46"
+      },
+      "primes.json": {
+        "bytes": 58426,
+        "sha256": "ae3bf5c3e3ae9e64e2675a1a45ef70b613631e61788179cbd521b4b7314e8ad9"
+      },
+      "responses.jsonl": {
+        "bytes": 965564,
+        "sha256": "860144b4940c12f2c10c34f31689227859a4490dd1128ae536cf1d4ad1c604bf"
+      },
+      "rulebook.txt": {
+        "bytes": 12745,
+        "sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b"
+      }
+    }
+  },
+  "study": {
+    "generated_at_utc": "2026-10-02T18:18:01.811973+00:00",
+    "quality": [
+      {
+        "passed": true,
+        "checks": {
+          "run_completed": true,
+          "frozen_cases_hash": true,
+          "initial_runner_hash": true,
+          "current_shared_adapter_hash": true,
+          "frozen_random_plan_reproduces": true,
+          "all_expected_identities_exactly_once": true,
+          "metadata_counts_match": true,
+          "all_requests_responses_and_targets_match": true,
+          "amendment_1_original_prefix_unchanged": true,
+          "amendment_1_snapshot_hash": true,
+          "amendment_1_continuation_code_hash": true,
+          "amendment_1_initial_code_matches": true,
+          "amendment_1_frozen_plan_hash": true,
+          "amendment_1_attempt_count_and_no_replays": true,
+          "missing_bills_not_imputed": true,
+          "metadata_total_billing_semantics": true,
+          "known_billed_subtotal_reconciles": true,
+          "unknown_bill_count_reconciles": true,
+          "allowance_is_separate_from_reported_bill": true
+        },
+        "issues": {},
+        "attempts": 9570,
+        "valid": 9569,
+        "invalid": 1,
+        "failed_attempts": [
+          {
+            "case_id": "expanded-probability-0075",
+            "model": "Jev",
+            "http_status": 520,
+            "cost_usd": null,
+            "error": "ValueError: HTTP/API error: {\"error\": {\"message\": \"HTTP 520: error code: 520\\n\", \"code\": 520}}"
+          }
+        ],
+        "billing": {
+          "known_billed_usd": 0.28895565,
+          "missing_bills": 1,
+          "total_billed_usd": null
+        },
+        "raw_sha256": "c508f6173a27bed9834a294329414cf499bdc078381eb3f41e4d66c08f9f3f8b",
+        "plan_sha256": "4a9deec659f08d1698e150b41b0b32ad01f55dde55c2c93fc4e288ef89a67c36",
+        "case_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+        "valid_model_provider_counts": {
+          "('typesafe/jev-1.13-20260917', 'TypeSafe')": 4784,
+          "('openai/gpt-6-luna', 'OpenAI')": 4785
+        },
+        "observed_usage_statistics": {
+          "Jev": {
+            "valid_calls": 4784,
+            "reported_output_tokens": {
+              "observed": 4784,
+              "min": 20,
+              "max": 20,
+              "mean": 20.0,
+              "total": 95680.0
+            },
+            "reported_output_token_source_fields": {
+              "output_tokens": 4784
+            },
+            "reported_input_tokens": {
+              "observed": 4784,
+              "min": 343,
+              "max": 1598,
+              "mean": 445.66785117056855,
+              "total": 2132075.0
+            },
+            "reported_reasoning_tokens": {
+              "observed": 0,
+              "min": null,
+              "max": null,
+              "mean": null,
+              "total": null
+            },
+            "luna_requested_output_ceiling": null
+          },
+          "Luna": {
+            "valid_calls": 4785,
+            "reported_output_tokens": {
+              "observed": 4785,
+              "min": 20,
+              "max": 28,
+              "mean": 20.69299895506792,
+              "total": 99016.0
+            },
+            "reported_output_token_source_fields": {
+              "completion_tokens": 4785
+            },
+            "reported_input_tokens": {
+              "observed": 4785,
+              "min": 218,
+              "max": 1340,
+              "mean": 313.2716823406479,
+              "total": 1499005.0
+            },
+            "reported_reasoning_tokens": {
+              "observed": 4785,
+              "min": 0,
+              "max": 0,
+              "mean": 0.0,
+              "total": 0.0
+            },
+            "luna_requested_output_ceiling": 128
+          }
+        },
+        "scientific_note": "Failed attempts remain in primary success/accuracy denominators; unknown bills remain unknown. Concurrent quality latency is diagnostic only.",
+        "run_dir": "benchmark/expanded/runs/quality-20261002T093341Z"
+      },
+      {
+        "passed": true,
+        "checks": {
+          "completed": true,
+          "unique_frozen_case_ids": true,
+          "frozen_cases_hash": true,
+          "expected_models_present": true,
+          "frozen_source_code_hashes": true,
+          "plan_count": true,
+          "plan_sha256": true,
+          "seeded_plan_reproduces": true,
+          "unique_attempt_identities": true,
+          "every_record_matches_contract_and_source": true,
+          "complete_quality_cross_product": true,
+          "attempts.jsonl_unique_dispatches": true,
+          "attempts.jsonl_frozen_request_hashes": true,
+          "saved_exact_requests_hash": true,
+          "saved_responses_sha256": true,
+          "saved_attempts_sha256": true,
+          "metadata_billing_complete_or_unknown": true,
+          "named_source_hashes_match": true,
+          "current_code_matches_saved_snapshot": true,
+          "prospective_continuation_evidence_preserved": true
+        },
+        "issues": [],
+        "issue_count": 0,
+        "run_dir": "benchmark/multimodel/runs/quality-20261002T155349573021Z",
+        "raw_sha256": "a0bc839aaf80fb359b48e808962f21249bde21ef00d058ce163a6bab6ca750b6",
+        "case_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+        "attempts": 4785,
+        "valid": 4671,
+        "cost": {
+          "requests": 4785,
+          "known_billed_usd": 0.228254452,
+          "observed_bills": 4671,
+          "missing_bills": 114,
+          "total_billed_usd": null,
+          "usd_per_1000_attempts": null
+        },
+        "observed_usage": {
+          "Qwen3.8 Flash": {
+            "valid_calls": 4671,
+            "output_tokens": {
+              "observed": 4671,
+              "min": 11,
+              "max": 27,
+              "total": 74005
+            },
+            "reasoning_counter_observed": 4671,
+            "reasoning_counter_unknown": 0,
+            "reasoning_tokens_reported_total": 0,
+            "visible_reasoning_calls": 0,
+            "cache_read_counter_observed": 4671,
+            "cache_write_counter_observed": 4671
+          }
+        },
+        "exact_payload_factory_supplied": true,
+        "seeded_plan_factory_supplied": true,
+        "limitations": [
+          "Missing reasoning/cache counters are unobserved, not verified zero. Without factories, quality/timing source content and contracts are checked, but complete payload and seeded plan regeneration are not established."
+        ],
+        "continuation_audit": {
+          "passed": true,
+          "checks": {
+            "amendment_1_metadata_snapshot_hash": true,
+            "amendment_1_safe_continuation_filename": true,
+            "amendment_1_wrapper_hash": true,
+            "amendment_1_saved_amendment_matches_metadata": true,
+            "amendment_1_frozen_configuration": true,
+            "amendment_1_responses.jsonl_preserved_prefix": true,
+            "amendment_1_attempts.jsonl_preserved_prefix": true,
+            "amendment_1_plan.json_preserved_prefix": true,
+            "amendment_1_plan.json_unchanged": true,
+            "amendment_1_requests.jsonl_preserved_prefix": true,
+            "amendment_1_requests.jsonl_unchanged": true,
+            "amendment_1_original_counts": true,
+            "amendment_1_retained_cumulative_invalid_rate": true,
+            "amendment_1_no_original_identity_retried": true,
+            "amendment_1_probe_is_separate": true,
+            "amendment_1_probe_metadata_hash": true,
+            "amendment_1_probe_continuation_file": true,
+            "amendment_1_probe_outcome_hash": true,
+            "amendment_1_probe_dispatches_unique_retained": true,
+            "amendment_1_probe_count_matches": true,
+            "amendment_1_recovery_result_consistent": true,
+            "amendment_1_probe_0_request_journal": true,
+            "amendment_1_probe_0_frozen_identity": true,
+            "amendment_1_probe_0_exact_payload": true,
+            "amendment_1_probe_0_billing_readback": true,
+            "amendment_1_probe_0_valid_observed_zero_reasoning": true,
+            "amendment_1_probe_0_strict_noul_answer": true,
+            "amendment_1_probe_1_request_journal": true,
+            "amendment_1_probe_1_frozen_identity": true,
+            "amendment_1_probe_1_exact_payload": true,
+            "amendment_1_probe_1_billing_readback": true,
+            "amendment_1_probe_1_valid_observed_zero_reasoning": true,
+            "amendment_1_probe_1_strict_noul_answer": true,
+            "amendment_1_probe_billing_complete_or_unknown": true,
+            "amendment_1_probe_budget_retained": true,
+            "amendment_1_earlier_probe_budget_retained": true,
+            "amendment_1_only_historical_circuit_rearmed": true,
+            "amendment_1_original_unknown_guard_retained": true,
+            "amendment_2_metadata_snapshot_hash": true,
+            "amendment_2_safe_continuation_filename": true,
+            "amendment_2_wrapper_hash": true,
+            "amendment_2_saved_amendment_matches_metadata": true,
+            "amendment_2_frozen_configuration": true,
+            "amendment_2_responses.jsonl_preserved_prefix": true,
+            "amendment_2_attempts.jsonl_preserved_prefix": true,
+            "amendment_2_plan.json_preserved_prefix": true,
+            "amendment_2_plan.json_unchanged": true,
+            "amendment_2_requests.jsonl_preserved_prefix": true,
+            "amendment_2_requests.jsonl_unchanged": true,
+            "amendment_2_original_counts": true,
+            "amendment_2_retained_cumulative_invalid_rate": true,
+            "amendment_2_no_original_identity_retried": true,
+            "amendment_2_probe_is_separate": true,
+            "amendment_2_probe_metadata_hash": true,
+            "amendment_2_probe_continuation_file": true,
+            "amendment_2_probe_outcome_hash": true,
+            "amendment_2_probe_dispatches_unique_retained": true,
+            "amendment_2_probe_count_matches": true,
+            "amendment_2_recovery_result_consistent": true,
+            "amendment_2_probe_0_request_journal": true,
+            "amendment_2_probe_0_frozen_identity": true,
+            "amendment_2_probe_0_exact_payload": true,
+            "amendment_2_probe_0_billing_readback": true,
+            "amendment_2_probe_0_valid_observed_zero_reasoning": true,
+            "amendment_2_probe_0_strict_noul_answer": true,
+            "amendment_2_probe_1_request_journal": true,
+            "amendment_2_probe_1_frozen_identity": true,
+            "amendment_2_probe_1_exact_payload": true,
+            "amendment_2_probe_1_billing_readback": true,
+            "amendment_2_probe_1_valid_observed_zero_reasoning": true,
+            "amendment_2_probe_1_strict_noul_answer": true,
+            "amendment_2_probe_billing_complete_or_unknown": true,
+            "amendment_2_probe_budget_retained": true,
+            "amendment_2_earlier_probe_budget_retained": true,
+            "amendment_2_only_historical_circuit_rearmed": true,
+            "amendment_2_original_unknown_guard_retained": true,
+            "amendment_2_paced_first_unattempted_sequence": true,
+            "amendment_2_paced_window_bounds": true,
+            "amendment_2_paced_amendment_fields": true,
+            "amendment_2_paced_run_metadata": true,
+            "amendment_2_paced_new_quality_row_fields": true,
+            "amendment_2_paced_runtime_ceiling": true,
+            "amendment_2_paced_rows_and_dispatches_match": true,
+            "amendment_2_observed_dispatch_spacing_at_least_0_25s": true,
+            "quality_budget_excludes_all_linked_probe_charges": true
+          },
+          "issues": [],
+          "amendments": [
+            {
+              "id": "20261002T164150404672Z",
+              "status": "continuation_stopped",
+              "continuation_file": "continuation.py",
+              "original_attempts": 3019,
+              "original_invalid": 47,
+              "recovery_calls": 2,
+              "recovery_budget_accounted_usd": 6.534e-05,
+              "paced_evidence": null
+            },
+            {
+              "id": "20261002T165108634637Z",
+              "status": "completed",
+              "continuation_file": "continuation_paced.py",
+              "original_attempts": 3651,
+              "original_invalid": 71,
+              "recovery_calls": 2,
+              "recovery_budget_accounted_usd": 6.581e-05,
+              "paced_evidence": {
+                "new_quality_rows": 1134,
+                "observed_minimum_dispatch_gap_s": 0.2501969337463379,
+                "saved_timestamp_tolerance_s": 0.001
+              }
+            }
+          ],
+          "linked_recovery_budget_accounted_usd": 0.00013115,
+          "limitations": [
+            "Successful serial probes establish momentary service response; they do not establish sustained provider capacity. Pacing checks compare declared executor limits and recorded dispatch spacing; they do not measure upstream internal concurrency. Original invalid quality outcomes remain in their original denominators."
+          ]
+        }
+      },
+      {
+        "passed": true,
+        "checks": {
+          "completed": true,
+          "unique_frozen_case_ids": true,
+          "frozen_cases_hash": true,
+          "expected_models_present": true,
+          "frozen_source_code_hashes": true,
+          "plan_count": true,
+          "plan_sha256": true,
+          "seeded_plan_reproduces": true,
+          "unique_attempt_identities": true,
+          "every_record_matches_contract_and_source": true,
+          "complete_quality_cross_product": true,
+          "attempts.jsonl_unique_dispatches": true,
+          "attempts.jsonl_frozen_request_hashes": true,
+          "saved_exact_requests_hash": true,
+          "saved_responses_sha256": true,
+          "saved_attempts_sha256": true,
+          "metadata_billing_complete_or_unknown": true,
+          "named_source_hashes_match": true,
+          "current_code_matches_saved_snapshot": true
+        },
+        "issues": [],
+        "issue_count": 0,
+        "run_dir": "benchmark/multimodel/runs/quality-20261002T160544592288Z",
+        "raw_sha256": "9b949a90dcc900c2228ef035987ae306a858c138eab153eb7cf4bb6056357a22",
+        "case_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+        "attempts": 14355,
+        "valid": 14351,
+        "cost": {
+          "requests": 14355,
+          "known_billed_usd": 1.3245464012,
+          "observed_bills": 14351,
+          "missing_bills": 4,
+          "total_billed_usd": null,
+          "usd_per_1000_attempts": null
+        },
+        "observed_usage": {
+          "DeepSeek V4.1 Flash": {
+            "valid_calls": 4785,
+            "output_tokens": {
+              "observed": 4785,
+              "min": 12,
+              "max": 21,
+              "total": 71528
+            },
+            "reasoning_counter_observed": 4785,
+            "reasoning_counter_unknown": 0,
+            "reasoning_tokens_reported_total": 0,
+            "visible_reasoning_calls": 0,
+            "cache_read_counter_observed": 4785,
+            "cache_write_counter_observed": 4785
+          },
+          "Hy4 Preview": {
+            "valid_calls": 4781,
+            "output_tokens": {
+              "observed": 4781,
+              "min": 12,
+              "max": 19,
+              "total": 76770
+            },
+            "reasoning_counter_observed": 4781,
+            "reasoning_counter_unknown": 0,
+            "reasoning_tokens_reported_total": 0,
+            "visible_reasoning_calls": 0,
+            "cache_read_counter_observed": 4781,
+            "cache_write_counter_observed": 4781
+          },
+          "MiMo V2.6 Flash": {
+            "valid_calls": 4785,
+            "output_tokens": {
+              "observed": 4785,
+              "min": 12,
+              "max": 23,
+              "total": 81649
+            },
+            "reasoning_counter_observed": 4785,
+            "reasoning_counter_unknown": 0,
+            "reasoning_tokens_reported_total": 0,
+            "visible_reasoning_calls": 0,
+            "cache_read_counter_observed": 4785,
+            "cache_write_counter_observed": 4785
+          }
+        },
+        "exact_payload_factory_supplied": true,
+        "seeded_plan_factory_supplied": true,
+        "limitations": [
+          "Missing reasoning/cache counters are unobserved, not verified zero. Without factories, quality/timing source content and contracts are checked, but complete payload and seeded plan regeneration are not established."
+        ]
+      }
+    ],
+    "timing": {
+      "passed": true,
+      "checks": {
+        "completed": true,
+        "unique_frozen_case_ids": true,
+        "frozen_cases_hash": true,
+        "expected_models_present": true,
+        "frozen_source_code_hashes": true,
+        "plan_count": true,
+        "plan_sha256": true,
+        "seeded_plan_reproduces": true,
+        "unique_attempt_identities": true,
+        "every_record_matches_contract_and_source": true,
+        "complete_timing_cross_product": true,
+        "serial_timing_concurrency": true,
+        "attempts.jsonl_unique_dispatches": true,
+        "attempts.jsonl_frozen_request_hashes": true,
+        "saved_exact_requests_hash": true,
+        "saved_responses_sha256": true,
+        "saved_attempts_sha256": true,
+        "metadata_billing_complete_or_unknown": true,
+        "named_source_hashes_match": true,
+        "current_code_matches_saved_snapshot": true
+      },
+      "issues": [],
+      "issue_count": 0,
+      "run_dir": "benchmark/multimodel/runs/timing-20261002T170524992994Z",
+      "raw_sha256": "7119428ee08d80ac620681f9a9bde1a5da76ffbe003df500b1ca0b968248fd78",
+      "case_sha256": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8",
+      "attempts": 1116,
+      "valid": 1116,
+      "cost": {
+        "requests": 1116,
+        "known_billed_usd": 0.0549220258,
+        "observed_bills": 1116,
+        "missing_bills": 0,
+        "total_billed_usd": 0.0549220258,
+        "usd_per_1000_attempts": 0.04921328476702509
+      },
+      "observed_usage": {
+        "Jev": {
+          "valid_calls": 186,
+          "output_tokens": {
+            "observed": 186,
+            "min": 20,
+            "max": 20,
+            "total": 3720
+          },
+          "reasoning_counter_observed": 0,
+          "reasoning_counter_unknown": 186,
+          "reasoning_tokens_reported_total": null,
+          "visible_reasoning_calls": 0,
+          "cache_read_counter_observed": 0,
+          "cache_write_counter_observed": 0
+        },
+        "Qwen3.8 Flash": {
+          "valid_calls": 186,
+          "output_tokens": {
+            "observed": 186,
+            "min": 11,
+            "max": 21,
+            "total": 2967
+          },
+          "reasoning_counter_observed": 186,
+          "reasoning_counter_unknown": 0,
+          "reasoning_tokens_reported_total": 0,
+          "visible_reasoning_calls": 0,
+          "cache_read_counter_observed": 186,
+          "cache_write_counter_observed": 186
+        },
+        "MiMo V2.6 Flash": {
+          "valid_calls": 186,
+          "output_tokens": {
+            "observed": 186,
+            "min": 13,
+            "max": 23,
+            "total": 3175
+          },
+          "reasoning_counter_observed": 186,
+          "reasoning_counter_unknown": 0,
+          "reasoning_tokens_reported_total": 0,
+          "visible_reasoning_calls": 0,
+          "cache_read_counter_observed": 186,
+          "cache_write_counter_observed": 186
+        },
+        "DeepSeek V4.1 Flash": {
+          "valid_calls": 186,
+          "output_tokens": {
+            "observed": 186,
+            "min": 12,
+            "max": 18,
+            "total": 2773
+          },
+          "reasoning_counter_observed": 186,
+          "reasoning_counter_unknown": 0,
+          "reasoning_tokens_reported_total": 0,
+          "visible_reasoning_calls": 0,
+          "cache_read_counter_observed": 186,
+          "cache_write_counter_observed": 186
+        },
+        "Luna": {
+          "valid_calls": 186,
+          "output_tokens": {
+            "observed": 186,
+            "min": 20,
+            "max": 27,
+            "total": 3900
+          },
+          "reasoning_counter_observed": 186,
+          "reasoning_counter_unknown": 0,
+          "reasoning_tokens_reported_total": 0,
+          "visible_reasoning_calls": 0,
+          "cache_read_counter_observed": 186,
+          "cache_write_counter_observed": 186
+        },
+        "Hy4 Preview": {
+          "valid_calls": 186,
+          "output_tokens": {
+            "observed": 186,
+            "min": 12,
+            "max": 18,
+            "total": 2990
+          },
+          "reasoning_counter_observed": 186,
+          "reasoning_counter_unknown": 0,
+          "reasoning_tokens_reported_total": 0,
+          "visible_reasoning_calls": 0,
+          "cache_read_counter_observed": 186,
+          "cache_write_counter_observed": 186
+        }
+      },
+      "exact_payload_factory_supplied": true,
+      "seeded_plan_factory_supplied": true,
+      "limitations": [
+        "Missing reasoning/cache counters are unobserved, not verified zero. Without factories, quality/timing source content and contracts are checked, but complete payload and seeded plan regeneration are not established."
+      ]
+    },
+    "cache": [
+      {
+        "passed": true,
+        "checks": {
+          "completed_run": true,
+          "frozen_96_cases_bytes": true,
+          "frozen_rulebook_bytes": true,
+          "reference_source_hashes": true,
+          "protocol_code_hash": true,
+          "saved_plan_hash": true,
+          "seeded_plan_and_all_requests_reproduce": true,
+          "four_distinct_new_prefixes": true,
+          "complete_measured_case_arm_cross_product": true,
+          "one_prime_per_controlled_model_per_block": true,
+          "all_attempts_count": true,
+          "ordered_sequences": true,
+          "dispatch_count_and_order": true,
+          "no_unresolved_dispatches": true,
+          "no_automatic_retries": true,
+          "all_four_blocks_completed": true,
+          "saved_prime_case_definitions": true,
+          "metadata_actual_bill_complete_or_unknown": true,
+          "metadata_known_bill_subtotal": true,
+          "metadata_unknown_bill_count": true,
+          "metadata_budget_allowance": true,
+          "metadata_budget_accounted": true,
+          "every_response_matches_source_and_contract": true,
+          "every_controlled_cache_treatment_verified": true
+        },
+        "issue_count": 0,
+        "issues": [],
+        "attempts": 676,
+        "measured_attempts": 672,
+        "prime_attempts": 4,
+        "expected_measured_attempts": 672,
+        "expected_prime_attempts": 4,
+        "valid": 676,
+        "cache_treatment": {
+          "Jev": {
+            "status": "unsupported",
+            "cache_state": "uncontrolled",
+            "calls": 96,
+            "observed_read_counters": 0,
+            "positive_read_calls": 0,
+            "observed_write_counters": 0
+          },
+          "Luna": {
+            "status": "verified",
+            "blocks": [
+              {
+                "block": 0,
+                "checks": {
+                  "one_valid_cold_prime": true,
+                  "all_24_cached_reads_observed_positive": true,
+                  "all_24_cached_writes_observed_zero": true,
+                  "all_24_uncached_reads_and_writes_observed_zero": true,
+                  "stable_prefix_read_size_matches_prime_write": true
+                },
+                "passed": true,
+                "prime_write_tokens": 2569,
+                "read_sizes": [
+                  2569
+                ]
+              },
+              {
+                "block": 1,
+                "checks": {
+                  "one_valid_cold_prime": true,
+                  "all_24_cached_reads_observed_positive": true,
+                  "all_24_cached_writes_observed_zero": true,
+                  "all_24_uncached_reads_and_writes_observed_zero": true,
+                  "stable_prefix_read_size_matches_prime_write": true
+                },
+                "passed": true,
+                "prime_write_tokens": 2572,
+                "read_sizes": [
+                  2572
+                ]
+              },
+              {
+                "block": 2,
+                "checks": {
+                  "one_valid_cold_prime": true,
+                  "all_24_cached_reads_observed_positive": true,
+                  "all_24_cached_writes_observed_zero": true,
+                  "all_24_uncached_reads_and_writes_observed_zero": true,
+                  "stable_prefix_read_size_matches_prime_write": true
+                },
+                "passed": true,
+                "prime_write_tokens": 2573,
+                "read_sizes": [
+                  2573
+                ]
+              },
+              {
+                "block": 3,
+                "checks": {
+                  "one_valid_cold_prime": true,
+                  "all_24_cached_reads_observed_positive": true,
+                  "all_24_cached_writes_observed_zero": true,
+                  "all_24_uncached_reads_and_writes_observed_zero": true,
+                  "stable_prefix_read_size_matches_prime_write": true
+                },
+                "passed": true,
+                "prime_write_tokens": 2566,
+                "read_sizes": [
+                  2566
+                ]
+              }
+            ]
+          },
+          "Qwen3.8 Flash": {
+            "status": "unsupported",
+            "cache_state": "uncontrolled",
+            "calls": 96,
+            "observed_read_counters": 96,
+            "positive_read_calls": 92,
+            "observed_write_counters": 96
+          },
+          "DeepSeek V4.1 Flash": {
+            "status": "unsupported",
+            "cache_state": "uncontrolled",
+            "calls": 96,
+            "observed_read_counters": 96,
+            "positive_read_calls": 92,
+            "observed_write_counters": 96
+          },
+          "MiMo V2.6 Flash": {
+            "status": "unsupported",
+            "cache_state": "uncontrolled",
+            "calls": 96,
+            "observed_read_counters": 96,
+            "positive_read_calls": 90,
+            "observed_write_counters": 96
+          },
+          "Hy4 Preview": {
+            "status": "unsupported",
+            "cache_state": "uncontrolled",
+            "calls": 96,
+            "observed_read_counters": 96,
+            "positive_read_calls": 76,
+            "observed_write_counters": 96
+          }
+        },
+        "billing": {
+          "actual_total_usd": 0.1568607109,
+          "known_subtotal_usd": 0.1568607109,
+          "missing_bills": 0,
+          "budget_only_allowance_usd": 0.0,
+          "budget_accounted_usd": 0.1568607109
+        },
+        "observed_usage": {
+          "Luna cached": {
+            "calls": 100,
+            "reasoning_counter_observed": 100,
+            "reasoning_counter_unknown": 0,
+            "reported_positive_reasoning_calls": 0,
+            "visible_reasoning_calls": 0,
+            "completion_counter_observed": 100,
+            "maximum_reported_completion_tokens": 20
+          },
+          "DeepSeek V4.1 Flash": {
+            "calls": 96,
+            "reasoning_counter_observed": 96,
+            "reasoning_counter_unknown": 0,
+            "reported_positive_reasoning_calls": 0,
+            "visible_reasoning_calls": 0,
+            "completion_counter_observed": 96,
+            "maximum_reported_completion_tokens": 12
+          },
+          "Luna uncached": {
+            "calls": 96,
+            "reasoning_counter_observed": 96,
+            "reasoning_counter_unknown": 0,
+            "reported_positive_reasoning_calls": 0,
+            "visible_reasoning_calls": 0,
+            "completion_counter_observed": 96,
+            "maximum_reported_completion_tokens": 20
+          },
+          "Hy4 Preview": {
+            "calls": 96,
+            "reasoning_counter_observed": 96,
+            "reasoning_counter_unknown": 0,
+            "reported_positive_reasoning_calls": 0,
+            "visible_reasoning_calls": 0,
+            "completion_counter_observed": 96,
+            "maximum_reported_completion_tokens": 17
+          },
+          "Qwen3.8 Flash": {
+            "calls": 96,
+            "reasoning_counter_observed": 96,
+            "reasoning_counter_unknown": 0,
+            "reported_positive_reasoning_calls": 0,
+            "visible_reasoning_calls": 0,
+            "completion_counter_observed": 96,
+            "maximum_reported_completion_tokens": 22
+          },
+          "Jev": {
+            "calls": 96,
+            "reasoning_counter_observed": 0,
+            "reasoning_counter_unknown": 96,
+            "reported_positive_reasoning_calls": 0,
+            "visible_reasoning_calls": 0,
+            "completion_counter_observed": 96,
+            "maximum_reported_completion_tokens": 20
+          },
+          "MiMo V2.6 Flash": {
+            "calls": 96,
+            "reasoning_counter_observed": 96,
+            "reasoning_counter_unknown": 0,
+            "reported_positive_reasoning_calls": 0,
+            "visible_reasoning_calls": 0,
+            "completion_counter_observed": 96,
+            "maximum_reported_completion_tokens": 17
+          }
+        },
+        "hashes": {
+          "responses_sha256": "df69dc65a48ec7f87721c187ad5470c51eeec40ae6ab5b928c597d6a0adf125f",
+          "plan_sha256": "239e42d0dfac906c1ad9af20e3c1c24b66f2d6a58d961f337e356152879a4bda",
+          "dispatches_sha256": "c234b5896b2b6e3291dc87fa2101e4069e993b12b02d7b06ff0aa67305b8fdbd",
+          "cases_sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c",
+          "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+          "protocol_sha256": "f3ddc1865467e45265cebd4b5e36c6512505ee1b1d46da11f823085b5283c616",
+          "adapter_sha256": "47c300bd57b53f669dd9c707b4317cf47cf2b5888c5233e17b94d1310e6f691b",
+          "generic_verifier_sha256": "742192c33af3836c3724f0ea60c2ceda140b35d775ff40d01a980e4d39ce4a0a",
+          "cache_verifier_sha256": "e545711dc22b0258b31295a1f37ed5fb08a984ddd81769a4514f5876317f5a39"
+        },
+        "limitations": [
+          "Missing reasoning or baseline cache counters remain unknown; they are not verified zero.",
+          "Provider-reported usage establishes recorded billing, not an independently reconciled invoice.",
+          "Four sequential blocks are one measurement session, not independent days or deployments."
+        ],
+        "run_dir": "benchmark/multimodel/runs/cache-20261002T175446Z",
+        "generated_at_utc": "2026-10-02T18:18:06.469288+00:00"
+      }
+    ],
+    "quality_cross_product_complete": true,
+    "models": [
+      "Jev",
+      "Luna",
+      "Qwen3.8 Flash",
+      "DeepSeek V4.1 Flash",
+      "MiMo V2.6 Flash",
+      "Hy4 Preview"
+    ],
+    "passed": true
+  },
+  "probes": [
+    {
+      "passed": true,
+      "checks": {
+        "unique_probe_identities": true,
+        "probe_phases_excluded_from_benchmarks": true,
+        "two_synthetic_fixtures_per_declared_model": true,
+        "all_record_contracts_and_payloads_match": true
+      },
+      "issues": [],
+      "attempts": 2,
+      "valid": 2,
+      "cost": {
+        "requests": 2,
+        "known_billed_usd": 6.581e-05,
+        "observed_bills": 2,
+        "missing_bills": 0,
+        "total_billed_usd": 6.581e-05,
+        "usd_per_1000_attempts": 0.032905
+      },
+      "run_dir": "benchmark/multimodel/runs/probes-20261002T154531Z",
+      "hashes": {
+        "metadata.json": {
+          "bytes": 644,
+          "sha256": "8c73186ddc222ca59ada9a37b190c6f8f6f75ad43edcc55ead0c7f82db71939b"
+        },
+        "responses.jsonl": {
+          "bytes": 6780,
+          "sha256": "179e508f0bcfd11a8d2008456ea0c2cfbecd9fd09f787970cabceef1f8ccc968"
+        }
+      },
+      "reasoning": {
+        "valid_calls": 2,
+        "counter_observed": 2,
+        "counter_unknown": 0,
+        "positive_calls": 0,
+        "visible_calls": 0
+      },
+      "limitations": [
+        "Setup probes are excluded from benchmark scores. Failed probes stay in the ledger and missing bills stay unknown."
+      ]
+    },
+    {
+      "passed": true,
+      "checks": {
+        "unique_probe_identities": true,
+        "probe_phases_excluded_from_benchmarks": true,
+        "two_synthetic_fixtures_per_declared_model": true,
+        "all_record_contracts_and_payloads_match": true
+      },
+      "issues": [],
+      "attempts": 6,
+      "valid": 4,
+      "cost": {
+        "requests": 6,
+        "known_billed_usd": 0.0001099,
+        "observed_bills": 4,
+        "missing_bills": 2,
+        "total_billed_usd": null,
+        "usd_per_1000_attempts": null
+      },
+      "run_dir": "benchmark/multimodel/runs/probes-20261002T160145Z",
+      "hashes": {
+        "metadata.json": {
+          "bytes": 2068,
+          "sha256": "458599aedda7ad3864a6683cd0c236506381024a61743dbee77f96ec98af1895"
+        },
+        "responses.jsonl": {
+          "bytes": 20223,
+          "sha256": "063603c9491de948a17b754e2dc23e6514e7946f23b537064ebbe93a2c4d8874"
+        }
+      },
+      "reasoning": {
+        "valid_calls": 4,
+        "counter_observed": 4,
+        "counter_unknown": 0,
+        "positive_calls": 0,
+        "visible_calls": 0
+      },
+      "limitations": [
+        "Setup probes are excluded from benchmark scores. Failed probes stay in the ledger and missing bills stay unknown."
+      ]
+    },
+    {
+      "passed": true,
+      "checks": {
+        "unique_probe_identities": true,
+        "probe_phases_excluded_from_benchmarks": true,
+        "two_synthetic_fixtures_per_declared_model": true,
+        "all_record_contracts_and_payloads_match": true
+      },
+      "issues": [],
+      "attempts": 6,
+      "valid": 6,
+      "cost": {
+        "requests": 6,
+        "known_billed_usd": 0.0004505442,
+        "observed_bills": 6,
+        "missing_bills": 0,
+        "total_billed_usd": 0.0004505442,
+        "usd_per_1000_attempts": 0.0750907
+      },
+      "run_dir": "benchmark/multimodel/runs/probes-20261002T160424Z",
+      "hashes": {
+        "metadata.json": {
+          "bytes": 2512,
+          "sha256": "1365b59941d21e537a3ea6451ca5e074a082c5e96eaf91b060c963e14892d399"
+        },
+        "responses.jsonl": {
+          "bytes": 20577,
+          "sha256": "793022b33fc0a54d81809cca39895df50716cb2809fda8a445b13daecc98ea00"
+        }
+      },
+      "reasoning": {
+        "valid_calls": 6,
+        "counter_observed": 6,
+        "counter_unknown": 0,
+        "positive_calls": 0,
+        "visible_calls": 0
+      },
+      "limitations": [
+        "Setup probes are excluded from benchmark scores. Failed probes stay in the ledger and missing bills stay unknown."
+      ]
+    },
+    {
+      "passed": true,
+      "checks": {
+        "unique_probe_identities": true,
+        "probe_phases_excluded_from_benchmarks": true,
+        "recovery_stopped_or_complete": true,
+        "all_record_contracts_and_payloads_match": true
+      },
+      "issues": [],
+      "attempts": 2,
+      "valid": 2,
+      "cost": {
+        "requests": 2,
+        "known_billed_usd": 6.534e-05,
+        "observed_bills": 2,
+        "missing_bills": 0,
+        "total_billed_usd": 6.534e-05,
+        "usd_per_1000_attempts": 0.03267
+      },
+      "run_dir": "benchmark/multimodel/runs/probes-recovery-20261002T164150404672Z",
+      "hashes": {
+        "attempts.jsonl": {
+          "bytes": 300,
+          "sha256": "c92616bae313e9b28f9253aa8bfc8f02e915846265138449aab755bc33404f38"
+        },
+        "cases.jsonl": {
+          "bytes": 697,
+          "sha256": "685bc3111777dbe79d6f8ddf404ecf5f76c72baf019d0bd14a38ea9b13822b73"
+        },
+        "metadata.json": {
+          "bytes": 1366,
+          "sha256": "475aded7d7780cd50c78b7a51090d24b094740d75fc7efc3e4ea8a13123389d9"
+        },
+        "responses.jsonl": {
+          "bytes": 6710,
+          "sha256": "98520092d6e82cf7f749ef2501234b0439b92c68e86e7ebb5cd06deb490d3f01"
+        }
+      },
+      "reasoning": {
+        "valid_calls": 2,
+        "counter_observed": 2,
+        "counter_unknown": 0,
+        "positive_calls": 0,
+        "visible_calls": 0
+      },
+      "limitations": [
+        "Setup probes are excluded from benchmark scores. Failed probes stay in the ledger and missing bills stay unknown."
+      ]
+    },
+    {
+      "passed": true,
+      "checks": {
+        "unique_probe_identities": true,
+        "probe_phases_excluded_from_benchmarks": true,
+        "recovery_stopped_or_complete": true,
+        "all_record_contracts_and_payloads_match": true
+      },
+      "issues": [],
+      "attempts": 2,
+      "valid": 2,
+      "cost": {
+        "requests": 2,
+        "known_billed_usd": 6.581e-05,
+        "observed_bills": 2,
+        "missing_bills": 0,
+        "total_billed_usd": 6.581e-05,
+        "usd_per_1000_attempts": 0.032905
+      },
+      "run_dir": "benchmark/multimodel/runs/probes-recovery-20261002T165108634637Z",
+      "hashes": {
+        "attempts.jsonl": {
+          "bytes": 300,
+          "sha256": "cee6a0f8cd3458ea2422a66c9c95969430ee1de580c42347c28a6c847e8815e3"
+        },
+        "cases.jsonl": {
+          "bytes": 697,
+          "sha256": "a82e8742b59c1b7933a6c100846b286454d8d02db6488213c966e30780f902b5"
+        },
+        "metadata.json": {
+          "bytes": 1414,
+          "sha256": "7d8c5eaf1814ed3e036af55ef9de03b68b2e44555f4344647d1a3959e8ce2cdd"
+        },
+        "responses.jsonl": {
+          "bytes": 6708,
+          "sha256": "f700c9a0a128f179aa1ea542f012a912c40af8f7d1d7dc6276628401c10c1d4f"
+        }
+      },
+      "reasoning": {
+        "valid_calls": 2,
+        "counter_observed": 2,
+        "counter_unknown": 0,
+        "positive_calls": 0,
+        "visible_calls": 0
+      },
+      "limitations": [
+        "Setup probes are excluded from benchmark scores. Failed probes stay in the ledger and missing bills stay unknown."
+      ]
+    }
+  ],
+  "supplementary_aborted_cache": [
+    {
+      "passed": true,
+      "primary_analysis_eligible": false,
+      "role": "supplementary_aborted_cache",
+      "run_dir": "benchmark/multimodel/runs/cache-20261002T174228Z",
+      "generated_at_utc": "2026-10-02T18:18:06.538517+00:00",
+      "verifier_sha256": "c2dc744c1deaa1f5a7f40c9a34d182d6c4be4be22d4d6f719f7d1afce97847fc",
+      "attempts": 55,
+      "original_saved_responses": 54,
+      "valid": 37,
+      "lost_outcomes": 1,
+      "cost": {
+        "requests": 55,
+        "known_billed_usd": 0.0125614895,
+        "observed_bills": 37,
+        "missing_bills": 18,
+        "total_billed_usd": null,
+        "usd_per_1000_attempts": null
+      },
+      "hashes": {
+        "metadata.json": "ac13d30de5e9f48861b2059ab32cf94e8af7889b809e95b353f07d6bb6fec676",
+        "responses.jsonl": "860144b4940c12f2c10c34f31689227859a4490dd1128ae536cf1d4ad1c604bf",
+        "dispatches.jsonl": "fcc5b9336e346153234f9bcfa49f4d1c26fa58deef86dd307893c50f7835703b",
+        "plan.json": "8356d29841cab994b3ca934229fb712b38f66d74db8a082038ea9efdc82b3c46",
+        "aborted-session-audit.json": "592edf4cd641a986538c559b28c370c3a2848f17cc846ef8bf7438633933cf6f",
+        "close_aborted_cache.py": "860c87da1337724cea73ec8b541b5f8a9cef9413775a1060857dbba3acbd1e01"
+      },
+      "checks": {
+        "session_aborted_and_ineligible_for_primary": true,
+        "reported_closure_passed": true,
+        "closure_script_hash": true,
+        "original_protocol_hash": true,
+        "exact_original_evidence_file_set": true,
+        "responses.jsonl_original_prefix_preserved": true,
+        "dispatches.jsonl_original_prefix_preserved": true,
+        "dispatches.jsonl_entire_original_file_preserved": true,
+        "plan.json_original_prefix_preserved": true,
+        "plan.json_entire_original_file_preserved": true,
+        "original_saved_response_count": true,
+        "final_response_dispatch_counts": true,
+        "one_ordered_outcome_per_dispatch": true,
+        "original_plan_reproduces": true,
+        "frozen_source_hashes": true,
+        "all_retained_rows_match_source_requests_and_response_contract": true,
+        "only_appended_lost_dispatches_marked_unknown": true,
+        "lost_dispatches_have_no_fabricated_outcome": true,
+        "lost_dispatch_metadata": true,
+        "closure_valid_count": true,
+        "closure_billing_complete_or_unknown": true,
+        "metadata_billing_complete_or_unknown": true
+      },
+      "issues": [],
+      "status": "passed",
+      "limitations": [
+        "This is evidence and billing closure for an aborted administrative-key session. It does not establish a successful cache treatment and is excluded from all primary quality, timing and cache estimates. A lost dispatched outcome and its bill remain unknown."
+      ]
+    }
+  ],
+  "selected_configuration_checks": {
+    "benchmark/multimodel/runs/quality-20261002T155349573021Z_selected_model_settings": true,
+    "benchmark/multimodel/runs/quality-20261002T160544592288Z_selected_model_settings": true,
+    "benchmark/multimodel/runs/timing-20261002T170524992994Z_all_selected_models": true,
+    "benchmark/multimodel/runs/timing-20261002T170524992994Z_selected_model_settings": true,
+    "benchmark/multimodel/runs/cache-20261002T175446Z_all_selected_models": true,
+    "benchmark/multimodel/runs/cache-20261002T175446Z_selected_model_settings": true
+  },
+  "ledger": [
+    {
+      "role": "quality",
+      "primary_estimate_eligible": true,
+      "run_dir": "benchmark/expanded/runs/quality-20261002T093341Z",
+      "attempts": 9570,
+      "valid": 9569,
+      "phase_counts": {
+        "quality": 9570
+      },
+      "cost": {
+        "requests": 9570,
+        "known_billed_usd": 0.28895565,
+        "observed_bills": 9569,
+        "missing_bills": 1,
+        "total_billed_usd": null,
+        "usd_per_1000_attempts": null
+      },
+      "raw_sha256": "c508f6173a27bed9834a294329414cf499bdc078381eb3f41e4d66c08f9f3f8b"
+    },
+    {
+      "role": "quality",
+      "primary_estimate_eligible": true,
+      "run_dir": "benchmark/multimodel/runs/quality-20261002T155349573021Z",
+      "attempts": 4785,
+      "valid": 4671,
+      "phase_counts": {
+        "quality": 4785
+      },
+      "cost": {
+        "requests": 4785,
+        "known_billed_usd": 0.228254452,
+        "observed_bills": 4671,
+        "missing_bills": 114,
+        "total_billed_usd": null,
+        "usd_per_1000_attempts": null
+      },
+      "raw_sha256": "a0bc839aaf80fb359b48e808962f21249bde21ef00d058ce163a6bab6ca750b6"
+    },
+    {
+      "role": "quality",
+      "primary_estimate_eligible": true,
+      "run_dir": "benchmark/multimodel/runs/quality-20261002T160544592288Z",
+      "attempts": 14355,
+      "valid": 14351,
+      "phase_counts": {
+        "quality": 14355
+      },
+      "cost": {
+        "requests": 14355,
+        "known_billed_usd": 1.3245464012,
+        "observed_bills": 14351,
+        "missing_bills": 4,
+        "total_billed_usd": null,
+        "usd_per_1000_attempts": null
+      },
+      "raw_sha256": "9b949a90dcc900c2228ef035987ae306a858c138eab153eb7cf4bb6056357a22"
+    },
+    {
+      "role": "timing",
+      "primary_estimate_eligible": true,
+      "run_dir": "benchmark/multimodel/runs/timing-20261002T170524992994Z",
+      "attempts": 1116,
+      "valid": 1116,
+      "phase_counts": {
+        "timing_warmup": 36,
+        "timing": 1080
+      },
+      "cost": {
+        "requests": 1116,
+        "known_billed_usd": 0.0549220258,
+        "observed_bills": 1116,
+        "missing_bills": 0,
+        "total_billed_usd": 0.0549220258,
+        "usd_per_1000_attempts": 0.04921328476702509
+      },
+      "raw_sha256": "7119428ee08d80ac620681f9a9bde1a5da76ffbe003df500b1ca0b968248fd78"
+    },
+    {
+      "role": "cache",
+      "primary_estimate_eligible": true,
+      "run_dir": "benchmark/multimodel/runs/cache-20261002T175446Z",
+      "attempts": 676,
+      "valid": 676,
+      "phase_counts": {
+        "cache_prime": 4,
+        "measured": 672
+      },
+      "cost": {
+        "requests": 676,
+        "known_billed_usd": 0.1568607109,
+        "observed_bills": 676,
+        "missing_bills": 0,
+        "total_billed_usd": 0.1568607109,
+        "usd_per_1000_attempts": 0.23204247174556214
+      },
+      "raw_sha256": "df69dc65a48ec7f87721c187ad5470c51eeec40ae6ab5b928c597d6a0adf125f"
+    },
+    {
+      "role": "setup",
+      "primary_estimate_eligible": false,
+      "run_dir": "benchmark/multimodel/runs/probes-20261002T154531Z",
+      "attempts": 2,
+      "valid": 2,
+      "phase_counts": {
+        "setup_probe": 2
+      },
+      "cost": {
+        "requests": 2,
+        "known_billed_usd": 6.581e-05,
+        "observed_bills": 2,
+        "missing_bills": 0,
+        "total_billed_usd": 6.581e-05,
+        "usd_per_1000_attempts": 0.032905
+      },
+      "raw_sha256": "179e508f0bcfd11a8d2008456ea0c2cfbecd9fd09f787970cabceef1f8ccc968"
+    },
+    {
+      "role": "setup",
+      "primary_estimate_eligible": false,
+      "run_dir": "benchmark/multimodel/runs/probes-20261002T160145Z",
+      "attempts": 6,
+      "valid": 4,
+      "phase_counts": {
+        "setup_probe": 6
+      },
+      "cost": {
+        "requests": 6,
+        "known_billed_usd": 0.0001099,
+        "observed_bills": 4,
+        "missing_bills": 2,
+        "total_billed_usd": null,
+        "usd_per_1000_attempts": null
+      },
+      "raw_sha256": "063603c9491de948a17b754e2dc23e6514e7946f23b537064ebbe93a2c4d8874"
+    },
+    {
+      "role": "setup",
+      "primary_estimate_eligible": false,
+      "run_dir": "benchmark/multimodel/runs/probes-20261002T160424Z",
+      "attempts": 6,
+      "valid": 6,
+      "phase_counts": {
+        "setup_probe": 6
+      },
+      "cost": {
+        "requests": 6,
+        "known_billed_usd": 0.0004505442,
+        "observed_bills": 6,
+        "missing_bills": 0,
+        "total_billed_usd": 0.0004505442,
+        "usd_per_1000_attempts": 0.0750907
+      },
+      "raw_sha256": "793022b33fc0a54d81809cca39895df50716cb2809fda8a445b13daecc98ea00"
+    },
+    {
+      "role": "setup",
+      "primary_estimate_eligible": false,
+      "run_dir": "benchmark/multimodel/runs/probes-recovery-20261002T164150404672Z",
+      "attempts": 2,
+      "valid": 2,
+      "phase_counts": {
+        "recovery_probe": 2
+      },
+      "cost": {
+        "requests": 2,
+        "known_billed_usd": 6.534e-05,
+        "observed_bills": 2,
+        "missing_bills": 0,
+        "total_billed_usd": 6.534e-05,
+        "usd_per_1000_attempts": 0.03267
+      },
+      "raw_sha256": "98520092d6e82cf7f749ef2501234b0439b92c68e86e7ebb5cd06deb490d3f01"
+    },
+    {
+      "role": "setup",
+      "primary_estimate_eligible": false,
+      "run_dir": "benchmark/multimodel/runs/probes-recovery-20261002T165108634637Z",
+      "attempts": 2,
+      "valid": 2,
+      "phase_counts": {
+        "recovery_probe": 2
+      },
+      "cost": {
+        "requests": 2,
+        "known_billed_usd": 6.581e-05,
+        "observed_bills": 2,
+        "missing_bills": 0,
+        "total_billed_usd": 6.581e-05,
+        "usd_per_1000_attempts": 0.032905
+      },
+      "raw_sha256": "f700c9a0a128f179aa1ea542f012a912c40af8f7d1d7dc6276628401c10c1d4f"
+    },
+    {
+      "role": "supplementary_aborted_cache",
+      "primary_estimate_eligible": false,
+      "run_dir": "benchmark/multimodel/runs/cache-20261002T174228Z",
+      "attempts": 55,
+      "valid": 37,
+      "phase_counts": {
+        "cache_prime": 1,
+        "measured": 54
+      },
+      "cost": {
+        "requests": 55,
+        "known_billed_usd": 0.0125614895,
+        "observed_bills": 37,
+        "missing_bills": 18,
+        "total_billed_usd": null,
+        "usd_per_1000_attempts": null
+      },
+      "raw_sha256": "860144b4940c12f2c10c34f31689227859a4490dd1128ae536cf1d4ad1c604bf"
+    }
+  ],
+  "totals": {
+    "attempts": 30575,
+    "valid": 30436,
+    "invalid": 139,
+    "cost": {
+      "requests": 30575,
+      "known_billed_usd": 2.0668581336,
+      "observed_bills": 30436,
+      "missing_bills": 139,
+      "total_billed_usd": null,
+      "usd_per_1000_attempts": null
+    }
+  },
+  "evidence_after": {
+    "benchmark/expanded/runs/quality-20261002T093341Z": {
+      "metadata.json": {
+        "bytes": 2858,
+        "sha256": "7d2e066a6ea4d62c7daf7f10145cc1ae27c536d384e4209a704e221df7120ed7"
+      },
+      "plan.json": {
+        "bytes": 554057,
+        "sha256": "4a9deec659f08d1698e150b41b0b32ad01f55dde55c2c93fc4e288ef89a67c36"
+      },
+      "responses.jsonl": {
+        "bytes": 27893199,
+        "sha256": "c508f6173a27bed9834a294329414cf499bdc078381eb3f41e4d66c08f9f3f8b"
+      }
+    },
+    "benchmark/multimodel/runs/quality-20261002T155349573021Z": {
+      "attempts.jsonl": {
+        "bytes": 730995,
+        "sha256": "595f028be707ecd9b1b9451ef9b8eceebea0aa1d75bdf6d606ec60eedcc99f22"
+      },
+      "metadata.json": {
+        "bytes": 10837,
+        "sha256": "25a1ba71ec635eecfce2855c2370f615a8edbf9c65dd7c0aa9a71305576d6a72"
+      },
+      "plan.json": {
+        "bytes": 1342472,
+        "sha256": "b6f47e7d5913a3be6c34e0ac8b59ee7e8e70953907a53a002818286c6887327f"
+      },
+      "requests.jsonl": {
+        "bytes": 9149297,
+        "sha256": "eca30790f8e18d580b19662c3d61cee27f4f8de6db4a3c3b8ba31e45a4b23911"
+      },
+      "responses.jsonl": {
+        "bytes": 18961625,
+        "sha256": "a0bc839aaf80fb359b48e808962f21249bde21ef00d058ce163a6bab6ca750b6"
+      }
+    },
+    "benchmark/multimodel/runs/quality-20261002T160544592288Z": {
+      "attempts.jsonl": {
+        "bytes": 2199560,
+        "sha256": "36eaaed33c2db8cb4f79dc0cb77536d34e382d6e7e3bf17cb08e2d890dd62670"
+      },
+      "metadata.json": {
+        "bytes": 4800,
+        "sha256": "6de40eac4355fa3e886db0837bfd6e89719089415338882799bce1bdcba76720"
+      },
+      "plan.json": {
+        "bytes": 4062697,
+        "sha256": "7beaa575ad9b58776da1be18e8c5a451d0a5199990f61b3f593bb65607fb06a8"
+      },
+      "requests.jsonl": {
+        "bytes": 27588446,
+        "sha256": "edbb6e6de3f59b7b5dceb81479a683f923a28351bdf93624fcd1c01e475a11ce"
+      },
+      "responses.jsonl": {
+        "bytes": 56934981,
+        "sha256": "9b949a90dcc900c2228ef035987ae306a858c138eab153eb7cf4bb6056357a22"
+      }
+    },
+    "benchmark/multimodel/runs/timing-20261002T170524992994Z": {
+      "attempts.jsonl": {
+        "bytes": 169638,
+        "sha256": "a3139a5882c83a2e865ad8eed7dc73f10c0e1dc7e985fc1c5595855bb656c5c6"
+      },
+      "metadata.json": {
+        "bytes": 6586,
+        "sha256": "d953c8c6de2de950108e81b4a5c48eeeea9f3df85ae8841099732bf3bdf2801d"
+      },
+      "plan.json": {
+        "bytes": 310868,
+        "sha256": "7298f8c79b0bd68c33c10a08bcfc62b93c2f80dd35e3deb705e0edb7117da0da"
+      },
+      "requests.jsonl": {
+        "bytes": 1864317,
+        "sha256": "93cecde0a629648ce8629eee54004482ba45df6f149c0676f50e2ffc857a3318"
+      },
+      "responses.jsonl": {
+        "bytes": 3928820,
+        "sha256": "7119428ee08d80ac620681f9a9bde1a5da76ffbe003df500b1ca0b968248fd78"
+      }
+    },
+    "benchmark/multimodel/runs/cache-20261002T175446Z": {
+      "cases.jsonl": {
+        "bytes": 1405194,
+        "sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c"
+      },
+      "dispatches.jsonl": {
+        "bytes": 161482,
+        "sha256": "c234b5896b2b6e3291dc87fa2101e4069e993b12b02d7b06ff0aa67305b8fdbd"
+      },
+      "metadata.json": {
+        "bytes": 6894,
+        "sha256": "85102a217b3a975b101caac932f2cfe0a5d5636e5948ccbd25202c60cdf58abf"
+      },
+      "plan.json": {
+        "bytes": 439037,
+        "sha256": "239e42d0dfac906c1ad9af20e3c1c24b66f2d6a58d961f337e356152879a4bda"
+      },
+      "primes.json": {
+        "bytes": 58426,
+        "sha256": "ae3bf5c3e3ae9e64e2675a1a45ef70b613631e61788179cbd521b4b7314e8ad9"
+      },
+      "responses.jsonl": {
+        "bytes": 12043192,
+        "sha256": "df69dc65a48ec7f87721c187ad5470c51eeec40ae6ab5b928c597d6a0adf125f"
+      },
+      "rulebook.txt": {
+        "bytes": 12745,
+        "sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b"
+      }
+    },
+    "benchmark/multimodel/runs/probes-20261002T154531Z": {
+      "metadata.json": {
+        "bytes": 644,
+        "sha256": "8c73186ddc222ca59ada9a37b190c6f8f6f75ad43edcc55ead0c7f82db71939b"
+      },
+      "responses.jsonl": {
+        "bytes": 6780,
+        "sha256": "179e508f0bcfd11a8d2008456ea0c2cfbecd9fd09f787970cabceef1f8ccc968"
+      }
+    },
+    "benchmark/multimodel/runs/probes-20261002T160145Z": {
+      "metadata.json": {
+        "bytes": 2068,
+        "sha256": "458599aedda7ad3864a6683cd0c236506381024a61743dbee77f96ec98af1895"
+      },
+      "responses.jsonl": {
+        "bytes": 20223,
+        "sha256": "063603c9491de948a17b754e2dc23e6514e7946f23b537064ebbe93a2c4d8874"
+      }
+    },
+    "benchmark/multimodel/runs/probes-20261002T160424Z": {
+      "metadata.json": {
+        "bytes": 2512,
+        "sha256": "1365b59941d21e537a3ea6451ca5e074a082c5e96eaf91b060c963e14892d399"
+      },
+      "responses.jsonl": {
+        "bytes": 20577,
+        "sha256": "793022b33fc0a54d81809cca39895df50716cb2809fda8a445b13daecc98ea00"
+      }
+    },
+    "benchmark/multimodel/runs/probes-recovery-20261002T164150404672Z": {
+      "attempts.jsonl": {
+        "bytes": 300,
+        "sha256": "c92616bae313e9b28f9253aa8bfc8f02e915846265138449aab755bc33404f38"
+      },
+      "cases.jsonl": {
+        "bytes": 697,
+        "sha256": "685bc3111777dbe79d6f8ddf404ecf5f76c72baf019d0bd14a38ea9b13822b73"
+      },
+      "metadata.json": {
+        "bytes": 1366,
+        "sha256": "475aded7d7780cd50c78b7a51090d24b094740d75fc7efc3e4ea8a13123389d9"
+      },
+      "responses.jsonl": {
+        "bytes": 6710,
+        "sha256": "98520092d6e82cf7f749ef2501234b0439b92c68e86e7ebb5cd06deb490d3f01"
+      }
+    },
+    "benchmark/multimodel/runs/probes-recovery-20261002T165108634637Z": {
+      "attempts.jsonl": {
+        "bytes": 300,
+        "sha256": "cee6a0f8cd3458ea2422a66c9c95969430ee1de580c42347c28a6c847e8815e3"
+      },
+      "cases.jsonl": {
+        "bytes": 697,
+        "sha256": "a82e8742b59c1b7933a6c100846b286454d8d02db6488213c966e30780f902b5"
+      },
+      "metadata.json": {
+        "bytes": 1414,
+        "sha256": "7d8c5eaf1814ed3e036af55ef9de03b68b2e44555f4344647d1a3959e8ce2cdd"
+      },
+      "responses.jsonl": {
+        "bytes": 6708,
+        "sha256": "f700c9a0a128f179aa1ea542f012a912c40af8f7d1d7dc6276628401c10c1d4f"
+      }
+    },
+    "benchmark/multimodel/runs/cache-20261002T174228Z": {
+      "aborted-session-audit.json": {
+        "bytes": 1268,
+        "sha256": "592edf4cd641a986538c559b28c370c3a2848f17cc846ef8bf7438633933cf6f"
+      },
+      "cases.jsonl": {
+        "bytes": 1405194,
+        "sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c"
+      },
+      "close_aborted_cache.py": {
+        "bytes": 4090,
+        "sha256": "860c87da1337724cea73ec8b541b5f8a9cef9413775a1060857dbba3acbd1e01"
+      },
+      "dispatches.jsonl": {
+        "bytes": 13074,
+        "sha256": "fcc5b9336e346153234f9bcfa49f4d1c26fa58deef86dd307893c50f7835703b"
+      },
+      "metadata.json": {
+        "bytes": 6236,
+        "sha256": "ac13d30de5e9f48861b2059ab32cf94e8af7889b809e95b353f07d6bb6fec676"
+      },
+      "plan.json": {
+        "bytes": 452557,
+        "sha256": "8356d29841cab994b3ca934229fb712b38f66d74db8a082038ea9efdc82b3c46"
+      },
+      "primes.json": {
+        "bytes": 58426,
+        "sha256": "ae3bf5c3e3ae9e64e2675a1a45ef70b613631e61788179cbd521b4b7314e8ad9"
+      },
+      "responses.jsonl": {
+        "bytes": 965564,
+        "sha256": "860144b4940c12f2c10c34f31689227859a4490dd1128ae536cf1d4ad1c604bf"
+      },
+      "rulebook.txt": {
+        "bytes": 12745,
+        "sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b"
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "unique_frozen_case_ids": true,
+    "frozen_cases_hash": true,
+    "expected_models_present": true,
+    "frozen_source_code_hashes": true,
+    "plan_count": true,
+    "plan_sha256": true,
+    "seeded_plan_reproduces": true,
+    "unique_attempt_identities": true,
+    "every_record_matches_contract_and_source": true,
+    "complete_quality_cross_product": true,
+    "attempts.jsonl_unique_dispatches": true,
+    "attempts.jsonl_frozen_request_hashes": true,
+    "saved_exact_requests_hash": true,
+    "metadata_billing_complete_or_unknown": true,
+    "named_source_hashes_match": true,
+    "current_code_matches_saved_snapshot": true
+  },
+  "issues": [],
+  "issue_count": 0,
+  "run_dir": "benchmark/multimodel/runs/quality-20261002T160544592288Z",
+  "raw_sha256": "9b949a90dcc900c2228ef035987ae306a858c138eab153eb7cf4bb6056357a22",
+  "case_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+  "attempts": 14355,
+  "valid": 14351,
+  "cost": {
+    "requests": 14355,
+    "known_billed_usd": 1.3245464012,
+    "observed_bills": 14351,
+    "missing_bills": 4,
+    "total_billed_usd": null,
+    "usd_per_1000_attempts": null
+  },
+  "observed_usage": {
+    "DeepSeek V4.1 Flash": {
+      "valid_calls": 4785,
+      "output_tokens": {
+        "observed": 4785,
+        "min": 12,
+        "max": 21,
+        "total": 71528
+      },
+      "reasoning_counter_observed": 4785,
+      "reasoning_counter_unknown": 0,
+      "reasoning_tokens_reported_total": 0,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 4785,
+      "cache_write_counter_observed": 4785
+    },
+    "Hy4 Preview": {
+      "valid_calls": 4781,
+      "output_tokens": {
+        "observed": 4781,
+        "min": 12,
+        "max": 19,
+        "total": 76770
+      },
+      "reasoning_counter_observed": 4781,
+      "reasoning_counter_unknown": 0,
+      "reasoning_tokens_reported_total": 0,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 4781,
+      "cache_write_counter_observed": 4781
+    },
+    "MiMo V2.6 Flash": {
+      "valid_calls": 4785,
+      "output_tokens": {
+        "observed": 4785,
+        "min": 12,
+        "max": 23,
+        "total": 81649
+      },
+      "reasoning_counter_observed": 4785,
+      "reasoning_counter_unknown": 0,
+      "reasoning_tokens_reported_total": 0,
+      "visible_reasoning_calls": 0,
+      "cache_read_counter_observed": 4785,
+      "cache_write_counter_observed": 4785
+    }
+  },
+  "exact_payload_factory_supplied": true,
+  "seeded_plan_factory_supplied": true,
+  "limitations": [
+    "Missing reasoning/cache counters are unobserved, not verified zero. Without factories, quality/timing source content and contracts are checked, but complete payload and seeded plan regeneration are not established."
+  ],
+  "generated_at_utc": "2026-10-02T16:42:48.067168+00:00"
+}

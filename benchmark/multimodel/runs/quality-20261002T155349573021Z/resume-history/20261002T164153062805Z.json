@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-02T15:53:49.997645+00:00",
+  "models": [
+    {
+      "label": "Qwen3.8 Flash",
+      "id": "qwen/qwen3.8-flash",
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "prices": {
+        "prompt": "0.00000015",
+        "completion": "0.00000047",
+        "input_cache_read": "0.000000016",
+        "input_cache_write": "0.0000002"
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "cache_control": "unsupported",
+      "max_tokens": 128,
+      "reasoning_mandatory": false,
+      "protocol_difference": null
+    }
+  ],
+  "phase": "quality",
+  "cases": 4785,
+  "planned_calls": 4785,
+  "calls_planned": 4785,
+  "concurrency_pairs": 16,
+  "seed": 20261002,
+  "source_hashes": {
+    "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+    "timing_cases_sha256": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8"
+  },
+  "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+  "code_hashes": {
+    "original-runner.py": "1c6d2ea8084da6e671d41a6d89f089edbf13729c75990bf4be0458db5df4242c",
+    "original-adapter.py": "47c300bd57b53f669dd9c707b4317cf47cf2b5888c5233e17b94d1310e6f691b",
+    "original-answer-contract.py": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7"
+  },
+  "plan_sha256": "b6f47e7d5913a3be6c34e0ac8b59ee7e8e70953907a53a002818286c6887327f",
+  "requests_sha256": "eca30790f8e18d580b19662c3d61cee27f4f8de6db4a3c3b8ba31e45a4b23911",
+  "automatic_retries": 0,
+  "repeats": 1,
+  "warmups_per_model_per_block": 0,
+  "unknown_bill_allowance_usd": 0.01,
+  "protocol": "Frozen full quality split; randomized case and within-case model order. Each worker runs a case's models sequentially. Bulk latency is diagnostic only.",
+  "stop_rule": "Stop new dispatches after 5 consecutive invalid or >=5% invalid after 100 completed calls, overall or per model, in completion order. In-flight attempts are retained.",
+  "billing_guard": "Known bills use observed values. Missing bills remain null and retain their reservation, at least $0.01, against the local guard. A local estimate cannot enforce a remote account-level cap.",
+  "resume_policy": "Quality only: identical source, adapter, plan and exact request hashes; dispatch journal prevents every attempted sequence from being retried, including lost outcomes.",
+  "status": "stopped",
+  "budget_usd": 5,
+  "calls_completed": 3019,
+  "valid": 2972,
+  "invalid": 47,
+  "charged_usd": null,
+  "known_charge_subtotal_usd": 0.14466682200000003,
+  "unknown_billing": 47,
+  "unknown_billing_guard_usd": 0.47000000000000025,
+  "budget_pending_usd": 0.0,
+  "budget_accounted_usd": 0.6146668220000002,
+  "budget_stop_reason": "Five consecutive invalid responses (all models)",
+  "finished_at": "2026-10-02T15:59:01.483990+00:00",
+  "stop_reason": "Five consecutive invalid responses (all models)",
+  "responses_sha256": "ea56e931c3509298d6f34ad7fd68c6dcc678cd41be34b50b1c1281541d113998",
+  "attempts_sha256": "63597db4441ebdbfe4758b4003cf1c6cb5a920a7eb0f029bc065ea944d802864",
+  "operational_amendments": [
+    {
+      "id": "20261002T164150404672Z",
+      "decided_at_utc": "2026-10-02T16:41:50.415128+00:00",
+      "status": "recovery_passed",
+      "continuation_sha256": "439e844fd74b119eef354ba2ff367fb0039b7f6438c8e0c89270f0b16e29de46",
+      "pre_continuation": {
+        "responses.jsonl": {
+          "sha256": "ea56e931c3509298d6f34ad7fd68c6dcc678cd41be34b50b1c1281541d113998",
+          "bytes": 11831768
+        },
+        "attempts.jsonl": {
+          "sha256": "63597db4441ebdbfe4758b4003cf1c6cb5a920a7eb0f029bc065ea944d802864",
+          "bytes": 460797
+        },
+        "plan.json": {
+          "sha256": "b6f47e7d5913a3be6c34e0ac8b59ee7e8e70953907a53a002818286c6887327f",
+          "bytes": 1342472
+        },
+        "requests.jsonl": {
+          "sha256": "eca30790f8e18d580b19662c3d61cee27f4f8de6db4a3c3b8ba31e45a4b23911",
+          "bytes": 9149297
+        }
+      },
+      "metadata_before_sha256": "537352319561e3368e72879891a89233dc103e1c820282ac7c9c31f9e2f16b96",
+      "metadata_before_path": "benchmark/multimodel/runs/quality-20261002T155349573021Z/continuation-history/20261002T164150404672Z/metadata-before.json",
+      "recovery_run_dir": "benchmark/multimodel/runs/probes-recovery-20261002T164150404672Z",
+      "original_attempts": 3019,
+      "original_invalid": 47,
+      "unattempted_requests": 1766,
+      "models": [
+        {
+          "label": "Qwen3.8 Flash",
+          "id": "qwen/qwen3.8-flash",
+          "provider": "alibaba",
+          "provider_name": "Alibaba",
+          "prices": {
+            "prompt": "0.00000015",
+            "completion": "0.00000047",
+            "input_cache_read": "0.000000016",
+            "input_cache_write": "0.0000002"
+          },
+          "reasoning": {
+            "effort": "none"
+          },
+          "cache_control": "unsupported",
+          "max_tokens": 128,
+          "reasoning_mandatory": false,
+          "protocol_difference": null
+        }
+      ],
+      "workers": 16,
+      "seed": 20261002,
+      "total_quality_and_recovery_budget_usd": 5,
+      "change": "After two valid synthetic service-health probes with observed zero reasoning, clear only the replayed historical consecutive-failure stop and streaks. Preserve cumulative invalid counts, every original attempt and bill, all unknown-bill reservations, request hashes, worker16 and the original live circuit. Dispatch only previously unattempted sequences. No benchmark output was selected for removal or retry.",
+      "recovery_finished_at": "2026-10-02T16:41:52.652944+00:00",
+      "recovery_budget_accounted_usd": 6.534e-05,
+      "historical_recovery_budget_accounted_usd": 0,
+      "recovery_calls": 2
+    }
+  ]
+}

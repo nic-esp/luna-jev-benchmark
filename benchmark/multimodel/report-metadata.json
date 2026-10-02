@@ -1,0 +1,15 @@
+{
+  "models": [
+    "Jev",
+    "Luna",
+    "Qwen3.8 Flash",
+    "DeepSeek V4.1 Flash",
+    "MiMo V2.6 Flash",
+    "Hy4 Preview"
+  ],
+  "quality_cases": 4785,
+  "quality_attempts": 28710,
+  "all_attempts": 31680,
+  "known_charge_subtotal_usd": 2.1520371066,
+  "missing_bills": 139
+}

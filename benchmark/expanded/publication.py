@@ -156,6 +156,8 @@ class Redactor:
     def public_text(self, text):
         for prefix in sorted(self.source_prefixes, key=len, reverse=True):
             text = text.replace(prefix, "")
+        # API errors can echo the account identifier. It is not study evidence.
+        text = re.sub(r'\borg_[A-Za-z0-9]{8,}\b', '[account identifier omitted]', text)
         return text
 
     def verify_text(self, text, path):
@@ -179,7 +181,16 @@ class Redactor:
             if "premise" in value and "hypothesis" in value:
                 case_id = case_id or self.text_to_id.get(value["premise"]) or self.text_to_id.get(value["hypothesis"])
                 return self.placeholder(case_id)
-            out = {k: self.redact(v, case_id) for k, v in value.items()}
+            out = {}
+            for key, item in value.items():
+                if key == 'user_id':
+                    continue
+                public_key = self.public_text(key) if isinstance(key, str) else key
+                if public_key in out:
+                    # Never silently overwrite evidence after path normalization.
+                    # Keep the original keys out of the error message.
+                    raise ValueError("Public dictionary-key normalization collision; conflicting keys were not logged")
+                out[public_key] = self.redact(item, case_id)
             if case_id and "request" in value:
                 out["public_export"] = {"request_source_text_omitted": True,
                     "original_request_preserved_locally": True}
