@@ -1,6 +1,6 @@
 {
   "format_version": 1,
-  "created_at": "2026-10-02T10:08:54.556160+00:00",
+  "created_at": "2026-10-02T10:14:01.642790+00:00",
   "note": "This is a transformed public copy. RTE premise/hypothesis text and copies in requests are omitted because exact upstream redistribution terms were not verified. All numerical results and reference labels are retained. Hashes recorded by the original study identify original local artifacts, not these public bytes; PUBLICATION_MANIFEST.json records the public file hashes. Local artifact paths have been made relative to the public package.",
   "rte_source_rows": 277,
   "rte_source_text_scan_passed": true,
@@ -96,9 +96,9 @@
       "transformed_or_added": false
     },
     "benchmark/expanded/README.md": {
-      "public_sha256": "c507e5a57a0ed198aa89b670aab67cfc476a04cbfb610c418784ff0a35d0abe4",
-      "bytes": 5597,
-      "original_local_sha256": "c507e5a57a0ed198aa89b670aab67cfc476a04cbfb610c418784ff0a35d0abe4",
+      "public_sha256": "3ee00297bdb9e96586b1afc330d68ca8a9ecb17e6e2fcd25cca6258495272fdf",
+      "bytes": 6212,
+      "original_local_sha256": "3ee00297bdb9e96586b1afc330d68ca8a9ecb17e6e2fcd25cca6258495272fdf",
       "transformed_or_added": false
     },
     "benchmark/expanded/TESTS.txt": {

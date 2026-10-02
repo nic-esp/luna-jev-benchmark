@@ -36,12 +36,19 @@ The report uses small saved-record JSON chunks for its expandable API records. S
 
 ## Fresh model calls
 
+For a public clone, first restore the original inputs with `python3 expanded/fetch_sources.py` and `python3 expanded/datasets.py` from the parent `benchmark` directory. Do not submit the public RTE omission placeholders to a model. The hash check below refuses those transformed inputs.
+
 Supply `OPENROUTER_API_KEY` securely in the environment; never put a key in code, URLs, browser storage or command arguments. A fresh run incurs charges. The following uses the saved frozen inputs and imports the original quality runner:
 
 ```python
-import os
+import os, hashlib
+from pathlib import Path
 from expanded.run_study import run_quality
-result = run_quality(os.environ['OPENROUTER_API_KEY'], budget=0.80)
+cases = Path('expanded/data/cases.jsonl')
+expected = 'e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256'
+if hashlib.sha256(cases.read_bytes()).hexdigest() != expected:
+    raise RuntimeError('Restore and verify the original frozen inputs before model calls.')
+result = run_quality(os.environ['OPENROUTER_API_KEY'], cases_path=cases, budget=0.80)
 ```
 
 Use `run_timing` only after bulk calls stop, with the frozen `data/timing-cases.jsonl`. The cache runner accepts a key through stdin; see its `--help`. Preserve any failed attempts and unknown bills when interpreting a new run. The budget guard is conservative local accounting, not an account-level provider cap.
