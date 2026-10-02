@@ -1,0 +1,12 @@
+{
+  "completed_calls": 292,
+  "completed_blocks": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "last_case": "expanded-cache-47-battery-invalid-yes",
+  "last_arm": "Jev",
+  "phase": "block_complete"
+}

@@ -1,0 +1,26 @@
+{
+  "experiment": "cache_policy",
+  "created_at": "2026-10-02T08:49:58.826529+00:00",
+  "models": {
+    "Luna cached": "openai/gpt-6-luna",
+    "Luna uncached": "openai/gpt-6-luna",
+    "Jev": "typesafe/jev-1.13"
+  },
+  "seed": 20261002,
+  "cases": 24,
+  "calls_planned": 73,
+  "budget_usd": 0.988362588,
+  "charged_usd": 0.012438148999999999,
+  "calls_completed": 73,
+  "status": "complete",
+  "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+  "cases_sha256": "7559a18a2c58c15206a951c2a483cae6eff11969a62b4ab799a87e919ab2c8ea",
+  "code_sha256": "40976904f39e343bfcf97ad38815f70cfe9e10cd69ef2260d77bad57060d14f7",
+  "rulebook_words": 1903,
+  "prompt_cache_key": "luna-jev-policy-1e70847917e24fd092c9b043bb8de051",
+  "source": "https://openrouter.ai/docs/guides/best-practices/prompt-caching",
+  "luna_reasoning": "none",
+  "luna_provider": "OpenAI",
+  "protocol": "One distinct Luna cached priming call, then 24 sequential cases with all three arms randomly ordered within case; no automatic retries; actual usage cost and cache counters; exact same Luna message text and segmentation.",
+  "finished_at": "2026-10-02T08:50:56.490676+00:00"
+}

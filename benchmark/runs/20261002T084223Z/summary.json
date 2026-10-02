@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-02T08:47:47.979378+00:00",
+  "metadata": {
+    "models": {
+      "Jev": "typesafe/jev-1.13",
+      "Luna": "openai/gpt-6-luna"
+    },
+    "created_at": "2026-10-02T08:42:23.244948+00:00",
+    "seed": 20261002,
+    "cases": 180,
+    "calls_planned": 360,
+    "budget_usd": 0.999912658,
+    "luna_reasoning": "none",
+    "luna_provider": "OpenAI",
+    "protocol": "One non-streaming request per model per case; sequential paired random order; one shared persistent HTTPS connection; no automatic retries; two warmups per model excluded from measured results.",
+    "cases_sha256": "60e6db60c72869936548c3c4620aa3b070cf12e516f3be42a61a306d0f592660",
+    "runner_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+    "status": "complete",
+    "charged_usd": 0.011550069999999994,
+    "calls_completed": 364,
+    "finished_at": "2026-10-02T08:46:47.575786+00:00"
+  },
+  "totals": {
+    "measured_requests": 360,
+    "measured_valid": 360,
+    "warmup_requests": 4,
+    "all_cost": {
+      "known_total_usd": 0.01155007,
+      "known_count": 364,
+      "missing_count": 0,
+      "complete": true,
+      "total_usd": 0.01155007,
+      "per_1000_requests_usd": 0.03173096153846154
+    },
+    "measured_cost": {
+      "known_total_usd": 0.011462728,
+      "known_count": 360,
+      "missing_count": 0,
+      "complete": true,
+      "total_usd": 0.011462728,
+      "per_1000_requests_usd": 0.03184091111111111
+    },
+    "warmup_cost": {
+      "known_total_usd": 8.7342e-05,
+      "known_count": 4,
+      "missing_count": 0,
+      "complete": true,
+      "total_usd": 8.7342e-05,
+      "per_1000_requests_usd": 0.0218355
+    }
+  },
+  "experiments": {
+    "boolq": {
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "requests": 60,
+          "unique_cases": 60,
+          "valid_count": 60,
+          "invalid_count": 0,
+          "success_rate": 1.0,
+          "target_kind": "label",
+          "quality": {
+            "accuracy": 0.95,
+            "brier": 0.06835999999999999,
+            "log_loss": 0.2482454306996313,
+            "correct_count": 57,
+            "accuracy_all_requests": 0.95
+          },
+          "valid_response_latency_s": {
+            "count": 60,
+            "p50": 0.23620002050301991,
+            "p95": 0.37197747530590275,
+            "mean": 0.26132939653180076
+          },
+          "all_request_latency_s": {
+            "count": 60,
+            "p50": 0.23620002050301991,
+            "p95": 0.37197747530590275,
+            "mean": 0.26132939653180076
+          },
+          "cost": {
+            "known_total_usd": 0.001190826,
+            "known_count": 60,
+            "missing_count": 0,
+            "complete": true,
+            "total_usd": 0.001190826,
+            "per_1000_requests_usd": 0.019847100000000003,
+            "per_correct_answer_usd": 2.0891684210526317e-05
+          },
+          "response_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "providers": [
+            "TypeSafe"
+          ]
+        },
+        "Luna": {
+          "requests": 60,
+          "unique_cases": 60,
+          "valid_count": 60,
+          "invalid_count": 0,
+          "success_rate": 1.0,
+          "target_kind": "label",
+          "quality": {
+            "accuracy": 0.8166666666666667,
+            "brier": 0.16761500000000001,
+            "log_loss": 3.6759119683872865,
+            "correct_count": 49,
+            "accuracy_all_requests": 0.8166666666666667
+          },
+          "valid_response_latency_s": {
+            "count": 60,
+            "p50": 1.1484179999970365,
+            "p95": 1.4701433298032498,
+            "mean": 1.1566619764028776
+          },
+          "all_request_latency_s": {
+            "count": 60,
+            "p50": 1.1484179999970365,
+            "p95": 1.4701433298032498,
+            "mean": 1.1566619764028776
+          },
+          "cost": {
+            "known_total_usd": 0.002669,
+            "known_count": 60,
+            "missing_count": 0,
+            "complete": true,
+            "total_usd": 0.002669,
+            "per_1000_requests_usd": 0.04448333333333333,
+            "per_correct_answer_usd": 5.446938775510204e-05
+          },
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        }
+      },
+      "paired": {
+        "difference_direction": "Luna minus Jev",
+        "latency_ratio_direction": "Luna divided by Jev",
+        "unit": "case; valid repeats averaged within case, latency repeats reduced to median",
+        "total_cases": 60,
+        "paired_cases": 60,
+        "excluded_cases": 0,
+        "mismatched_target_case_ids": [],
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 3745107185,
+        "confidence_level": 0.95,
+        "quality_differences": {
+          "accuracy": {
+            "estimate": -0.13333333333333333,
+            "ci95": [
+              -0.21666666666666667,
+              -0.05
+            ],
+            "favours_luna_when": "positive"
+          },
+          "brier": {
+            "estimate": 0.09925500000000001,
+            "ci95": [
+              0.03473529166666667,
+              0.17184033333333323
+            ],
+            "favours_luna_when": "negative"
+          },
+          "log_loss": {
+            "estimate": 3.4276665376876547,
+            "ci95": [
+              1.14736590607063,
+              6.148670921720271
+            ],
+            "favours_luna_when": "negative"
+          }
+        },
+        "latency_median_ratio": {
+          "estimate": 4.862057156266646,
+          "ci95": [
+            4.41750089230697,
+            5.1040566772845715
+          ],
+          "paired_cases": 60,
+          "defined_bootstrap_samples": 2000,
+          "favours_luna_when": "less than 1"
+        }
+      }
+    },
+    "policy": {
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "requests": 60,
+          "unique_cases": 60,
+          "valid_count": 60,
+          "invalid_count": 0,
+          "success_rate": 1.0,
+          "target_kind": "label",
+          "quality": {
+            "accuracy": 1.0,
+            "brier": 0.008311666666666669,
+            "log_loss": 0.06748769727937004,
+            "correct_count": 60,
+            "accuracy_all_requests": 1.0
+          },
+          "valid_response_latency_s": {
+            "count": 60,
+            "p50": 0.24326154148729984,
+            "p95": 0.3312737014319282,
+            "mean": 0.25546772780217
+          },
+          "all_request_latency_s": {
+            "count": 60,
+            "p50": 0.24326154148729984,
+            "p95": 0.3312737014319282,
+            "mean": 0.25546772780217
+          },
+          "cost": {
+            "known_total_usd": 0.001255632,
+            "known_count": 60,
+            "missing_count": 0,
+            "complete": true,
+            "total_usd": 0.001255632,
+            "per_1000_requests_usd": 0.020927200000000003,
+            "per_correct_answer_usd": 2.0927200000000002e-05
+          },
+          "response_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "providers": [
+            "TypeSafe"
+          ]
+        },
+        "Luna": {
+          "requests": 60,
+          "unique_cases": 60,
+          "valid_count": 60,
+          "invalid_count": 0,
+          "success_rate": 1.0,
+          "target_kind": "label",
+          "quality": {
+            "accuracy": 1.0,
+            "brier": 0.0,
+            "log_loss": 9.99600361081321e-16,
+            "correct_count": 60,
+            "accuracy_all_requests": 1.0
+          },
+          "valid_response_latency_s": {
+            "count": 60,
+            "p50": 1.1491409375012154,
+            "p95": 1.6466312964330425,
+            "mean": 1.1813501993514364
+          },
+          "all_request_latency_s": {
+            "count": 60,
+            "p50": 1.1491409375012154,
+            "p95": 1.6466312964330425,
+            "mean": 1.1813501993514364
+          },
+          "cost": {
+            "known_total_usd": 0.0027441,
+            "known_count": 60,
+            "missing_count": 0,
+            "complete": true,
+            "total_usd": 0.0027441,
+            "per_1000_requests_usd": 0.045735000000000005,
+            "per_correct_answer_usd": 4.5735e-05
+          },
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        }
+      },
+      "paired": {
+        "difference_direction": "Luna minus Jev",
+        "latency_ratio_direction": "Luna divided by Jev",
+        "unit": "case; valid repeats averaged within case, latency repeats reduced to median",
+        "total_cases": 60,
+        "paired_cases": 60,
+        "excluded_cases": 0,
+        "mismatched_target_case_ids": [],
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 2184452498,
+        "confidence_level": 0.95,
+        "quality_differences": {
+          "accuracy": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "favours_luna_when": "positive"
+          },
+          "brier": {
+            "estimate": -0.008311666666666669,
+            "ci95": [
+              -0.015043791666666669,
+              -0.0037815833333333347
+            ],
+            "favours_luna_when": "negative"
+          },
+          "log_loss": {
+            "estimate": -0.06748769727936903,
+            "ci95": [
+              -0.09047705235375375,
+              -0.04933797508124458
+            ],
+            "favours_luna_when": "negative"
+          }
+        },
+        "latency_median_ratio": {
+          "estimate": 4.723890716450177,
+          "ci95": [
+            4.262462643633293,
+            5.045807495730796
+          ],
+          "paired_cases": 60,
+          "defined_bootstrap_samples": 2000,
+          "favours_luna_when": "less than 1"
+        }
+      }
+    },
+    "probability": {
+      "target_kind": "probability",
+      "models": {
+        "Jev": {
+          "requests": 60,
+          "unique_cases": 60,
+          "valid_count": 60,
+          "invalid_count": 0,
+          "success_rate": 1.0,
+          "target_kind": "probability",
+          "quality": {
+            "mae": 0.0644286219101022,
+            "excess_brier": 0.009976842577220275,
+            "expected_brier": 0.15633600538274284,
+            "rmse": 0.09988414577509423
+          },
+          "valid_response_latency_s": {
+            "count": 60,
+            "p50": 0.237314312485978,
+            "p95": 0.31138571220799344,
+            "mean": 0.2471950327322702
+          },
+          "all_request_latency_s": {
+            "count": 60,
+            "p50": 0.237314312485978,
+            "p95": 0.31138571220799344,
+            "mean": 0.2471950327322702
+          },
+          "cost": {
+            "known_total_usd": 0.00111867,
+            "known_count": 60,
+            "missing_count": 0,
+            "complete": true,
+            "total_usd": 0.00111867,
+            "per_1000_requests_usd": 0.0186445,
+            "per_correct_answer_usd": null
+          },
+          "response_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "providers": [
+            "TypeSafe"
+          ]
+        },
+        "Luna": {
+          "requests": 60,
+          "unique_cases": 60,
+          "valid_count": 60,
+          "invalid_count": 0,
+          "success_rate": 1.0,
+          "target_kind": "probability",
+          "quality": {
+            "mae": 0.03277039096880469,
+            "excess_brier": 0.005510213165512707,
+            "expected_brier": 0.15186937597103528,
+            "rmse": 0.07423081008255741
+          },
+          "valid_response_latency_s": {
+            "count": 60,
+            "p50": 1.1426221465080744,
+            "p95": 1.5959135121971477,
+            "mean": 1.2395371187997322
+          },
+          "all_request_latency_s": {
+            "count": 60,
+            "p50": 1.1426221465080744,
+            "p95": 1.5959135121971477,
+            "mean": 1.2395371187997322
+          },
+          "cost": {
+            "known_total_usd": 0.0024845,
+            "known_count": 60,
+            "missing_count": 0,
+            "complete": true,
+            "total_usd": 0.0024845,
+            "per_1000_requests_usd": 0.04140833333333333,
+            "per_correct_answer_usd": null
+          },
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        }
+      },
+      "paired": {
+        "difference_direction": "Luna minus Jev",
+        "latency_ratio_direction": "Luna divided by Jev",
+        "unit": "case; valid repeats averaged within case, latency repeats reduced to median",
+        "total_cases": 60,
+        "paired_cases": 60,
+        "excluded_cases": 0,
+        "mismatched_target_case_ids": [],
+        "bootstrap_samples": 2000,
+        "bootstrap_seed": 961937342,
+        "confidence_level": 0.95,
+        "quality_differences": {
+          "mae": {
+            "estimate": -0.0316582309412975,
+            "ci95": [
+              -0.0521207929380925,
+              -0.01113896868529326
+            ],
+            "favours_luna_when": "negative"
+          },
+          "excess_brier": {
+            "estimate": -0.004466629411707567,
+            "ci95": [
+              -0.011295080296257799,
+              0.002042924425773913
+            ],
+            "favours_luna_when": "negative"
+          },
+          "expected_brier": {
+            "estimate": -0.004466629411707568,
+            "ci95": [
+              -0.011295080296257797,
+              0.0020429244257739133
+            ],
+            "favours_luna_when": "negative"
+          }
+        },
+        "latency_median_ratio": {
+          "estimate": 4.814805034464946,
+          "ci95": [
+            4.469474257664341,
+            5.36853956771415
+          ],
+          "paired_cases": 60,
+          "defined_bootstrap_samples": 2000,
+          "favours_luna_when": "less than 1"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "success": "valid=true with a finite probability and valid target in [0,1]; label targets must be 0 or 1",
+    "accuracy": "Fraction correct among valid responses, predicting yes when p_yes >= 0.5",
+    "accuracy_all_requests": "Correct valid responses divided by every measured request; invalid requests count as failures",
+    "brier": "Mean (p_yes - observed_label)^2; lower is better",
+    "log_loss": "Mean binary negative log likelihood in natural-log units; p clipped to [1e-15, 1-1e-15]",
+    "mae": "Mean absolute difference between reported p_yes and exact reference probability",
+    "rmse": "Square root of mean squared error against exact reference probabilities",
+    "excess_brier": "Mean (p_yes - true_probability)^2: expected Brier above the optimal probability forecast",
+    "expected_brier": "Mean [(p_yes - true_probability)^2 + true_probability*(1-true_probability)]",
+    "latency": "End-to-end request time through receipt of a complete response; main table includes valid responses only",
+    "cost": "Recorded billed USD across all requests in the stated phase, including failed/invalid requests when billed",
+    "cost_per_1000": "Measured total billed cost / measured request count * 1000; withheld if any bill is missing",
+    "cost_per_correct": "All measured billed cost / number of correct valid label responses; withheld for missing bills or zero correct",
+    "bootstrap": "Percentile 95% paired bootstrap by case identity; quality repeats averaged within case; latency repeats use median; no CI for fewer than 2 pairs"
+  },
+  "caveats": [
+    "This is a small benchmark. Intervals describe variation across the sampled cases; they do not prove a general model ranking.",
+    "Luna supplies generated numerical probabilities; Jev supplies its native Noul probabilities. Neither adapter extracts next-token probabilities. Brier combines calibration and discrimination; this small sample cannot establish general calibration.",
+    "Each task has a separate quality scale. Quality is not pooled across tasks; no overall winner is inferred.",
+    "BoolQ is public and may have appeared in training data. Reading-comprehension results can be affected by contamination.",
+    "Paired comparisons include only cases with valid responses from both models. Check success rates and excluded pairs before comparing conditional quality.",
+    "Latency includes the OpenRouter/provider/network path. Provider routing, caching, load, reasoning settings, and output length can change speed and price.",
+    "The intended primary protocol is Luna reasoning=none, sequential randomized interleaving, and no retries. The recorded run metadata is the source of truth for whether that protocol was used.",
+    "95% intervals are exploratory percentile bootstrap intervals without multiple-comparison correction. Zero-width intervals can occur in a small or uniform sample.",
+    "Costs are USD as reported by the runner. Missing billing remains unknown; cost per 1,000 is a sample-based projection, not a price guarantee."
+  ]
+}

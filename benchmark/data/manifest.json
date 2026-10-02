@@ -1,0 +1,141 @@
+{
+  "boolq": {
+    "attribution": "BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions. Christopher Clark, Kenton Lee, Ming-Wei Chang, Tom Kwiatkowski, Michael Collins, Kristina Toutanova. NAACL 2019.",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "mirror": "https://huggingface.co/datasets/google/boolq",
+    "mirror_rows_api": "https://datasets-server.huggingface.co/rows?dataset=google%2Fboolq&config=default&split=validation",
+    "official_download": "https://storage.googleapis.com/boolq/dev.jsonl",
+    "paper": "https://arxiv.org/abs/1905.10044",
+    "raw_jsonl_sha256": "e8fb84fbf510b022e963cddf3a3aded04151afa0ea0ef1cc1bf22f260ddd2344",
+    "retrieval_note": "Original Google Cloud Storage URL returned HTTP 403. Downloaded complete Google-owned Hugging Face validation mirror via rows API, then serialized to JSONL. This JSONL hash is of the local normalized mirror, not the original GCS file.",
+    "sample_method": "random.Random(seed).sample(range(3270), 60); uniform without replacement; no filtering by label or model output",
+    "selected_row_indices_zero_based": [
+      659,
+      2774,
+      579,
+      2217,
+      1517,
+      1662,
+      2868,
+      1447,
+      383,
+      2665,
+      2041,
+      1296,
+      1114,
+      1953,
+      2493,
+      3009,
+      2504,
+      3125,
+      1092,
+      55,
+      2791,
+      1842,
+      2951,
+      852,
+      1171,
+      1550,
+      2116,
+      341,
+      2098,
+      2597,
+      468,
+      65,
+      3114,
+      877,
+      2630,
+      448,
+      3134,
+      525,
+      1381,
+      308,
+      2849,
+      210,
+      3115,
+      587,
+      2552,
+      1859,
+      1739,
+      1066,
+      3247,
+      1335,
+      1979,
+      2426,
+      3165,
+      980,
+      2011,
+      2818,
+      1603,
+      1625,
+      767,
+      1570
+    ],
+    "source": "https://github.com/google-research-datasets/boolean-questions",
+    "source_rows": 3270
+  },
+  "cases_file": "cases.jsonl",
+  "cases_sha256": "60e6db60c72869936548c3c4620aa3b070cf12e516f3be42a61a306d0f592660",
+  "count": 180,
+  "distribution": {
+    "boolq": {
+      "count": 60,
+      "labels": {
+        "no": 24,
+        "yes": 36
+      },
+      "target_max": 1.0,
+      "target_mean": 0.6,
+      "target_min": 0.0
+    },
+    "policy": {
+      "count": 60,
+      "labels": {
+        "no": 30,
+        "yes": 30
+      },
+      "target_max": 1.0,
+      "target_mean": 0.5,
+      "target_min": 0.0
+    },
+    "probability": {
+      "count": 60,
+      "target_max": 1.0,
+      "target_mean": 0.4896041483485319,
+      "target_min": 0.0
+    }
+  },
+  "generator_version": 1,
+  "limitations": [
+    "This is a small, exploratory pilot, not a broad ranking of either model.",
+    "BoolQ development labels are human annotations rather than a mathematical oracle; the public set may be present in model training data.",
+    "Synthetic policy and probability cases measure the specified rules and probability problems, not general operational or forecasting performance.",
+    "Probability cases use exact known event probabilities, not observed binary outcomes. Use MAE/RMSE and expected proper scores for these cases.",
+    "Thresholds and prompts must be frozen before reading scored model outputs."
+  ],
+  "model_input_fields": [
+    "state",
+    "question",
+    "criteria"
+  ],
+  "name": "Luna versus Jev matched binary decisions pilot",
+  "never_send_to_models": [
+    "id",
+    "experiment",
+    "target",
+    "target_kind",
+    "source"
+  ],
+  "policy_families": {
+    "access": 20,
+    "delivery": 20,
+    "refund": 20
+  },
+  "probability_families": {
+    "conditional_table": 20,
+    "weighted_mixture": 20,
+    "without_replacement": 20
+  },
+  "seed": 20261002
+}

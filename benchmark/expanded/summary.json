@@ -1,0 +1,2552 @@
+{
+  "analysis_version": 1,
+  "generated_at_utc": "2026-10-02T09:56:41.525294+00:00",
+  "analysis_spec_sha256": "1ba66f1f7a0ecdf0cb25f6d83daa36f5ccfb4440db1ea175edbb80b8027463c5",
+  "analysis_spec": {
+    "version": 1,
+    "frozen_at_utc": "2026-10-02T09:22:59.150624+00:00",
+    "freeze_note": "Analysis choices specified before inspection of any expanded scored output.",
+    "quality_phase": "quality",
+    "quality_repeat": 0,
+    "models": [
+      "Jev",
+      "Luna"
+    ],
+    "primary_binary_quality": "Accuracy across all attempted requests; invalid answers count as incorrect. Balanced accuracy averages class-specific recall, counting invalid answers as incorrect within their true class.",
+    "binary_secondary": "Valid-response accuracy and balanced accuracy; valid-only Brier and clipped natural-log loss. Wilson 95% intervals for accuracy; always show validity and class denominators.",
+    "probability_quality": "Valid-only MAE and RMSE against exact probability; excess and expected Brier; counts of missing/invalid responses shown separately.",
+    "paired_difference_direction": "Luna minus Jev",
+    "paired_ratio_direction": "Luna divided by Jev",
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 20261002,
+    "bootstrap_method": "Percentile 95% interval. Resample complete case pairs. Within BoolQ, exact duplicate passage strings form a single resampling cluster, retaining every row from each selected cluster. Paired accuracy includes invalid outputs as wrong; proper-score/probability-error comparisons use only pairs valid for both models, with excluded counts.",
+    "bootstrap_limits": "Exploratory, unadjusted intervals. No IID claim for shared synthetic templates or a finite public development set. Missing one class in a resample yields an undefined balanced-accuracy draw, reported explicitly. Degenerate intervals do not establish equivalence.",
+    "binary_discordance": "Report both-correct, Luna-only-correct, Jev-only-correct, both-incorrect; exact two-sided McNemar binomial p-value is exploratory and unadjusted.",
+    "boolq_subgroups": "Descriptive pilot60 versus remaining3210, identified from the existing frozen pilot case IDs before expanded outcomes are inspected; no selection on performance.",
+    "bulk_latency": "Concurrent quality-run latency is diagnostic only and must not support speed comparisons.",
+    "timing_phase": "timing",
+    "timing_primary": "Serial timing only. Require paired positive finite complete-response timings. Reduce repeats to each case/model median, then compare medians across cases with a paired case bootstrap. Report all attempts, valid counts, complete-repeat counts, and per-repeat block medians. Timing warmups excluded from timing estimates, retained in billing.",
+    "cost": "Known billed USD subtotal and missing-bill count for all attempts in each phase. Full total, per-1000 projection and cost-per-correct withheld when any required bill is missing. Warmups and failed/invalid attempts remain in their phase's billing totals.",
+    "missingness": "Never impute missing response probabilities, times or costs; partial runs and unpaired/excluded cases are identified. Published labels are not relabeled after seeing outputs."
+  },
+  "bootstrap_replicates": 5000,
+  "seed": 20261002,
+  "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+  "quality_records_sha256": "c508f6173a27bed9834a294329414cf499bdc078381eb3f41e4d66c08f9f3f8b",
+  "quality_run": {
+    "metadata": {
+      "status": "complete",
+      "created_at": "2026-10-02T09:33:41.649117+00:00",
+      "models": {
+        "Jev": "typesafe/jev-1.13",
+        "Luna": "openai/gpt-6-luna"
+      },
+      "cases": 4785,
+      "planned_calls": 9570,
+      "concurrency_pairs": 16,
+      "phase": "quality",
+      "seed": 20261002,
+      "budget_usd": 0.8,
+      "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+      "runner_sha256": "992c7c8ce88be5a4b7928957690a239cee5cac510f7882a8be61636eaa2c79e8",
+      "adapter_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+      "protocol": "Fresh full quality evaluation. Random case and within-pair model order. Thread workers each perform one pair sequentially. No retries or repairs. Concurrent latency is diagnostic only, excluded from speed claims. Shared answer contract and Luna settings unchanged from pilot.",
+      "calls_completed": 9570,
+      "valid": 9569,
+      "invalid": 1,
+      "charged_usd": null,
+      "known_charge_subtotal_usd": 0.28895565000000006,
+      "unknown_billing": 1,
+      "budget_pending_usd": 0.0,
+      "budget_stop_reason": null,
+      "finished_at": "2026-10-02T09:49:23.338894+00:00",
+      "protocol_amendments": [
+        {
+          "timestamp": "2026-10-02T09:42:28.671416+00:00",
+          "reason": "Continue only unattempted calls after a transient HTTP 520 and unknown bill. Retain the failed attempt without retry. Separate budget allowances permit continuation without fabricating billing.",
+          "code_sha256": "9e13adeed4f44c0aa376c4a25e14beeb3770861e21daba65854aff32fb558768",
+          "initial_code_sha256": "992c7c8ce88be5a4b7928957690a239cee5cac510f7882a8be61636eaa2c79e8",
+          "initial_metadata_sha256": "a7c3d8243bd30a7da333de4736ce5630a5307f1236d8a53cb4aed54238937a8d",
+          "initial_metadata_snapshot": "metadata-before-amendment-1.json",
+          "initial_raw_prefix_sha256": "74bd79d76e29d2bc6f747e4d3632e56c2d7bd4ca0badf89fbbe5a22946c5fc94",
+          "initial_raw_prefix_bytes": 899939,
+          "initial_attempts": 308,
+          "unattempted_calls": 9262,
+          "frozen_plan_sha256": "4a9deec659f08d1698e150b41b0b32ad01f55dde55c2c93fc4e288ef89a67c36",
+          "workers": 16,
+          "unknown_billing_policy": "$0.01 accounting allowance per unknown attempt; reported cost remains null. In-flight reservations are the larger of the original request estimate and $0.01.",
+          "failure_circuit": "Five consecutive invalid completions, or at least 5% invalid among global completed attempts once 100 have completed. Completion order is append order in responses.jsonl.",
+          "retry_policy": "No retries, repairs, or replays; every original (case_id,model) is attempted at most once."
+        }
+      ],
+      "continuation_started_at": "2026-10-02T09:42:28.672123+00:00",
+      "consecutive_invalid": 0,
+      "unknown_charge_allowance_per_attempt_usd": 0.01,
+      "unknown_charge_allowance_total_usd": 0.01,
+      "budget_accounted_usd": 0.2989556500000001
+    },
+    "attempts": 9570,
+    "expected_attempts": 9570,
+    "missing_attempts": 0,
+    "cost_all_phases": {
+      "requests": 9570,
+      "known_billed_usd": 0.28895565,
+      "observed_bills": 9569,
+      "missing_bills": 1,
+      "total_billed_usd": null,
+      "usd_per_1000_attempts": null
+    },
+    "cost_quality_phase": {
+      "requests": 9570,
+      "known_billed_usd": 0.28895565,
+      "observed_bills": 9569,
+      "missing_bills": 1,
+      "total_billed_usd": null,
+      "usd_per_1000_attempts": null
+    },
+    "cost_by_phase": {
+      "quality": {
+        "requests": 9570,
+        "known_billed_usd": 0.28895565,
+        "observed_bills": 9569,
+        "missing_bills": 1,
+        "total_billed_usd": null,
+        "usd_per_1000_attempts": null
+      }
+    },
+    "bulk_latency_diagnostic_only": {
+      "Jev": {
+        "attempts": 4785,
+        "valid": 4784,
+        "observed_positive_timings": 4785,
+        "median_s": 0.2417347920127213,
+        "p95_s": 0.32409904980449955,
+        "mean_s": 0.25440568755248943
+      },
+      "Luna": {
+        "attempts": 4785,
+        "valid": 4785,
+        "observed_positive_timings": 4785,
+        "median_s": 1.0800500409968663,
+        "p95_s": 1.5839749831997325,
+        "mean_s": 1.1784223865195909
+      }
+    }
+  },
+  "tasks": {
+    "boolq": {
+      "expected_cases": 3270,
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "attempts": 3270,
+          "valid": 3270,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.998826620388002,
+            1
+          ],
+          "unique_cases": 3270,
+          "target_kind": "label",
+          "cost": {
+            "requests": 3270,
+            "known_billed_usd": 0.06289479,
+            "observed_bills": 3270,
+            "missing_bills": 0,
+            "total_billed_usd": 0.06289479,
+            "usd_per_1000_attempts": 0.019233880733944955,
+            "usd_per_correct_answer": 2.095794401866045e-05
+          },
+          "quality": {
+            "correct": 3001,
+            "accuracy_all_attempts": 0.917737003058104,
+            "accuracy_all_attempts_wilson95": [
+              0.9078221114479283,
+              0.9266715665031486
+            ],
+            "balanced_accuracy_all_attempts": 0.9162745579108811,
+            "class_denominators": {
+              "no": {
+                "attempts": 1237,
+                "valid": 1237,
+                "correct": 1126,
+                "recall_all_attempts": 0.910266774454325
+              },
+              "yes": {
+                "attempts": 2033,
+                "valid": 2033,
+                "correct": 1875,
+                "recall_all_attempts": 0.9222823413674373
+              }
+            },
+            "accuracy_valid_only": 0.917737003058104,
+            "accuracy_valid_only_wilson95": [
+              0.9078221114479283,
+              0.9266715665031486
+            ],
+            "balanced_accuracy_valid_only": 0.9162745579108811,
+            "brier_valid_only": 0.062442293577981645,
+            "log_loss_valid_only": 0.219908748023455,
+            "proper_score_denominator": 3270
+          }
+        },
+        "Luna": {
+          "attempts": 3270,
+          "valid": 3270,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.998826620388002,
+            1
+          ],
+          "unique_cases": 3270,
+          "target_kind": "label",
+          "cost": {
+            "requests": 3270,
+            "known_billed_usd": 0.1404962,
+            "observed_bills": 3270,
+            "missing_bills": 0,
+            "total_billed_usd": 0.1404962,
+            "usd_per_1000_attempts": 0.042965198776758404,
+            "usd_per_correct_answer": 4.9733168141592913e-05
+          },
+          "quality": {
+            "correct": 2825,
+            "accuracy_all_attempts": 0.863914373088685,
+            "accuracy_all_attempts_wilson95": [
+              0.8517343947848243,
+              0.8752403319807552
+            ],
+            "balanced_accuracy_all_attempts": 0.8577956443023181,
+            "class_denominators": {
+              "no": {
+                "attempts": 1237,
+                "valid": 1237,
+                "correct": 1030,
+                "recall_all_attempts": 0.8326596604688763
+              },
+              "yes": {
+                "attempts": 2033,
+                "valid": 2033,
+                "correct": 1795,
+                "recall_all_attempts": 0.88293162813576
+              }
+            },
+            "accuracy_valid_only": 0.863914373088685,
+            "accuracy_valid_only_wilson95": [
+              0.8517343947848243,
+              0.8752403319807552
+            ],
+            "balanced_accuracy_valid_only": 0.8577956443023181,
+            "brier_valid_only": 0.1254407339449541,
+            "log_loss_valid_only": 2.0475586107185118,
+            "proper_score_denominator": 3270
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 3270,
+        "paired_cases": 3270,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 3270,
+        "invalid_response_pairs": 0,
+        "resampling_clusters": 2938,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261002,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "accuracy_all_attempts_difference": {
+            "estimate": -0.05382262996941896,
+            "ci95": [
+              -0.06487188927230851,
+              -0.04314538527434187
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "balanced_accuracy_all_attempts_difference": {
+            "estimate": -0.058478913608563,
+            "ci95": [
+              -0.07053555551408902,
+              -0.04661974990646179
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "brier_valid_pairs_difference": {
+            "estimate": 0.06299844036697247,
+            "ci95": [
+              0.05413421740104574,
+              0.07189101253309452
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "log_loss_valid_pairs_difference": {
+            "estimate": 1.8276498626950566,
+            "ci95": [
+              1.5795518090371796,
+              2.08361927992546
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        },
+        "correctness_pairs": {
+          "both_correct": 2754,
+          "luna_only_correct": 71,
+          "jev_only_correct": 247,
+          "both_incorrect": 198
+        },
+        "mcnemar_exact_two_sided_p_exploratory": 6.090829100595564e-24,
+        "mcnemar_limit": "Treats discordant rows as independent; duplicate passages/shared templates violate that assumption. Do not substitute this test for the passage-cluster intervals."
+      }
+    },
+    "policy": {
+      "expected_cases": 300,
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "attempts": 300,
+          "valid": 300,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "unique_cases": 300,
+          "target_kind": "label",
+          "cost": {
+            "requests": 300,
+            "known_billed_usd": 0.006052662,
+            "observed_bills": 300,
+            "missing_bills": 0,
+            "total_billed_usd": 0.006052662,
+            "usd_per_1000_attempts": 0.02017554,
+            "usd_per_correct_answer": 2.017554e-05
+          },
+          "quality": {
+            "correct": 300,
+            "accuracy_all_attempts": 1.0,
+            "accuracy_all_attempts_wilson95": [
+              0.9873570287754538,
+              0.9999999999999998
+            ],
+            "balanced_accuracy_all_attempts": 1.0,
+            "class_denominators": {
+              "no": {
+                "attempts": 150,
+                "valid": 150,
+                "correct": 150,
+                "recall_all_attempts": 1.0
+              },
+              "yes": {
+                "attempts": 150,
+                "valid": 150,
+                "correct": 150,
+                "recall_all_attempts": 1.0
+              }
+            },
+            "accuracy_valid_only": 1.0,
+            "accuracy_valid_only_wilson95": [
+              0.9873570287754538,
+              0.9999999999999998
+            ],
+            "balanced_accuracy_valid_only": 1.0,
+            "brier_valid_only": 0.005199333333333334,
+            "log_loss_valid_only": 0.05776850682166601,
+            "proper_score_denominator": 300
+          }
+        },
+        "Luna": {
+          "attempts": 300,
+          "valid": 300,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "unique_cases": 300,
+          "target_kind": "label",
+          "cost": {
+            "requests": 300,
+            "known_billed_usd": 0.0132828,
+            "observed_bills": 300,
+            "missing_bills": 0,
+            "total_billed_usd": 0.0132828,
+            "usd_per_1000_attempts": 0.044276,
+            "usd_per_correct_answer": 4.442408026755853e-05
+          },
+          "quality": {
+            "correct": 299,
+            "accuracy_all_attempts": 0.9966666666666667,
+            "accuracy_all_attempts_wilson95": [
+              0.9813633063054688,
+              0.9994113422781488
+            ],
+            "balanced_accuracy_all_attempts": 0.9966666666666666,
+            "class_denominators": {
+              "no": {
+                "attempts": 150,
+                "valid": 150,
+                "correct": 149,
+                "recall_all_attempts": 0.9933333333333333
+              },
+              "yes": {
+                "attempts": 150,
+                "valid": 150,
+                "correct": 150,
+                "recall_all_attempts": 1.0
+              }
+            },
+            "accuracy_valid_only": 0.9966666666666667,
+            "accuracy_valid_only_wilson95": [
+              0.9813633063054688,
+              0.9994113422781488
+            ],
+            "balanced_accuracy_valid_only": 0.9966666666666666,
+            "brier_valid_only": 0.0033333333333333335,
+            "log_loss_valid_only": 0.11513191997447059,
+            "proper_score_denominator": 300
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 300,
+        "paired_cases": 300,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 300,
+        "invalid_response_pairs": 0,
+        "resampling_clusters": 300,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261003,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "accuracy_all_attempts_difference": {
+            "estimate": -0.0033333333333333335,
+            "ci95": [
+              -0.01,
+              0.0
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "balanced_accuracy_all_attempts_difference": {
+            "estimate": -0.0033333333333333335,
+            "ci95": [
+              -0.010416666666666666,
+              0.0
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "brier_valid_pairs_difference": {
+            "estimate": -0.0018660000000000007,
+            "ci95": [
+              -0.006158083333333334,
+              0.005145308333333328
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "log_loss_valid_pairs_difference": {
+            "estimate": 0.05736341315280459,
+            "ci95": [
+              -0.062071831103943646,
+              0.2893760384603044
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        },
+        "correctness_pairs": {
+          "both_correct": 299,
+          "luna_only_correct": 0,
+          "jev_only_correct": 1,
+          "both_incorrect": 0
+        },
+        "mcnemar_exact_two_sided_p_exploratory": 1.0,
+        "mcnemar_limit": "Treats discordant rows as independent; duplicate passages/shared templates violate that assumption. Do not substitute this test for the passage-cluster intervals."
+      }
+    },
+    "probability": {
+      "expected_cases": 300,
+      "target_kind": "probability",
+      "models": {
+        "Jev": {
+          "attempts": 300,
+          "valid": 299,
+          "invalid": 1,
+          "success_rate": 0.9966666666666667,
+          "success_rate_wilson95": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "unique_cases": 300,
+          "target_kind": "probability",
+          "cost": {
+            "requests": 300,
+            "known_billed_usd": 0.005577474,
+            "observed_bills": 299,
+            "missing_bills": 1,
+            "total_billed_usd": null,
+            "usd_per_1000_attempts": null
+          },
+          "quality": {
+            "mae_valid_only": 0.07640276740848177,
+            "rmse_valid_only": 0.12256650038782585,
+            "excess_brier_valid_only": 0.015022547017318914,
+            "expected_brier_valid_only": 0.16237160248127255,
+            "error_score_denominator": 299
+          }
+        },
+        "Luna": {
+          "attempts": 300,
+          "valid": 300,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "unique_cases": 300,
+          "target_kind": "probability",
+          "cost": {
+            "requests": 300,
+            "known_billed_usd": 0.0124422,
+            "observed_bills": 300,
+            "missing_bills": 0,
+            "total_billed_usd": 0.0124422,
+            "usd_per_1000_attempts": 0.041474000000000004
+          },
+          "quality": {
+            "mae_valid_only": 0.024395889425565125,
+            "rmse_valid_only": 0.06518648458252084,
+            "excess_brier_valid_only": 0.0042492777722272276,
+            "expected_brier_valid_only": 0.1511071697179677,
+            "error_score_denominator": 300
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 300,
+        "paired_cases": 300,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 299,
+        "invalid_response_pairs": 1,
+        "resampling_clusters": 300,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261004,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "mae_valid_pairs_difference": {
+            "estimate": -0.05192528637948666,
+            "ci95": [
+              -0.06447602149488647,
+              -0.040097355461651114
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "excess_brier_valid_pairs_difference": {
+            "estimate": -0.010759057613746443,
+            "ci95": [
+              -0.015846050706466788,
+              -0.006036327923267275
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "rmse_valid_pairs_difference": {
+            "estimate": -0.05727109929730134,
+            "ci95": [
+              -0.08372751489614814,
+              -0.03235248315925982
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        }
+      }
+    },
+    "rte": {
+      "expected_cases": 277,
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "attempts": 277,
+          "valid": 277,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9863216106452903,
+            1
+          ],
+          "unique_cases": 277,
+          "target_kind": "label",
+          "cost": {
+            "requests": 277,
+            "known_billed_usd": 0.004656624,
+            "observed_bills": 277,
+            "missing_bills": 0,
+            "total_billed_usd": 0.004656624,
+            "usd_per_1000_attempts": 0.016810916967509023,
+            "usd_per_correct_answer": 1.855228685258964e-05
+          },
+          "quality": {
+            "correct": 251,
+            "accuracy_all_attempts": 0.9061371841155235,
+            "accuracy_all_attempts_wilson95": [
+              0.8660240489486702,
+              0.9351397142108616
+            ],
+            "balanced_accuracy_all_attempts": 0.9074296768796403,
+            "class_denominators": {
+              "no": {
+                "attempts": 131,
+                "valid": 131,
+                "correct": 122,
+                "recall_all_attempts": 0.9312977099236641
+              },
+              "yes": {
+                "attempts": 146,
+                "valid": 146,
+                "correct": 129,
+                "recall_all_attempts": 0.8835616438356164
+              }
+            },
+            "accuracy_valid_only": 0.9061371841155235,
+            "accuracy_valid_only_wilson95": [
+              0.8660240489486702,
+              0.9351397142108616
+            ],
+            "balanced_accuracy_valid_only": 0.9074296768796403,
+            "brier_valid_only": 0.07178808664259928,
+            "log_loss_valid_only": 0.2483805767638515,
+            "proper_score_denominator": 277
+          }
+        },
+        "Luna": {
+          "attempts": 277,
+          "valid": 277,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9863216106452903,
+            1
+          ],
+          "unique_cases": 277,
+          "target_kind": "label",
+          "cost": {
+            "requests": 277,
+            "known_billed_usd": 0.0102786,
+            "observed_bills": 277,
+            "missing_bills": 0,
+            "total_billed_usd": 0.0102786,
+            "usd_per_1000_attempts": 0.03710685920577617,
+            "usd_per_correct_answer": 4.264979253112033e-05
+          },
+          "quality": {
+            "correct": 241,
+            "accuracy_all_attempts": 0.8700361010830325,
+            "accuracy_all_attempts_wilson95": [
+              0.8253226276877503,
+              0.9046265787464898
+            ],
+            "balanced_accuracy_all_attempts": 0.8684774652305762,
+            "class_denominators": {
+              "no": {
+                "attempts": 131,
+                "valid": 131,
+                "correct": 110,
+                "recall_all_attempts": 0.8396946564885496
+              },
+              "yes": {
+                "attempts": 146,
+                "valid": 146,
+                "correct": 131,
+                "recall_all_attempts": 0.8972602739726028
+              }
+            },
+            "accuracy_valid_only": 0.8700361010830325,
+            "accuracy_valid_only_wilson95": [
+              0.8253226276877503,
+              0.9046265787464898
+            ],
+            "balanced_accuracy_valid_only": 0.8684774652305762,
+            "brier_valid_only": 0.1103158844765343,
+            "log_loss_valid_only": 1.4235066715760918,
+            "proper_score_denominator": 277
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 277,
+        "paired_cases": 277,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 277,
+        "invalid_response_pairs": 0,
+        "resampling_clusters": 277,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261005,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "accuracy_all_attempts_difference": {
+            "estimate": -0.036101083032490974,
+            "ci95": [
+              -0.07581227436823104,
+              0.0
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "balanced_accuracy_all_attempts_difference": {
+            "estimate": -0.0389522116490641,
+            "ci95": [
+              -0.07694710899897943,
+              -0.0020090398651944853
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "brier_valid_pairs_difference": {
+            "estimate": 0.038527797833935014,
+            "ci95": [
+              0.010516218411552343,
+              0.0684873014440433
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "log_loss_valid_pairs_difference": {
+            "estimate": 1.1751260948122404,
+            "ci95": [
+              0.5386244615361224,
+              1.9217280243331614
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        },
+        "correctness_pairs": {
+          "both_correct": 231,
+          "luna_only_correct": 10,
+          "jev_only_correct": 20,
+          "both_incorrect": 16
+        },
+        "mcnemar_exact_two_sided_p_exploratory": 0.0987371467053885,
+        "mcnemar_limit": "Treats discordant rows as independent; duplicate passages/shared templates violate that assumption. Do not substitute this test for the passage-cluster intervals."
+      }
+    },
+    "wic": {
+      "expected_cases": 638,
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "attempts": 638,
+          "valid": 638,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9940149412788755,
+            1
+          ],
+          "unique_cases": 638,
+          "target_kind": "label",
+          "cost": {
+            "requests": 638,
+            "known_billed_usd": 0.010365599999999999,
+            "observed_bills": 638,
+            "missing_bills": 0,
+            "total_billed_usd": 0.010365599999999999,
+            "usd_per_1000_attempts": 0.016247021943573667,
+            "usd_per_correct_answer": 2.196101694915254e-05
+          },
+          "quality": {
+            "correct": 472,
+            "accuracy_all_attempts": 0.7398119122257053,
+            "accuracy_all_attempts_wilson95": [
+              0.704404201462688,
+              0.7723490462353305
+            ],
+            "balanced_accuracy_all_attempts": 0.7398119122257053,
+            "class_denominators": {
+              "no": {
+                "attempts": 319,
+                "valid": 319,
+                "correct": 221,
+                "recall_all_attempts": 0.6927899686520376
+              },
+              "yes": {
+                "attempts": 319,
+                "valid": 319,
+                "correct": 251,
+                "recall_all_attempts": 0.786833855799373
+              }
+            },
+            "accuracy_valid_only": 0.7398119122257053,
+            "accuracy_valid_only_wilson95": [
+              0.704404201462688,
+              0.7723490462353305
+            ],
+            "balanced_accuracy_valid_only": 0.7398119122257053,
+            "brier_valid_only": 0.1717985893416928,
+            "log_loss_valid_only": 0.5200123164526982,
+            "proper_score_denominator": 638
+          }
+        },
+        "Luna": {
+          "attempts": 638,
+          "valid": 638,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9940149412788755,
+            1
+          ],
+          "unique_cases": 638,
+          "target_kind": "label",
+          "cost": {
+            "requests": 638,
+            "known_billed_usd": 0.0229087,
+            "observed_bills": 638,
+            "missing_bills": 0,
+            "total_billed_usd": 0.0229087,
+            "usd_per_1000_attempts": 0.035907053291536054,
+            "usd_per_correct_answer": 4.926602150537634e-05
+          },
+          "quality": {
+            "correct": 465,
+            "accuracy_all_attempts": 0.7288401253918495,
+            "accuracy_all_attempts_wilson95": [
+              0.6930507977097585,
+              0.761890209897501
+            ],
+            "balanced_accuracy_all_attempts": 0.7288401253918495,
+            "class_denominators": {
+              "no": {
+                "attempts": 319,
+                "valid": 319,
+                "correct": 265,
+                "recall_all_attempts": 0.8307210031347962
+              },
+              "yes": {
+                "attempts": 319,
+                "valid": 319,
+                "correct": 200,
+                "recall_all_attempts": 0.6269592476489029
+              }
+            },
+            "accuracy_valid_only": 0.7288401253918495,
+            "accuracy_valid_only_wilson95": [
+              0.6930507977097585,
+              0.761890209897501
+            ],
+            "balanced_accuracy_valid_only": 0.7288401253918495,
+            "brier_valid_only": 0.2600086206896552,
+            "log_loss_valid_only": 6.0042757769812765,
+            "proper_score_denominator": 638
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 638,
+        "paired_cases": 638,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 638,
+        "invalid_response_pairs": 0,
+        "resampling_clusters": 638,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261006,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "accuracy_all_attempts_difference": {
+            "estimate": -0.0109717868338558,
+            "ci95": [
+              -0.047021943573667714,
+              0.023510971786833857
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "balanced_accuracy_all_attempts_difference": {
+            "estimate": -0.010971786833855801,
+            "ci95": [
+              -0.04562027420693741,
+              0.021943602620684097
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "brier_valid_pairs_difference": {
+            "estimate": 0.08821003134796238,
+            "ci95": [
+              0.06147048981191222,
+              0.11624947492163006
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "log_loss_valid_pairs_difference": {
+            "estimate": 5.484263460528578,
+            "ci95": [
+              4.590402638057494,
+              6.439863226904234
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        },
+        "correctness_pairs": {
+          "both_correct": 400,
+          "luna_only_correct": 65,
+          "jev_only_correct": 72,
+          "both_incorrect": 101
+        },
+        "mcnemar_exact_two_sided_p_exploratory": 0.6083841068999314,
+        "mcnemar_limit": "Treats discordant rows as independent; duplicate passages/shared templates violate that assumption. Do not substitute this test for the passage-cluster intervals."
+      }
+    }
+  },
+  "experiments": {
+    "boolq": {
+      "expected_cases": 3270,
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "attempts": 3270,
+          "valid": 3270,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.998826620388002,
+            1
+          ],
+          "unique_cases": 3270,
+          "target_kind": "label",
+          "cost": {
+            "requests": 3270,
+            "known_billed_usd": 0.06289479,
+            "observed_bills": 3270,
+            "missing_bills": 0,
+            "total_billed_usd": 0.06289479,
+            "usd_per_1000_attempts": 0.019233880733944955,
+            "usd_per_correct_answer": 2.095794401866045e-05
+          },
+          "quality": {
+            "correct": 3001,
+            "accuracy_all_attempts": 0.917737003058104,
+            "accuracy_all_attempts_wilson95": [
+              0.9078221114479283,
+              0.9266715665031486
+            ],
+            "balanced_accuracy_all_attempts": 0.9162745579108811,
+            "class_denominators": {
+              "no": {
+                "attempts": 1237,
+                "valid": 1237,
+                "correct": 1126,
+                "recall_all_attempts": 0.910266774454325
+              },
+              "yes": {
+                "attempts": 2033,
+                "valid": 2033,
+                "correct": 1875,
+                "recall_all_attempts": 0.9222823413674373
+              }
+            },
+            "accuracy_valid_only": 0.917737003058104,
+            "accuracy_valid_only_wilson95": [
+              0.9078221114479283,
+              0.9266715665031486
+            ],
+            "balanced_accuracy_valid_only": 0.9162745579108811,
+            "brier_valid_only": 0.062442293577981645,
+            "log_loss_valid_only": 0.219908748023455,
+            "proper_score_denominator": 3270
+          }
+        },
+        "Luna": {
+          "attempts": 3270,
+          "valid": 3270,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.998826620388002,
+            1
+          ],
+          "unique_cases": 3270,
+          "target_kind": "label",
+          "cost": {
+            "requests": 3270,
+            "known_billed_usd": 0.1404962,
+            "observed_bills": 3270,
+            "missing_bills": 0,
+            "total_billed_usd": 0.1404962,
+            "usd_per_1000_attempts": 0.042965198776758404,
+            "usd_per_correct_answer": 4.9733168141592913e-05
+          },
+          "quality": {
+            "correct": 2825,
+            "accuracy_all_attempts": 0.863914373088685,
+            "accuracy_all_attempts_wilson95": [
+              0.8517343947848243,
+              0.8752403319807552
+            ],
+            "balanced_accuracy_all_attempts": 0.8577956443023181,
+            "class_denominators": {
+              "no": {
+                "attempts": 1237,
+                "valid": 1237,
+                "correct": 1030,
+                "recall_all_attempts": 0.8326596604688763
+              },
+              "yes": {
+                "attempts": 2033,
+                "valid": 2033,
+                "correct": 1795,
+                "recall_all_attempts": 0.88293162813576
+              }
+            },
+            "accuracy_valid_only": 0.863914373088685,
+            "accuracy_valid_only_wilson95": [
+              0.8517343947848243,
+              0.8752403319807552
+            ],
+            "balanced_accuracy_valid_only": 0.8577956443023181,
+            "brier_valid_only": 0.1254407339449541,
+            "log_loss_valid_only": 2.0475586107185118,
+            "proper_score_denominator": 3270
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 3270,
+        "paired_cases": 3270,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 3270,
+        "invalid_response_pairs": 0,
+        "resampling_clusters": 2938,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261002,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "accuracy_all_attempts_difference": {
+            "estimate": -0.05382262996941896,
+            "ci95": [
+              -0.06487188927230851,
+              -0.04314538527434187
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "balanced_accuracy_all_attempts_difference": {
+            "estimate": -0.058478913608563,
+            "ci95": [
+              -0.07053555551408902,
+              -0.04661974990646179
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "brier_valid_pairs_difference": {
+            "estimate": 0.06299844036697247,
+            "ci95": [
+              0.05413421740104574,
+              0.07189101253309452
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "log_loss_valid_pairs_difference": {
+            "estimate": 1.8276498626950566,
+            "ci95": [
+              1.5795518090371796,
+              2.08361927992546
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        },
+        "correctness_pairs": {
+          "both_correct": 2754,
+          "luna_only_correct": 71,
+          "jev_only_correct": 247,
+          "both_incorrect": 198
+        },
+        "mcnemar_exact_two_sided_p_exploratory": 6.090829100595564e-24,
+        "mcnemar_limit": "Treats discordant rows as independent; duplicate passages/shared templates violate that assumption. Do not substitute this test for the passage-cluster intervals."
+      }
+    },
+    "policy": {
+      "expected_cases": 300,
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "attempts": 300,
+          "valid": 300,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "unique_cases": 300,
+          "target_kind": "label",
+          "cost": {
+            "requests": 300,
+            "known_billed_usd": 0.006052662,
+            "observed_bills": 300,
+            "missing_bills": 0,
+            "total_billed_usd": 0.006052662,
+            "usd_per_1000_attempts": 0.02017554,
+            "usd_per_correct_answer": 2.017554e-05
+          },
+          "quality": {
+            "correct": 300,
+            "accuracy_all_attempts": 1.0,
+            "accuracy_all_attempts_wilson95": [
+              0.9873570287754538,
+              0.9999999999999998
+            ],
+            "balanced_accuracy_all_attempts": 1.0,
+            "class_denominators": {
+              "no": {
+                "attempts": 150,
+                "valid": 150,
+                "correct": 150,
+                "recall_all_attempts": 1.0
+              },
+              "yes": {
+                "attempts": 150,
+                "valid": 150,
+                "correct": 150,
+                "recall_all_attempts": 1.0
+              }
+            },
+            "accuracy_valid_only": 1.0,
+            "accuracy_valid_only_wilson95": [
+              0.9873570287754538,
+              0.9999999999999998
+            ],
+            "balanced_accuracy_valid_only": 1.0,
+            "brier_valid_only": 0.005199333333333334,
+            "log_loss_valid_only": 0.05776850682166601,
+            "proper_score_denominator": 300
+          }
+        },
+        "Luna": {
+          "attempts": 300,
+          "valid": 300,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "unique_cases": 300,
+          "target_kind": "label",
+          "cost": {
+            "requests": 300,
+            "known_billed_usd": 0.0132828,
+            "observed_bills": 300,
+            "missing_bills": 0,
+            "total_billed_usd": 0.0132828,
+            "usd_per_1000_attempts": 0.044276,
+            "usd_per_correct_answer": 4.442408026755853e-05
+          },
+          "quality": {
+            "correct": 299,
+            "accuracy_all_attempts": 0.9966666666666667,
+            "accuracy_all_attempts_wilson95": [
+              0.9813633063054688,
+              0.9994113422781488
+            ],
+            "balanced_accuracy_all_attempts": 0.9966666666666666,
+            "class_denominators": {
+              "no": {
+                "attempts": 150,
+                "valid": 150,
+                "correct": 149,
+                "recall_all_attempts": 0.9933333333333333
+              },
+              "yes": {
+                "attempts": 150,
+                "valid": 150,
+                "correct": 150,
+                "recall_all_attempts": 1.0
+              }
+            },
+            "accuracy_valid_only": 0.9966666666666667,
+            "accuracy_valid_only_wilson95": [
+              0.9813633063054688,
+              0.9994113422781488
+            ],
+            "balanced_accuracy_valid_only": 0.9966666666666666,
+            "brier_valid_only": 0.0033333333333333335,
+            "log_loss_valid_only": 0.11513191997447059,
+            "proper_score_denominator": 300
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 300,
+        "paired_cases": 300,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 300,
+        "invalid_response_pairs": 0,
+        "resampling_clusters": 300,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261003,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "accuracy_all_attempts_difference": {
+            "estimate": -0.0033333333333333335,
+            "ci95": [
+              -0.01,
+              0.0
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "balanced_accuracy_all_attempts_difference": {
+            "estimate": -0.0033333333333333335,
+            "ci95": [
+              -0.010416666666666666,
+              0.0
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "brier_valid_pairs_difference": {
+            "estimate": -0.0018660000000000007,
+            "ci95": [
+              -0.006158083333333334,
+              0.005145308333333328
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "log_loss_valid_pairs_difference": {
+            "estimate": 0.05736341315280459,
+            "ci95": [
+              -0.062071831103943646,
+              0.2893760384603044
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        },
+        "correctness_pairs": {
+          "both_correct": 299,
+          "luna_only_correct": 0,
+          "jev_only_correct": 1,
+          "both_incorrect": 0
+        },
+        "mcnemar_exact_two_sided_p_exploratory": 1.0,
+        "mcnemar_limit": "Treats discordant rows as independent; duplicate passages/shared templates violate that assumption. Do not substitute this test for the passage-cluster intervals."
+      }
+    },
+    "probability": {
+      "expected_cases": 300,
+      "target_kind": "probability",
+      "models": {
+        "Jev": {
+          "attempts": 300,
+          "valid": 299,
+          "invalid": 1,
+          "success_rate": 0.9966666666666667,
+          "success_rate_wilson95": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "unique_cases": 300,
+          "target_kind": "probability",
+          "cost": {
+            "requests": 300,
+            "known_billed_usd": 0.005577474,
+            "observed_bills": 299,
+            "missing_bills": 1,
+            "total_billed_usd": null,
+            "usd_per_1000_attempts": null
+          },
+          "quality": {
+            "mae_valid_only": 0.07640276740848177,
+            "rmse_valid_only": 0.12256650038782585,
+            "excess_brier_valid_only": 0.015022547017318914,
+            "expected_brier_valid_only": 0.16237160248127255,
+            "error_score_denominator": 299
+          }
+        },
+        "Luna": {
+          "attempts": 300,
+          "valid": 300,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "unique_cases": 300,
+          "target_kind": "probability",
+          "cost": {
+            "requests": 300,
+            "known_billed_usd": 0.0124422,
+            "observed_bills": 300,
+            "missing_bills": 0,
+            "total_billed_usd": 0.0124422,
+            "usd_per_1000_attempts": 0.041474000000000004
+          },
+          "quality": {
+            "mae_valid_only": 0.024395889425565125,
+            "rmse_valid_only": 0.06518648458252084,
+            "excess_brier_valid_only": 0.0042492777722272276,
+            "expected_brier_valid_only": 0.1511071697179677,
+            "error_score_denominator": 300
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 300,
+        "paired_cases": 300,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 299,
+        "invalid_response_pairs": 1,
+        "resampling_clusters": 300,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261004,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "mae_valid_pairs_difference": {
+            "estimate": -0.05192528637948666,
+            "ci95": [
+              -0.06447602149488647,
+              -0.040097355461651114
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "excess_brier_valid_pairs_difference": {
+            "estimate": -0.010759057613746443,
+            "ci95": [
+              -0.015846050706466788,
+              -0.006036327923267275
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "rmse_valid_pairs_difference": {
+            "estimate": -0.05727109929730134,
+            "ci95": [
+              -0.08372751489614814,
+              -0.03235248315925982
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        }
+      }
+    },
+    "rte": {
+      "expected_cases": 277,
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "attempts": 277,
+          "valid": 277,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9863216106452903,
+            1
+          ],
+          "unique_cases": 277,
+          "target_kind": "label",
+          "cost": {
+            "requests": 277,
+            "known_billed_usd": 0.004656624,
+            "observed_bills": 277,
+            "missing_bills": 0,
+            "total_billed_usd": 0.004656624,
+            "usd_per_1000_attempts": 0.016810916967509023,
+            "usd_per_correct_answer": 1.855228685258964e-05
+          },
+          "quality": {
+            "correct": 251,
+            "accuracy_all_attempts": 0.9061371841155235,
+            "accuracy_all_attempts_wilson95": [
+              0.8660240489486702,
+              0.9351397142108616
+            ],
+            "balanced_accuracy_all_attempts": 0.9074296768796403,
+            "class_denominators": {
+              "no": {
+                "attempts": 131,
+                "valid": 131,
+                "correct": 122,
+                "recall_all_attempts": 0.9312977099236641
+              },
+              "yes": {
+                "attempts": 146,
+                "valid": 146,
+                "correct": 129,
+                "recall_all_attempts": 0.8835616438356164
+              }
+            },
+            "accuracy_valid_only": 0.9061371841155235,
+            "accuracy_valid_only_wilson95": [
+              0.8660240489486702,
+              0.9351397142108616
+            ],
+            "balanced_accuracy_valid_only": 0.9074296768796403,
+            "brier_valid_only": 0.07178808664259928,
+            "log_loss_valid_only": 0.2483805767638515,
+            "proper_score_denominator": 277
+          }
+        },
+        "Luna": {
+          "attempts": 277,
+          "valid": 277,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9863216106452903,
+            1
+          ],
+          "unique_cases": 277,
+          "target_kind": "label",
+          "cost": {
+            "requests": 277,
+            "known_billed_usd": 0.0102786,
+            "observed_bills": 277,
+            "missing_bills": 0,
+            "total_billed_usd": 0.0102786,
+            "usd_per_1000_attempts": 0.03710685920577617,
+            "usd_per_correct_answer": 4.264979253112033e-05
+          },
+          "quality": {
+            "correct": 241,
+            "accuracy_all_attempts": 0.8700361010830325,
+            "accuracy_all_attempts_wilson95": [
+              0.8253226276877503,
+              0.9046265787464898
+            ],
+            "balanced_accuracy_all_attempts": 0.8684774652305762,
+            "class_denominators": {
+              "no": {
+                "attempts": 131,
+                "valid": 131,
+                "correct": 110,
+                "recall_all_attempts": 0.8396946564885496
+              },
+              "yes": {
+                "attempts": 146,
+                "valid": 146,
+                "correct": 131,
+                "recall_all_attempts": 0.8972602739726028
+              }
+            },
+            "accuracy_valid_only": 0.8700361010830325,
+            "accuracy_valid_only_wilson95": [
+              0.8253226276877503,
+              0.9046265787464898
+            ],
+            "balanced_accuracy_valid_only": 0.8684774652305762,
+            "brier_valid_only": 0.1103158844765343,
+            "log_loss_valid_only": 1.4235066715760918,
+            "proper_score_denominator": 277
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 277,
+        "paired_cases": 277,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 277,
+        "invalid_response_pairs": 0,
+        "resampling_clusters": 277,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261005,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "accuracy_all_attempts_difference": {
+            "estimate": -0.036101083032490974,
+            "ci95": [
+              -0.07581227436823104,
+              0.0
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "balanced_accuracy_all_attempts_difference": {
+            "estimate": -0.0389522116490641,
+            "ci95": [
+              -0.07694710899897943,
+              -0.0020090398651944853
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "brier_valid_pairs_difference": {
+            "estimate": 0.038527797833935014,
+            "ci95": [
+              0.010516218411552343,
+              0.0684873014440433
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "log_loss_valid_pairs_difference": {
+            "estimate": 1.1751260948122404,
+            "ci95": [
+              0.5386244615361224,
+              1.9217280243331614
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        },
+        "correctness_pairs": {
+          "both_correct": 231,
+          "luna_only_correct": 10,
+          "jev_only_correct": 20,
+          "both_incorrect": 16
+        },
+        "mcnemar_exact_two_sided_p_exploratory": 0.0987371467053885,
+        "mcnemar_limit": "Treats discordant rows as independent; duplicate passages/shared templates violate that assumption. Do not substitute this test for the passage-cluster intervals."
+      }
+    },
+    "wic": {
+      "expected_cases": 638,
+      "target_kind": "label",
+      "models": {
+        "Jev": {
+          "attempts": 638,
+          "valid": 638,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9940149412788755,
+            1
+          ],
+          "unique_cases": 638,
+          "target_kind": "label",
+          "cost": {
+            "requests": 638,
+            "known_billed_usd": 0.010365599999999999,
+            "observed_bills": 638,
+            "missing_bills": 0,
+            "total_billed_usd": 0.010365599999999999,
+            "usd_per_1000_attempts": 0.016247021943573667,
+            "usd_per_correct_answer": 2.196101694915254e-05
+          },
+          "quality": {
+            "correct": 472,
+            "accuracy_all_attempts": 0.7398119122257053,
+            "accuracy_all_attempts_wilson95": [
+              0.704404201462688,
+              0.7723490462353305
+            ],
+            "balanced_accuracy_all_attempts": 0.7398119122257053,
+            "class_denominators": {
+              "no": {
+                "attempts": 319,
+                "valid": 319,
+                "correct": 221,
+                "recall_all_attempts": 0.6927899686520376
+              },
+              "yes": {
+                "attempts": 319,
+                "valid": 319,
+                "correct": 251,
+                "recall_all_attempts": 0.786833855799373
+              }
+            },
+            "accuracy_valid_only": 0.7398119122257053,
+            "accuracy_valid_only_wilson95": [
+              0.704404201462688,
+              0.7723490462353305
+            ],
+            "balanced_accuracy_valid_only": 0.7398119122257053,
+            "brier_valid_only": 0.1717985893416928,
+            "log_loss_valid_only": 0.5200123164526982,
+            "proper_score_denominator": 638
+          }
+        },
+        "Luna": {
+          "attempts": 638,
+          "valid": 638,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9940149412788755,
+            1
+          ],
+          "unique_cases": 638,
+          "target_kind": "label",
+          "cost": {
+            "requests": 638,
+            "known_billed_usd": 0.0229087,
+            "observed_bills": 638,
+            "missing_bills": 0,
+            "total_billed_usd": 0.0229087,
+            "usd_per_1000_attempts": 0.035907053291536054,
+            "usd_per_correct_answer": 4.926602150537634e-05
+          },
+          "quality": {
+            "correct": 465,
+            "accuracy_all_attempts": 0.7288401253918495,
+            "accuracy_all_attempts_wilson95": [
+              0.6930507977097585,
+              0.761890209897501
+            ],
+            "balanced_accuracy_all_attempts": 0.7288401253918495,
+            "class_denominators": {
+              "no": {
+                "attempts": 319,
+                "valid": 319,
+                "correct": 265,
+                "recall_all_attempts": 0.8307210031347962
+              },
+              "yes": {
+                "attempts": 319,
+                "valid": 319,
+                "correct": 200,
+                "recall_all_attempts": 0.6269592476489029
+              }
+            },
+            "accuracy_valid_only": 0.7288401253918495,
+            "accuracy_valid_only_wilson95": [
+              0.6930507977097585,
+              0.761890209897501
+            ],
+            "balanced_accuracy_valid_only": 0.7288401253918495,
+            "brier_valid_only": 0.2600086206896552,
+            "log_loss_valid_only": 6.0042757769812765,
+            "proper_score_denominator": 638
+          }
+        }
+      },
+      "paired": {
+        "direction": "Luna minus Jev",
+        "attempted_case_union": 638,
+        "paired_cases": 638,
+        "unpaired_cases": 0,
+        "valid_response_pairs": 638,
+        "invalid_response_pairs": 0,
+        "resampling_clusters": 638,
+        "cluster_rule": "Exact identical BoolQ passage; otherwise case identity",
+        "bootstrap_replicates": 5000,
+        "bootstrap_seed": 20261006,
+        "confidence_level": 0.95,
+        "inference": "exploratory; no multiplicity adjustment",
+        "metrics": {
+          "accuracy_all_attempts_difference": {
+            "estimate": -0.0109717868338558,
+            "ci95": [
+              -0.047021943573667714,
+              0.023510971786833857
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "balanced_accuracy_all_attempts_difference": {
+            "estimate": -0.010971786833855801,
+            "ci95": [
+              -0.04562027420693741,
+              0.021943602620684097
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "brier_valid_pairs_difference": {
+            "estimate": 0.08821003134796238,
+            "ci95": [
+              0.06147048981191222,
+              0.11624947492163006
+            ],
+            "defined_bootstrap_draws": 5000
+          },
+          "log_loss_valid_pairs_difference": {
+            "estimate": 5.484263460528578,
+            "ci95": [
+              4.590402638057494,
+              6.439863226904234
+            ],
+            "defined_bootstrap_draws": 5000
+          }
+        },
+        "correctness_pairs": {
+          "both_correct": 400,
+          "luna_only_correct": 65,
+          "jev_only_correct": 72,
+          "both_incorrect": 101
+        },
+        "mcnemar_exact_two_sided_p_exploratory": 0.6083841068999314,
+        "mcnemar_limit": "Treats discordant rows as independent; duplicate passages/shared templates violate that assumption. Do not substitute this test for the passage-cluster intervals."
+      }
+    }
+  },
+  "boolq_subgroups": {
+    "pilot60": {
+      "identification": "Existing pilot frozen case IDs; no selection on expanded performance",
+      "descriptive_only": true,
+      "case_count": 60,
+      "models": {
+        "Jev": {
+          "attempts": 60,
+          "valid": 60,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.93982814785791,
+            0.9999999999999998
+          ],
+          "unique_cases": 60,
+          "target_kind": "label",
+          "cost": {
+            "requests": 60,
+            "known_billed_usd": 0.001190826,
+            "observed_bills": 60,
+            "missing_bills": 0,
+            "total_billed_usd": 0.001190826,
+            "usd_per_1000_attempts": 0.019847100000000003,
+            "usd_per_correct_answer": 2.126475e-05
+          },
+          "quality": {
+            "correct": 56,
+            "accuracy_all_attempts": 0.9333333333333333,
+            "accuracy_all_attempts_wilson95": [
+              0.8407464268680283,
+              0.9737713012754938
+            ],
+            "balanced_accuracy_all_attempts": 0.9305555555555556,
+            "class_denominators": {
+              "no": {
+                "attempts": 24,
+                "valid": 24,
+                "correct": 22,
+                "recall_all_attempts": 0.9166666666666666
+              },
+              "yes": {
+                "attempts": 36,
+                "valid": 36,
+                "correct": 34,
+                "recall_all_attempts": 0.9444444444444444
+              }
+            },
+            "accuracy_valid_only": 0.9333333333333333,
+            "accuracy_valid_only_wilson95": [
+              0.8407464268680283,
+              0.9737713012754938
+            ],
+            "balanced_accuracy_valid_only": 0.9305555555555556,
+            "brier_valid_only": 0.070425,
+            "log_loss_valid_only": 0.2550270430068494,
+            "proper_score_denominator": 60
+          }
+        },
+        "Luna": {
+          "attempts": 60,
+          "valid": 60,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.93982814785791,
+            0.9999999999999998
+          ],
+          "unique_cases": 60,
+          "target_kind": "label",
+          "cost": {
+            "requests": 60,
+            "known_billed_usd": 0.002675,
+            "observed_bills": 60,
+            "missing_bills": 0,
+            "total_billed_usd": 0.002675,
+            "usd_per_1000_attempts": 0.04458333333333333,
+            "usd_per_correct_answer": 5.047169811320755e-05
+          },
+          "quality": {
+            "correct": 53,
+            "accuracy_all_attempts": 0.8833333333333333,
+            "accuracy_all_attempts_wilson95": [
+              0.7782121197582914,
+              0.9423227935994396
+            ],
+            "balanced_accuracy_all_attempts": 0.875,
+            "class_denominators": {
+              "no": {
+                "attempts": 24,
+                "valid": 24,
+                "correct": 20,
+                "recall_all_attempts": 0.8333333333333334
+              },
+              "yes": {
+                "attempts": 36,
+                "valid": 36,
+                "correct": 33,
+                "recall_all_attempts": 0.9166666666666666
+              }
+            },
+            "accuracy_valid_only": 0.8833333333333333,
+            "accuracy_valid_only_wilson95": [
+              0.7782121197582914,
+              0.9423227935994396
+            ],
+            "balanced_accuracy_valid_only": 0.875,
+            "brier_valid_only": 0.11921166666666667,
+            "log_loss_valid_only": 2.5221252474456923,
+            "proper_score_denominator": 60
+          }
+        }
+      }
+    },
+    "remaining3210": {
+      "identification": "Existing pilot frozen case IDs; no selection on expanded performance",
+      "descriptive_only": true,
+      "case_count": 3210,
+      "models": {
+        "Jev": {
+          "attempts": 3210,
+          "valid": 3210,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9988047142742058,
+            1
+          ],
+          "unique_cases": 3210,
+          "target_kind": "label",
+          "cost": {
+            "requests": 3210,
+            "known_billed_usd": 0.061703964,
+            "observed_bills": 3210,
+            "missing_bills": 0,
+            "total_billed_usd": 0.061703964,
+            "usd_per_1000_attempts": 0.019222418691588784,
+            "usd_per_correct_answer": 2.0952110016977928e-05
+          },
+          "quality": {
+            "correct": 2945,
+            "accuracy_all_attempts": 0.9174454828660437,
+            "accuracy_all_attempts_wilson95": [
+              0.9074187129972437,
+              0.9264743194809093
+            ],
+            "balanced_accuracy_all_attempts": 0.916011486314385,
+            "class_denominators": {
+              "no": {
+                "attempts": 1213,
+                "valid": 1213,
+                "correct": 1104,
+                "recall_all_attempts": 0.9101401483924155
+              },
+              "yes": {
+                "attempts": 1997,
+                "valid": 1997,
+                "correct": 1841,
+                "recall_all_attempts": 0.9218828242363545
+              }
+            },
+            "accuracy_valid_only": 0.9174454828660437,
+            "accuracy_valid_only_wilson95": [
+              0.9074187129972437,
+              0.9264743194809093
+            ],
+            "balanced_accuracy_valid_only": 0.916011486314385,
+            "brier_valid_only": 0.06229308411214953,
+            "log_loss_valid_only": 0.21925233129479343,
+            "proper_score_denominator": 3210
+          }
+        },
+        "Luna": {
+          "attempts": 3210,
+          "valid": 3210,
+          "invalid": 0,
+          "success_rate": 1.0,
+          "success_rate_wilson95": [
+            0.9988047142742058,
+            1
+          ],
+          "unique_cases": 3210,
+          "target_kind": "label",
+          "cost": {
+            "requests": 3210,
+            "known_billed_usd": 0.1378212,
+            "observed_bills": 3210,
+            "missing_bills": 0,
+            "total_billed_usd": 0.1378212,
+            "usd_per_1000_attempts": 0.04293495327102804,
+            "usd_per_correct_answer": 4.9719047619047624e-05
+          },
+          "quality": {
+            "correct": 2772,
+            "accuracy_all_attempts": 0.8635514018691589,
+            "accuracy_all_attempts_wilson95": [
+              0.8512412572021655,
+              0.8749924509336588
+            ],
+            "balanced_accuracy_all_attempts": 0.8574849083187849,
+            "class_denominators": {
+              "no": {
+                "attempts": 1213,
+                "valid": 1213,
+                "correct": 1010,
+                "recall_all_attempts": 0.832646331409728
+              },
+              "yes": {
+                "attempts": 1997,
+                "valid": 1997,
+                "correct": 1762,
+                "recall_all_attempts": 0.8823234852278418
+              }
+            },
+            "accuracy_valid_only": 0.8635514018691589,
+            "accuracy_valid_only_wilson95": [
+              0.8512412572021655,
+              0.8749924509336588
+            ],
+            "balanced_accuracy_valid_only": 0.8574849083187849,
+            "brier_valid_only": 0.12555716510903428,
+            "log_loss_valid_only": 2.0386882062937044,
+            "proper_score_denominator": 3210
+          }
+        }
+      }
+    }
+  },
+  "timing": {
+    "status": "complete",
+    "metadata": {
+      "status": "complete",
+      "created_at": "2026-10-02T09:50:11.871711+00:00",
+      "models": {
+        "Jev": "typesafe/jev-1.13",
+        "Luna": "openai/gpt-6-luna"
+      },
+      "cases": 60,
+      "repeats": 3,
+      "planned_calls": 372,
+      "seed": 20261005,
+      "budget_usd": 0.1,
+      "cases_sha256": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8",
+      "runner_sha256": "992c7c8ce88be5a4b7928957690a239cee5cac510f7882a8be61636eaa2c79e8",
+      "adapter_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+      "protocol": "Isolated sequential timing run after all bulk calls complete. 3 randomized blocks, same 60 cases. Two warmup cases/model/block excluded. Shared persistent HTTPS connection; nonstreaming complete-response timing; no retries.",
+      "calls_completed": 372,
+      "charged_usd": 0.010753982,
+      "known_charge_subtotal_usd": 0.010753982,
+      "unknown_billing": 0,
+      "budget_pending_usd": 0,
+      "budget_stop_reason": null,
+      "finished_at": "2026-10-02T09:54:48.735657+00:00"
+    },
+    "measured_attempts": 360,
+    "warmup_attempts": 12,
+    "expected_repeats": 3,
+    "cost_all_attempts": {
+      "requests": 372,
+      "known_billed_usd": 0.010753982,
+      "observed_bills": 372,
+      "missing_bills": 0,
+      "total_billed_usd": 0.010753982,
+      "usd_per_1000_attempts": 0.028908553763440863
+    },
+    "cost_measured": {
+      "requests": 360,
+      "known_billed_usd": 0.010491956,
+      "observed_bills": 360,
+      "missing_bills": 0,
+      "total_billed_usd": 0.010491956,
+      "usd_per_1000_attempts": 0.029144322222222224
+    },
+    "cost_warmups": {
+      "requests": 12,
+      "known_billed_usd": 0.000262026,
+      "observed_bills": 12,
+      "missing_bills": 0,
+      "total_billed_usd": 0.000262026,
+      "usd_per_1000_attempts": 0.0218355
+    },
+    "tasks": {
+      "boolq": {
+        "case_union": 12,
+        "complete_valid_paired_cases": 12,
+        "excluded_cases": 0,
+        "by_model_all_attempts": {
+          "Jev": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 0.2360229795012856,
+            "p95_s": 0.3528754790095263,
+            "mean_s": 0.25012112386240104
+          },
+          "Luna": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 1.1607210415095324,
+            "p95_s": 1.5120983337328653,
+            "mean_s": 1.206845739666379
+          }
+        },
+        "primary_case_median_latency_s": {
+          "Jev": 0.24033297899586614,
+          "Luna": 1.1607210415095324
+        },
+        "paired": {
+          "direction": "Luna minus Jev for difference; Luna divided by Jev for ratio",
+          "bootstrap_replicates": 5000,
+          "bootstrap_seed": 20261102,
+          "metrics": {
+            "ratio_of_case_medians": {
+              "estimate": 4.829636974330923,
+              "ci95": [
+                4.580866503596673,
+                5.501579804969975
+              ]
+            },
+            "median_of_case_ratios": {
+              "estimate": 4.833157110485688,
+              "ci95": [
+                4.616286565570867,
+                5.38043120396072
+              ]
+            },
+            "mean_case_latency_difference_s": {
+              "estimate": 0.9722954689180673,
+              "ci95": [
+                0.8845390063638964,
+                1.0724947954012045
+              ]
+            }
+          }
+        },
+        "repeat_blocks": {
+          "0": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.24259549949783832,
+              "p95_s": 0.30454023125639645,
+              "mean_s": 0.2499326353354263
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.228621396003291,
+              "p95_s": 1.5854041044891345,
+              "mean_s": 1.2527186564160122
+            },
+            "ratio_of_medians_luna_over_jev": 5.0644855265101025
+          },
+          "1": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.23112808349833358,
+              "p95_s": 0.3332594847423024,
+              "mean_s": 0.24869293391384417
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.1243714794982225,
+              "p95_s": 1.5079384565397047,
+              "mean_s": 1.1956957083311863
+            },
+            "ratio_of_medians_luna_over_jev": 4.864711645940374
+          },
+          "2": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.2360430420085322,
+              "p95_s": 0.3232825463652261,
+              "mean_s": 0.2517378023379327
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.1426647920161486,
+              "p95_s": 1.3838787978136677,
+              "mean_s": 1.1721228542519384
+            },
+            "ratio_of_medians_luna_over_jev": 4.8409170729753805
+          }
+        }
+      },
+      "policy": {
+        "case_union": 12,
+        "complete_valid_paired_cases": 12,
+        "excluded_cases": 0,
+        "by_model_all_attempts": {
+          "Jev": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 0.24257293750997633,
+            "p95_s": 0.33296847925521433,
+            "mean_s": 0.257389666667829
+          },
+          "Luna": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 1.1150820835027844,
+            "p95_s": 1.4614160837445525,
+            "mean_s": 1.1831323368913016
+          }
+        },
+        "primary_case_median_latency_s": {
+          "Jev": 0.24551664550381247,
+          "Luna": 1.227638187498087
+        },
+        "paired": {
+          "direction": "Luna minus Jev for difference; Luna divided by Jev for ratio",
+          "bootstrap_replicates": 5000,
+          "bootstrap_seed": 20261103,
+          "metrics": {
+            "ratio_of_case_medians": {
+              "estimate": 5.000223854390451,
+              "ci95": [
+                4.317739170424662,
+                5.402041667447928
+              ]
+            },
+            "median_of_case_ratios": {
+              "estimate": 4.750205072752266,
+              "ci95": [
+                4.305651894885356,
+                5.154100146810082
+              ]
+            },
+            "mean_case_latency_difference_s": {
+              "estimate": 0.939896673829935,
+              "ci95": [
+                0.8731048389421631,
+                1.0045787727998685
+              ]
+            }
+          }
+        },
+        "repeat_blocks": {
+          "0": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.23853450000751764,
+              "p95_s": 0.32929691464232747,
+              "mean_s": 0.2583484513331011
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.158807396001066,
+              "p95_s": 1.469816283545515,
+              "mean_s": 1.2062079620081931
+            },
+            "ratio_of_medians_luna_over_jev": 4.858028486296721
+          },
+          "1": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.24711893750645686,
+              "p95_s": 0.3431621972486027,
+              "mean_s": 0.2638015277480008
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.177036291512195,
+              "p95_s": 1.4697350584610829,
+              "mean_s": 1.1869639203359839
+            },
+            "ratio_of_medians_luna_over_jev": 4.763035578693522
+          },
+          "2": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.24048102099914104,
+              "p95_s": 0.3035469602153171,
+              "mean_s": 0.250019020922385
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.1094735204969766,
+              "p95_s": 1.3454524850545566,
+              "mean_s": 1.1562251283297276
+            },
+            "ratio_of_medians_luna_over_jev": 4.6135595893903805
+          }
+        }
+      },
+      "probability": {
+        "case_union": 12,
+        "complete_valid_paired_cases": 12,
+        "excluded_cases": 0,
+        "by_model_all_attempts": {
+          "Jev": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 0.24020481250772718,
+            "p95_s": 0.28317401024105493,
+            "mean_s": 0.24651740163891292
+          },
+          "Luna": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 1.2326235829968937,
+            "p95_s": 1.5251372292404994,
+            "mean_s": 1.2480138252212782
+          }
+        },
+        "primary_case_median_latency_s": {
+          "Jev": 0.23940764550934546,
+          "Luna": 1.1964958120079245
+        },
+        "paired": {
+          "direction": "Luna minus Jev for difference; Luna divided by Jev for ratio",
+          "bootstrap_replicates": 5000,
+          "bootstrap_seed": 20261104,
+          "metrics": {
+            "ratio_of_case_medians": {
+              "estimate": 4.9977343432886245,
+              "ci95": [
+                4.517802485268757,
+                5.813563405090273
+              ]
+            },
+            "median_of_case_ratios": {
+              "estimate": 4.905473621110076,
+              "ci95": [
+                4.403284711165663,
+                5.8534395048545615
+              ]
+            },
+            "mean_case_latency_difference_s": {
+              "estimate": 0.9894328715769612,
+              "ci95": [
+                0.9100295859709756,
+                1.074396052022045
+              ]
+            }
+          }
+        },
+        "repeat_blocks": {
+          "0": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.23594435449922457,
+              "p95_s": 0.2720304062604555,
+              "mean_s": 0.2404965139212436
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.2112997500080382,
+              "p95_s": 1.5471068439001099,
+              "mean_s": 1.227467170249535
+            },
+            "ratio_of_medians_luna_over_jev": 5.133836546243869
+          },
+          "1": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.2434447915002238,
+              "p95_s": 0.2817531338369008,
+              "mean_s": 0.24868954174598912
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.283833166497061,
+              "p95_s": 1.6067686623515327,
+              "mean_s": 1.2813741525824298
+            },
+            "ratio_of_medians_luna_over_jev": 5.273611148488592
+          },
+          "2": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.23745295849221293,
+              "p95_s": 0.3180334771968773,
+              "mean_s": 0.250366149249506
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.2219300830038264,
+              "p95_s": 1.4001268338499357,
+              "mean_s": 1.23520015283187
+            },
+            "ratio_of_medians_luna_over_jev": 5.1459880338526025
+          }
+        }
+      },
+      "rte": {
+        "case_union": 12,
+        "complete_valid_paired_cases": 12,
+        "excluded_cases": 0,
+        "by_model_all_attempts": {
+          "Jev": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 0.2422389999992447,
+            "p95_s": 0.3289704062481178,
+            "mean_s": 0.2561738738610681
+          },
+          "Luna": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 1.2627918335056165,
+            "p95_s": 1.5863647187434253,
+            "mean_s": 1.2701796296654113
+          }
+        },
+        "primary_case_median_latency_s": {
+          "Jev": 0.24425760400481522,
+          "Luna": 1.2627918335056165
+        },
+        "paired": {
+          "direction": "Luna minus Jev for difference; Luna divided by Jev for ratio",
+          "bootstrap_replicates": 5000,
+          "bootstrap_seed": 20261105,
+          "metrics": {
+            "ratio_of_case_medians": {
+              "estimate": 5.169918204391795,
+              "ci95": [
+                4.70460388839347,
+                5.4954292322251055
+              ]
+            },
+            "median_of_case_ratios": {
+              "estimate": 5.0763174381254546,
+              "ci95": [
+                4.7501800462613275,
+                5.37116348062151
+              ]
+            },
+            "mean_case_latency_difference_s": {
+              "estimate": 1.0077994794143403,
+              "ci95": [
+                0.937722705482641,
+                1.071565119190018
+              ]
+            }
+          }
+        },
+        "repeat_blocks": {
+          "0": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.2524977709981613,
+              "p95_s": 0.3122827437691739,
+              "mean_s": 0.25863154525723075
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.3222954795055557,
+              "p95_s": 1.6858058312500361,
+              "mean_s": 1.3303592186663689
+            },
+            "ratio_of_medians_luna_over_jev": 5.236860009806521
+          },
+          "1": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.24074243700306397,
+              "p95_s": 0.3030408768885536,
+              "mean_s": 0.25433818049593054
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.1780842919979477,
+              "p95_s": 1.479955660039559,
+              "mean_s": 1.1724384653328646
+            },
+            "ratio_of_medians_luna_over_jev": 4.893546425231851
+          },
+          "2": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.2374215414893115,
+              "p95_s": 0.3310308453554171,
+              "mean_s": 0.25555189583004295
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.3106714584864676,
+              "p95_s": 1.4998894520336763,
+              "mean_s": 1.3077412049970008
+            },
+            "ratio_of_medians_luna_over_jev": 5.520440353747231
+          }
+        }
+      },
+      "wic": {
+        "case_union": 12,
+        "complete_valid_paired_cases": 12,
+        "excluded_cases": 0,
+        "by_model_all_attempts": {
+          "Jev": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 0.2383076670084847,
+            "p95_s": 0.2864501769945491,
+            "mean_s": 0.24330528019587896
+          },
+          "Luna": {
+            "attempts": 36,
+            "valid": 36,
+            "observed_positive_timings": 36,
+            "median_s": 1.135553770523984,
+            "p95_s": 1.7270816359960008,
+            "mean_s": 1.2246926481699727
+          }
+        },
+        "primary_case_median_latency_s": {
+          "Jev": 0.2383076670084847,
+          "Luna": 1.1403546035144245
+        },
+        "paired": {
+          "direction": "Luna minus Jev for difference; Luna divided by Jev for ratio",
+          "bootstrap_replicates": 5000,
+          "bootstrap_seed": 20261106,
+          "metrics": {
+            "ratio_of_case_medians": {
+              "estimate": 4.785219954647213,
+              "ci95": [
+                4.605385357641358,
+                5.3953990524788535
+              ]
+            },
+            "median_of_case_ratios": {
+              "estimate": 4.919863163096943,
+              "ci95": [
+                4.700636659518869,
+                5.245444580103801
+              ]
+            },
+            "mean_case_latency_difference_s": {
+              "estimate": 0.9487160690841847,
+              "ci95": [
+                0.8885003532145371,
+                1.0151258960207996
+              ]
+            }
+          }
+        },
+        "repeat_blocks": {
+          "0": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.2564197705069091,
+              "p95_s": 0.3110746520542306,
+              "mean_s": 0.26097597233213793
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.0862320414889837,
+              "p95_s": 1.6090144937523287,
+              "mean_s": 1.1735931215880555
+            },
+            "ratio_of_medians_luna_over_jev": 4.2361477796413345
+          },
+          "1": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.23865022949757986,
+              "p95_s": 0.25453735245828285,
+              "mean_s": 0.2362220419187603
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.2858024585148087,
+              "p95_s": 1.5616956090088931,
+              "mean_s": 1.2614639792542828
+            },
+            "ratio_of_medians_luna_over_jev": 5.387811531636713
+          },
+          "2": {
+            "Jev": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 0.22946591601066757,
+              "p95_s": 0.2450518125187955,
+              "mean_s": 0.23271782633673865
+            },
+            "Luna": {
+              "attempts": 12,
+              "valid": 12,
+              "observed_positive_timings": 12,
+              "median_s": 1.1530404579971218,
+              "p95_s": 1.5772304795042142,
+              "mean_s": 1.2390208436675796
+            },
+            "ratio_of_medians_luna_over_jev": 5.024887695929179
+          }
+        }
+      }
+    },
+    "method": "Exclude warmups. Primary comparisons use cases with valid, positive finite response timings for both arms in all expected repeat blocks; reduce repeats to each case/arm median, then bootstrap paired case identities.",
+    "inference": "Exploratory; case resampling preserves repeats but does not estimate provider/day-to-day variation. Cost includes all attempts."
+  },
+  "limitations": [
+    "Published benchmark scores are agreement with their frozen reference labels; source fidelity does not establish label correctness. Public development data may overlap model training.",
+    "Accuracy and balanced accuracy count invalid outputs as wrong. Brier/log loss and exact-probability errors require valid probabilities; their denominators and paired exclusions are explicit.",
+    "The full development splits are fixed finite benchmarks. Wilson intervals and bootstrap intervals are nominal exploratory summaries, not guarantees of deployment accuracy.",
+    "Identical BoolQ passages are resampled together. Other shared topics, synthetic templates and time/provider dependence are not fully represented by case resampling.",
+    "No multiple-comparison correction is applied. Degenerate intervals from uniform outcomes do not establish certainty or model equivalence. McNemar p-values additionally assume independent rows.",
+    "Concurrent bulk request latency is excluded from comparative speed claims. Serial timing reduces three repeats to case medians and reports block medians; it cannot establish performance under other traffic or provider conditions.",
+    "Luna reasoning is none. Native API/formatting overhead differs. Both expose the same answer object, but this does not equalize their architecture, training, tokenization or reasoning budget.",
+    "Brier combines calibration and discrimination. Exact-probability arithmetic tasks do not establish real-world forecasting calibration.",
+    "All attempted bills, including failed responses and warmups, remain accounted for. Missing bills remain unknown; per-1,000 costs project the observed workload only.",
+    "Pilot60 and remaining3210 BoolQ subgroups are descriptive. No retrospective relabeling or outcome-based case removal is applied."
+  ]
+}

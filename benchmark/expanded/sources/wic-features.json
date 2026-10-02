@@ -1,0 +1,77 @@
+[
+  {
+    "feature_idx": 0,
+    "name": "word",
+    "type": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  {
+    "feature_idx": 1,
+    "name": "sentence1",
+    "type": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  {
+    "feature_idx": 2,
+    "name": "sentence2",
+    "type": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  {
+    "feature_idx": 3,
+    "name": "start1",
+    "type": {
+      "dtype": "int32",
+      "_type": "Value"
+    }
+  },
+  {
+    "feature_idx": 4,
+    "name": "start2",
+    "type": {
+      "dtype": "int32",
+      "_type": "Value"
+    }
+  },
+  {
+    "feature_idx": 5,
+    "name": "end1",
+    "type": {
+      "dtype": "int32",
+      "_type": "Value"
+    }
+  },
+  {
+    "feature_idx": 6,
+    "name": "end2",
+    "type": {
+      "dtype": "int32",
+      "_type": "Value"
+    }
+  },
+  {
+    "feature_idx": 7,
+    "name": "idx",
+    "type": {
+      "dtype": "int32",
+      "_type": "Value"
+    }
+  },
+  {
+    "feature_idx": 8,
+    "name": "label",
+    "type": {
+      "names": [
+        "False",
+        "True"
+      ],
+      "_type": "ClassLabel"
+    }
+  }
+]

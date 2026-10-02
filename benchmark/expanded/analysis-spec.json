@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "frozen_at_utc": "2026-10-02T09:22:59.150624+00:00",
+  "freeze_note": "Analysis choices specified before inspection of any expanded scored output.",
+  "quality_phase": "quality",
+  "quality_repeat": 0,
+  "models": [
+    "Jev",
+    "Luna"
+  ],
+  "primary_binary_quality": "Accuracy across all attempted requests; invalid answers count as incorrect. Balanced accuracy averages class-specific recall, counting invalid answers as incorrect within their true class.",
+  "binary_secondary": "Valid-response accuracy and balanced accuracy; valid-only Brier and clipped natural-log loss. Wilson 95% intervals for accuracy; always show validity and class denominators.",
+  "probability_quality": "Valid-only MAE and RMSE against exact probability; excess and expected Brier; counts of missing/invalid responses shown separately.",
+  "paired_difference_direction": "Luna minus Jev",
+  "paired_ratio_direction": "Luna divided by Jev",
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20261002,
+  "bootstrap_method": "Percentile 95% interval. Resample complete case pairs. Within BoolQ, exact duplicate passage strings form a single resampling cluster, retaining every row from each selected cluster. Paired accuracy includes invalid outputs as wrong; proper-score/probability-error comparisons use only pairs valid for both models, with excluded counts.",
+  "bootstrap_limits": "Exploratory, unadjusted intervals. No IID claim for shared synthetic templates or a finite public development set. Missing one class in a resample yields an undefined balanced-accuracy draw, reported explicitly. Degenerate intervals do not establish equivalence.",
+  "binary_discordance": "Report both-correct, Luna-only-correct, Jev-only-correct, both-incorrect; exact two-sided McNemar binomial p-value is exploratory and unadjusted.",
+  "boolq_subgroups": "Descriptive pilot60 versus remaining3210, identified from the existing frozen pilot case IDs before expanded outcomes are inspected; no selection on performance.",
+  "bulk_latency": "Concurrent quality-run latency is diagnostic only and must not support speed comparisons.",
+  "timing_phase": "timing",
+  "timing_primary": "Serial timing only. Require paired positive finite complete-response timings. Reduce repeats to each case/model median, then compare medians across cases with a paired case bootstrap. Report all attempts, valid counts, complete-repeat counts, and per-repeat block medians. Timing warmups excluded from timing estimates, retained in billing.",
+  "cost": "Known billed USD subtotal and missing-bill count for all attempts in each phase. Full total, per-1000 projection and cost-per-correct withheld when any required bill is missing. Warmups and failed/invalid attempts remain in their phase's billing totals.",
+  "missingness": "Never impute missing response probabilities, times or costs; partial runs and unpaired/excluded cases are identified. Published labels are not relabeled after seeing outputs."
+}

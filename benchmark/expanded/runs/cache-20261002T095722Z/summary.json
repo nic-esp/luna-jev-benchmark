@@ -1,0 +1,706 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "schema_version": 1,
+    "experiment": "expanded_cache_policy",
+    "created_at": "2026-10-02T09:57:22.547918+00:00",
+    "seed": 20261002,
+    "models": {
+      "Luna cached": "openai/gpt-6-luna",
+      "Luna uncached": "openai/gpt-6-luna",
+      "Jev": "typesafe/jev-1.13"
+    },
+    "blocks": 4,
+    "cases": 96,
+    "counterfactual_pairs": 48,
+    "calls_planned": 292,
+    "budget_usd": 0.15,
+    "block_identifiers": [
+      "16c3557eb5ab469bb9f224860ba22b59",
+      "9ae014115a4045809606c2845f769574",
+      "25696913dd3742638d846f3b2f2df539",
+      "ccb1c6f8b89e40b8a79dce1b27067262"
+    ],
+    "cases_sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c",
+    "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+    "script_sha256": "29ccdc95f58d687e4c64d0bc744ef7e8d35d47e75cc29fd8683e70f36c4f31ed",
+    "pilot_runner_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+    "pilot_cache_adapter_sha256": "40976904f39e343bfcf97ad38815f70cfe9e10cd69ef2260d77bad57060d14f7",
+    "luna_reasoning": "none",
+    "luna_provider": "OpenAI",
+    "automatic_retries": 0,
+    "resume_policy": "Only complete-block boundaries; partial blocks are preserved without replay.",
+    "protocol": "Four sequential blocks. Each has a unique administrative identifier inside the shared prefix, one separate Luna cached cold-prime attempt, and 24 cases with randomly ordered three-arm requests. One persistent HTTPS connection. Cache identity, cold writes, reads, and disabled controls verified from usage.",
+    "billing_guard": "Before each call reserve every request UTF-8 byte plus 4096 as input tokens at $1/M, plus 128 output tokens at $2/M. Stop on unknown costs or observed charges above budget. This is a local accounting guard, not an account-level provider spend cap.",
+    "status": "complete",
+    "charged_usd": 0.05034943,
+    "calls_completed": 292,
+    "known_charge_subtotal_usd": 0.05034943,
+    "cost_missing_n": 0,
+    "current_block": 3,
+    "completed_blocks": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "finished_at": "2026-10-02T10:01:23.629266+00:00"
+  },
+  "arms": {
+    "Luna cached": {
+      "n": 96,
+      "valid_n": 96,
+      "cost": {
+        "total_usd": 0.0068864,
+        "known_subtotal_usd": 0.0068864,
+        "missing_n": 0
+      },
+      "cost_per_1000_usd": 0.07173333333333333,
+      "accuracy_including_invalid_as_wrong": 0.8854166666666666,
+      "brier_valid_only": 0.11458333333333333,
+      "median_latency_s": 0.9659681670018472,
+      "mean_latency_s": 1.0262378523945397,
+      "p95_latency_s": 1.5014998744954937,
+      "cache_observed_n": 96,
+      "cache_hit_calls": 96,
+      "cache_read_tokens": 246480,
+      "cache_write_observed_n": 96,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        2565,
+        2567,
+        2571
+      ],
+      "response_models": [
+        "openai/gpt-6-luna"
+      ],
+      "providers": [
+        "OpenAI"
+      ]
+    },
+    "Luna uncached": {
+      "n": 96,
+      "valid_n": 96,
+      "cost": {
+        "total_usd": 0.02906,
+        "known_subtotal_usd": 0.02906,
+        "missing_n": 0
+      },
+      "cost_per_1000_usd": 0.3027083333333333,
+      "accuracy_including_invalid_as_wrong": 0.8645833333333334,
+      "brier_valid_only": 0.13541666666666666,
+      "median_latency_s": 1.0938666670117527,
+      "mean_latency_s": 1.168591856366523,
+      "p95_latency_s": 1.7230133230041247,
+      "cache_observed_n": 96,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": 0,
+      "cache_write_observed_n": 96,
+      "cache_write_tokens": 0,
+      "unique_cache_read_sizes": [
+        0
+      ],
+      "response_models": [
+        "openai/gpt-6-luna"
+      ],
+      "providers": [
+        "OpenAI"
+      ]
+    },
+    "Jev": {
+      "n": 96,
+      "valid_n": 96,
+      "cost": {
+        "total_usd": 0.01293768,
+        "known_subtotal_usd": 0.01293768,
+        "missing_n": 0
+      },
+      "cost_per_1000_usd": 0.1347675,
+      "accuracy_including_invalid_as_wrong": 0.8854166666666666,
+      "brier_valid_only": 0.083584375,
+      "median_latency_s": 0.25351039599627256,
+      "mean_latency_s": 0.27175785855039675,
+      "p95_latency_s": 0.40952933325752383,
+      "cache_observed_n": 0,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": null,
+      "cache_write_observed_n": 0,
+      "cache_write_tokens": null,
+      "unique_cache_read_sizes": [],
+      "response_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "providers": [
+        "TypeSafe"
+      ]
+    }
+  },
+  "paired": {
+    "Luna cached / Luna uncached": {
+      "n": 96,
+      "median_latency_ratio": 0.8747240827256647,
+      "mean_latency_difference_s": -0.14235400397198342,
+      "cost_ratio": 0.23697178251892637,
+      "label_agreement": 0.8541666666666666,
+      "accuracy_difference": 0.020833333333333332
+    },
+    "Luna cached / Jev": {
+      "n": 96,
+      "median_latency_ratio": 3.8451398177849683,
+      "mean_latency_difference_s": 0.7544799938441429,
+      "cost_ratio": 0.5322747200425424,
+      "label_agreement": 0.875,
+      "accuracy_difference": 0
+    },
+    "Luna uncached / Jev": {
+      "n": 96,
+      "median_latency_ratio": 4.224893073396789,
+      "mean_latency_difference_s": 0.8968339978161263,
+      "cost_ratio": 2.2461523240642833,
+      "label_agreement": 0.8541666666666666,
+      "accuracy_difference": -0.020833333333333332
+    }
+  },
+  "blocks": [
+    {
+      "block": 0,
+      "arms": {
+        "Luna cached": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.00172168,
+            "known_subtotal_usd": 0.00172168,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.07173666666666666,
+          "accuracy_including_invalid_as_wrong": 0.875,
+          "brier_valid_only": 0.125,
+          "median_latency_s": 0.9378486454952508,
+          "mean_latency_s": 0.9891269635336357,
+          "p95_latency_s": 1.307679272338282,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 24,
+          "cache_read_tokens": 61608,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            2567
+          ],
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        },
+        "Luna uncached": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.007264,
+            "known_subtotal_usd": 0.007264,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.30266666666666664,
+          "accuracy_including_invalid_as_wrong": 0.8333333333333334,
+          "brier_valid_only": 0.16666666666666666,
+          "median_latency_s": 1.1054907084908336,
+          "mean_latency_s": 1.2104139427550156,
+          "p95_latency_s": 1.8929679982073133,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": 0,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0
+          ],
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        },
+        "Jev": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.00323253,
+            "known_subtotal_usd": 0.00323253,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.13468875,
+          "accuracy_including_invalid_as_wrong": 0.8333333333333334,
+          "brier_valid_only": 0.0975375,
+          "median_latency_s": 0.2450790205184603,
+          "mean_latency_s": 0.2823094670420687,
+          "p95_latency_s": 0.44412016246787933,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": [],
+          "response_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "providers": [
+            "TypeSafe"
+          ]
+        }
+      },
+      "paired": {
+        "Luna cached / Luna uncached": {
+          "n": 24,
+          "median_latency_ratio": 0.8462976597026266,
+          "mean_latency_difference_s": -0.22128697922137994,
+          "cost_ratio": 0.23701541850220265,
+          "label_agreement": 0.7916666666666666,
+          "accuracy_difference": 0.041666666666666664
+        },
+        "Luna cached / Jev": {
+          "n": 24,
+          "median_latency_ratio": 3.7767603952226034,
+          "mean_latency_difference_s": 0.706817496491567,
+          "cost_ratio": 0.5326106795605918,
+          "label_agreement": 0.875,
+          "accuracy_difference": 0.041666666666666664
+        },
+        "Luna uncached / Jev": {
+          "n": 24,
+          "median_latency_ratio": 4.6047984738330285,
+          "mean_latency_difference_s": 0.928104475712947,
+          "cost_ratio": 2.2471562522234905,
+          "label_agreement": 0.75,
+          "accuracy_difference": 0
+        }
+      },
+      "prime": {
+        "cost_usd": 0.000366275,
+        "latency_s": 1.0814631249813829,
+        "cached_tokens": 0,
+        "cache_write_tokens": 2567
+      },
+      "cold_prime_verified": true,
+      "all_cached_requests_hit": true,
+      "stable_cached_prefix_token_count": 2567,
+      "read_size_matches_prime_write": true,
+      "uncached_control_verified": true,
+      "all_arms_complete": true
+    },
+    {
+      "block": 1,
+      "arms": {
+        "Luna cached": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.0017205999999999999,
+            "known_subtotal_usd": 0.0017205999999999999,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.07169166666666665,
+          "accuracy_including_invalid_as_wrong": 0.8333333333333334,
+          "brier_valid_only": 0.16666666666666666,
+          "median_latency_s": 0.8966984790022252,
+          "mean_latency_s": 0.958665947917325,
+          "p95_latency_s": 1.2706661829419315,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 24,
+          "cache_read_tokens": 61560,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            2565
+          ],
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        },
+        "Luna uncached": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.0072586,
+            "known_subtotal_usd": 0.0072586,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.30244166666666666,
+          "accuracy_including_invalid_as_wrong": 0.875,
+          "brier_valid_only": 0.125,
+          "median_latency_s": 0.9795645830017747,
+          "mean_latency_s": 1.1185372430421314,
+          "p95_latency_s": 2.3324491356179324,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": 0,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0
+          ],
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        },
+        "Jev": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.003235806,
+            "known_subtotal_usd": 0.003235806,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.13482524999999998,
+          "accuracy_including_invalid_as_wrong": 0.9583333333333334,
+          "brier_valid_only": 0.04614166666666667,
+          "median_latency_s": 0.25583479198394343,
+          "mean_latency_s": 0.2738232152890608,
+          "p95_latency_s": 0.4114773955414419,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": [],
+          "response_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "providers": [
+            "TypeSafe"
+          ]
+        }
+      },
+      "paired": {
+        "Luna cached / Luna uncached": {
+          "n": 24,
+          "median_latency_ratio": 0.9352658666969866,
+          "mean_latency_difference_s": -0.15987129512480655,
+          "cost_ratio": 0.23704295594191716,
+          "label_agreement": 0.875,
+          "accuracy_difference": -0.041666666666666664
+        },
+        "Luna cached / Jev": {
+          "n": 24,
+          "median_latency_ratio": 3.5806628863557313,
+          "mean_latency_difference_s": 0.6848427326282641,
+          "cost_ratio": 0.53173768761168,
+          "label_agreement": 0.875,
+          "accuracy_difference": -0.125
+        },
+        "Luna uncached / Jev": {
+          "n": 24,
+          "median_latency_ratio": 3.868625040224593,
+          "mean_latency_difference_s": 0.8447140277530707,
+          "cost_ratio": 2.2432123557469144,
+          "label_agreement": 0.9166666666666666,
+          "accuracy_difference": -0.08333333333333333
+        }
+      },
+      "prime": {
+        "cost_usd": 0.000366025,
+        "latency_s": 0.8748697499977425,
+        "cached_tokens": 0,
+        "cache_write_tokens": 2565
+      },
+      "cold_prime_verified": true,
+      "all_cached_requests_hit": true,
+      "stable_cached_prefix_token_count": 2565,
+      "read_size_matches_prime_write": true,
+      "uncached_control_verified": true,
+      "all_arms_complete": true
+    },
+    {
+      "block": 2,
+      "arms": {
+        "Luna cached": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.00172128,
+            "known_subtotal_usd": 0.00172128,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.07171999999999999,
+          "accuracy_including_invalid_as_wrong": 0.9166666666666666,
+          "brier_valid_only": 0.08333333333333333,
+          "median_latency_s": 0.992883917002473,
+          "mean_latency_s": 1.0626901057924745,
+          "p95_latency_s": 1.4792640847474101,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 24,
+          "cache_read_tokens": 61608,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            2567
+          ],
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        },
+        "Luna uncached": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.007263599999999999,
+            "known_subtotal_usd": 0.007263599999999999,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.30265,
+          "accuracy_including_invalid_as_wrong": 0.875,
+          "brier_valid_only": 0.125,
+          "median_latency_s": 1.1332991039962508,
+          "mean_latency_s": 1.1892692674179368,
+          "p95_latency_s": 1.3411919393605785,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": 0,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0
+          ],
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        },
+        "Jev": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.003234378,
+            "known_subtotal_usd": 0.003234378,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.13476575,
+          "accuracy_including_invalid_as_wrong": 0.8333333333333334,
+          "brier_valid_only": 0.09815,
+          "median_latency_s": 0.2504945209948346,
+          "mean_latency_s": 0.25785488724674605,
+          "p95_latency_s": 0.30154996699857295,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": [],
+          "response_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "providers": [
+            "TypeSafe"
+          ]
+        }
+      },
+      "paired": {
+        "Luna cached / Luna uncached": {
+          "n": 24,
+          "median_latency_ratio": 0.8767961745210296,
+          "mean_latency_difference_s": -0.1265791616254622,
+          "cost_ratio": 0.2369734016190319,
+          "label_agreement": 0.875,
+          "accuracy_difference": 0.041666666666666664
+        },
+        "Luna cached / Jev": {
+          "n": 24,
+          "median_latency_ratio": 3.985910182226689,
+          "mean_latency_difference_s": 0.8048352185457285,
+          "cost_ratio": 0.5321826947870657,
+          "label_agreement": 0.8333333333333334,
+          "accuracy_difference": 0.08333333333333333
+        },
+        "Luna uncached / Jev": {
+          "n": 24,
+          "median_latency_ratio": 4.4750255391583975,
+          "mean_latency_difference_s": 0.9314143801711907,
+          "cost_ratio": 2.245748641624448,
+          "label_agreement": 0.7916666666666666,
+          "accuracy_difference": 0.041666666666666664
+        }
+      },
+      "prime": {
+        "cost_usd": 0.000366275,
+        "latency_s": 0.8864273750223219,
+        "cached_tokens": 0,
+        "cache_write_tokens": 2567
+      },
+      "cold_prime_verified": true,
+      "all_cached_requests_hit": true,
+      "stable_cached_prefix_token_count": 2567,
+      "read_size_matches_prime_write": true,
+      "uncached_control_verified": true,
+      "all_arms_complete": true
+    },
+    {
+      "block": 3,
+      "arms": {
+        "Luna cached": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.00172284,
+            "known_subtotal_usd": 0.00172284,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.071785,
+          "accuracy_including_invalid_as_wrong": 0.9166666666666666,
+          "brier_valid_only": 0.08333333333333333,
+          "median_latency_s": 1.0119312500028173,
+          "mean_latency_s": 1.0944683923347232,
+          "p95_latency_s": 1.6308431231824212,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 24,
+          "cache_read_tokens": 61704,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            2571
+          ],
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        },
+        "Luna uncached": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.0072737999999999995,
+            "known_subtotal_usd": 0.0072737999999999995,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.303075,
+          "accuracy_including_invalid_as_wrong": 0.875,
+          "brier_valid_only": 0.125,
+          "median_latency_s": 1.1306785625056364,
+          "mean_latency_s": 1.1561469722510083,
+          "p95_latency_s": 1.4320955956689427,
+          "cache_observed_n": 24,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": 0,
+          "cache_write_observed_n": 24,
+          "cache_write_tokens": 0,
+          "unique_cache_read_sizes": [
+            0
+          ],
+          "response_models": [
+            "openai/gpt-6-luna"
+          ],
+          "providers": [
+            "OpenAI"
+          ]
+        },
+        "Jev": {
+          "n": 24,
+          "valid_n": 24,
+          "cost": {
+            "total_usd": 0.003234966,
+            "known_subtotal_usd": 0.003234966,
+            "missing_n": 0
+          },
+          "cost_per_1000_usd": 0.13479025,
+          "accuracy_including_invalid_as_wrong": 0.9166666666666666,
+          "brier_valid_only": 0.09250833333333333,
+          "median_latency_s": 0.2538313749973895,
+          "mean_latency_s": 0.2730438646237114,
+          "p95_latency_s": 0.3923692312106139,
+          "cache_observed_n": 0,
+          "cache_hit_calls": 0,
+          "cache_read_tokens": null,
+          "cache_write_observed_n": 0,
+          "cache_write_tokens": null,
+          "unique_cache_read_sizes": [],
+          "response_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "providers": [
+            "TypeSafe"
+          ]
+        }
+      },
+      "paired": {
+        "Luna cached / Luna uncached": {
+          "n": 24,
+          "median_latency_ratio": 0.8926294231479345,
+          "mean_latency_difference_s": -0.06167857991628504,
+          "cost_ratio": 0.23685556380433886,
+          "label_agreement": 0.875,
+          "accuracy_difference": 0.041666666666666664
+        },
+        "Luna cached / Jev": {
+          "n": 24,
+          "median_latency_ratio": 4.0104284289109176,
+          "mean_latency_difference_s": 0.8214245277110118,
+          "cost_ratio": 0.532568193916103,
+          "label_agreement": 0.9166666666666666,
+          "accuracy_difference": 0
+        },
+        "Luna uncached / Jev": {
+          "n": 24,
+          "median_latency_ratio": 4.195065111497657,
+          "mean_latency_difference_s": 0.8831031076272969,
+          "cost_ratio": 2.248493492667311,
+          "label_agreement": 0.9583333333333334,
+          "accuracy_difference": -0.041666666666666664
+        }
+      },
+      "prime": {
+        "cost_usd": 0.000366775,
+        "latency_s": 0.9092799589852802,
+        "cached_tokens": 0,
+        "cache_write_tokens": 2571
+      },
+      "cold_prime_verified": true,
+      "all_cached_requests_hit": true,
+      "stable_cached_prefix_token_count": 2571,
+      "read_size_matches_prime_write": true,
+      "uncached_control_verified": true,
+      "all_arms_complete": true
+    }
+  ],
+  "total_cost": {
+    "total_usd": 0.05034943,
+    "known_subtotal_usd": 0.05034943,
+    "missing_n": 0
+  },
+  "cache_verification": {
+    "cold_primed_blocks": 4,
+    "blocks_with_all_24_cache_hits": 4,
+    "blocks_with_verified_uncached_control": 4,
+    "fully_verified": true,
+    "prime_count": 4,
+    "priming_cost": {
+      "total_usd": 0.00146535,
+      "known_subtotal_usd": 0.00146535,
+      "missing_n": 0
+    },
+    "setup_inclusive_cached_cost_usd": 0.00835175,
+    "setup_inclusive_cached_cost_per_1000_usd": 0.08699739583333334
+  },
+  "definitions": {
+    "accuracy": "Probability >=0.5 means yes; invalid responses count as incorrect.",
+    "cost_per_1000": "Observed mean billed cost scaled to 1,000 requests; not another run.",
+    "setup_inclusive": "All four distinct priming charges plus cached measured charges, allocated across measured cached cases.",
+    "latency": "Full non-streaming request time, including network and service processing; prime excluded from measured distributions.",
+    "blocks": "Four separately primed prefixes, with 12 distinct counterfactual case pairs per block. Blocks are sequential in one run, not independent days or deployments.",
+    "ground_truth": "Synthetic written-policy cases. Each pair differs by one fact; manual expected labels checked by two local rule implementations. This is not an established external benchmark.",
+    "randomisation": "Counterfactual pairs distributed across blocks, case order random within block, model arm order random within case; same pair may appear far apart in time."
+  }
+}

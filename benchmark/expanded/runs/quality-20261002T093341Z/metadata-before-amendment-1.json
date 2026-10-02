@@ -1,0 +1,28 @@
+{
+  "status": "stopped",
+  "created_at": "2026-10-02T09:33:41.649117+00:00",
+  "models": {
+    "Jev": "typesafe/jev-1.13",
+    "Luna": "openai/gpt-6-luna"
+  },
+  "cases": 4785,
+  "planned_calls": 9570,
+  "concurrency_pairs": 16,
+  "phase": "quality",
+  "seed": 20261002,
+  "budget_usd": 0.8,
+  "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+  "runner_sha256": "992c7c8ce88be5a4b7928957690a239cee5cac510f7882a8be61636eaa2c79e8",
+  "adapter_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+  "protocol": "Fresh full quality evaluation. Random case and within-pair model order. Thread workers each perform one pair sequentially. No retries or repairs. Concurrent latency is diagnostic only, excluded from speed claims. Shared answer contract and Luna settings unchanged from pilot.",
+  "calls_completed": 308,
+  "valid": 307,
+  "invalid": 1,
+  "charged_usd": null,
+  "known_charge_subtotal_usd": 0.009407146000000009,
+  "unknown_billing": 1,
+  "budget_pending_usd": 0,
+  "budget_stop_reason": "Unknown billing stopped further calls",
+  "error": "Unknown billing stopped further calls",
+  "finished_at": "2026-10-02T09:33:58.734033+00:00"
+}

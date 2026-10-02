@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "created_at": "2026-10-02T09:50:11.871711+00:00",
+  "models": {
+    "Jev": "typesafe/jev-1.13",
+    "Luna": "openai/gpt-6-luna"
+  },
+  "cases": 60,
+  "repeats": 3,
+  "planned_calls": 372,
+  "seed": 20261005,
+  "budget_usd": 0.1,
+  "cases_sha256": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8",
+  "runner_sha256": "992c7c8ce88be5a4b7928957690a239cee5cac510f7882a8be61636eaa2c79e8",
+  "adapter_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+  "protocol": "Isolated sequential timing run after all bulk calls complete. 3 randomized blocks, same 60 cases. Two warmup cases/model/block excluded. Shared persistent HTTPS connection; nonstreaming complete-response timing; no retries.",
+  "calls_completed": 372,
+  "charged_usd": 0.010753982,
+  "known_charge_subtotal_usd": 0.010753982,
+  "unknown_billing": 0,
+  "budget_pending_usd": 0,
+  "budget_stop_reason": null,
+  "finished_at": "2026-10-02T09:54:48.735657+00:00"
+}

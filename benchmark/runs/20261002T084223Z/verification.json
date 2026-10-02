@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "checks": {
+    "run_completed": true,
+    "frozen_case_hash_matches": true,
+    "runner_source_hash_matches": true,
+    "expected_number_of_calls": true,
+    "one_request_per_model_per_case": true,
+    "inputs_and_targets_match_frozen_cases": true,
+    "all_responses_valid": true,
+    "all_costs_reported": true,
+    "billed_total_reconciles": true,
+    "luna_is_openai_with_zero_reasoning": true,
+    "main_luna_cache_reads_and_writes_zero": true
+  },
+  "measured_requests": 360,
+  "warmup_requests": 4,
+  "served_models": [
+    "openai/gpt-6-luna",
+    "typesafe/jev-1.13-20260917"
+  ],
+  "charged_usd_including_warmups": 0.011550069999999994
+}

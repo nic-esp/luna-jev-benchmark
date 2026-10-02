@@ -1,0 +1,77 @@
+{
+  "verified_date": "2026-10-02",
+  "scope": "Read-only source verification; no model calls or pilot edits",
+  "source_identity": {
+    "requested": "google/super_glue",
+    "verified_current_card": "aps/super_glue",
+    "note": "Retrieved aps/super_glue rows API; observed dataset repository revision from live Hugging Face metadata. Rows API is not itself revision-pinned; normalized downloaded row hashes are authoritative for reproduction.",
+    "hf_revision_observed": "3de24cf8022e94f4ee4b9d55a6f539891524d646"
+  },
+  "rte": {
+    "validation_count": 277,
+    "fields": {
+      "source_text_omitted": "RTE source text omitted from public export; retrieve the original row from the linked source.",
+      "retrieve_from": "https://huggingface.co/datasets/aps/super_glue/viewer/rte/validation",
+      "source_idx": null
+    },
+    "labels": {
+      "0": "entailment",
+      "1": "not_entailment"
+    },
+    "yes_mapping": "For the question whether the premise entails the hypothesis, target_yes = 1 - label.",
+    "definition": "Decide whether the premise entails the hypothesis. Non-entailment includes unsupported hypotheses as well as contradictions.",
+    "provenance": "SuperGLUE reuses GLUE RTE; merges RTE1, RTE2, RTE3, RTE5 and converts to two classes.",
+    "license": "No unified permissive license verified. HF card marks other and refers to original dataset licenses, with a research-context use/redistribution statement. Exact upstream RTE terms remain unverified."
+  },
+  "wic": {
+    "validation_count": 638,
+    "fields": {
+      "word": "string",
+      "sentence1": "string",
+      "sentence2": "string",
+      "start1": "int32",
+      "start2": "int32",
+      "end1": "int32",
+      "end2": "int32",
+      "idx": "int32",
+      "label": "ClassLabel"
+    },
+    "labels": {
+      "0": "False",
+      "1": "True"
+    },
+    "yes_mapping": "For the question whether the marked word has the same meaning in both sentences, target_yes = label.",
+    "definition": "Binary classification of whether two occurrences of a target noun or verb share the same sense.",
+    "provenance": "Pilehvar and Camacho-Collados (2019); examples drawn from WordNet, VerbNet and Wiktionary.",
+    "license": "CC BY-NC 4.0 explicitly stated by dataset authors. Do not relabel as CC BY 4.0 or Apache/MIT.",
+    "offset_caveat": "Field types verified; character offset end-exclusive convention was not independently verified in this short pass. Check sentence[start:end] against intended word occurrences before rendering markers."
+  },
+  "sources": [
+    {
+      "url": "https://huggingface.co/datasets/aps/super_glue/raw/main/README.md",
+      "supports": "RTE/WiC exact fields, counts, class label ordering; card license other and dataset-specific licensing statement"
+    },
+    {
+      "url": "https://www.tensorflow.org/datasets/catalog/super_glue#super_gluerte",
+      "supports": "Independent primary implementation counts and RTE provenance"
+    },
+    {
+      "url": "https://www.tensorflow.org/datasets/catalog/super_glue#super_gluewic",
+      "supports": "WiC counts, fields and source resources"
+    },
+    {
+      "url": "https://pilehvar.github.io/wic/",
+      "supports": "Author task definition, True/False examples, explicit CC BY-NC 4.0 license"
+    },
+    {
+      "url": "https://super.gluebenchmark.com/diagnostics/",
+      "supports": "Entailment vs not-entailment interpretation; this page describes diagnostics, not RTE validation provenance"
+    }
+  ],
+  "benchmark_caveats": [
+    "These are old public evaluation sets; label agreement does not establish unseen-data generalization or absence of training contamination.",
+    "Keep the published labels and exact source row IDs frozen; any label audit exclusions must be separately reported.",
+    "Report RTE and WiC results separately; neither is an exact event-probability ground truth task.",
+    "Do not claim a blanket commercial redistribution license from the SuperGLUE wrapper."
+  ]
+}

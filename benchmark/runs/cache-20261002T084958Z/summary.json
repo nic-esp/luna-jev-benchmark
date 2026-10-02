@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "experiment": "cache_policy",
+    "created_at": "2026-10-02T08:49:58.826529+00:00",
+    "models": {
+      "Luna cached": "openai/gpt-6-luna",
+      "Luna uncached": "openai/gpt-6-luna",
+      "Jev": "typesafe/jev-1.13"
+    },
+    "seed": 20261002,
+    "cases": 24,
+    "calls_planned": 73,
+    "budget_usd": 0.988362588,
+    "charged_usd": 0.012438148999999999,
+    "calls_completed": 73,
+    "status": "complete",
+    "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+    "cases_sha256": "7559a18a2c58c15206a951c2a483cae6eff11969a62b4ab799a87e919ab2c8ea",
+    "code_sha256": "40976904f39e343bfcf97ad38815f70cfe9e10cd69ef2260d77bad57060d14f7",
+    "rulebook_words": 1903,
+    "prompt_cache_key": "luna-jev-policy-1e70847917e24fd092c9b043bb8de051",
+    "source": "https://openrouter.ai/docs/guides/best-practices/prompt-caching",
+    "luna_reasoning": "none",
+    "luna_provider": "OpenAI",
+    "protocol": "One distinct Luna cached priming call, then 24 sequential cases with all three arms randomly ordered within case; no automatic retries; actual usage cost and cache counters; exact same Luna message text and segmentation.",
+    "finished_at": "2026-10-02T08:50:56.490676+00:00"
+  },
+  "arms": {
+    "Luna cached": {
+      "n": 24,
+      "valid": 24,
+      "cost_observed_n": 24,
+      "accuracy_including_invalid_as_wrong": 0.875,
+      "brier_valid_only": 0.125,
+      "median_latency_s": 0.9179664584953571,
+      "p95_latency_s": 1.1803516982632571,
+      "known_cost_subtotal_usd": 0.00171132,
+      "cost_missing_n": 0,
+      "total_cost_usd": 0.00171132,
+      "mean_cost_usd": 7.1305e-05,
+      "cache_observed_n": 24,
+      "cache_hit_calls": 24,
+      "cache_read_tokens": 60792,
+      "known_cache_read_subtotal_tokens": 60792,
+      "cache_write_observed_n": 24,
+      "cache_write_tokens": 0,
+      "known_cache_write_subtotal_tokens": 0,
+      "prompt_tokens": 69426,
+      "cache_read_fraction": 0.8756373692852821
+    },
+    "Luna uncached": {
+      "n": 24,
+      "valid": 24,
+      "cost_observed_n": 24,
+      "accuracy_including_invalid_as_wrong": 0.875,
+      "brier_valid_only": 0.125,
+      "median_latency_s": 1.0602054579940159,
+      "p95_latency_s": 1.291354949955712,
+      "known_cost_subtotal_usd": 0.0071802,
+      "cost_missing_n": 0,
+      "total_cost_usd": 0.0071802,
+      "mean_cost_usd": 0.000299175,
+      "cache_observed_n": 24,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": 0,
+      "known_cache_read_subtotal_tokens": 0,
+      "cache_write_observed_n": 24,
+      "cache_write_tokens": 0,
+      "known_cache_write_subtotal_tokens": 0,
+      "prompt_tokens": 69402,
+      "cache_read_fraction": 0.0
+    },
+    "Jev": {
+      "n": 24,
+      "valid": 24,
+      "cost_observed_n": 24,
+      "accuracy_including_invalid_as_wrong": 0.8333333333333334,
+      "brier_valid_only": 0.08786666666666666,
+      "median_latency_s": 0.2544942910026293,
+      "p95_latency_s": 0.33727485434792465,
+      "known_cost_subtotal_usd": 0.003184104,
+      "cost_missing_n": 0,
+      "total_cost_usd": 0.003184104,
+      "mean_cost_usd": 0.000132671,
+      "cache_observed_n": 0,
+      "cache_hit_calls": 0,
+      "cache_read_tokens": null,
+      "known_cache_read_subtotal_tokens": 0,
+      "cache_write_observed_n": 0,
+      "cache_write_tokens": null,
+      "known_cache_write_subtotal_tokens": 0,
+      "prompt_tokens": null,
+      "cache_read_fraction": null
+    }
+  },
+  "paired": {
+    "Luna cached / Luna uncached": {
+      "n": 24,
+      "median_latency_ratio": 0.9125562576625701,
+      "total_cost_ratio": 0.2383387649369098,
+      "label_agreement": 0.9166666666666666
+    },
+    "Luna cached / Jev": {
+      "n": 24,
+      "median_latency_ratio": 3.617968437782495,
+      "total_cost_ratio": 0.5374573192332913,
+      "label_agreement": 0.875
+    },
+    "Luna uncached / Jev": {
+      "n": 24,
+      "median_latency_ratio": 3.918573737604335,
+      "total_cost_ratio": 2.255014283453053,
+      "label_agreement": 0.875
+    }
+  },
+  "cache_verification": {
+    "cached_arm_has_observed_hits": true,
+    "uncached_control_verified": true,
+    "controlled_cache_comparison_verified": true,
+    "status": "observed cache hits and clean uncached control",
+    "prime_cached_tokens": 0,
+    "prime_cache_write_tokens": 2533,
+    "prime_cost_usd": 0.000362525,
+    "prime_latency_s": 1.2044517089962028,
+    "prime_was_observed_cold": true,
+    "setup_inclusive_cached_cost_usd": 0.002073845,
+    "setup_inclusive_cost_per_measured_case_usd": 8.641020833333333e-05
+  }
+}

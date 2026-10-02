@@ -1,0 +1,206 @@
+{
+  "inputs": {
+    "main": {
+      "path": "benchmark/runs/20261002T084223Z/responses.jsonl",
+      "sha256": "501a97e6330c2c44126075afbc7a8f9cb0a39bfa5d07539833485a167112e87e"
+    },
+    "cache": {
+      "path": "benchmark/runs/cache-20261002T084958Z/responses.jsonl",
+      "sha256": "b790eeb249847b3438ce79dfee24f74e9971dc649e43864b18ac353cac73b97c"
+    },
+    "cases": {
+      "path": "benchmark/data/cases.jsonl",
+      "sha256": "60e6db60c72869936548c3c4620aa3b070cf12e516f3be42a61a306d0f592660"
+    }
+  },
+  "generator": {
+    "path": "benchmark/paper_figures.py",
+    "sha256": "00b037750fbb47947ebdeeab2ed708f196d19165bf430460edd4c4455a0e0bf3",
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20261002,
+    "bootstrap_unit": "case identity within probability family, retaining model pairing"
+  },
+  "population": {
+    "main_measured_requests": 360,
+    "cache_measured_requests": 72,
+    "cache_prime_requests": 1
+  },
+  "figures": {
+    "fig1-latency": {
+      "svg": "fig1-latency.svg",
+      "png": "fig1-latency.png",
+      "size_inches": [
+        12.4,
+        4.6
+      ],
+      "png_pixels": [
+        3224,
+        1196
+      ],
+      "title": "Latency distributions across three benchmark tasks",
+      "caption": "Empirical cumulative distribution of end-to-end non-streaming latency for each task, using 60 measured requests per model per panel. Each step represents observed calls, with common logarithmic time axes. Two warmup requests per model are excluded. Timing includes network, OpenRouter, and provider processing; it is not isolated model inference time. Solid navy denotes Jev and dashed orange denotes Luna.",
+      "svg_sha256": "98f54b27128b4a4a1b0d45b5aa9de64e329ee63002a200abef97d1a6fe9ec790",
+      "png_sha256": "2bf8e268b27e9f23c64bd0b9d43f21fc286730b3447e1eb9f2e360b77f402631"
+    },
+    "fig2-probability": {
+      "svg": "fig2-probability.svg",
+      "png": "fig2-probability.png",
+      "size_inches": [
+        12.4,
+        4.9
+      ],
+      "png_pixels": [
+        3224,
+        1274
+      ],
+      "title": "Probability estimation against exact references",
+      "caption": "Predicted probabilities versus exact event probabilities for Jev (A) and Luna (B), using the same 60 finite probability problems. The dashed diagonal is exact agreement, not a fitted line. Panel C shows mean absolute error in percentage points for three prespecified 20-case families. Intervals are exploratory 95% percentile bootstrap intervals from 10,000 resamples of case identities within each family, retaining model pairing. These intervals do not establish broad calibration or correct for multiple comparisons.",
+      "svg_sha256": "265e30846f36c8b3be48c4b377803be45bd6bf360e145c7c5139dffadda31262",
+      "png_sha256": "0c25b31bda5a1e1b5d9cdc541776fd3ded1cdf68065ebbbc42fe314b1a84ed28"
+    },
+    "fig3-cache": {
+      "svg": "fig3-cache.svg",
+      "png": "fig3-cache.png",
+      "size_inches": [
+        12.4,
+        5.3
+      ],
+      "png_pixels": [
+        3224,
+        1378
+      ],
+      "title": "Measured cost and latency in the long-prefix caching experiment",
+      "caption": "Three arms answered the same 24 equipment-policy cases. Panel A scales actual measured mean billed costs to 1,000 requests; this is a workload-based projection, not a list price or a further 1,000-request run. The fourth row adds one distinct priming request divided across the 24 measured cached cases; the hatched segment isolates that allocation. Panel B shows empirical latency distributions after the priming request, excluding the prime itself. All 24 Luna cached calls reported cache reads and every uncached Luna control reported zero reads and writes. Same prompt text and segmentation were used for both Luna arms, with only cache metadata changed. Lower observed latency in this run does not identify provider-only inference latency.",
+      "svg_sha256": "87c653fe952b0c91e9be2de972a6c6bfe020fdebab61717ce03df02832782fe8",
+      "png_sha256": "2a2172cf2777c0a93344ab95658a9dd212283d84faaa88711d2089c92c28bd24"
+    }
+  },
+  "metrics": {
+    "main_latency": {
+      "boolq": {
+        "Jev": {
+          "n": 60,
+          "median_s": 0.23620002050301991,
+          "p95_s": 0.37197747530590275
+        },
+        "Luna": {
+          "n": 60,
+          "median_s": 1.1484179999970365,
+          "p95_s": 1.4701433298032498
+        }
+      },
+      "policy": {
+        "Jev": {
+          "n": 60,
+          "median_s": 0.24326154148729984,
+          "p95_s": 0.3312737014319282
+        },
+        "Luna": {
+          "n": 60,
+          "median_s": 1.1491409375012154,
+          "p95_s": 1.6466312964330425
+        }
+      },
+      "probability": {
+        "Jev": {
+          "n": 60,
+          "median_s": 0.237314312485978,
+          "p95_s": 0.31138571220799344
+        },
+        "Luna": {
+          "n": 60,
+          "median_s": 1.1426221465080744,
+          "p95_s": 1.5959135121971477
+        }
+      }
+    },
+    "probability_families": {
+      "conditional_table": {
+        "Jev": {
+          "n": 20,
+          "mae": 0.020416666666666666,
+          "ci95": [
+            0.016333333333333328,
+            0.02475208333333331
+          ]
+        },
+        "Luna": {
+          "n": 20,
+          "mae": 3.33333360913457e-12,
+          "ci95": [
+            0.0,
+            8.333334022836425e-12
+          ]
+        }
+      },
+      "without_replacement": {
+        "Jev": {
+          "n": 20,
+          "mae": 0.08215762313029003,
+          "ci95": [
+            0.05057425108777326,
+            0.12016434488128894
+          ]
+        },
+        "Luna": {
+          "n": 20,
+          "mae": 0.01884820341602098,
+          "ci95": [
+            0.001949048549209979,
+            0.04853159994631379
+          ]
+        }
+      },
+      "weighted_mixture": {
+        "Jev": {
+          "n": 20,
+          "mae": 0.09071157593334987,
+          "ci95": [
+            0.05603932944477918,
+            0.13250484941546423
+          ]
+        },
+        "Luna": {
+          "n": 20,
+          "mae": 0.07946296948705978,
+          "ci95": [
+            0.04740467765114048,
+            0.11617651098241388
+          ]
+        }
+      }
+    },
+    "cache": {
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "cost_usd": 0.003184104,
+          "cost_per_1000_usd": 0.132671,
+          "median_s": 0.2544942910026293
+        },
+        "Luna uncached": {
+          "n": 24,
+          "cost_usd": 0.0071802,
+          "cost_per_1000_usd": 0.29917499999999997,
+          "median_s": 1.0602054579940159
+        },
+        "Luna cached": {
+          "n": 24,
+          "cost_usd": 0.00171132,
+          "cost_per_1000_usd": 0.071305,
+          "median_s": 0.9179664584953571
+        }
+      },
+      "prime_cost_usd": 0.000362525,
+      "prime_latency_s": 1.2044517089962028,
+      "prime_cost_allocated_per_1000_usd": 0.015105208333333332,
+      "cached_plus_prime_cost_per_1000_usd": 0.08641020833333332,
+      "measured_cache_reads_tokens": 60792,
+      "measured_cache_hit_calls": 24,
+      "uncached_control_calls_with_zero_reads_and_writes": 24
+    }
+  }
+}

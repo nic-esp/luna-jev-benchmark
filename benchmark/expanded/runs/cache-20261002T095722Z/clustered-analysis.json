@@ -1,0 +1,456 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "experiment": "expanded_cache_policy",
+    "created_at": "2026-10-02T09:57:22.547918+00:00",
+    "seed": 20261002,
+    "models": {
+      "Luna cached": "openai/gpt-6-luna",
+      "Luna uncached": "openai/gpt-6-luna",
+      "Jev": "typesafe/jev-1.13"
+    },
+    "blocks": 4,
+    "cases": 96,
+    "counterfactual_pairs": 48,
+    "calls_planned": 292,
+    "budget_usd": 0.15,
+    "block_identifiers": [
+      "16c3557eb5ab469bb9f224860ba22b59",
+      "9ae014115a4045809606c2845f769574",
+      "25696913dd3742638d846f3b2f2df539",
+      "ccb1c6f8b89e40b8a79dce1b27067262"
+    ],
+    "cases_sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c",
+    "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+    "script_sha256": "29ccdc95f58d687e4c64d0bc744ef7e8d35d47e75cc29fd8683e70f36c4f31ed",
+    "pilot_runner_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+    "pilot_cache_adapter_sha256": "40976904f39e343bfcf97ad38815f70cfe9e10cd69ef2260d77bad57060d14f7",
+    "luna_reasoning": "none",
+    "luna_provider": "OpenAI",
+    "automatic_retries": 0,
+    "resume_policy": "Only complete-block boundaries; partial blocks are preserved without replay.",
+    "protocol": "Four sequential blocks. Each has a unique administrative identifier inside the shared prefix, one separate Luna cached cold-prime attempt, and 24 cases with randomly ordered three-arm requests. One persistent HTTPS connection. Cache identity, cold writes, reads, and disabled controls verified from usage.",
+    "billing_guard": "Before each call reserve every request UTF-8 byte plus 4096 as input tokens at $1/M, plus 128 output tokens at $2/M. Stop on unknown costs or observed charges above budget. This is a local accounting guard, not an account-level provider spend cap.",
+    "status": "complete",
+    "charged_usd": 0.05034943,
+    "calls_completed": 292,
+    "known_charge_subtotal_usd": 0.05034943,
+    "cost_missing_n": 0,
+    "current_block": 3,
+    "completed_blocks": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "finished_at": "2026-10-02T10:01:23.629266+00:00"
+  },
+  "population": {
+    "measured_calls": 288,
+    "cases": 96,
+    "counterfactual_pairs": 48,
+    "blocks": 4,
+    "primes": 4
+  },
+  "bootstrap": {
+    "draws": 5000,
+    "seed": 20261019,
+    "confidence_level": 0.95,
+    "unit": "Counterfactual pair_id (two correlated cases), keeping all three model responses together.",
+    "stratification": "Resample 12 pair identities with replacement within each of the four observed blocks. Hold blocks fixed.",
+    "scope": "Exploratory percentile intervals over these synthetic cases, conditional on this run and its four blocks. No multiple-comparison adjustment; no uncertainty over days, providers, or new model draws."
+  },
+  "comparisons": {
+    "Luna cached / Luna uncached": {
+      "paired_cases": 96,
+      "clusters": 48,
+      "difference_direction": "Luna cached minus Luna uncached",
+      "ratio_direction": "Luna cached divided by Luna uncached",
+      "metrics": {
+        "accuracy_difference": {
+          "estimate": 0.020833333333333332,
+          "ci95": [
+            -0.0625,
+            0.10416666666666667
+          ],
+          "defined_draws": 5000
+        },
+        "brier_difference": {
+          "estimate": -0.020833333333333332,
+          "ci95": [
+            -0.10416666666666667,
+            0.0625
+          ],
+          "defined_draws": 5000
+        },
+        "median_paired_latency_ratio": {
+          "estimate": 0.8747240827256647,
+          "ci95": [
+            0.8483804685712446,
+            0.9033339520679113
+          ],
+          "defined_draws": 5000
+        },
+        "mean_latency_difference_s": {
+          "estimate": -0.14235400397198342,
+          "ci95": [
+            -0.21287456465666613,
+            -0.07976936624812278
+          ],
+          "defined_draws": 5000
+        },
+        "cost_ratio": {
+          "estimate": 0.23697178251892637,
+          "ci95": [
+            0.23689300340709638,
+            0.23705054536696143
+          ],
+          "defined_draws": 5000
+        },
+        "label_agreement": {
+          "estimate": 0.8541666666666666,
+          "ci95": [
+            0.78125,
+            0.9169270833333295
+          ],
+          "defined_draws": 5000
+        }
+      }
+    },
+    "Luna cached / Jev": {
+      "paired_cases": 96,
+      "clusters": 48,
+      "difference_direction": "Luna cached minus Jev",
+      "ratio_direction": "Luna cached divided by Jev",
+      "metrics": {
+        "accuracy_difference": {
+          "estimate": 0,
+          "ci95": [
+            -0.0625,
+            0.0625
+          ],
+          "defined_draws": 5000
+        },
+        "brier_difference": {
+          "estimate": 0.03099895833333333,
+          "ci95": [
+            -0.025554114583333332,
+            0.09232799479166666
+          ],
+          "defined_draws": 5000
+        },
+        "median_paired_latency_ratio": {
+          "estimate": 3.8451398177849683,
+          "ci95": [
+            3.682639912682797,
+            3.9391361956208133
+          ],
+          "defined_draws": 5000
+        },
+        "mean_latency_difference_s": {
+          "estimate": 0.7544799938441429,
+          "ci95": [
+            0.7111010787080204,
+            0.79986143093109
+          ],
+          "defined_draws": 5000
+        },
+        "cost_ratio": {
+          "estimate": 0.5322747200425424,
+          "ci95": [
+            0.5320877498765516,
+            0.5324671414268364
+          ],
+          "defined_draws": 5000
+        },
+        "label_agreement": {
+          "estimate": 0.875,
+          "ci95": [
+            0.8125,
+            0.9270833333333334
+          ],
+          "defined_draws": 5000
+        }
+      }
+    },
+    "Luna uncached / Jev": {
+      "paired_cases": 96,
+      "clusters": 48,
+      "difference_direction": "Luna uncached minus Jev",
+      "ratio_direction": "Luna uncached divided by Jev",
+      "metrics": {
+        "accuracy_difference": {
+          "estimate": -0.020833333333333332,
+          "ci95": [
+            -0.10416666666666667,
+            0.0625
+          ],
+          "defined_draws": 5000
+        },
+        "brier_difference": {
+          "estimate": 0.05183229166666667,
+          "ci95": [
+            -0.0019258072916666681,
+            0.10831374999999996
+          ],
+          "defined_draws": 5000
+        },
+        "median_paired_latency_ratio": {
+          "estimate": 4.224893073396789,
+          "ci95": [
+            4.075500544740897,
+            4.501059891306124
+          ],
+          "defined_draws": 5000
+        },
+        "mean_latency_difference_s": {
+          "estimate": 0.8968339978161263,
+          "ci95": [
+            0.8469693055611818,
+            0.9526009764480553
+          ],
+          "defined_draws": 5000
+        },
+        "cost_ratio": {
+          "estimate": 2.2461523240642833,
+          "ci95": [
+            2.245891314494804,
+            2.246402322378075
+          ],
+          "defined_draws": 5000
+        },
+        "label_agreement": {
+          "estimate": 0.8541666666666666,
+          "ci95": [
+            0.78125,
+            0.9166666666666666
+          ],
+          "defined_draws": 5000
+        }
+      }
+    }
+  },
+  "blocks": [
+    {
+      "block": 0,
+      "prime_cost_usd": 0.000366275,
+      "prime_latency_s": 1.0814631249813829,
+      "prime_cache_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2567,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "accuracy": 0.8333333333333334,
+          "median_latency_s": 0.2450790205184603,
+          "p95_latency_s": 0.44412016246787933,
+          "cost_usd": 0.00323253,
+          "cost_per_1000_usd": 0.13468875,
+          "cache_read_tokens": null,
+          "cache_write_tokens": null,
+          "cache_hit_calls": 0,
+          "cache_counter_observed_n": 0
+        },
+        "Luna uncached": {
+          "n": 24,
+          "accuracy": 0.8333333333333334,
+          "median_latency_s": 1.1054907084908336,
+          "p95_latency_s": 1.8929679982073133,
+          "cost_usd": 0.007264,
+          "cost_per_1000_usd": 0.30266666666666664,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_hit_calls": 0,
+          "cache_counter_observed_n": 24
+        },
+        "Luna cached": {
+          "n": 24,
+          "accuracy": 0.875,
+          "median_latency_s": 0.9378486454952508,
+          "p95_latency_s": 1.307679272338282,
+          "cost_usd": 0.00172168,
+          "cost_per_1000_usd": 0.07173666666666666,
+          "cache_read_tokens": 61608,
+          "cache_write_tokens": 0,
+          "cache_hit_calls": 24,
+          "cache_counter_observed_n": 24,
+          "cost_per_1000_with_prime_usd": 0.086998125
+        }
+      }
+    },
+    {
+      "block": 1,
+      "prime_cost_usd": 0.000366025,
+      "prime_latency_s": 0.8748697499977425,
+      "prime_cache_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2565,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "accuracy": 0.9583333333333334,
+          "median_latency_s": 0.25583479198394343,
+          "p95_latency_s": 0.4114773955414419,
+          "cost_usd": 0.003235806,
+          "cost_per_1000_usd": 0.13482524999999998,
+          "cache_read_tokens": null,
+          "cache_write_tokens": null,
+          "cache_hit_calls": 0,
+          "cache_counter_observed_n": 0
+        },
+        "Luna uncached": {
+          "n": 24,
+          "accuracy": 0.875,
+          "median_latency_s": 0.9795645830017747,
+          "p95_latency_s": 2.3324491356179324,
+          "cost_usd": 0.0072586,
+          "cost_per_1000_usd": 0.30244166666666666,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_hit_calls": 0,
+          "cache_counter_observed_n": 24
+        },
+        "Luna cached": {
+          "n": 24,
+          "accuracy": 0.8333333333333334,
+          "median_latency_s": 0.8966984790022252,
+          "p95_latency_s": 1.2706661829419315,
+          "cost_usd": 0.0017205999999999999,
+          "cost_per_1000_usd": 0.07169166666666665,
+          "cache_read_tokens": 61560,
+          "cache_write_tokens": 0,
+          "cache_hit_calls": 24,
+          "cache_counter_observed_n": 24,
+          "cost_per_1000_with_prime_usd": 0.08694270833333334
+        }
+      }
+    },
+    {
+      "block": 2,
+      "prime_cost_usd": 0.000366275,
+      "prime_latency_s": 0.8864273750223219,
+      "prime_cache_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2567,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "accuracy": 0.8333333333333334,
+          "median_latency_s": 0.2504945209948346,
+          "p95_latency_s": 0.30154996699857295,
+          "cost_usd": 0.003234378,
+          "cost_per_1000_usd": 0.13476575,
+          "cache_read_tokens": null,
+          "cache_write_tokens": null,
+          "cache_hit_calls": 0,
+          "cache_counter_observed_n": 0
+        },
+        "Luna uncached": {
+          "n": 24,
+          "accuracy": 0.875,
+          "median_latency_s": 1.1332991039962508,
+          "p95_latency_s": 1.3411919393605785,
+          "cost_usd": 0.007263599999999999,
+          "cost_per_1000_usd": 0.30265,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_hit_calls": 0,
+          "cache_counter_observed_n": 24
+        },
+        "Luna cached": {
+          "n": 24,
+          "accuracy": 0.9166666666666666,
+          "median_latency_s": 0.992883917002473,
+          "p95_latency_s": 1.4792640847474101,
+          "cost_usd": 0.00172128,
+          "cost_per_1000_usd": 0.07171999999999999,
+          "cache_read_tokens": 61608,
+          "cache_write_tokens": 0,
+          "cache_hit_calls": 24,
+          "cache_counter_observed_n": 24,
+          "cost_per_1000_with_prime_usd": 0.08698145833333333
+        }
+      }
+    },
+    {
+      "block": 3,
+      "prime_cost_usd": 0.000366775,
+      "prime_latency_s": 0.9092799589852802,
+      "prime_cache_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2571,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "arms": {
+        "Jev": {
+          "n": 24,
+          "accuracy": 0.9166666666666666,
+          "median_latency_s": 0.2538313749973895,
+          "p95_latency_s": 0.3923692312106139,
+          "cost_usd": 0.003234966,
+          "cost_per_1000_usd": 0.13479025,
+          "cache_read_tokens": null,
+          "cache_write_tokens": null,
+          "cache_hit_calls": 0,
+          "cache_counter_observed_n": 0
+        },
+        "Luna uncached": {
+          "n": 24,
+          "accuracy": 0.875,
+          "median_latency_s": 1.1306785625056364,
+          "p95_latency_s": 1.4320955956689427,
+          "cost_usd": 0.0072737999999999995,
+          "cost_per_1000_usd": 0.303075,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_hit_calls": 0,
+          "cache_counter_observed_n": 24
+        },
+        "Luna cached": {
+          "n": 24,
+          "accuracy": 0.9166666666666666,
+          "median_latency_s": 1.0119312500028173,
+          "p95_latency_s": 1.6308431231824212,
+          "cost_usd": 0.00172284,
+          "cost_per_1000_usd": 0.071785,
+          "cache_read_tokens": 61704,
+          "cache_write_tokens": 0,
+          "cache_hit_calls": 24,
+          "cache_counter_observed_n": 24,
+          "cost_per_1000_with_prime_usd": 0.08706729166666666
+        }
+      }
+    }
+  ],
+  "counterfactual_pair_accuracy": {
+    "Jev": {
+      "both_cases_correct": 38,
+      "pairs": 48,
+      "fraction": 0.7916666666666666
+    },
+    "Luna uncached": {
+      "both_cases_correct": 35,
+      "pairs": 48,
+      "fraction": 0.7291666666666666
+    },
+    "Luna cached": {
+      "both_cases_correct": 38,
+      "pairs": 48,
+      "fraction": 0.7916666666666666
+    }
+  },
+  "provenance": {
+    "responses_sha256": "a837d11e4ad92e01c258a5d5e1defe82f6b64b7e4440ec6f383defc30d650e3f",
+    "analysis_script_sha256": "83e99988a8026b6c96839d1439d8923c3d48baed5e077f94a8bbd70b1458f65e"
+  }
+}

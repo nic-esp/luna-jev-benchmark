@@ -1,0 +1,2234 @@
+[
+  {
+    "case_id": "warmup-yes",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-yes",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-no",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-no",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "expanded-policy-0110",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0110",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0118",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0118",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0049",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0049",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0080",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0080",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2890",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2890",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2142",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2142",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0143",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0143",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0032",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0032",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0221",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0221",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1124",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1124",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0781",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0781",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0064",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0064",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0214",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0214",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0057",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0057",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0220",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0220",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0076",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0076",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0011",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0011",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0127",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0127",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0188",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0188",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0098",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0098",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0202",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0202",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0715",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0715",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0383",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0383",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0134",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0134",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0031",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0031",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0198",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0198",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0120",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0120",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0167",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0167",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0625",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0625",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0170",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0170",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1609",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1609",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0364",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0364",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0190",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0190",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0566",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0566",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0038",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0038",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0134",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0134",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3044",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3044",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0219",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0219",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0128",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0128",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0107",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0107",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0185",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0185",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0223",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0223",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0130",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0130",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0455",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0455",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0137",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0137",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0204",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0204",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3090",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3090",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0009",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0009",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0143",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0143",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0092",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0092",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2750",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2750",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1240",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1240",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0216",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0216",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0113",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0113",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0297",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0297",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0244",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0244",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0519",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0519",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0095",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0095",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0148",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0148",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0075",
+    "model": "Jev",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0075",
+    "model": "Luna",
+    "repeat": 0,
+    "phase": "timing"
+  },
+  {
+    "case_id": "warmup-yes",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-yes",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-no",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-no",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "wic-validation-0364",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0364",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0076",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0076",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0128",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0128",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1609",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1609",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0080",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0080",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0038",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0038",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0148",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0148",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0170",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0170",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0204",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0204",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0143",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0143",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0216",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0216",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0715",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0715",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0032",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0032",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0221",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0221",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3090",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3090",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0190",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0190",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0127",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0127",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0031",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0031",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0134",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0134",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0137",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0137",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0113",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0113",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0120",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0120",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0219",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0219",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0009",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0009",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1124",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1124",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0134",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0134",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0188",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0188",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0098",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0098",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0110",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0110",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2750",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2750",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0095",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0095",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0625",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0625",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0064",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0064",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0185",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0185",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0092",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0092",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0781",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0781",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0167",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0167",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0107",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0107",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0244",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0244",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0202",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0202",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0383",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0383",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0143",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0143",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0297",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0297",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0198",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0198",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0214",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0214",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2142",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2142",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0519",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0519",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2890",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2890",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0011",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0011",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0130",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0130",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0455",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0455",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1240",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1240",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0220",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0220",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0057",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0057",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0566",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0566",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0223",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0223",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0118",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0118",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0075",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0075",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3044",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3044",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0049",
+    "model": "Luna",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0049",
+    "model": "Jev",
+    "repeat": 1,
+    "phase": "timing"
+  },
+  {
+    "case_id": "warmup-yes",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-yes",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-no",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "warmup-no",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing_warmup"
+  },
+  {
+    "case_id": "wic-validation-0455",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0455",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0128",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0128",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0031",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0031",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0092",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0092",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0223",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0223",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0120",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0120",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0110",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0110",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0098",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0098",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0566",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0566",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0383",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0383",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0185",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0185",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0049",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0049",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0134",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0134",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0107",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0107",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0781",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0781",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3044",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3044",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0075",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0075",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0202",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0202",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3090",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-3090",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0032",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0032",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0244",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0244",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0625",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0625",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0297",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0297",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0219",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0219",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0118",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0118",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0214",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0214",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0216",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0216",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0198",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0198",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0127",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0127",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0143",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0143",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0134",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0134",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0076",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0076",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0038",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0038",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0113",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0113",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0364",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0364",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0143",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0143",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1124",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1124",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0009",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0009",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0064",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0064",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0204",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0204",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0011",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0011",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2890",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2890",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0130",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0130",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0190",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0190",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0170",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0170",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0715",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0715",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0148",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0148",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0137",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-policy-0137",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0057",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "wic-validation-0057",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2142",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2142",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2750",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-2750",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0095",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0095",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0519",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0519",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0221",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-0221",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0220",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0220",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1609",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1609",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0080",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "expanded-probability-0080",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0167",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0167",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0188",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "rte-validation-0188",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1240",
+    "model": "Jev",
+    "repeat": 2,
+    "phase": "timing"
+  },
+  {
+    "case_id": "boolq-dev-1240",
+    "model": "Luna",
+    "repeat": 2,
+    "phase": "timing"
+  }
+]

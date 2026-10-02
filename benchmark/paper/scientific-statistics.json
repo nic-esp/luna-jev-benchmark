@@ -1,0 +1,1168 @@
+{
+  "generated_at_utc": "2026-10-02T09:11:51.530602+00:00",
+  "analysis_status": "post-hoc exploratory uncertainty supplement; original records, endpoints, labels and scores unchanged",
+  "methods": {
+    "confidence_level": 0.95,
+    "paired_bootstrap_replicates": 20000,
+    "interval": "2.5th and 97.5th percentiles, linear interpolation",
+    "resampling_unit": "case identity; all compared arms retained together",
+    "accuracy_interval": "Wilson score interval with z=1.959963984540054",
+    "direction": "Each comparison identifies its left and right arms; differences are left minus right; ratios are left divided by right",
+    "independence_limit": "Case-level bootstrap/Wilson calculations do not account for common synthetic templates, duplicated passages, temporal dependence or provider-state variation. They are descriptive intervals for this fixed pilot, not population-wide guarantees.",
+    "multiplicity": "No multiplicity adjustment. Main endpoints existed before evaluation; these additional interval calculations and sensitivities are post hoc."
+  },
+  "integrity": {
+    "main": {
+      "checks": {
+        "status_complete": true,
+        "case_hash_matches": true,
+        "source_hash_matches": true,
+        "phase_counts_match": true,
+        "consecutive_sequence_numbers": true,
+        "unique_generation_ids": true,
+        "http_200_and_valid": true,
+        "exact_answer_schema": true,
+        "probability_matches_answer": true,
+        "logged_answer_matches_raw_response": true,
+        "raw_cost_matches_record_and_finite": true,
+        "billed_total_matches_metadata": true,
+        "positive_finite_latencies": true,
+        "targets_and_inputs_match_frozen_cases": true,
+        "one_measurement_per_case_per_arm": true,
+        "luna_provider_reasoning": true,
+        "jev_provider_model": true,
+        "luna_cache_reads_and_writes_zero": true
+      },
+      "passed": true,
+      "records": 364,
+      "measured": 360,
+      "raw_sha256": "501a97e6330c2c44126075afbc7a8f9cb0a39bfa5d07539833485a167112e87e",
+      "billed_cost_usd": 0.01155007
+    },
+    "cache": {
+      "checks": {
+        "status_complete": true,
+        "case_hash_matches": true,
+        "source_hash_matches": true,
+        "phase_counts_match": true,
+        "consecutive_sequence_numbers": true,
+        "unique_generation_ids": true,
+        "http_200_and_valid": true,
+        "exact_answer_schema": true,
+        "probability_matches_answer": true,
+        "logged_answer_matches_raw_response": true,
+        "raw_cost_matches_record_and_finite": true,
+        "billed_total_matches_metadata": true,
+        "positive_finite_latencies": true,
+        "targets_and_inputs_match_frozen_cases": true,
+        "one_measurement_per_case_per_arm": true,
+        "luna_provider_reasoning": true,
+        "jev_provider_model": true,
+        "all_cached_measured_have_reads": true,
+        "uncached_reads_and_writes_zero": true,
+        "actual_luna_payloads_differ_only_in_cache_breakpoint": true
+      },
+      "passed": true,
+      "records": 73,
+      "measured": 72,
+      "raw_sha256": "b790eeb249847b3438ce79dfee24f74e9971dc649e43864b18ac353cac73b97c",
+      "billed_cost_usd": 0.012438149
+    },
+    "existing_summary_metric_mismatches": [],
+    "all_numeric_summaries_reconciled": true,
+    "complete_arm_case_counts": {
+      "main": {
+        "Luna": 180,
+        "Jev": 180
+      },
+      "cache": {
+        "Luna uncached": 24,
+        "Luna cached": 24,
+        "Jev": 24
+      }
+    }
+  },
+  "main": {
+    "policy": {
+      "models": {
+        "Jev": {
+          "n": 60,
+          "valid": 60,
+          "median_latency_s": 0.24326154148729984,
+          "p95_latency_s": 0.3312737014319282,
+          "mean_latency_s": 0.25546772780217,
+          "billed_cost_usd": 0.001255632,
+          "usd_per_1000_requests": 0.020927200000000003,
+          "exact_zero_or_one_predictions": 0,
+          "correct": 60,
+          "accuracy": 1.0,
+          "accuracy_wilson95": [
+            0.93982814785791,
+            0.9999999999999998
+          ],
+          "brier": 0.008311666666666669,
+          "log_loss": 0.06748769727937004,
+          "incorrect_case_ids": []
+        },
+        "Luna": {
+          "n": 60,
+          "valid": 60,
+          "median_latency_s": 1.1491409375012154,
+          "p95_latency_s": 1.6466312964330425,
+          "mean_latency_s": 1.1813501993514364,
+          "billed_cost_usd": 0.0027441,
+          "usd_per_1000_requests": 0.045735000000000005,
+          "exact_zero_or_one_predictions": 60,
+          "correct": 60,
+          "accuracy": 1.0,
+          "accuracy_wilson95": [
+            0.93982814785791,
+            0.9999999999999998
+          ],
+          "brier": 0.0,
+          "log_loss": 9.99600361081321e-16,
+          "incorrect_case_ids": []
+        }
+      },
+      "paired": {
+        "left": "Luna",
+        "right": "Jev",
+        "n_pairs": 60,
+        "difference": "left minus right",
+        "ratio": "left divided by right",
+        "bootstrap_seed": 20261002,
+        "metrics": {
+          "brier_difference": {
+            "estimate": -0.008311666666666669,
+            "ci95": [
+              -0.014858500000000002,
+              -0.0037949583333333377
+            ]
+          },
+          "mean_absolute_label_error_difference": {
+            "estimate": -0.06250000000000001,
+            "ci95": [
+              -0.08050000000000002,
+              -0.047333333333333345
+            ]
+          },
+          "mean_latency_difference_s": {
+            "estimate": 0.9258824715492665,
+            "ci95": [
+              0.8648824935581433,
+              0.9946337015639558
+            ]
+          },
+          "mean_cost_difference_usd": {
+            "estimate": 2.48078e-05,
+            "ci95": [
+              2.4696865833333333e-05,
+              2.49125e-05
+            ]
+          },
+          "accuracy_difference": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "log_loss_difference": {
+            "estimate": -0.06748769727936903,
+            "ci95": [
+              -0.0895977519743015,
+              -0.04958625371843448
+            ]
+          },
+          "ratio_of_median_latencies": {
+            "estimate": 4.723890716450177,
+            "ci95": [
+              4.266531603721035,
+              5.047853414741613
+            ]
+          },
+          "median_of_paired_latency_ratios": {
+            "estimate": 4.5148499480948425,
+            "ci95": [
+              4.1382223950328,
+              4.789030734144223
+            ]
+          },
+          "ratio_of_mean_costs": {
+            "estimate": 2.1854333116709355,
+            "ci95": [
+              2.184486385094379,
+              2.186404222462109
+            ]
+          }
+        },
+        "paired_correctness_counts": {
+          "both_correct": 60,
+          "left_only_correct": 0,
+          "right_only_correct": 0,
+          "both_incorrect": 0
+        }
+      },
+      "family_descriptive_results": {
+        "delivery": {
+          "Jev": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 0.23518043749209028,
+            "p95_latency_s": 0.3075738895640825,
+            "mean_latency_s": 0.24279662920162082,
+            "billed_cost_usd": 0.000425964,
+            "usd_per_1000_requests": 0.0212982,
+            "exact_zero_or_one_predictions": 0,
+            "correct": 20,
+            "accuracy": 1.0,
+            "accuracy_wilson95": [
+              0.8388748419471806,
+              1
+            ],
+            "brier": 0.011625000000000002,
+            "log_loss": 0.07697036711430137,
+            "incorrect_case_ids": []
+          },
+          "Luna": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 1.1735261874855496,
+            "p95_latency_s": 1.2876820315883382,
+            "mean_latency_s": 1.133705837551679,
+            "billed_cost_usd": 0.0009294,
+            "usd_per_1000_requests": 0.04647,
+            "exact_zero_or_one_predictions": 20,
+            "correct": 20,
+            "accuracy": 1.0,
+            "accuracy_wilson95": [
+              0.8388748419471806,
+              1
+            ],
+            "brier": 0.0,
+            "log_loss": 9.99600361081321e-16,
+            "incorrect_case_ids": []
+          }
+        },
+        "access": {
+          "Jev": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 0.24228670848242473,
+            "p95_latency_s": 0.392510266667523,
+            "mean_latency_s": 0.25893684795155425,
+            "billed_cost_usd": 0.000421806,
+            "usd_per_1000_requests": 0.0210903,
+            "exact_zero_or_one_predictions": 0,
+            "correct": 20,
+            "accuracy": 1.0,
+            "accuracy_wilson95": [
+              0.8388748419471806,
+              1
+            ],
+            "brier": 0.009595000000000001,
+            "log_loss": 0.0730228734197132,
+            "incorrect_case_ids": []
+          },
+          "Luna": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 1.0688631250086473,
+            "p95_latency_s": 1.5101126541529086,
+            "mean_latency_s": 1.1539596479502507,
+            "billed_cost_usd": 0.0009227,
+            "usd_per_1000_requests": 0.046135,
+            "exact_zero_or_one_predictions": 20,
+            "correct": 20,
+            "accuracy": 1.0,
+            "accuracy_wilson95": [
+              0.8388748419471806,
+              1
+            ],
+            "brier": 0.0,
+            "log_loss": 9.99600361081321e-16,
+            "incorrect_case_ids": []
+          }
+        },
+        "refund": {
+          "Jev": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 0.2587476255139336,
+            "p95_latency_s": 0.3312737014319282,
+            "mean_latency_s": 0.26466970625333486,
+            "billed_cost_usd": 0.000407862,
+            "usd_per_1000_requests": 0.0203931,
+            "exact_zero_or_one_predictions": 0,
+            "correct": 20,
+            "accuracy": 1.0,
+            "accuracy_wilson95": [
+              0.8388748419471806,
+              1
+            ],
+            "brier": 0.0037150000000000004,
+            "log_loss": 0.052469851304095524,
+            "incorrect_case_ids": []
+          },
+          "Luna": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 1.177424396009883,
+            "p95_latency_s": 1.9449935735450712,
+            "mean_latency_s": 1.2563851125523797,
+            "billed_cost_usd": 0.000892,
+            "usd_per_1000_requests": 0.0446,
+            "exact_zero_or_one_predictions": 20,
+            "correct": 20,
+            "accuracy": 1.0,
+            "accuracy_wilson95": [
+              0.8388748419471806,
+              1
+            ],
+            "brier": 0.0,
+            "log_loss": 9.99600361081321e-16,
+            "incorrect_case_ids": []
+          }
+        }
+      }
+    },
+    "boolq": {
+      "models": {
+        "Jev": {
+          "n": 60,
+          "valid": 60,
+          "median_latency_s": 0.23620002050301991,
+          "p95_latency_s": 0.37197747530590275,
+          "mean_latency_s": 0.26132939653180076,
+          "billed_cost_usd": 0.001190826,
+          "usd_per_1000_requests": 0.019847100000000003,
+          "exact_zero_or_one_predictions": 0,
+          "correct": 57,
+          "accuracy": 0.95,
+          "accuracy_wilson95": [
+            0.8629948352365147,
+            0.9828504978356043
+          ],
+          "brier": 0.06835999999999999,
+          "log_loss": 0.2482454306996313,
+          "incorrect_case_ids": [
+            "boolq-dev-1517",
+            "boolq-dev-1842",
+            "boolq-dev-0587"
+          ]
+        },
+        "Luna": {
+          "n": 60,
+          "valid": 60,
+          "median_latency_s": 1.1484179999970365,
+          "p95_latency_s": 1.4701433298032498,
+          "mean_latency_s": 1.1566619764028776,
+          "billed_cost_usd": 0.002669,
+          "usd_per_1000_requests": 0.04448333333333333,
+          "exact_zero_or_one_predictions": 45,
+          "correct": 49,
+          "accuracy": 0.8166666666666667,
+          "accuracy_wilson95": [
+            0.7008024625353194,
+            0.8944220311080237
+          ],
+          "brier": 0.16761500000000001,
+          "log_loss": 3.6759119683872865,
+          "incorrect_case_ids": [
+            "boolq-dev-1447",
+            "boolq-dev-2504",
+            "boolq-dev-0448",
+            "boolq-dev-1625",
+            "boolq-dev-1517",
+            "boolq-dev-2597",
+            "boolq-dev-0852",
+            "boolq-dev-2868",
+            "boolq-dev-2665",
+            "boolq-dev-1842",
+            "boolq-dev-0587"
+          ]
+        }
+      },
+      "paired": {
+        "left": "Luna",
+        "right": "Jev",
+        "n_pairs": 60,
+        "difference": "left minus right",
+        "ratio": "left divided by right",
+        "bootstrap_seed": 20261003,
+        "metrics": {
+          "brier_difference": {
+            "estimate": 0.09925500000000001,
+            "ci95": [
+              0.0335895,
+              0.17571883333333327
+            ]
+          },
+          "mean_absolute_label_error_difference": {
+            "estimate": 0.04516666666666666,
+            "ci95": [
+              -0.024333333333333332,
+              0.12366666666666666
+            ]
+          },
+          "mean_latency_difference_s": {
+            "estimate": 0.895332579871077,
+            "ci95": [
+              0.8495035622303112,
+              0.941849156431296
+            ]
+          },
+          "mean_cost_difference_usd": {
+            "estimate": 2.4636233333333333e-05,
+            "ci95": [
+              2.3409253333333334e-05,
+              2.6234952499999995e-05
+            ]
+          },
+          "accuracy_difference": {
+            "estimate": -0.13333333333333333,
+            "ci95": [
+              -0.23333333333333334,
+              -0.05
+            ]
+          },
+          "log_loss_difference": {
+            "estimate": 3.4276665376876547,
+            "ci95": [
+              1.153912919291477,
+              6.183977213123923
+            ]
+          },
+          "ratio_of_median_latencies": {
+            "estimate": 4.862057156266646,
+            "ci95": [
+              4.439819894127453,
+              5.1176199255015336
+            ]
+          },
+          "median_of_paired_latency_ratios": {
+            "estimate": 4.39906621865231,
+            "ci95": [
+              4.244045901529168,
+              4.9290712246743675
+            ]
+          },
+          "ratio_of_mean_costs": {
+            "estimate": 2.241301415991925,
+            "ci95": [
+              2.231369685908802,
+              2.2524149376246383
+            ]
+          }
+        },
+        "paired_correctness_counts": {
+          "both_correct": 49,
+          "left_only_correct": 0,
+          "right_only_correct": 8,
+          "both_incorrect": 3
+        }
+      }
+    },
+    "probability": {
+      "models": {
+        "Jev": {
+          "n": 60,
+          "valid": 60,
+          "median_latency_s": 0.237314312485978,
+          "p95_latency_s": 0.31138571220799344,
+          "mean_latency_s": 0.2471950327322702,
+          "billed_cost_usd": 0.00111867,
+          "usd_per_1000_requests": 0.0186445,
+          "exact_zero_or_one_predictions": 0,
+          "mae": 0.0644286219101022,
+          "rmse": 0.09988414577509423,
+          "excess_brier": 0.009976842577220275,
+          "expected_brier": 0.15633600538274284
+        },
+        "Luna": {
+          "n": 60,
+          "valid": 60,
+          "median_latency_s": 1.1426221465080744,
+          "p95_latency_s": 1.5959135121971477,
+          "mean_latency_s": 1.2395371187997322,
+          "billed_cost_usd": 0.0024845,
+          "usd_per_1000_requests": 0.04140833333333333,
+          "exact_zero_or_one_predictions": 6,
+          "mae": 0.03277039096880469,
+          "rmse": 0.07423081008255741,
+          "excess_brier": 0.005510213165512707,
+          "expected_brier": 0.15186937597103528
+        }
+      },
+      "paired": {
+        "left": "Luna",
+        "right": "Jev",
+        "n_pairs": 60,
+        "difference": "left minus right",
+        "ratio": "left divided by right",
+        "bootstrap_seed": 20261004,
+        "metrics": {
+          "excess_brier_difference": {
+            "estimate": -0.004466629411707567,
+            "ci95": [
+              -0.011735129597998939,
+              0.002056910350914978
+            ]
+          },
+          "mae_difference": {
+            "estimate": -0.0316582309412975,
+            "ci95": [
+              -0.05221159271243001,
+              -0.011476891283283205
+            ]
+          },
+          "mean_latency_difference_s": {
+            "estimate": 0.992342086067462,
+            "ci95": [
+              0.917132350749198,
+              1.079241541537558
+            ]
+          },
+          "mean_cost_difference_usd": {
+            "estimate": 2.2763833333333334e-05,
+            "ci95": [
+              2.2401362500000003e-05,
+              2.3128505833333332e-05
+            ]
+          },
+          "ratio_of_median_latencies": {
+            "estimate": 4.814805034464946,
+            "ci95": [
+              4.480785852223475,
+              5.36817426179022
+            ]
+          },
+          "median_of_paired_latency_ratios": {
+            "estimate": 4.750724711529367,
+            "ci95": [
+              4.48309361915998,
+              5.076219965790033
+            ]
+          },
+          "ratio_of_mean_costs": {
+            "estimate": 2.220940938793389,
+            "ci95": [
+              2.2073309330627984,
+              2.235412532162518
+            ]
+          }
+        }
+      },
+      "family_descriptive_results": {
+        "without_replacement": {
+          "Jev": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 0.24165856248873752,
+            "p95_latency_s": 0.29094072920124747,
+            "mean_latency_s": 0.25065561265219005,
+            "billed_cost_usd": 0.000350154,
+            "usd_per_1000_requests": 0.017507699999999998,
+            "exact_zero_or_one_predictions": 0,
+            "mae": 0.08215762313029003,
+            "rmse": 0.11443929483405323,
+            "excess_brier": 0.013096352202115363,
+            "expected_brier": 0.13237820973353845
+          },
+          "Luna": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 1.0988034585025162,
+            "p95_latency_s": 1.4990901916447918,
+            "mean_latency_s": 1.2055278500483837,
+            "billed_cost_usd": 0.000792,
+            "usd_per_1000_requests": 0.0396,
+            "exact_zero_or_one_predictions": 3,
+            "mae": 0.01884820341602098,
+            "rmse": 0.06357040152690356,
+            "excess_brier": 0.004041195950291742,
+            "expected_brier": 0.12332305348171482
+          }
+        },
+        "weighted_mixture": {
+          "Jev": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 0.23649129198747687,
+            "p95_latency_s": 0.3113857122079935,
+            "mean_latency_s": 0.24089466054720104,
+            "billed_cost_usd": 0.00040005,
+            "usd_per_1000_requests": 0.0200025,
+            "exact_zero_or_one_predictions": 0,
+            "mae": 0.09071157593334987,
+            "rmse": 0.1277612051036834,
+            "excess_brier": 0.016322925529545458,
+            "expected_brier": 0.20021147308135673
+          },
+          "Luna": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 1.188938417006284,
+            "p95_latency_s": 1.9231115711547324,
+            "mean_latency_s": 1.2903996457986069,
+            "billed_cost_usd": 0.000888,
+            "usd_per_1000_requests": 0.0444,
+            "exact_zero_or_one_predictions": 0,
+            "mae": 0.07946296948705976,
+            "rmse": 0.11175617900700784,
+            "excess_brier": 0.012489443546246379,
+            "expected_brier": 0.19637799109805767
+          }
+        },
+        "conditional_table": {
+          "Jev": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 0.24253977098851465,
+            "p95_latency_s": 0.2937989497047966,
+            "mean_latency_s": 0.25003482499741947,
+            "billed_cost_usd": 0.000368466,
+            "usd_per_1000_requests": 0.0184233,
+            "exact_zero_or_one_predictions": 0,
+            "mae": 0.020416666666666666,
+            "rmse": 0.022610838109190023,
+            "excess_brier": 0.0005112499999999999,
+            "expected_brier": 0.13641833333333336
+          },
+          "Luna": {
+            "n": 20,
+            "valid": 20,
+            "median_latency_s": 1.2159329165006056,
+            "p95_latency_s": 1.5020713753503514,
+            "mean_latency_s": 1.2226838605522061,
+            "billed_cost_usd": 0.0008045,
+            "usd_per_1000_requests": 0.040225000000000004,
+            "exact_zero_or_one_predictions": 3,
+            "mae": 3.33333360913457e-12,
+            "rmse": 1.0540926406054687e-11,
+            "excess_brier": 1.1111112949786098e-22,
+            "expected_brier": 0.13590708333333335
+          }
+        }
+      }
+    }
+  },
+  "cache": {
+    "models": {
+      "Luna cached": {
+        "n": 24,
+        "valid": 24,
+        "median_latency_s": 0.9179664584953571,
+        "p95_latency_s": 1.1803516982632571,
+        "mean_latency_s": 0.9428539184179195,
+        "billed_cost_usd": 0.00171132,
+        "usd_per_1000_requests": 0.071305,
+        "exact_zero_or_one_predictions": 24,
+        "correct": 21,
+        "accuracy": 0.875,
+        "accuracy_wilson95": [
+          0.6899611872949993,
+          0.9565566591987655
+        ],
+        "brier": 0.125,
+        "log_loss": 4.317413682483019,
+        "incorrect_case_ids": [
+          "cache-member-supervised-expired",
+          "cache-sensor-outdoor-weather",
+          "cache-portable-battery-low"
+        ]
+      },
+      "Luna uncached": {
+        "n": 24,
+        "valid": 24,
+        "median_latency_s": 1.0602054579940159,
+        "p95_latency_s": 1.291354949955712,
+        "mean_latency_s": 1.136900599000607,
+        "billed_cost_usd": 0.0071802,
+        "usd_per_1000_requests": 0.29917499999999997,
+        "exact_zero_or_one_predictions": 24,
+        "correct": 21,
+        "accuracy": 0.875,
+        "accuracy_wilson95": [
+          0.6899611872949993,
+          0.9565566591987655
+        ],
+        "brier": 0.125,
+        "log_loss": 4.317413682483019,
+        "incorrect_case_ids": [
+          "cache-after-hours-permitted",
+          "cache-sensor-outdoor-weather",
+          "cache-portable-battery-low"
+        ]
+      },
+      "Jev": {
+        "n": 24,
+        "valid": 24,
+        "median_latency_s": 0.2544942910026293,
+        "p95_latency_s": 0.33727485434792465,
+        "mean_latency_s": 0.2704224321253908,
+        "billed_cost_usd": 0.003184104,
+        "usd_per_1000_requests": 0.132671,
+        "exact_zero_or_one_predictions": 0,
+        "correct": 20,
+        "accuracy": 0.8333333333333334,
+        "accuracy_wilson95": [
+          0.6414692935030095,
+          0.9332132367136705
+        ],
+        "brier": 0.08786666666666666,
+        "log_loss": 0.28680211062673244,
+        "incorrect_case_ids": [
+          "cache-sensor-outdoor-weather",
+          "cache-after-hours-unsigned",
+          "cache-trainee-duration-limit",
+          "cache-portable-battery-low"
+        ]
+      }
+    },
+    "paired": {
+      "Luna cached vs Luna uncached": {
+        "left": "Luna cached",
+        "right": "Luna uncached",
+        "n_pairs": 24,
+        "difference": "left minus right",
+        "ratio": "left divided by right",
+        "bootstrap_seed": 20261012,
+        "metrics": {
+          "brier_difference": {
+            "estimate": 0.0,
+            "ci95": [
+              -0.125,
+              0.125
+            ]
+          },
+          "mean_absolute_label_error_difference": {
+            "estimate": 0.0,
+            "ci95": [
+              -0.125,
+              0.125
+            ]
+          },
+          "mean_latency_difference_s": {
+            "estimate": -0.19404668058268726,
+            "ci95": [
+              -0.3724629672147785,
+              -0.07326244343109173
+            ]
+          },
+          "mean_cost_difference_usd": {
+            "estimate": -0.00022787000000000003,
+            "ci95": [
+              -0.00022787000000000003,
+              -0.00022787000000000003
+            ]
+          },
+          "accuracy_difference": {
+            "estimate": 0.0,
+            "ci95": [
+              -0.125,
+              0.125
+            ]
+          },
+          "log_loss_difference": {
+            "estimate": 0.0,
+            "ci95": [
+              -4.3173470493638355,
+              4.3173470493638355
+            ]
+          },
+          "ratio_of_median_latencies": {
+            "estimate": 0.8658382689636543,
+            "ci95": [
+              0.8002578901736012,
+              0.9627587174487656
+            ]
+          },
+          "median_of_paired_latency_ratios": {
+            "estimate": 0.9125562576625701,
+            "ci95": [
+              0.7795041957054406,
+              0.9593429075486408
+            ]
+          },
+          "ratio_of_mean_costs": {
+            "estimate": 0.2383387649369098,
+            "ci95": [
+              0.2382645030991016,
+              0.23841301229650877
+            ]
+          },
+          "setup_inclusive_cost_ratio_fixed_observed_prime": {
+            "estimate": 0.28882830561822787,
+            "ci95": [
+              0.2887589665018455,
+              0.28889763121614276
+            ]
+          }
+        },
+        "paired_correctness_counts": {
+          "both_correct": 20,
+          "left_only_correct": 1,
+          "right_only_correct": 1,
+          "both_incorrect": 2
+        }
+      },
+      "Luna cached vs Jev": {
+        "left": "Luna cached",
+        "right": "Jev",
+        "n_pairs": 24,
+        "difference": "left minus right",
+        "ratio": "left divided by right",
+        "bootstrap_seed": 20261013,
+        "metrics": {
+          "brier_difference": {
+            "estimate": 0.03713333333333333,
+            "ci95": [
+              -0.06411041666666667,
+              0.1536670833333333
+            ]
+          },
+          "mean_absolute_label_error_difference": {
+            "estimate": -0.08166666666666668,
+            "ci95": [
+              -0.18625,
+              0.02666666666666666
+            ]
+          },
+          "mean_latency_difference_s": {
+            "estimate": 0.6724314862925288,
+            "ci95": [
+              0.6306404519296241,
+              0.7208375596278225
+            ]
+          },
+          "mean_cost_difference_usd": {
+            "estimate": -6.136600000000001e-05,
+            "ci95": [
+              -6.138725e-05,
+              -6.134341666666668e-05
+            ]
+          },
+          "accuracy_difference": {
+            "estimate": 0.041666666666666664,
+            "ci95": [
+              -0.08333333333333333,
+              0.16666666666666666
+            ]
+          },
+          "log_loss_difference": {
+            "estimate": 4.030611571856286,
+            "ci95": [
+              -0.18489103719648087,
+              8.363371197754898
+            ]
+          },
+          "ratio_of_median_latencies": {
+            "estimate": 3.6070218112903487,
+            "ci95": [
+              3.402496772316425,
+              3.7383018313273846
+            ]
+          },
+          "median_of_paired_latency_ratios": {
+            "estimate": 3.617968437782495,
+            "ci95": [
+              3.4348607259371517,
+              3.6970101768802643
+            ]
+          },
+          "ratio_of_mean_costs": {
+            "estimate": 0.5374573192332913,
+            "ci95": [
+              0.5372911169744943,
+              0.5376386635537441
+            ]
+          },
+          "setup_inclusive_cost_ratio_fixed_observed_prime": {
+            "estimate": 0.6513119546346475,
+            "ci95": [
+              0.6511492855792343,
+              0.6514888293051501
+            ]
+          }
+        },
+        "paired_correctness_counts": {
+          "both_correct": 19,
+          "left_only_correct": 2,
+          "right_only_correct": 1,
+          "both_incorrect": 2
+        }
+      },
+      "Luna uncached vs Jev": {
+        "left": "Luna uncached",
+        "right": "Jev",
+        "n_pairs": 24,
+        "difference": "left minus right",
+        "ratio": "left divided by right",
+        "bootstrap_seed": 20261014,
+        "metrics": {
+          "brier_difference": {
+            "estimate": 0.03713333333333333,
+            "ci95": [
+              -0.06677614583333333,
+              0.16213062499999986
+            ]
+          },
+          "mean_absolute_label_error_difference": {
+            "estimate": -0.08166666666666668,
+            "ci95": [
+              -0.19208333333333336,
+              0.040833333333333326
+            ]
+          },
+          "mean_latency_difference_s": {
+            "estimate": 0.8664781668752161,
+            "ci95": [
+              0.755344436835882,
+              1.037138564075758
+            ]
+          },
+          "mean_cost_difference_usd": {
+            "estimate": 0.00016650400000000002,
+            "ci95": [
+              0.0001664825,
+              0.00016652683333333337
+            ]
+          },
+          "accuracy_difference": {
+            "estimate": 0.041666666666666664,
+            "ci95": [
+              -0.08333333333333333,
+              0.16666666666666666
+            ]
+          },
+          "log_loss_difference": {
+            "estimate": 4.030611571856286,
+            "ci95": [
+              -0.18605978817093258,
+              9.448219672079865
+            ]
+          },
+          "ratio_of_median_latencies": {
+            "estimate": 4.165930221134361,
+            "ci95": [
+              3.7397323426328377,
+              4.46620313518592
+            ]
+          },
+          "median_of_paired_latency_ratios": {
+            "estimate": 3.918573737604335,
+            "ci95": [
+              3.6925993959134398,
+              4.406468553807654
+            ]
+          },
+          "ratio_of_mean_costs": {
+            "estimate": 2.255014283453053,
+            "ci95": [
+              2.254743282717801,
+              2.2552820186159237
+            ]
+          }
+        },
+        "paired_correctness_counts": {
+          "both_correct": 19,
+          "left_only_correct": 2,
+          "right_only_correct": 1,
+          "both_incorrect": 2
+        }
+      }
+    },
+    "priming": {
+      "cost_usd": 0.000362525,
+      "latency_s": 1.2044517089962028,
+      "read_tokens": 0,
+      "written_tokens": 2533,
+      "inference_limit": "Single observed priming request; setup-inclusive interval treats its measured bill as fixed and does not estimate uncertainty in future priming latency/cost."
+    },
+    "cache_counts": {
+      "cached_arm_has_observed_hits": true,
+      "uncached_control_verified": true,
+      "controlled_cache_comparison_verified": true,
+      "status": "observed cache hits and clean uncached control",
+      "prime_cached_tokens": 0,
+      "prime_cache_write_tokens": 2533,
+      "prime_cost_usd": 0.000362525,
+      "prime_latency_s": 1.2044517089962028,
+      "prime_was_observed_cold": true,
+      "setup_inclusive_cached_cost_usd": 0.002073845,
+      "setup_inclusive_cost_per_measured_case_usd": 8.641020833333333e-05
+    }
+  },
+  "billing": {
+    "main_measured_usd": 0.011462728,
+    "main_warmups_usd": 8.7342e-05,
+    "setup_probes_usd": 8.7342e-05,
+    "cache_measured_usd": 0.012075624,
+    "cache_prime_usd": 0.000362525,
+    "all_observed_requests": 441,
+    "all_observed_billed_usd": 0.024075561
+  },
+  "boolq_posthoc_exclusion_sensitivity": {
+    "label": "Exclude only the one pre-existing audit flag for an unambiguous passage-label contradiction; keep all other labels and cases unchanged",
+    "excluded_case_id": "boolq-dev-1842",
+    "primary_label": 1,
+    "passage_supported_label": 0,
+    "predictions": {
+      "Luna": 0.0,
+      "Jev": 0.03
+    },
+    "models": {
+      "Jev": {
+        "n": 59,
+        "valid": 59,
+        "median_latency_s": 0.2360435409937054,
+        "p95_latency_s": 0.3724394086049869,
+        "mean_latency_s": 0.2597932514050873,
+        "billed_cost_usd": 0.001172598,
+        "usd_per_1000_requests": 0.019874542372881356,
+        "exact_zero_or_one_predictions": 0,
+        "correct": 57,
+        "accuracy": 0.9661016949152542,
+        "accuracy_wilson95": [
+          0.8845642924988925,
+          0.9906540909083387
+        ],
+        "brier": 0.053571186440677966,
+        "log_loss": 0.1930197956721677,
+        "incorrect_case_ids": [
+          "boolq-dev-1517",
+          "boolq-dev-0587"
+        ]
+      },
+      "Luna": {
+        "n": 59,
+        "valid": 59,
+        "median_latency_s": 1.1432648339832667,
+        "p95_latency_s": 1.4705759506032337,
+        "mean_latency_s": 1.15482401625713,
+        "billed_cost_usd": 0.0026284,
+        "usd_per_1000_requests": 0.044549152542372884,
+        "exact_zero_or_one_predictions": 44,
+        "correct": 49,
+        "accuracy": 0.8305084745762712,
+        "accuracy_wilson95": [
+          0.71536779263512,
+          0.9052416065081895
+        ],
+        "brier": 0.15350677966101697,
+        "log_loss": 3.152812571327568,
+        "incorrect_case_ids": [
+          "boolq-dev-1447",
+          "boolq-dev-2504",
+          "boolq-dev-0448",
+          "boolq-dev-1625",
+          "boolq-dev-1517",
+          "boolq-dev-2597",
+          "boolq-dev-0852",
+          "boolq-dev-2868",
+          "boolq-dev-2665",
+          "boolq-dev-0587"
+        ]
+      }
+    },
+    "paired": {
+      "left": "Luna",
+      "right": "Jev",
+      "n_pairs": 59,
+      "difference": "left minus right",
+      "ratio": "left divided by right",
+      "bootstrap_seed": 20261022,
+      "metrics": {
+        "brier_difference": {
+          "estimate": 0.09993559322033899,
+          "ci95": [
+            0.033645466101694915,
+            0.17669563559322013
+          ]
+        },
+        "mean_absolute_label_error_difference": {
+          "estimate": 0.04542372881355932,
+          "ci95": [
+            -0.025427966101694923,
+            0.12373305084745725
+          ]
+        },
+        "mean_latency_difference_s": {
+          "estimate": 0.8950307648520427,
+          "ci95": [
+            0.8485650032077363,
+            0.9422056648823516
+          ]
+        },
+        "mean_cost_difference_usd": {
+          "estimate": 2.4674610169491526e-05,
+          "ci95": [
+            2.3425851694915254e-05,
+            2.623991864406779e-05
+          ]
+        },
+        "accuracy_difference": {
+          "estimate": -0.13559322033898305,
+          "ci95": [
+            -0.23728813559322035,
+            -0.05084745762711865
+          ]
+        },
+        "log_loss_difference": {
+          "estimate": 2.9597927756553997,
+          "ci95": [
+            0.7258945316229899,
+            5.670080571804208
+          ]
+        },
+        "ratio_of_median_latencies": {
+          "estimate": 4.84344892120456,
+          "ci95": [
+            4.439952214167102,
+            5.07630224189156
+          ]
+        },
+        "median_of_paired_latency_ratios": {
+          "estimate": 4.400885207005879,
+          "ci95": [
+            4.269253980950404,
+            4.9290712246743675
+          ]
+        },
+        "ratio_of_mean_costs": {
+          "estimate": 2.241518406137483,
+          "ci95": [
+            2.23132303121675,
+            2.2525479038346683
+          ]
+        }
+      },
+      "paired_correctness_counts": {
+        "both_correct": 49,
+        "left_only_correct": 0,
+        "right_only_correct": 8,
+        "both_incorrect": 2
+      }
+    }
+  },
+  "data_limitations": {
+    "boolq_unique_passages": 59,
+    "boolq_repeated_passage_case_groups": [
+      [
+        "boolq-dev-0659",
+        "boolq-dev-0383"
+      ]
+    ],
+    "boolq_audit_status_counts": {
+      "supported": 38,
+      "ambiguous": 15,
+      "time_or_scope": 6,
+      "contradiction": 1
+    },
+    "boolq_scope": "Agreement with frozen published human labels; not verified truth and not a current-law/current-fact evaluation.",
+    "synthetic_main_design": "20 cases per family; three policy families with balanced labels and three probability families. Policy boundary/exception anchors are deliberately selected, not an IID random natural workload sample.",
+    "cache_design": "24 hand-designed cases sharing a single synthetic rulebook; all 3 arms tested once/case; 24/24 cached calls had reads; uncached control reads and writes all zero.",
+    "schema_equivalence": "The returned answer object matches exactly. API envelopes, tokenizers, backend processing and required Luna formatting instruction differ."
+  }
+}

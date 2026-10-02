@@ -1,0 +1,19 @@
+{
+  "frozen_before_expanded_model_calls": true,
+  "files": {
+    "datasets.py": "bd080e69b0a345af294c686ace1aa58e3e6553391e8c2b0a24f8aa72ead54dcd",
+    "fetch_sources.py": "1a5c2b51bc34ef4f1c92e82874ce73743fc112be3ef8fbf846e3407545b17ac0",
+    "test_datasets.py": "06105e710e818140ab9437401b400f948e21aed8d400f9242e4b16bd6de55d1c",
+    "data/boolq.jsonl": "f16a15996c72d6220484980ef03b5bea526a9b17cdde08a4f0b73b3cbafa48ae",
+    "data/cases.jsonl": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+    "data/manifest.json": "9823456b270d3afe9b898cf9e51621e511a9a2573103923eb87ac1d4e49414ac",
+    "data/policy.jsonl": "afad3bd6e581ea21616d67af43dd1c9a4282b1bc8711cfcd6a1cac0537b514cd",
+    "data/probability.jsonl": "4fa93ea9c63f86e42b7e448d3d6cd7272a5508adce81591efd25b0abc91d94c3",
+    "data/rte.jsonl": "1702b466e5cd4cc23ab155c1adc26b87a498b31fd7fa294edd8fb01ddd4c0a3e",
+    "data/timing-cases.jsonl": "aa034a8fd9eedcf2ef2614fd3861d81af9d500eaed94629fb9f72c7d1df504f8",
+    "data/wic.jsonl": "4d81751e8725e50271956f8764a703fa6634d715f2d72b332d20682e491942c6",
+    "sources/provenance.json": "a3c98b8a15c24643f456eaee7703917f200ff15625cc926905142b87a0836a82",
+    "sources/rte-features.json": "0a8a675525f3baf03902bce808a02c7ef3d0e54964c74460f1ae47162ed428ce",
+    "sources/wic-features.json": "ff08ae0020d406b73a9675e18f8a9a558feec42af889d2027c957280f077aa13"
+  }
+}

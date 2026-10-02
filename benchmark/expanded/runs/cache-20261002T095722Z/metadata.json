@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "experiment": "expanded_cache_policy",
+  "created_at": "2026-10-02T09:57:22.547918+00:00",
+  "seed": 20261002,
+  "models": {
+    "Luna cached": "openai/gpt-6-luna",
+    "Luna uncached": "openai/gpt-6-luna",
+    "Jev": "typesafe/jev-1.13"
+  },
+  "blocks": 4,
+  "cases": 96,
+  "counterfactual_pairs": 48,
+  "calls_planned": 292,
+  "budget_usd": 0.15,
+  "block_identifiers": [
+    "16c3557eb5ab469bb9f224860ba22b59",
+    "9ae014115a4045809606c2845f769574",
+    "25696913dd3742638d846f3b2f2df539",
+    "ccb1c6f8b89e40b8a79dce1b27067262"
+  ],
+  "cases_sha256": "73e400bef4a7025d31ab77523f6dcafe9ae46ee2100c1b8e7d4bd444d3a88e0c",
+  "rulebook_sha256": "01006795edc5f9ee13a1e4efc56fc8e19516d74f40cddbce2e72d19b00f0d43b",
+  "script_sha256": "29ccdc95f58d687e4c64d0bc744ef7e8d35d47e75cc29fd8683e70f36c4f31ed",
+  "pilot_runner_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+  "pilot_cache_adapter_sha256": "40976904f39e343bfcf97ad38815f70cfe9e10cd69ef2260d77bad57060d14f7",
+  "luna_reasoning": "none",
+  "luna_provider": "OpenAI",
+  "automatic_retries": 0,
+  "resume_policy": "Only complete-block boundaries; partial blocks are preserved without replay.",
+  "protocol": "Four sequential blocks. Each has a unique administrative identifier inside the shared prefix, one separate Luna cached cold-prime attempt, and 24 cases with randomly ordered three-arm requests. One persistent HTTPS connection. Cache identity, cold writes, reads, and disabled controls verified from usage.",
+  "billing_guard": "Before each call reserve every request UTF-8 byte plus 4096 as input tokens at $1/M, plus 128 output tokens at $2/M. Stop on unknown costs or observed charges above budget. This is a local accounting guard, not an account-level provider spend cap.",
+  "status": "complete",
+  "charged_usd": 0.05034943,
+  "calls_completed": 292,
+  "known_charge_subtotal_usd": 0.05034943,
+  "cost_missing_n": 0,
+  "current_block": 3,
+  "completed_blocks": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "finished_at": "2026-10-02T10:01:23.629266+00:00"
+}

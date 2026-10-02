@@ -1,0 +1,194 @@
+{
+  "name": "Expanded Luna and Jev binary evaluation",
+  "version": 1,
+  "created_date": "2026-10-02",
+  "count": 4785,
+  "base_seed": 20261002,
+  "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+  "files": {
+    "boolq": {
+      "file": "boolq.jsonl",
+      "sha256": "f16a15996c72d6220484980ef03b5bea526a9b17cdde08a4f0b73b3cbafa48ae",
+      "count": 3270,
+      "target_kind": "label",
+      "labels": {
+        "no": 1237,
+        "yes": 2033
+      }
+    },
+    "rte": {
+      "file": "rte.jsonl",
+      "sha256": "1702b466e5cd4cc23ab155c1adc26b87a498b31fd7fa294edd8fb01ddd4c0a3e",
+      "count": 277,
+      "target_kind": "label",
+      "labels": {
+        "no": 131,
+        "yes": 146
+      }
+    },
+    "wic": {
+      "file": "wic.jsonl",
+      "sha256": "4d81751e8725e50271956f8764a703fa6634d715f2d72b332d20682e491942c6",
+      "count": 638,
+      "target_kind": "label",
+      "labels": {
+        "no": 319,
+        "yes": 319
+      }
+    },
+    "policy": {
+      "file": "policy.jsonl",
+      "sha256": "afad3bd6e581ea21616d67af43dd1c9a4282b1bc8711cfcd6a1cac0537b514cd",
+      "count": 300,
+      "target_kind": "label",
+      "labels": {
+        "yes": 150,
+        "no": 150
+      }
+    },
+    "probability": {
+      "file": "probability.jsonl",
+      "sha256": "4fa93ea9c63f86e42b7e448d3d6cd7272a5508adce81591efd25b0abc91d94c3",
+      "count": 300,
+      "target_kind": "probability",
+      "labels": null
+    }
+  },
+  "pilot_generator_sha256": "5d6f08efd3f3b0ead5354c82aefe9d582f5d4f273b0f0303f4f4662e935291b3",
+  "generator_sha256": "bd080e69b0a345af294c686ace1aa58e3e6553391e8c2b0a24f8aa72ead54dcd",
+  "sampling": {
+    "boolq": "All3270 published development rows; no filtering.",
+    "rte": "All277 published validation rows; no filtering.",
+    "wic": "All638 published validation rows; no filtering.",
+    "policy": "300 deterministic cases;100 per family;50 yes/50 no per family;6 informative contrast pairs per family plus seeded stratified samples.",
+    "probability": "300 exact-probability tasks;100 each conditional table, without replacement and weighted mixture; successive seeded batches, retaining first unique inputs and excluding pilot-identical inputs."
+  },
+  "raw_sources": {
+    "boolq": {
+      "normalized_jsonl_sha256": "e8fb84fbf510b022e963cddf3a3aded04151afa0ea0ef1cc1bf22f260ddd2344",
+      "rows": 3270
+    },
+    "rte": {
+      "normalized_jsonl_sha256": "eec4bac5953538dc63792265f59f7df4f68c0048bcacd3d07336b7d7dc60db40",
+      "rows": 277
+    },
+    "wic": {
+      "normalized_jsonl_sha256": "dccc5a7709e2d016ed6dcab6566039da37dc2a6a1be2fd500f8b04952a5dcaec",
+      "rows": 638
+    }
+  },
+  "hf_superglue": {
+    "repository": "aps/super_glue",
+    "observed_revision": "3de24cf8022e94f4ee4b9d55a6f539891524d646",
+    "last_modified": "2025-05-16T03:18:03.000Z",
+    "rows_api_revision_pinned": false,
+    "downloaded_content_hashes_authoritative": true
+  },
+  "label_mappings": {
+    "boolq": "target_yes=int(answer)",
+    "rte": "0=entailment,1=not_entailment; target_yes=1-label",
+    "wic": "0=False,1=True; target_yes=label"
+  },
+  "pilot_overlap": {
+    "boolq_case_count": 60,
+    "boolq_case_ids": [
+      "boolq-dev-0055",
+      "boolq-dev-0065",
+      "boolq-dev-0210",
+      "boolq-dev-0308",
+      "boolq-dev-0341",
+      "boolq-dev-0383",
+      "boolq-dev-0448",
+      "boolq-dev-0468",
+      "boolq-dev-0525",
+      "boolq-dev-0579",
+      "boolq-dev-0587",
+      "boolq-dev-0659",
+      "boolq-dev-0767",
+      "boolq-dev-0852",
+      "boolq-dev-0877",
+      "boolq-dev-0980",
+      "boolq-dev-1066",
+      "boolq-dev-1092",
+      "boolq-dev-1114",
+      "boolq-dev-1171",
+      "boolq-dev-1296",
+      "boolq-dev-1335",
+      "boolq-dev-1381",
+      "boolq-dev-1447",
+      "boolq-dev-1517",
+      "boolq-dev-1550",
+      "boolq-dev-1570",
+      "boolq-dev-1603",
+      "boolq-dev-1625",
+      "boolq-dev-1662",
+      "boolq-dev-1739",
+      "boolq-dev-1842",
+      "boolq-dev-1859",
+      "boolq-dev-1953",
+      "boolq-dev-1979",
+      "boolq-dev-2011",
+      "boolq-dev-2041",
+      "boolq-dev-2098",
+      "boolq-dev-2116",
+      "boolq-dev-2217",
+      "boolq-dev-2426",
+      "boolq-dev-2493",
+      "boolq-dev-2504",
+      "boolq-dev-2552",
+      "boolq-dev-2597",
+      "boolq-dev-2630",
+      "boolq-dev-2665",
+      "boolq-dev-2774",
+      "boolq-dev-2791",
+      "boolq-dev-2818",
+      "boolq-dev-2849",
+      "boolq-dev-2868",
+      "boolq-dev-2951",
+      "boolq-dev-3009",
+      "boolq-dev-3114",
+      "boolq-dev-3115",
+      "boolq-dev-3125",
+      "boolq-dev-3134",
+      "boolq-dev-3165",
+      "boolq-dev-3247"
+    ],
+    "new_api_run_required": true,
+    "reuse_predictions": false,
+    "synthetic_templates_shared": true,
+    "policy_semantic_overlap_count": 13,
+    "probability_identical_input_overlap_count": 0
+  },
+  "model_visible_fields": [
+    "state",
+    "question",
+    "criteria"
+  ],
+  "ground_truth_status": {
+    "boolq": "Published human labels retained, including known label contradiction1842.",
+    "rte": "Published human entailment labels retained.",
+    "wic": "Published human word-sense labels retained.",
+    "policy": "Programmatic Boolean oracle.",
+    "probability": "Exact rational event probability; not an observed event."
+  },
+  "license_status": {
+    "boolq": "CC BY-SA3.0",
+    "wic": "CC BY-NC4.0; source authors explicit",
+    "rte": "Original RTE terms; no unified permissive license verified"
+  },
+  "limitations": [
+    "Public validation sets may overlap model training; no unseen-data generalization claim.",
+    "The dataset is larger, but evaluation reliability also requires repeated timing and provider control.",
+    "Public labels are annotations, not infallible truth.",
+    "WiC sense identity and RTE entailment can be ambiguous; no model-assisted label corrections applied.",
+    "Synthetic cases share task templates and cannot be treated as independent real-world domains.",
+    "No official SuperGLUE leaderboard claim: only binary RTE and WiC tasks are included, with a probability-output adaptation.",
+    "Known BoolQ label audit remains post-hoc; primary labels unchanged."
+  ],
+  "source_provenance_file": "../sources/provenance.json",
+  "public_export": {
+    "transformed": true,
+    "note": "This is a transformed public copy. RTE premise/hypothesis text and copies in requests are omitted because exact upstream redistribution terms were not verified. All numerical results and reference labels are retained. Hashes recorded by the original study identify original local artifacts, not these public bytes; PUBLICATION_MANIFEST.json records the public file hashes. Local artifact paths have been made relative to the public package.",
+    "public_hash_manifest": "PUBLICATION_MANIFEST.json"
+  }
+}

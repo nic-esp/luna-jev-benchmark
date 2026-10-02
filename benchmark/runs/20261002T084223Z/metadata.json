@@ -1,0 +1,20 @@
+{
+  "models": {
+    "Jev": "typesafe/jev-1.13",
+    "Luna": "openai/gpt-6-luna"
+  },
+  "created_at": "2026-10-02T08:42:23.244948+00:00",
+  "seed": 20261002,
+  "cases": 180,
+  "calls_planned": 360,
+  "budget_usd": 0.999912658,
+  "luna_reasoning": "none",
+  "luna_provider": "OpenAI",
+  "protocol": "One non-streaming request per model per case; sequential paired random order; one shared persistent HTTPS connection; no automatic retries; two warmups per model excluded from measured results.",
+  "cases_sha256": "60e6db60c72869936548c3c4620aa3b070cf12e516f3be42a61a306d0f592660",
+  "runner_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+  "status": "complete",
+  "charged_usd": 0.011550069999999994,
+  "calls_completed": 364,
+  "finished_at": "2026-10-02T08:46:47.575786+00:00"
+}

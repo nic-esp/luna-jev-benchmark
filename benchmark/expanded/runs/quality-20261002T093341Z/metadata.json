@@ -1,0 +1,51 @@
+{
+  "status": "complete",
+  "created_at": "2026-10-02T09:33:41.649117+00:00",
+  "models": {
+    "Jev": "typesafe/jev-1.13",
+    "Luna": "openai/gpt-6-luna"
+  },
+  "cases": 4785,
+  "planned_calls": 9570,
+  "concurrency_pairs": 16,
+  "phase": "quality",
+  "seed": 20261002,
+  "budget_usd": 0.8,
+  "cases_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+  "runner_sha256": "992c7c8ce88be5a4b7928957690a239cee5cac510f7882a8be61636eaa2c79e8",
+  "adapter_sha256": "3a05cb20816fbc5b7c30a065429a7365afa9583f273d683bf69784f4af3e9ad7",
+  "protocol": "Fresh full quality evaluation. Random case and within-pair model order. Thread workers each perform one pair sequentially. No retries or repairs. Concurrent latency is diagnostic only, excluded from speed claims. Shared answer contract and Luna settings unchanged from pilot.",
+  "calls_completed": 9570,
+  "valid": 9569,
+  "invalid": 1,
+  "charged_usd": null,
+  "known_charge_subtotal_usd": 0.28895565000000006,
+  "unknown_billing": 1,
+  "budget_pending_usd": 0.0,
+  "budget_stop_reason": null,
+  "finished_at": "2026-10-02T09:49:23.338894+00:00",
+  "protocol_amendments": [
+    {
+      "timestamp": "2026-10-02T09:42:28.671416+00:00",
+      "reason": "Continue only unattempted calls after a transient HTTP 520 and unknown bill. Retain the failed attempt without retry. Separate budget allowances permit continuation without fabricating billing.",
+      "code_sha256": "9e13adeed4f44c0aa376c4a25e14beeb3770861e21daba65854aff32fb558768",
+      "initial_code_sha256": "992c7c8ce88be5a4b7928957690a239cee5cac510f7882a8be61636eaa2c79e8",
+      "initial_metadata_sha256": "a7c3d8243bd30a7da333de4736ce5630a5307f1236d8a53cb4aed54238937a8d",
+      "initial_metadata_snapshot": "metadata-before-amendment-1.json",
+      "initial_raw_prefix_sha256": "74bd79d76e29d2bc6f747e4d3632e56c2d7bd4ca0badf89fbbe5a22946c5fc94",
+      "initial_raw_prefix_bytes": 899939,
+      "initial_attempts": 308,
+      "unattempted_calls": 9262,
+      "frozen_plan_sha256": "4a9deec659f08d1698e150b41b0b32ad01f55dde55c2c93fc4e288ef89a67c36",
+      "workers": 16,
+      "unknown_billing_policy": "$0.01 accounting allowance per unknown attempt; reported cost remains null. In-flight reservations are the larger of the original request estimate and $0.01.",
+      "failure_circuit": "Five consecutive invalid completions, or at least 5% invalid among global completed attempts once 100 have completed. Completion order is append order in responses.jsonl.",
+      "retry_policy": "No retries, repairs, or replays; every original (case_id,model) is attempted at most once."
+    }
+  ],
+  "continuation_started_at": "2026-10-02T09:42:28.672123+00:00",
+  "consecutive_invalid": 0,
+  "unknown_charge_allowance_per_attempt_usd": 0.01,
+  "unknown_charge_allowance_total_usd": 0.01,
+  "budget_accounted_usd": 0.2989556500000001
+}

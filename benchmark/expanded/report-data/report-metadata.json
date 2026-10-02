@@ -1,0 +1,10 @@
+{
+  "all_attempts": 10675,
+  "expanded_cases": 4881,
+  "known_cost_usd": 0.374134623,
+  "missing_bills": 1,
+  "quality_run": "benchmark/expanded/runs/quality-20261002T093341Z",
+  "timing_run": "benchmark/expanded/runs/timing-20261002T095011Z",
+  "cache_run": "benchmark/expanded/runs/cache-20261002T095722Z",
+  "public_note": "Public reproducibility copy: RTE source text is omitted; all numerical results are retained. Original hashes identify the complete experimental inputs; PUBLICATION_MANIFEST.json describes public bytes."
+}

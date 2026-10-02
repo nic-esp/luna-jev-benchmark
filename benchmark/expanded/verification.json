@@ -1,0 +1,167 @@
+{
+  "generated_at_utc": "2026-10-02T10:02:06.021434+00:00",
+  "quality": {
+    "passed": true,
+    "checks": {
+      "run_completed": true,
+      "frozen_cases_hash": true,
+      "initial_runner_hash": true,
+      "current_shared_adapter_hash": true,
+      "frozen_random_plan_reproduces": true,
+      "all_expected_identities_exactly_once": true,
+      "metadata_counts_match": true,
+      "all_requests_responses_and_targets_match": true,
+      "amendment_1_original_prefix_unchanged": true,
+      "amendment_1_snapshot_hash": true,
+      "amendment_1_continuation_code_hash": true,
+      "amendment_1_initial_code_matches": true,
+      "amendment_1_frozen_plan_hash": true,
+      "amendment_1_attempt_count_and_no_replays": true,
+      "missing_bills_not_imputed": true,
+      "metadata_total_billing_semantics": true,
+      "known_billed_subtotal_reconciles": true,
+      "unknown_bill_count_reconciles": true,
+      "allowance_is_separate_from_reported_bill": true
+    },
+    "issues": {},
+    "attempts": 9570,
+    "valid": 9569,
+    "invalid": 1,
+    "failed_attempts": [
+      {
+        "case_id": "expanded-probability-0075",
+        "model": "Jev",
+        "http_status": 520,
+        "cost_usd": null,
+        "error": "ValueError: HTTP/API error: {\"error\": {\"message\": \"HTTP 520: error code: 520\\n\", \"code\": 520}}"
+      }
+    ],
+    "billing": {
+      "known_billed_usd": 0.28895565,
+      "missing_bills": 1,
+      "total_billed_usd": null
+    },
+    "raw_sha256": "c508f6173a27bed9834a294329414cf499bdc078381eb3f41e4d66c08f9f3f8b",
+    "plan_sha256": "4a9deec659f08d1698e150b41b0b32ad01f55dde55c2c93fc4e288ef89a67c36",
+    "case_sha256": "e271790b2ee38a1c231e312fa15ece2a56c95f6bf705294f1637d43b2edcf256",
+    "valid_model_provider_counts": {
+      "('typesafe/jev-1.13-20260917', 'TypeSafe')": 4784,
+      "('openai/gpt-6-luna', 'OpenAI')": 4785
+    },
+    "observed_usage_statistics": {
+      "Jev": {
+        "valid_calls": 4784,
+        "reported_output_tokens": {
+          "observed": 4784,
+          "min": 20,
+          "max": 20,
+          "mean": 20.0,
+          "total": 95680.0
+        },
+        "reported_output_token_source_fields": {
+          "output_tokens": 4784
+        },
+        "reported_input_tokens": {
+          "observed": 4784,
+          "min": 343,
+          "max": 1598,
+          "mean": 445.66785117056855,
+          "total": 2132075.0
+        },
+        "reported_reasoning_tokens": {
+          "observed": 0,
+          "min": null,
+          "max": null,
+          "mean": null,
+          "total": null
+        },
+        "luna_requested_output_ceiling": null
+      },
+      "Luna": {
+        "valid_calls": 4785,
+        "reported_output_tokens": {
+          "observed": 4785,
+          "min": 20,
+          "max": 28,
+          "mean": 20.69299895506792,
+          "total": 99016.0
+        },
+        "reported_output_token_source_fields": {
+          "completion_tokens": 4785
+        },
+        "reported_input_tokens": {
+          "observed": 4785,
+          "min": 218,
+          "max": 1340,
+          "mean": 313.2716823406479,
+          "total": 1499005.0
+        },
+        "reported_reasoning_tokens": {
+          "observed": 4785,
+          "min": 0,
+          "max": 0,
+          "mean": 0.0,
+          "total": 0.0
+        },
+        "luna_requested_output_ceiling": 128
+      }
+    },
+    "scientific_note": "Failed attempts remain in primary success/accuracy denominators; unknown bills remain unknown. Concurrent quality latency is diagnostic only."
+  },
+  "timing": {
+    "passed": true,
+    "checks": {
+      "run_completed": true,
+      "frozen_cases_hash": true,
+      "runner_and_adapter_hashes": true,
+      "serial_random_plan_reproduces": true,
+      "expected_calls": true,
+      "every_request_matches_plan_and_source": true,
+      "timing_started_after_bulk_finished": true,
+      "missing_bills_not_imputed": true,
+      "metadata_total_billing_semantics": true,
+      "known_billed_subtotal_reconciles": true,
+      "unknown_bill_count_reconciles": true
+    },
+    "issues": {},
+    "attempts": 372,
+    "phase_counts": {
+      "timing_warmup": 12,
+      "timing": 360
+    },
+    "billing": {
+      "known_billed_usd": 0.010753982,
+      "missing_bills": 0,
+      "total_billed_usd": 0.010753982
+    },
+    "raw_sha256": "6625f9f8375f3552e8311044155230b7b8d9efac550d8338b2213d5d38f50cc9"
+  },
+  "cache": {
+    "passed": true,
+    "checks": {
+      "run_completed": true,
+      "cases_and_source_hashes": true,
+      "imported_adapters_unchanged": true,
+      "case_generator_reproduces_frozen_cases": true,
+      "expected_calls": true,
+      "every_request_matches_frozen_plan_and_source": true,
+      "block_0_cold_prime_and_24_matching_reads": true,
+      "block_1_cold_prime_and_24_matching_reads": true,
+      "block_2_cold_prime_and_24_matching_reads": true,
+      "block_3_cold_prime_and_24_matching_reads": true,
+      "missing_bills_not_imputed": true,
+      "metadata_total_billing_semantics": true,
+      "known_billed_subtotal_reconciles": true,
+      "missing_bill_count_reconciles": true
+    },
+    "issues": {},
+    "attempts": 292,
+    "billing": {
+      "known_billed_usd": 0.05034943,
+      "missing_bills": 0,
+      "total_billed_usd": 0.05034943
+    },
+    "raw_sha256": "a837d11e4ad92e01c258a5d5e1defe82f6b64b7e4440ec6f383defc30d650e3f"
+  },
+  "passed": true
+}

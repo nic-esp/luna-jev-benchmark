@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "planned_calls_received": true,
+    "source_hash_matches": true,
+    "frozen_cases_hash_matches": true,
+    "payloads_targets_match_frozen_plan": true,
+    "all_valid": true,
+    "all_bills_match_usage": true,
+    "billing_reconciles": true,
+    "all_24_cached_calls_hit": true,
+    "uncached_control_zero_reads_writes": true,
+    "cold_prime_verified": true,
+    "luna_provider_and_reasoning_confirmed": true
+  },
+  "calls": 73,
+  "cost_usd": 0.012438148999999999
+}
